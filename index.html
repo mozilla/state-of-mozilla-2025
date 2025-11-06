@@ -34,10 +34,18 @@
             YOUR E-MAIL WILL BE USED ONLY TO SEND YOU THE LINK TO THE REPORT —
             NOTHING ELSE.
           </p>
-          <form class="flex flex-col space-y-1.5 mb-0">
+          <form
+            action="https://mozilla.formstack.com/forms/index.php"
+            method="POST"
+            class="flex flex-col space-y-1.5 mb-0"
+          >
+            <input type="hidden" name="form" value="6352547" />
+            <input type="hidden" name="viewkey" value="oMYX3UGOFV" />
+            <input type="hidden" name="_submit" value="1" />
             <input
               type="email"
-              name="email"
+              name="field189514574"
+              id="email"
               placeholder="Enter your e-mail"
               required
               aria-required="true"
