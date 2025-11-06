@@ -1,79 +1,46 @@
-# State of Mozilla 2025
+# Astro Starter Kit: Basics
 
-A landing page for the State of Mozilla 2025 report with an email signup form and poster download.
-
-## Features
-
-- Email signup form to receive the State of Mozilla 2025 report
-- Downloadable poster (PDF)
-- Real-time clock display with timezone
-- Responsive design using Tailwind CSS
-- Mozilla branding and styling
-
-## Tech Stack
-
-- [Vite](https://vitejs.dev/) - Build tool and dev server
-- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
-- Vanilla JavaScript
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js (version 14 or higher)
-- pnpm (or npm/yarn)
-
-### Installation
-
-```bash
-pnpm install
+```sh
+pnpm create astro@latest -- --template basics
 ```
 
-### Development
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-Run the development server:
+## 🚀 Project Structure
 
-```bash
-pnpm dev
+Inside of your Astro project, you'll see the following folders and files:
+
+```text
+/
+├── public/
+│   └── favicon.svg
+├── src
+│   ├── assets
+│   │   └── astro.svg
+│   ├── components
+│   │   └── Welcome.astro
+│   ├── layouts
+│   │   └── Layout.astro
+│   └── pages
+│       └── index.astro
+└── package.json
 ```
 
-The site will be available at `http://localhost:5173`
+To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
 
-### Build
+## 🧞 Commands
 
-Build for production:
+All commands are run from the root of the project, from a terminal:
 
-```bash
-pnpm build
-```
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `pnpm install`             | Installs dependencies                            |
+| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
+| `pnpm build`           | Build your production site to `./dist/`          |
+| `pnpm preview`         | Preview your build locally, before deploying     |
+| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `pnpm astro -- --help` | Get help using the Astro CLI                     |
 
-The built files will be in the `dist/` directory.
+## 👀 Want to learn more?
 
-### Preview
-
-Preview the production build locally:
-
-```bash
-pnpm preview
-```
-
-## Project Structure
-
-```
-.
-├── public/          # Static assets
-│   ├── fonts/       # Font files
-│   ├── img/         # Images
-│   ├── pdf/         # Downloadable poster PDF
-│   └── svg/         # SVG graphics
-├── src/
-│   ├── main.js      # Main JavaScript entry point
-│   └── style.css    # Custom styles
-├── index.html       # HTML entry point
-├── package.json     # Dependencies and scripts
-└── vite.config.js   # Vite configuration
-```
-
-## Privacy
-
-User emails are collected only to send the State of Mozilla 2025 report link. See [Mozilla's Privacy Notice](https://www.mozilla.org/privacy/websites/) for more information.
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
