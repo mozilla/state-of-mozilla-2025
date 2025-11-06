@@ -21,13 +21,6 @@
   font-display: swap;
 }
 
-html {
-  font-size: 14px;
-  @media (min-width: 1024px) {
-    font-size: 16px;
-  }
-}
-
 body {
   font-family: "OCR-PBI", sans-serif;
 }
@@ -41,6 +34,28 @@ h6 {
   font-family: "Workbench", sans-serif;
 }
 
-input {
-  font-size: 16px;
+button {
+  position: relative;
+  text-transform: uppercase;
+  padding: 1rem 1.5rem;
+  border: 1px solid;
+  background-color: #000000;
+  border-color: #ffffff;
+  color: #ffffff;
+  cursor: pointer;
+  &:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: 0;
+    height: 100%;
+    background-color: #ffffff;
+    mix-blend-mode: difference;
+    transition: width 0.5s steps(8);
+  }
+  &:hover {
+    &:before {
+      width: 100%;
+    }
+  }
 }

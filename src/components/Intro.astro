@@ -1,0 +1,51 @@
+<section
+  id="intro"
+  class="p-3 lg:p-6 space-y-3 lg:space-y-6 flex-1 bg-black text-white"
+>
+  <code class="block"></code>
+  <button class="hidden">Enter the website</button>
+</section>
+
+<script>
+  const lines = [
+    "INITIALIZING:// MOZFEST_2025",
+    ":: JOIN_THE_RESISTANCE ::",
+    "{ SIGNAL: OPEN }",
+    "# MOZFEST//AI.REBELLION.ACTIVE",
+    ">>> JOIN_THE_RESISTANCE_2025 >>>",
+    "[DATA_STREAM: HUMAN-FIRST]",
+    "// MOZFEST_2025 [AUTH_OK]",
+    "< REBOOT_NETWORK >",
+    ": JOIN_THE_RESISTANCE :",
+    "[ ] TRANSMIT: MOZFEST",
+    "> END_OF_LINE // CHOOSE_YOUR_FUTURE",
+    ">>> JOIN_THE_RESISTANCE_2025 >>>",
+    "{ SYSTEM: OPEN }",
+    "// MOZFEST::2025::REBELLION",
+    ">_ JOIN_THE_RESISTANCE();",
+  ];
+
+  const code = document.querySelector("#intro code");
+  const button = document.querySelector("#intro button");
+
+  if (code) {
+    let currentIndex = 0;
+
+    function addLine() {
+      const randomDelay = Math.random() * 150 + 50;
+      if (currentIndex < lines.length) {
+        const p = document.createElement("p");
+        p.textContent = lines[currentIndex];
+        code?.appendChild(p);
+        currentIndex++;
+        setTimeout(addLine, randomDelay);
+      } else {
+        setTimeout(() => {
+          button?.classList.remove("hidden");
+        }, randomDelay);
+      }
+    }
+
+    addLine();
+  }
+</script>

@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import Header from "../components/Header.astro";
 ---
 
 <!doctype html>
@@ -23,7 +24,8 @@ import "../styles/global.css";
     <meta name="generator" content={Astro.generator} />
     <title>State of Mozilla 2025</title>
   </head>
-  <body>
+  <body class="flex flex-col min-h-svh">
+    <Header />
     <slot />
   </body>
 </html>
