@@ -1,5 +1,26 @@
 import "./style.css";
 
+// Check for submitted query parameter
+const urlParams = new URLSearchParams(window.location.search);
+if (urlParams.has("submitted")) {
+  // Replace form with success message
+  const formElement = document.querySelector("form");
+  if (formElement) {
+    const successMessage = document.createElement("div");
+    successMessage.className = "space-y-3 lg:space-y-6";
+    successMessage.innerHTML = `
+      <h2 class="text-3xl lg:text-4xl xl:text-5xl font-bold">
+        THANK YOU!
+      </h2>
+      <p class="text-balance lg:w-3/4">
+        YOUR SUBMISSION HAS BEEN RECEIVED.<br />
+        CHECK YOUR E-MAIL FOR THE REPORT LINK.
+      </p>
+    `;
+    formElement.replaceWith(successMessage);
+  }
+}
+
 // Update date and time every second
 function updateDateTime() {
   const now = new Date();
