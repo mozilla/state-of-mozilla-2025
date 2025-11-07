@@ -60,7 +60,8 @@ button {
   }
   &.auto-hover {
     &:before {
-      animation: fillSlow 4s steps(8) forwards;
+      transition: width 4s steps(8);
+      width: 100%;
     }
   }
   &.manual-hover {
@@ -86,14 +87,5 @@ button {
   }
   100% {
     opacity: 0;
-  }
-}
-
-@keyframes fillSlow {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
   }
 }
