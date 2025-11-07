@@ -26,13 +26,19 @@
   let displayedLines = $state([]);
   let showButton = $state(false);
   let buttonRef = $state(null);
+  let autoCloseTimer;
 
-  // Start the animation when component mounts
   onMount(() => {
+    if (sessionStorage.getItem("introShown")) {
+      showContent = true;
+      return;
+    }
+
     let currentIndex = 0;
 
     function addLine() {
       const randomDelay = Math.random() * 150 + 50;
+
       if (currentIndex < lines.length) {
         displayedLines = [...displayedLines, lines[currentIndex]];
         currentIndex++;
@@ -40,15 +46,9 @@
       } else {
         setTimeout(() => {
           showButton = true;
-          // Wait for next tick so button is in DOM
           setTimeout(() => {
-            if (buttonRef) {
-              buttonRef.classList.add("auto-hover");
-            }
-            // Auto-close after 4 seconds
-            setTimeout(() => {
-              showContent = true;
-            }, 4500);
+            buttonRef?.classList.add("auto-hover");
+            autoCloseTimer = setTimeout(closeIntro, 4500);
           }, 500);
         }, randomDelay);
       }
@@ -57,27 +57,26 @@
     addLine();
   });
 
-  function handleEnter() {
+  function closeIntro() {
     showContent = true;
+    sessionStorage.setItem("introShown", "true");
   }
 
   function handleMouseEnter() {
-    if (buttonRef && buttonRef.classList.contains("auto-hover")) {
-      const before = window.getComputedStyle(buttonRef, "::before");
-      const currentWidth = before.getPropertyValue("width");
+    clearTimeout(autoCloseTimer);
 
-      buttonRef.style.setProperty("--current-width", currentWidth);
-      buttonRef.classList.remove("auto-hover");
-      buttonRef.classList.add("manual-hover");
+    if (!buttonRef?.classList.contains("auto-hover")) return;
 
-      // Force reflow
-      void buttonRef.offsetWidth;
+    const currentWidth = getComputedStyle(buttonRef, "::before").width;
+    buttonRef.style.setProperty("--current-width", currentWidth);
+    buttonRef.classList.replace("auto-hover", "manual-hover");
+    void buttonRef.offsetWidth;
 
-      // Trigger the transition
-      requestAnimationFrame(() => {
-        buttonRef.classList.add("manual-hover-active");
-      });
-    }
+    requestAnimationFrame(() => buttonRef.classList.add("manual-hover-active"));
+  }
+
+  function handleMouseLeave() {
+    buttonRef?.classList.remove("manual-hover", "manual-hover-active");
   }
 </script>
 
@@ -94,8 +93,9 @@
     {#if showButton}
       <button
         bind:this={buttonRef}
-        onclick={handleEnter}
+        onclick={closeIntro}
         onmouseenter={handleMouseEnter}
+        onmouseleave={handleMouseLeave}
       >
         Enter the website
       </button>
