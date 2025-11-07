@@ -92,6 +92,7 @@
     </p>
     {#if showButton}
       <button
+        class="btn"
         bind:this={buttonRef}
         onclick={closeIntro}
         onmouseenter={handleMouseEnter}
@@ -102,7 +103,11 @@
     {/if}
   </section>
 {:else}
-  <div>
-    {@render children()}
-  </div>
+  {@render children()}
 {/if}
+
+<style>
+  :global(html.intro-seen) #intro {
+    display: none;
+  }
+</style>

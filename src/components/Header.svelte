@@ -1,0 +1,66 @@
+<script>
+  let open = $state(false);
+
+  function toggleMenu() {
+    open = !open;
+  }
+</script>
+
+<header
+  class="sticky z-50 top-0 left-0 right-0 w-full border-y border-white bg-black text-white divide-y divide-white"
+>
+  <div class="flex items-center">
+    <a
+      href="https://www.mozilla.org"
+      class="size-10 p-3 border-r border-white flex justify-center items-center"
+      title="State of Mozilla 2025"
+    >
+      <svg
+        width="24"
+        height="27"
+        viewBox="0 0 24 27"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M0 26.6957H3.47622V0H0V26.6957Z" fill="white"></path>
+        <path
+          d="M6.31085 13.617H20.0757V12.8497L11.1052 9.65442V6.95164L20.0757 3.75641V2.97764H9.44876V6.05835H6.31085V2.97764H9.44876V0H23.2136V5.43992L15.9113 7.91365V8.68096L23.2136 11.1547V16.5946H6.31085V13.617Z"
+          fill="white"
+        ></path>
+      </svg>
+    </a>
+    <span class="flex-1 px-3 text-center">STATE OF MOZILLA 2025</span>
+    <div
+      class="size-10 p-3 border-l border-white flex justify-center items-center"
+    >
+      <button aria-label="Menu" class="cursor-pointer" onclick={toggleMenu}>
+        <svg
+          width="25"
+          height="19"
+          viewBox="0 0 25 19"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <line y1="0.5" x2="25" y2="0.5" stroke="white"></line>
+          <line y1="9.5" x2="25" y2="9.5" stroke="white"></line>
+          <line y1="18.5" x2="25" y2="18.5" stroke="white"></line>
+        </svg>
+      </button>
+    </div>
+  </div>
+  {#if open}
+    <div>
+      <ul
+        class="grid lg:grid-cols-7 divide-y lg:divide-x divide-white uppercase"
+      >
+        <li><a href="/">Introduction</a></li>
+        <li><a href="/">I</a></li>
+        <li><a href="/">II</a></li>
+        <li><a href="/">III</a></li>
+        <li><a href="/">IV</a></li>
+        <li><a href="/">V</a></li>
+        <li><a href="/">The pledge</a></li>
+      </ul>
+    </div>
+  {/if}
+</header>

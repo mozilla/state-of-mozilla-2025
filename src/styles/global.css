@@ -34,7 +34,7 @@ h6 {
   font-family: "Workbench", sans-serif;
 }
 
-button {
+.btn {
   position: relative;
   text-transform: uppercase;
   padding: 1rem 1.5rem;

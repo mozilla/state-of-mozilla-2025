@@ -1,6 +1,6 @@
 ---
 import "../styles/global.css";
-import Header from "../components/Header.astro";
+import Header from "../components/Header.svelte";
 ---
 
 <!doctype html>
@@ -25,7 +25,7 @@ import Header from "../components/Header.astro";
     <title>State of Mozilla 2025</title>
   </head>
   <body class="flex flex-col min-h-svh">
-    <Header />
+    <Header client:load />
     <slot />
   </body>
 </html>
