@@ -58,6 +58,9 @@ button {
       width: 100%;
     }
   }
+  &.auto-hover:before {
+    width: 100%;
+  }
 }
 
 .blinking-cursor {

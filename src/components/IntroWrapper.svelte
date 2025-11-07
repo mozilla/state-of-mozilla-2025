@@ -25,6 +25,7 @@
 
   let displayedLines = $state([]);
   let showButton = $state(false);
+  let buttonRef = $state(null);
 
   // Start the animation when component mounts
   onMount(() => {
@@ -39,6 +40,14 @@
       } else {
         setTimeout(() => {
           showButton = true;
+          // Add hover class to trigger animation
+          if (buttonRef) {
+            buttonRef.classList.add("auto-hover");
+          }
+          // Auto-close after 4 seconds
+          setTimeout(() => {
+            showContent = true;
+          }, 4000);
         }, randomDelay);
       }
     }
@@ -62,7 +71,9 @@
       <span class="blinking-cursor inline-block w-3 h-6 bg-white"></span>
     </p>
     {#if showButton}
-      <button onclick={handleEnter}>Enter the website</button>
+      <button bind:this={buttonRef} onclick={handleEnter}>
+        Enter the website
+      </button>
     {/if}
   </section>
 {:else}
