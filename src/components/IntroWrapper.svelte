@@ -40,14 +40,16 @@
       } else {
         setTimeout(() => {
           showButton = true;
-          // Add hover class to trigger animation
-          if (buttonRef) {
-            buttonRef.classList.add("auto-hover");
-          }
-          // Auto-close after 4 seconds
+          // Wait for next tick so button is in DOM
           setTimeout(() => {
-            showContent = true;
-          }, 4000);
+            if (buttonRef) {
+              buttonRef.classList.add("auto-hover");
+            }
+            // Auto-close after 4 seconds
+            setTimeout(() => {
+              showContent = true;
+            }, 4500);
+          }, 500);
         }, randomDelay);
       }
     }
@@ -58,10 +60,29 @@
   function handleEnter() {
     showContent = true;
   }
+
+  function handleMouseEnter() {
+    if (buttonRef && buttonRef.classList.contains("auto-hover")) {
+      const before = window.getComputedStyle(buttonRef, "::before");
+      const currentWidth = before.getPropertyValue("width");
+
+      buttonRef.style.setProperty("--current-width", currentWidth);
+      buttonRef.classList.remove("auto-hover");
+      buttonRef.classList.add("manual-hover");
+
+      // Force reflow
+      void buttonRef.offsetWidth;
+
+      // Trigger the transition
+      requestAnimationFrame(() => {
+        buttonRef.classList.add("manual-hover-active");
+      });
+    }
+  }
 </script>
 
 {#if !showContent}
-  <section id="intro" class="fixed inset-0 p-3 lg:p-6 bg-black text-white z-50">
+  <section id="intro" class="flex-1 p-3 lg:p-6 bg-black text-white z-40">
     <code class="block">
       {#each displayedLines as line}
         <p>{line}</p>
@@ -71,7 +92,11 @@
       <span class="blinking-cursor inline-block w-3 h-6 bg-white"></span>
     </p>
     {#if showButton}
-      <button bind:this={buttonRef} onclick={handleEnter}>
+      <button
+        bind:this={buttonRef}
+        onclick={handleEnter}
+        onmouseenter={handleMouseEnter}
+      >
         Enter the website
       </button>
     {/if}

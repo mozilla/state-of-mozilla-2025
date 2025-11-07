@@ -58,8 +58,21 @@ button {
       width: 100%;
     }
   }
-  &.auto-hover:before {
-    width: 100%;
+  &.auto-hover {
+    &:before {
+      animation: fillSlow 4s steps(8) forwards;
+    }
+  }
+  &.manual-hover {
+    &:before {
+      width: var(--current-width, 0);
+      transition: width 0.5s steps(8);
+    }
+    &.manual-hover-active {
+      &:before {
+        width: 100%;
+      }
+    }
   }
 }
 
@@ -73,5 +86,14 @@ button {
   }
   100% {
     opacity: 0;
+  }
+}
+
+@keyframes fillSlow {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
   }
 }
