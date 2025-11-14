@@ -7,7 +7,9 @@
 </script>
 
 <header
-  class="sticky z-50 top-0 left-0 right-0 w-full border-y border-white bg-black text-white divide-y divide-white"
+  class="sticky z-50 top-0 left-0 right-0 w-full border-y border-white bg-black text-white divide-y divide-white {open
+    ? 'max-lg:h-svh max-lg:overflow-y-auto max-lg:overscroll-y-contain'
+    : ''}"
 >
   <div class="flex items-center">
     <a
@@ -34,17 +36,44 @@
       class="size-10 p-3 border-l border-white flex justify-center items-center"
     >
       <button aria-label="Menu" class="cursor-pointer" onclick={toggleMenu}>
-        <svg
-          width="25"
-          height="19"
-          viewBox="0 0 25 19"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <line y1="0.5" x2="25" y2="0.5" stroke="white"></line>
-          <line y1="9.5" x2="25" y2="9.5" stroke="white"></line>
-          <line y1="18.5" x2="25" y2="18.5" stroke="white"></line>
-        </svg>
+        {#if !open}
+          <svg
+            width="25"
+            height="19"
+            viewBox="0 0 25 19"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <line y1="0.5" x2="25" y2="0.5" stroke="white"></line>
+            <line y1="9.5" x2="25" y2="9.5" stroke="white"></line>
+            <line y1="18.5" x2="25" y2="18.5" stroke="white"></line>
+          </svg>
+        {:else}
+          <svg
+            width="22"
+            height="22"
+            viewBox="0 0 22 22"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <line
+              x1="0.835731"
+              y1="20.9285"
+              x2="21.3539"
+              y2="0.410357"
+              stroke="white"
+              stroke-width="1.16068"
+            />
+            <line
+              x1="0.410363"
+              y1="0.811622"
+              x2="20.9285"
+              y2="21.3298"
+              stroke="white"
+              stroke-width="1.16068"
+            />
+          </svg>
+        {/if}
       </button>
     </div>
   </div>
@@ -53,13 +82,27 @@
       <ul
         class="grid lg:grid-cols-7 divide-y lg:divide-x divide-white uppercase"
       >
-        <li><a href="/">Introduction</a></li>
-        <li><a href="/">I</a></li>
-        <li><a href="/">II</a></li>
-        <li><a href="/">III</a></li>
-        <li><a href="/">IV</a></li>
-        <li><a href="/">V</a></li>
-        <li><a href="/">The pledge</a></li>
+        <li class="p-3 flex justify-center items-center text-center">
+          <a href="/">Intro</a>
+        </li>
+        <li class="p-3 flex justify-center items-center text-center">
+          <a href="/">Stakes</a>
+        </li>
+        <li class="p-3 flex justify-center items-center text-center">
+          <a href="/">Code</a>
+        </li>
+        <li class="p-3 flex justify-center items-center text-center">
+          <a href="/">Tools</a>
+        </li>
+        <li class="p-3 flex justify-center items-center text-center">
+          <a href="/">Rebels</a>
+        </li>
+        <li class="p-3 flex justify-center items-center text-center">
+          <a href="/">Ledger</a>
+        </li>
+        <li class="p-3 flex justify-center items-center text-center">
+          <a href="/">Pledge</a>
+        </li>
       </ul>
     </div>
   {/if}

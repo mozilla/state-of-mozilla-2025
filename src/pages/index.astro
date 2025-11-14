@@ -1,6 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import IntroWrapper from "../components/IntroWrapper.svelte";
+import Svg1 from "../components/svg/Svg1.svelte";
+import Svg2 from "../components/svg/Svg2.svelte";
 ---
 
 <Layout>
@@ -10,11 +12,26 @@ import IntroWrapper from "../components/IntroWrapper.svelte";
     }
   </script>
   <IntroWrapper client:load>
-    <div class="p-3 lg:p-6">
-      <h1 class="text-4xl font-bold mb-4">Rest of the home page content</h1>
+    <section class="px-3 lg:px-6 my-3 lg:my-6 space-y-3 lg:space-y-6">
+      <div class="grid lg:grid-cols-2 gap-3 lg:gap-6">
+        <div class="bg-gray-500"></div>
+        <div>
+          <h1
+            class="relative z-10 text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl"
+          >
+            DOING FOR AI<br />WHAT WE DID<br />FOR THE WEB
+          </h1>
+          <div class="-mt-3 lg:-mt-6"><Svg1 /></div>
+          <div class="-mt-3 lg:-mt-6"><Svg2 /></div>
+        </div>
+      </div>
       <p>
-        This content will only be visible after clicking "Enter the website"
+        Mozilla is transforming for a new era, doing for AI what we once did for
+        the web: decentralizing control, empowering people with choice, and
+        proving that an economic model anchored in a double bottom line of
+        mission and money can succeed. At a moment when Big Tech seeks to
+        monopolize the AI future, Mozilla is choosing a different path.
       </p>
-    </div>
+    </section>
   </IntroWrapper>
 </Layout>
