@@ -1,8 +1,9 @@
 <script>
   import { onMount } from "svelte";
-  import CaptchaWord from "./svg/CaptchaWord.svelte";
+  import CaptchaWordSvg from "./svg/CaptchaWordSvg.svelte";
 
   let showCaptcha = $state(true);
+  let input = $state(null);
   let inputValue = $state("");
   let attemptCount = $state(0);
   let showBypass = $state(false);
@@ -22,6 +23,7 @@
     if (sessionStorage.getItem("captchaVerified")) {
       showCaptcha = false;
     }
+    input.focus();
   });
 
   function handleSubmit(event) {
@@ -76,21 +78,21 @@
 {#if showCaptcha}
   <div
     id="captcha"
-    class="fixed z-40 w-full h-full inset-0 flex justify-center items-center overscroll-contain bg-white/60 p-3"
+    class="fixed z-40 w-full h-full inset-0 flex justify-center items-center overscroll-contain bg-white/60 p-2.5"
   >
-    <div class="p-3 lg:p-6 border-2 border-black bg-yellow">
+    <div class="p-2.5 lg:p-5 border-2 border-black bg-yellow">
       {#if !showBypass}
-        <CaptchaWord />
+        <CaptchaWordSvg />
 
         <form onsubmit={handleSubmit}>
           <label for="word">Type the word above:</label>
-          <div class="grid lg:grid-cols-2 gap-3">
-            <div class="flex space-x-3">
+          <div class="grid lg:grid-cols-2 gap-2.5">
+            <div class="flex space-x-2.5">
               <input
-                id="word"
                 type="text"
+                bind:this={input}
                 bind:value={inputValue}
-                class="border border-black bg-white px-3 px-[1.5rem] py-[1rem]"
+                class="border border-black bg-white px-2.5 px-[1.5rem] py-[1rem]"
               />
               <div class="flex flex-col justify-around">
                 <svg

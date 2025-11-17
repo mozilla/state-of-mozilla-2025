@@ -4,9 +4,9 @@
 </script>
 
 <footer>
-  <section class="bg-yellow px-3 lg:px-6 pt-3 pb-6 lg:pt-6 lg:pb-12">
-    <div class="grid lg:grid-cols-2 gap-3 lg:gap-6">
-      <div class="space-y-3">
+  <section class="bg-yellow px-2.5 lg:px-5 pt-2.5 pb-5 lg:pt-5 lg:pb-12">
+    <div class="grid lg:grid-cols-2 gap-2.5 lg:gap-5">
+      <div class="space-y-2.5">
         <p class="uppercase">Join us in creating a better internet</p>
         <p>
           We know the internet has the potential to be even better. But we can
@@ -46,8 +46,8 @@
       </div>
     </div>
   </section>
-  <section class="bg-black text-white px-3 lg:px-6 py-3 lg:py-6">
-    <div class="grid lg:grid-cols-2 gap-3 lg:gap-6 mb-6 lg:mb-12">
+  <section class="bg-black text-white px-2.5 lg:px-5 py-2.5 lg:py-5">
+    <div class="grid lg:grid-cols-2 gap-2.5 lg:gap-5 mb-5 lg:mb-12">
       <div>
         <p>Get Mozilla updates. Private and secure - no sharing, no selling.</p>
       </div>
@@ -55,7 +55,7 @@
         <form
           action="https://mozilla.formstack.com/forms/index.php"
           method="POST"
-          class="flex flex-col space-y-1.5 lg:space-y-3 mb-0"
+          class="flex flex-col space-y-1.5 lg:space-y-2.5 mb-0"
         >
           <input type="hidden" name="form" value="6352547" />
           <input type="hidden" name="viewkey" value="oMYX3UGOFV" />
@@ -67,11 +67,11 @@
             placeholder="Enter your e-mail"
             required
             aria-required="true"
-            class="placeholder:text-white w-full lg:w-3/4 border-b border-white border-dashed focus:outline-0 py-1.5 uppercase"
+            class="placeholder:text-white w-full lg:w-2.5/4 border-b border-white border-dashed focus:outline-0 py-1.5 uppercase"
           />
           <label
             for="privacy"
-            class="flex items-start space-x-1 lg:w-3/4 text-sm"
+            class="flex items-start space-x-1 lg:w-2.5/4 text-sm"
           >
             <input
               type="checkbox"
@@ -92,12 +92,12 @@
               </a>
             </span>
           </label>
-          <button class="btn text-left lg:w-3/4"> Sign up now </button>
+          <button class="btn text-left lg:w-2.5/4"> Sign up now </button>
         </form>
       </div>
     </div>
-    <div class="grid lg:grid-cols-2 gap-3 lg:gap-6 mb-6 lg:mb-12">
-      <div class="space-y-6 lg:space-y-12">
+    <div class="grid lg:grid-cols-2 gap-2.5 lg:gap-5 mb-5 lg:mb-12">
+      <div class="space-y-5 lg:space-y-12">
         <p>
           Visit <a
             class="underline"

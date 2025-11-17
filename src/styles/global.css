@@ -57,17 +57,6 @@ body {
   line-height: 130%;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "mnicmp Star", sans-serif;
-  letter-spacing: -12%;
-  line-height: 70%;
-}
-
 .font-ocr-pbi {
   font-family: "OCR-PBI", sans-serif;
   line-height: 130%;
@@ -98,6 +87,7 @@ h6 {
 
 .btn {
   position: relative;
+  display: inline-block;
   text-transform: uppercase;
   padding: 1rem 1.5rem;
   border: 1px solid;

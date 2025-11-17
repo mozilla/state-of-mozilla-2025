@@ -29,8 +29,10 @@ import Footer from "../components/Footer.svelte";
   <body class="flex flex-col min-h-svh">
     <Header client:load />
     <IntroWrapper client:load>
-      <slot />
-      <Footer />
+      <main class="space-y-10 lg:space-y-20">
+        <slot />
+        <Footer />
+      </main>
     </IntroWrapper>
     <script is:inline>
       if (sessionStorage.getItem("introShown")) {

@@ -81,14 +81,14 @@
 </script>
 
 {#if !showContent}
-  <section id="intro" class="flex-1 p-3 lg:p-6 bg-black text-white z-40">
+  <section id="intro" class="flex-1 p-2.5 lg:p-5 bg-black text-white z-40">
     <code class="block">
       {#each displayedLines as line}
         <p>{line}</p>
       {/each}
     </code>
-    <p class="mb-3 lg:mb-6">
-      <span class="blinking-cursor inline-block w-3 h-6 bg-white"></span>
+    <p class="mb-2.5 lg:mb-5">
+      <span class="blinking-cursor inline-block w-2.5 h-5 bg-white"></span>
     </p>
     {#if showButton}
       <button

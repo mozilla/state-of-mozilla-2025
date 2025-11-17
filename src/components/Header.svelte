@@ -14,7 +14,7 @@
   <div class="flex items-center">
     <a
       href="https://www.mozilla.org"
-      class="size-10 p-3 border-r border-white flex justify-center items-center"
+      class="size-10 p-2.5 border-r border-white flex justify-center items-center"
       title="State of Mozilla 2025"
     >
       <svg
@@ -31,9 +31,9 @@
         ></path>
       </svg>
     </a>
-    <span class="flex-1 px-3 text-center">STATE OF MOZILLA 2025</span>
+    <span class="flex-1 px-2.5 text-center">STATE OF MOZILLA 2025</span>
     <div
-      class="size-10 p-3 border-l border-white flex justify-center items-center"
+      class="size-10 p-2.5 border-l border-white flex justify-center items-center"
     >
       <button aria-label="Menu" class="cursor-pointer" onclick={toggleMenu}>
         {#if !open}
@@ -84,7 +84,7 @@
       >
         <li class="flex">
           <a
-            class="flex-1 p-3 flex flex-col justify-center items-center text-center space-y-3"
+            class="flex-1 p-2.5 flex flex-col justify-center items-center text-center space-y-2.5"
             href="/"
           >
             Intro
@@ -92,7 +92,7 @@
         </li>
         <li class="flex">
           <a
-            class="flex-1 p-3 flex flex-col justify-center items-center text-center space-y-3"
+            class="flex-1 p-2.5 flex flex-col justify-center items-center text-center space-y-2.5"
             href="/stakes"
           >
             <span class="lg:hidden">I</span>
@@ -101,7 +101,7 @@
         </li>
         <li class="flex">
           <a
-            class="flex-1 p-3 flex flex-col justify-center items-center text-center space-y-3"
+            class="flex-1 p-2.5 flex flex-col justify-center items-center text-center space-y-2.5"
             href="/code"
           >
             <span class="lg:hidden">II</span>
@@ -110,7 +110,7 @@
         </li>
         <li class="flex">
           <a
-            class="flex-1 p-3 flex flex-col justify-center items-center text-center space-y-3"
+            class="flex-1 p-2.5 flex flex-col justify-center items-center text-center space-y-2.5"
             href="/tools"
           >
             <span class="lg:hidden">III</span>
@@ -119,7 +119,7 @@
         </li>
         <li class="flex">
           <a
-            class="flex-1 p-3 flex flex-col justify-center items-center text-center space-y-3"
+            class="flex-1 p-2.5 flex flex-col justify-center items-center text-center space-y-2.5"
             href="/rebels"
           >
             <span class="lg:hidden">IV</span>
@@ -128,7 +128,7 @@
         </li>
         <li class="flex">
           <a
-            class="flex-1 p-3 flex flex-col justify-center items-center text-center space-y-3"
+            class="flex-1 p-2.5 flex flex-col justify-center items-center text-center space-y-2.5"
             href="/ledger"
           >
             <span class="lg:hidden">V</span>
@@ -137,7 +137,7 @@
         </li>
         <li class="flex">
           <a
-            class="flex-1 p-3 flex flex-col justify-center items-center text-center space-y-3"
+            class="flex-1 p-2.5 flex flex-col justify-center items-center text-center space-y-2.5"
             href="/pledge"
           >
             Pledge
