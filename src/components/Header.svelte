@@ -80,28 +80,68 @@
   {#if open}
     <div>
       <ul
-        class="grid lg:grid-cols-7 divide-y lg:divide-x divide-white uppercase"
+        class="grid lg:grid-cols-7 max-lg:divide-y lg:divide-x divide-white uppercase"
       >
-        <li class="p-3 flex justify-center items-center text-center">
-          <a href="/">Intro</a>
+        <li class="flex">
+          <a
+            class="flex-1 p-3 flex flex-col justify-center items-center text-center space-y-3"
+            href="/"
+          >
+            Intro
+          </a>
         </li>
-        <li class="p-3 flex justify-center items-center text-center">
-          <a href="/">Stakes</a>
+        <li class="flex">
+          <a
+            class="flex-1 p-3 flex flex-col justify-center items-center text-center space-y-3"
+            href="/stakes"
+          >
+            <span class="lg:hidden">I</span>
+            <span class="font-tuoi-tre text-7xl lg:text-4xl">Stakes</span>
+          </a>
         </li>
-        <li class="p-3 flex justify-center items-center text-center">
-          <a href="/">Code</a>
+        <li class="flex">
+          <a
+            class="flex-1 p-3 flex flex-col justify-center items-center text-center space-y-3"
+            href="/code"
+          >
+            <span class="lg:hidden">II</span>
+            <span class="font-workbench text-7xl lg:text-4xl">Code</span>
+          </a>
         </li>
-        <li class="p-3 flex justify-center items-center text-center">
-          <a href="/">Tools</a>
+        <li class="flex">
+          <a
+            class="flex-1 p-3 flex flex-col justify-center items-center text-center space-y-3"
+            href="/tools"
+          >
+            <span class="lg:hidden">III</span>
+            <span class="font-mainframe text-7xl lg:text-4xl">Tools</span>
+          </a>
         </li>
-        <li class="p-3 flex justify-center items-center text-center">
-          <a href="/">Rebels</a>
+        <li class="flex">
+          <a
+            class="flex-1 p-3 flex flex-col justify-center items-center text-center space-y-3"
+            href="/rebels"
+          >
+            <span class="lg:hidden">IV</span>
+            <span class="font-computer text-7xl lg:text-4xl">Rebels</span>
+          </a>
         </li>
-        <li class="p-3 flex justify-center items-center text-center">
-          <a href="/">Ledger</a>
+        <li class="flex">
+          <a
+            class="flex-1 p-3 flex flex-col justify-center items-center text-center space-y-3"
+            href="/ledger"
+          >
+            <span class="lg:hidden">V</span>
+            <span class="font-star text-7xl lg:text-4xl">Ledger</span>
+          </a>
         </li>
-        <li class="p-3 flex justify-center items-center text-center">
-          <a href="/">Pledge</a>
+        <li class="flex">
+          <a
+            class="flex-1 p-3 flex flex-col justify-center items-center text-center space-y-3"
+            href="/pledge"
+          >
+            Pledge
+          </a>
         </li>
       </ul>
     </div>

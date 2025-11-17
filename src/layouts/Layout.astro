@@ -1,6 +1,8 @@
 ---
 import "../styles/global.css";
+import IntroWrapper from "../components/IntroWrapper.svelte";
 import Header from "../components/Header.svelte";
+import Footer from "../components/Footer.svelte";
 ---
 
 <!doctype html>
@@ -26,6 +28,17 @@ import Header from "../components/Header.svelte";
   </head>
   <body class="flex flex-col min-h-svh">
     <Header client:load />
-    <slot />
+    <IntroWrapper client:load>
+      <slot />
+      <Footer />
+    </IntroWrapper>
+    <script is:inline>
+      if (sessionStorage.getItem("introShown")) {
+        document.documentElement.classList.add("intro-seen");
+      }
+      if (sessionStorage.getItem("captchaVerified")) {
+        document.documentElement.classList.add("captcha-seen");
+      }
+    </script>
   </body>
 </html>

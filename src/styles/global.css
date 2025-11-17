@@ -1,8 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  --font-ocr-pbi: "OCR-PBI", sans-serif;
-  --font-workbench: "Workbench", sans-serif;
+  --color-yellow: #ffffb4;
 }
 
 @font-face {
@@ -21,8 +20,41 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Lazenby Computer";
+  src: url("/fonts/LazenbyComputer-Smooth.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "FFF_tuoi-tre Text";
+  src: url("/fonts/FFF_tuoi-tre-Text.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mainframe";
+  src: url("/fonts/Mainframe-Spore.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "mnicmp Star";
+  src: url("/fonts/mnicmpStar-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 body {
   font-family: "OCR-PBI", sans-serif;
+  line-height: 130%;
 }
 
 h1,
@@ -31,7 +63,37 @@ h3,
 h4,
 h5,
 h6 {
+  font-family: "mnicmp Star", sans-serif;
+  letter-spacing: -12%;
+  line-height: 70%;
+}
+
+.font-ocr-pbi {
+  font-family: "OCR-PBI", sans-serif;
+  line-height: 130%;
+}
+.font-workbench {
   font-family: "Workbench", sans-serif;
+  line-height: 93%;
+}
+.font-computer {
+  font-family: "Lazenby Computer", sans-serif;
+  line-height: 95%;
+}
+.font-tuoi-tre {
+  font-family: "FFF_tuoi-tre Text", sans-serif;
+  letter-spacing: -1%;
+  line-height: 75%;
+}
+.font-mainframe {
+  font-family: "Mainframe", sans-serif;
+  letter-spacing: -12%;
+  line-height: 80%;
+}
+.font-star {
+  font-family: "mnicmp Star", sans-serif;
+  letter-spacing: -12%;
+  line-height: 70%;
 }
 
 .btn {
