@@ -105,6 +105,7 @@ h6 {
   border-color: #ffffff;
   color: #ffffff;
   cursor: pointer;
+  text-align: left;
   &:before {
     content: "";
     position: absolute;
