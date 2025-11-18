@@ -4,6 +4,10 @@
   --color-yellow: #ffffb4;
 }
 
+:root {
+  --header-height: 42px;
+}
+
 @font-face {
   font-family: "OCR-PBI";
   src: url("/fonts/OCR-PBI-site.woff2") format("woff2");
@@ -140,5 +144,39 @@ body {
   }
   100% {
     opacity: 0;
+  }
+}
+
+.marquee {
+  --gap: 5rem;
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  gap: var(--gap);
+}
+
+.marquee__content {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-around;
+  gap: var(--gap);
+  min-width: 100%;
+  animation: scroll 20s linear infinite;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}
+
+/* Pause animation when reduced-motion is set */
+@media (prefers-reduced-motion: reduce) {
+  .marquee__content {
+    animation-play-state: paused !important;
   }
 }
