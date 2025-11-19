@@ -1,5 +1,5 @@
 <script>
-  import { onMount } from "svelte";
+  import { progressStore } from "../stores/progressStore.js";
   import Journey1Svg from "./svg/Journey1Svg.svelte";
   import Journey2Svg from "./svg/Journey2Svg.svelte";
   import Journey3Svg from "./svg/Journey3Svg.svelte";
@@ -8,14 +8,7 @@
   import Journey6Svg from "./svg/Journey6Svg.svelte";
 
   let cardHeight = $state(0);
-  let progress = $state({});
-
-  onMount(() => {
-    const stored = sessionStorage.getItem("progress");
-    if (stored) {
-      progress = JSON.parse(stored);
-    }
-  });
+  const progress = $derived($progressStore);
 </script>
 
 <div
@@ -62,5 +55,8 @@
         {/if}
       </div>
     </div>
+    <button onclick={() => progressStore.reset()} class="mt-2.5 btn invert">
+      Reset progress
+    </button>
   </div>
 </div>

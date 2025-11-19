@@ -27,7 +27,7 @@ import Footer from "../components/Footer.svelte";
     <title>State of Mozilla 2025</title>
   </head>
   <body class="flex flex-col min-h-svh">
-    <Header client:load />
+    <Header currentPage={Astro.url.pathname} client:load />
     <IntroWrapper client:load>
       <main class="space-y-10 lg:space-y-20">
         <slot />

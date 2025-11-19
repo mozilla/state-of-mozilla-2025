@@ -1,8 +1,26 @@
 <script>
+  import { progressStore } from "../stores/progressStore.js";
+
+  const { currentPage = "/" } = $props();
+
   let open = $state(false);
+  const progress = $derived($progressStore);
 
   function toggleMenu() {
     open = !open;
+  }
+
+  function getLinkClasses(href, page) {
+    const isActive = currentPage === href;
+    const isViewed = page && progress[page];
+
+    if (isActive) {
+      return "bg-yellow text-black outline outline-black";
+    } else if (isViewed) {
+      return "bg-white text-black outline outline-black";
+    } else {
+      return "bg-black text-white outline outline-white";
+    }
   }
 </script>
 
@@ -81,10 +99,10 @@
   </div>
   {#if open}
     <div>
-      <ul class="grid lg:grid-cols-7 max-lg:divide-y lg:divide-x divide-white">
+      <ul class="grid lg:grid-cols-7 gap-px">
         <li class="flex">
           <a
-            class="flex-1 p-2.5 flex flex-col justify-center items-center text-center space-y-2.5"
+            class="flex-1 p-2.5 flex flex-col justify-center items-center text-center space-y-2.5 outline bg-white text-black outline-black"
             href="/"
           >
             <span class="text-5xl lg:text-2xl uppercase">Intro</span>
@@ -92,7 +110,10 @@
         </li>
         <li class="flex">
           <a
-            class="flex-1 p-2.5 flex flex-col justify-center items-center text-center space-y-2.5"
+            class="flex-1 p-2.5 flex flex-col justify-center items-center text-center space-y-2.5 {getLinkClasses(
+              '/stakes',
+              'stakes',
+            )}"
             href="/stakes"
           >
             <span class="lg:hidden">I</span>
@@ -103,7 +124,10 @@
         </li>
         <li class="flex">
           <a
-            class="flex-1 p-2.5 flex flex-col justify-center items-center text-center space-y-2.5"
+            class="flex-1 p-2.5 flex flex-col justify-center items-center text-center space-y-2.5 {getLinkClasses(
+              '/code',
+              'code',
+            )}"
             href="/code"
           >
             <span class="lg:hidden">II</span>
@@ -114,7 +138,10 @@
         </li>
         <li class="flex">
           <a
-            class="flex-1 p-2.5 flex flex-col justify-center items-center text-center space-y-2.5"
+            class="flex-1 p-2.5 flex flex-col justify-center items-center text-center space-y-2.5 {getLinkClasses(
+              '/tools',
+              'tools',
+            )}"
             href="/tools"
           >
             <span class="lg:hidden">III</span>
@@ -125,7 +152,10 @@
         </li>
         <li class="flex">
           <a
-            class="flex-1 p-2.5 flex flex-col justify-center items-center text-center space-y-2.5"
+            class="flex-1 p-2.5 flex flex-col justify-center items-center text-center space-y-2.5 {getLinkClasses(
+              '/rebels',
+              'rebels',
+            )}"
             href="/rebels"
           >
             <span class="lg:hidden">IV</span>
@@ -136,7 +166,10 @@
         </li>
         <li class="flex">
           <a
-            class="flex-1 p-2.5 flex flex-col justify-center items-center text-center space-y-2.5"
+            class="flex-1 p-2.5 flex flex-col justify-center items-center text-center space-y-2.5 {getLinkClasses(
+              '/ledger',
+              'ledger',
+            )}"
             href="/ledger"
           >
             <span class="lg:hidden">V</span>
@@ -145,7 +178,10 @@
         </li>
         <li class="flex">
           <a
-            class="flex-1 p-2.5 flex flex-col justify-center items-center text-center space-y-2.5"
+            class="flex-1 p-2.5 flex flex-col justify-center items-center text-center space-y-2.5 {getLinkClasses(
+              '/pledge',
+              'pledge',
+            )}"
             href="/pledge"
           >
             <span class="font-mozilla-headline text-6xl lg:text-3xl">
