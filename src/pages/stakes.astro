@@ -26,7 +26,7 @@ import ProgressCard from "../components/ProgressCard.svelte";
 
   <section class="p-2.5 lg:p-5">
     <div class="grid lg:grid-cols-4 gap-2.5 lg:gap-5">
-      <div class="lg:col-span-2 lg:col-start-2 space-y-2.5 space-y-5">
+      <div class="lg:col-span-2 lg:col-start-2 space-y-2.5 lg:space-y-5">
         <p>
           AI isn't just another tech trend. It's become the internet's core
           operating system - the beating heart of most apps, tools and
@@ -51,9 +51,7 @@ import ProgressCard from "../components/ProgressCard.svelte";
   </section>
 
   <section class="p-2.5 lg:p-5">
-    <div
-      class="marquee bg-black text-white text-xl mb-5 lg:mb-10 -mx-2.5 lg:-mx-5"
-    >
+    <div class="marquee bg-black text-white text-xl mb-5 -mx-2.5 lg:-mx-5">
       <ul class="marquee__content">
         <li>DO NOT ACCEPT DEFAULT SETTINGS</li>
         <li>DO NOT ACCEPT DEFAULT SETTINGS</li>
@@ -71,7 +69,9 @@ import ProgressCard from "../components/ProgressCard.svelte";
         <li>DO NOT ACCEPT DEFAULT SETTINGS</li>
       </ul>
     </div>
-    <p class="text-center mb-2.5 lg:mb-5">TWO FUTURES</p>
+    <p class="text-center mb-2.5 lg:mb-5 border-y border-black py-2.5">
+      TWO FUTURES
+    </p>
     <div class="grid grid-cols-2 lg:gap-2.5">
       <div class="space-y-2.5 lg:space-y-5">
         <button
@@ -81,7 +81,7 @@ import ProgressCard from "../components/ProgressCard.svelte";
           <span class="text-9xl">A</span>
         </button>
         <div class="future-a hidden space-y-2.5 lg:space-y-5">
-          <p>CLOSED AND EXTRACTIVE</p>
+          <p class="border-y border-black py-2.5">CLOSED AND EXTRACTIVE</p>
           <p>
             Monopolies, concentration, and slop. A future where a few
             corporations decide how billions of people learn, create, and see
@@ -101,7 +101,7 @@ import ProgressCard from "../components/ProgressCard.svelte";
           <span class="text-9xl">B</span>
         </button>
         <div class="future-b hidden space-y-2.5 lg:space-y-5">
-          <p>OPEN AND HUMAN-FIRST</p>
+          <p class="border-y border-black py-2.5">OPEN AND HUMAN-FIRST</p>
           <p>
             An internet built on human agency and choice. Technology that
             empowers creativity, protects privacy, and benefits everyone.
@@ -116,7 +116,7 @@ import ProgressCard from "../components/ProgressCard.svelte";
   </section>
 
   <section class="future-a future-b hidden p-2.5 lg:p-5 space-y-5 space-y-10">
-    <div class="future-a hidden space-y-2.5 space-y-5">
+    <div class="future-a hidden space-y-2.5 lg:space-y-5">
       <div class="pb-10 lg:pb-20">
         <h2 class="font-tuoi-tre text-5xl lg:text-7xl">
           Monopolies, concentration, and slop.
@@ -156,7 +156,7 @@ import ProgressCard from "../components/ProgressCard.svelte";
       </div>
     </div>
 
-    <div class="future-b hidden space-y-2.5 space-y-5">
+    <div class="future-b hidden space-y-2.5 lg:space-y-5">
       <div class="pb-10 lg:pb-20">
         <h2 class="font-tuoi-tre text-5xl lg:text-7xl">
           An internet built on human agency and choice
@@ -205,46 +205,36 @@ import ProgressCard from "../components/ProgressCard.svelte";
       </div>
     </div>
 
-    <div class="grid lg:grid-cols-3 gap-2.5 lg:gap-5">
-      <div class="lg:col-start-2">
-        <a class="btn w-full border-black!" href="/code">
-          NEXT → II-THE CODE
-        </a>
-      </div>
-    </div>
-
     <ProgressWatcher client:load current="stakes" />
   </section>
 
   <section class="m-0">
-    <div class="bg-black px-2.5 lg:px-5 text-white">
+    <div class="bg-black text-yellow py-2.5 px-2.5 lg:px-5">
       <p>END OF:// CHAPTER_ONE</p>
     </div>
-    <div class="bg-yellow p-2.5 lg:p-5 space-y-2.5 space-y-5">
-      <div class="grid lg:grid-cols-2 gap-2.5 lg:gap-5">
+    <div
+      class="bg-yellow px-2.5 pt-2.5 lg:px-5 lg:pt-5 pb-20 lg:pb-40 space-y-2.5"
+    >
+      <div class="grid lg:grid-cols-2 gap-2.5">
         <div>
           <p>:: CONGRATS! :: FIRST #STAMP# REWARD AFFIRMATIVE</p>
         </div>
         <div>
           <a class="flex flex-col gap-px" href="/stakes">
             <div
-              class="relative overflow-hidden outline outline-dashed bg-yellow"
+              class="relative overflow-hidden px-2.5 pt-2.5 pb-20 space-y-2.5 outline outline-dashed outline-black bg-black text-white"
             >
               <img
                 class="absolute bottom-0 left-0 right-0 w-full h-1/2 object-cover object-top"
                 src="/dots.png"
               />
-              <div
-                class="relative flex-1 px-2.5 pt-2.5 lg:px-5 lg:pt-5 pb-20 flex flex-col justify-center items-center text-center space-y-2.5"
-              >
-                <h3 class="text-7xl uppercase">
-                  <span class="font-star">Choose</span>
-                  <span class="font-star">your future</span>
-                </h3>
-              </div>
+              <p class="uppercase">Go to next chapter</p>
+              <h3 class="font-workbench text-7xl uppercase">Code</h3>
             </div>
-            <div class="outline outline-dashed bg-yellow p-5">
-              START THE JOURNEY →
+            <div
+              class="outline outline-dashed outline-black bg-black text-white p-2.5"
+            >
+              PROCEED →
             </div>
           </a>
         </div>

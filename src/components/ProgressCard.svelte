@@ -21,37 +21,49 @@
       <div class="relative aspect-square p-1 outline outline-black">
         <span class="absolute top-0 left-0 bg-black text-white">I</span>
         {#if progress.stakes}
-          <Journey1Svg />
+          <div class="animate-blink w-full h-full">
+            <Journey1Svg />
+          </div>
         {/if}
       </div>
       <div class="relative aspect-square p-1 outline outline-black">
         <span class="absolute top-0 left-0 bg-black text-white">II</span>
         {#if progress.code}
-          <Journey2Svg />
+          <div class="animate-blink w-full h-full">
+            <Journey2Svg />
+          </div>
         {/if}
       </div>
       <div class="relative aspect-square p-1 outline outline-black">
         <span class="absolute top-0 left-0 bg-black text-white">III</span>
         {#if progress.tools}
-          <Journey3Svg />
+          <div class="animate-blink w-full h-full">
+            <Journey3Svg />
+          </div>
         {/if}
       </div>
       <div class="relative aspect-square p-1 outline outline-black">
         <span class="absolute top-0 left-0 bg-black text-white">IV</span>
         {#if progress.rebels}
-          <Journey4Svg />
+          <div class="animate-blink w-full h-full">
+            <Journey4Svg />
+          </div>
         {/if}
       </div>
       <div class="relative aspect-square p-1 outline outline-black">
         <span class="absolute top-0 left-0 bg-black text-white">V</span>
         {#if progress.ledger}
-          <Journey5Svg />
+          <div class="animate-blink w-full h-full">
+            <Journey5Svg />
+          </div>
         {/if}
       </div>
       <div class="relative aspect-square p-1 outline outline-black">
         <span class="absolute top-0 left-0 bg-black text-white">F</span>
         {#if progress.pledge}
-          <Journey6Svg />
+          <div class="animate-blink w-full h-full">
+            <Journey6Svg />
+          </div>
         {/if}
       </div>
     </div>

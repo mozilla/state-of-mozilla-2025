@@ -172,6 +172,10 @@ body {
   animation: blink 1s steps(2, jump-none) infinite;
 }
 
+.animate-blink {
+  animation: blink 0.5s steps(2, jump-none) 3;
+}
+
 @keyframes blink {
   0% {
     opacity: 1;
