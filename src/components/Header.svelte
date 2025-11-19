@@ -102,7 +102,10 @@
       <ul class="grid lg:grid-cols-7 gap-px">
         <li class="flex">
           <a
-            class="flex-1 p-2.5 flex flex-col justify-center items-center text-center space-y-2.5 outline bg-white text-black outline-black"
+            class="flex-1 p-2.5 flex flex-col justify-center items-center text-center space-y-2.5 {getLinkClasses(
+              '/',
+              'intro',
+            )}"
             href="/"
           >
             <span class="text-5xl lg:text-2xl uppercase">Intro</span>
