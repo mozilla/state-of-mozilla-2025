@@ -92,13 +92,26 @@
     </p>
     {#if showButton}
       <button
-        class="btn"
+        class="btn inline-flex! items-center space-x-5 lg:w-1/2"
         bind:this={buttonRef}
         onclick={closeIntro}
         onmouseenter={handleMouseEnter}
         onmouseleave={handleMouseLeave}
       >
-        Enter the website
+        <svg
+          width="16"
+          height="18"
+          viewBox="0 0 16 18"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M0 18H2.39598V0H0V18Z" fill="white" />
+          <path
+            d="M4.34975 9.18147H13.8372V8.66409L7.65427 6.50965V4.68726L13.8372 2.53282V2.00772H6.51256V4.08494H4.34975V2.00772H6.51256V0H16V3.66795L10.9668 5.33591V5.85328L16 7.52123V11.1892H4.34975V9.18147Z"
+            fill="white"
+          />
+        </svg>
+        <span>Enter the website</span>
       </button>
     {/if}
   </section>

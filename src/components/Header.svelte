@@ -31,7 +31,9 @@
         ></path>
       </svg>
     </a>
-    <span class="flex-1 px-2.5 text-center">STATE OF MOZILLA 2025</span>
+    <span class="font-mozilla-text flex-1 px-2.5 text-center">
+      State of Mozilla 2025
+    </span>
     <div
       class="size-10 p-2.5 border-l border-white flex justify-center items-center"
     >
@@ -79,15 +81,13 @@
   </div>
   {#if open}
     <div>
-      <ul
-        class="grid lg:grid-cols-7 max-lg:divide-y lg:divide-x divide-white uppercase"
-      >
+      <ul class="grid lg:grid-cols-7 max-lg:divide-y lg:divide-x divide-white">
         <li class="flex">
           <a
             class="flex-1 p-2.5 flex flex-col justify-center items-center text-center space-y-2.5"
             href="/"
           >
-            Intro
+            <span class="text-5xl lg:text-2xl uppercase">Intro</span>
           </a>
         </li>
         <li class="flex">
@@ -96,7 +96,9 @@
             href="/stakes"
           >
             <span class="lg:hidden">I</span>
-            <span class="font-tuoi-tre text-7xl lg:text-4xl">Stakes</span>
+            <span class="font-tuoi-tre text-7xl lg:text-4xl uppercase">
+              Stakes
+            </span>
           </a>
         </li>
         <li class="flex">
@@ -105,7 +107,9 @@
             href="/code"
           >
             <span class="lg:hidden">II</span>
-            <span class="font-workbench text-7xl lg:text-4xl">Code</span>
+            <span class="font-workbench text-7xl lg:text-4xl uppercase"
+              >Code</span
+            >
           </a>
         </li>
         <li class="flex">
@@ -114,7 +118,9 @@
             href="/tools"
           >
             <span class="lg:hidden">III</span>
-            <span class="font-mainframe text-7xl lg:text-4xl">Tools</span>
+            <span class="font-mainframe text-6xl lg:text-3xl uppercase"
+              >Tools</span
+            >
           </a>
         </li>
         <li class="flex">
@@ -123,7 +129,9 @@
             href="/rebels"
           >
             <span class="lg:hidden">IV</span>
-            <span class="font-computer text-7xl lg:text-4xl">Rebels</span>
+            <span class="font-computer text-7xl lg:text-4xl uppercase"
+              >Rebels</span
+            >
           </a>
         </li>
         <li class="flex">
@@ -132,7 +140,7 @@
             href="/ledger"
           >
             <span class="lg:hidden">V</span>
-            <span class="font-star text-7xl lg:text-4xl">Ledger</span>
+            <span class="font-star text-7xl lg:text-4xl uppercase">Ledger</span>
           </a>
         </li>
         <li class="flex">
@@ -140,7 +148,9 @@
             class="flex-1 p-2.5 flex flex-col justify-center items-center text-center space-y-2.5"
             href="/pledge"
           >
-            Pledge
+            <span class="font-mozilla-headline text-6xl lg:text-3xl">
+              Pledge
+            </span>
           </a>
         </li>
       </ul>

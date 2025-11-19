@@ -1,4 +1,5 @@
 <svg
+  class="max-w-full max-h-full"
   width="161"
   height="128"
   viewBox="0 0 161 128"

@@ -7,147 +7,221 @@ import Journey2Svg from "../components/svg/Journey2Svg.svelte";
 import Journey3Svg from "../components/svg/Journey3Svg.svelte";
 import Journey4Svg from "../components/svg/Journey4Svg.svelte";
 import Journey5Svg from "../components/svg/Journey5Svg.svelte";
+import Journey6Svg from "../components/svg/Journey6Svg.svelte";
 ---
 
 <Layout>
   <section class="p-2.5 lg:p-5 space-y-2.5 lg:space-y-5">
     <div class="grid lg:grid-cols-2 gap-2.5 lg:gap-5">
-      <div class="bg-gray-500"></div>
       <div>
         <h1
-          class="font-star relative z-10 text-4xl lg:text-5xl xl:text-5xl 2xl:text-7xl"
+          class="font-mozilla-headline relative z-10 text-4xl lg:text-5xl xl:text-5xl 2xl:text-7xl"
         >
-          DOING FOR AI<br />WHAT WE DID<br />FOR THE WEB
+          Doing for AI<br />what we did<br />for the web
         </h1>
-        <div class="-mt-2.5 lg:-mt-5"><Svg1 /></div>
-        <div class="-mt-2.5 lg:-mt-5"><Svg2 /></div>
+        <div class="-mt-5 lg:-mt-10 -mx-5"><Svg1 /></div>
+        <div class="-mt-5 lg:-mt-10"><Svg2 /></div>
+      </div>
+      <div>
+        <div class="aspect-square w-full bg-gray-500"></div>
       </div>
     </div>
-    <p>
-      Mozilla is transforming for a new era, doing for AI what we once did for
-      the web: decentralizing control, empowering people with choice, and
-      proving that an economic model anchored in a double bottom line of mission
-      and money can succeed. At a moment when Big Tech seeks to monopolize the
-      AI future, Mozilla is choosing a different path.
-    </p>
-    <div class="grid lg:grid-cols-3 gap-2.5 lg:gap-5">
-      <div class="lg:col-start-2">
-        <a class="btn w-full border-black!" href="/stakes">
-          Choose your future
+  </section>
+
+  <section class="p-2.5 lg:p-5 space-y-2.5 lg:space-y-5">
+    <div class="grid lg:grid-cols-4 gap-2.5 lg:gap-5">
+      <div class="lg:col-start-2 lg:col-span-2 space-y-2.5 lg:space-y-5">
+        <p>
+          Mozilla is transforming for a new era, doing for AI what we once did
+          for the web: decentralizing control, empowering people with choice,
+          and proving that an economic model anchored in a double bottom line of
+          mission and money can succeed. At a moment when Big Tech seeks to
+          monopolize the AI future, Mozilla is choosing a different path.
+        </p>
+        <a class="flex flex-col gap-px" href="/stakes">
+          <div
+            class="relative overflow-hidden outline outline-dashed bg-yellow"
+          >
+            <img
+              class="absolute bottom-0 left-0 right-0 w-full h-1/2 object-cover object-top"
+              src="/dots.png"
+            />
+            <div
+              class="relative flex-1 px-2.5 pt-2.5 lg:px-5 lg:pt-5 pb-20 flex flex-col justify-center items-center text-center space-y-2.5"
+            >
+              <h3 class="text-7xl uppercase">
+                <span class="font-star">Choose</span>
+                <span class="font-star">your future</span>
+              </h3>
+            </div>
+          </div>
+          <div class="outline outline-dashed bg-yellow p-5">
+            START THE JOURNEY →
+          </div>
         </a>
       </div>
     </div>
   </section>
 
-  <section class="p-2.5 lg:p-5">
-    <hr class="border-dashed mb-2.5 lg:mb-5" />
-    <div class="grid lg:grid-cols-4 gap-2.5 lg:gap-5">
+  <section class="p-2.5 lg:p-5 space-y-2.5 lg:space-y-5">
+    <div
+      class="grid lg:grid-cols-4 gap-2.5 lg:gap-5 border-y border-black py-5"
+    >
       <div class="lg:col-start-2 lg:col-span-2 space-y-2.5 lg:space-y-5">
         <p>THE JOURNEY AHEAD</p>
+      </div>
+    </div>
+    <div class="grid lg:grid-cols-4 gap-2.5 lg:gap-5">
+      <div class="lg:col-start-2 lg:col-span-2 space-y-2.5 lg:space-y-5">
         <p>
           The experience unfolds through six chapters - each a choice, each a
           signal of how we can build a different future together.
         </p>
-        <h2 class="font-star text-5xl uppercase mt-7.5">
-          “We're not here to predict the future. We're here to prove that in the
-          age of artificial intelligence, we still get to choose its direction.”
-        </h2>
-        <p>– Nabiha Syed</p>
+      </div>
+    </div>
+    <div class="grid lg:grid-cols-4 gap-px">
+      <div
+        class="lg:col-span-full p-2.5 lg:p-5 outline outline-dashed bg-yellow"
+      >
+        <h2 class="text-3xl lg:text-5xl text-center">THE JOURNEY</h2>
+      </div>
+      <div
+        class="relative overflow-hidden lg:col-span-2 outline outline-dashed bg-yellow"
+      >
+        <img
+          class="absolute bottom-0 left-0 right-0 w-full h-1/2 object-cover object-top"
+          src="/dots.png"
+        />
+        <div class="absolute bottom-0 left-1/2 -translate-x-1/2">
+          <Journey1Svg />
+        </div>
+        <a
+          class="relative flex-1 px-2.5 pt-2.5 lg:px-5 lg:pt-5 pb-30 flex flex-col justify-center items-center text-center space-y-2.5"
+          href="/stakes"
+        >
+          <span>I</span>
+          <h3 class="font-tuoi-tre text-7xl uppercase">Stakes</h3>
+          <p class="text-xl text-balance">
+            Closed AI vs. Open AI. Which future will we choose?
+          </p>
+        </a>
+      </div>
+      <div
+        class="relative overflow-hidden lg:col-span-2 outline outline-dashed bg-yellow"
+      >
+        <img
+          class="absolute bottom-0 left-0 right-0 w-full h-1/2 object-cover object-top"
+          src="/dots.png"
+        />
+        <div class="absolute bottom-0 left-1/2 -translate-x-1/2">
+          <Journey2Svg />
+        </div>
+        <a
+          class="relative flex-1 px-2.5 pt-2.5 lg:px-5 lg:pt-5 pb-30 flex flex-col justify-center items-center text-center space-y-2.5"
+          href="/code"
+        >
+          <span>II</span>
+          <h3 class="font-workbench text-7xl uppercase">Code</h3>
+          <p class="text-xl text-balance">
+            Closed AI vs. Open AI. Which future will we choose?
+          </p>
+        </a>
+      </div>
+      <div
+        class="relative overflow-hidden lg:col-span-2 outline outline-dashed bg-yellow"
+      >
+        <img
+          class="absolute bottom-0 left-0 right-0 w-full h-1/2 object-cover object-top"
+          src="/dots.png"
+        />
+        <div class="absolute bottom-0 left-1/2 -translate-x-1/2">
+          <Journey3Svg />
+        </div>
+        <a
+          class="relative flex-1 px-2.5 pt-2.5 lg:px-5 lg:pt-5 pb-30 flex flex-col justify-center items-center text-center space-y-2.5"
+          href="/tools"
+        >
+          <span>III</span>
+          <h3 class="font-mainframe text-7xl uppercase">Tools</h3>
+          <p class="text-xl text-balance">
+            Closed AI vs. Open AI. Which future will we choose?
+          </p>
+        </a>
+      </div>
+      <div
+        class="relative overflow-hidden lg:col-span-2 outline outline-dashed bg-yellow"
+      >
+        <img
+          class="absolute bottom-0 left-0 right-0 w-full h-1/2 object-cover object-top"
+          src="/dots.png"
+        />
+        <div class="absolute bottom-0 left-1/2 -translate-x-1/2">
+          <Journey4Svg />
+        </div>
+        <a
+          class="relative flex-1 px-2.5 pt-2.5 lg:px-5 lg:pt-5 pb-30 flex flex-col justify-center items-center text-center space-y-2.5"
+          href="/rebels"
+        >
+          <span>IV</span>
+          <h3 class="font-computer text-7xl uppercase">Rebels</h3>
+          <p class="text-xl text-balance">
+            Closed AI vs. Open AI. Which future will we choose?
+          </p>
+        </a>
+      </div>
+      <div
+        class="relative overflow-hidden lg:col-span-2 outline outline-dashed bg-yellow"
+      >
+        <img
+          class="absolute bottom-0 left-0 right-0 w-full h-1/2 object-cover object-top"
+          src="/dots.png"
+        />
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2">
+          <Journey5Svg />
+        </div>
+        <a
+          class="relative flex-1 px-2.5 pt-2.5 lg:px-5 lg:pt-5 pb-30 flex flex-col justify-center items-center text-center space-y-2.5"
+          href="/ledger"
+        >
+          <span>V</span>
+          <h3 class="font-star text-7xl uppercase">Ledger</h3>
+          <p class="text-xl text-balance">
+            Closed AI vs. Open AI. Which future will we choose?
+          </p>
+        </a>
+      </div>
+      <div
+        class="relative overflow-hidden lg:col-span-2 outline outline-dashed bg-yellow"
+      >
+        <img
+          class="absolute bottom-0 left-0 right-0 w-full h-1/2 object-cover object-top"
+          src="/dots.png"
+        />
+        <div class="absolute bottom-0 left-1/2 -translate-x-1/2">
+          <Journey6Svg />
+        </div>
+        <a
+          class="relative flex-1 px-2.5 pt-2.5 lg:px-5 lg:pt-5 pb-30 flex flex-col justify-center items-center text-center space-y-2.5"
+          href="/pledge"
+        >
+          <span>FINAL</span>
+          <h3 class="font-mozilla-headline text-7xl">Pledge</h3>
+          <p class="text-xl text-balance">
+            Closed AI vs. Open AI. Which future will we choose?
+          </p>
+        </a>
       </div>
     </div>
   </section>
 
   <section class="p-2.5 lg:p-5">
-    <div class="grid lg:grid-cols-4 gap-px">
-      <div
-        class="lg:col-span-full p-2.5 lg:p-5 outline outline-dashed bg-yellow"
-      >
-        <h2 class="font-star text-7xl text-center">THE JOURNEY</h2>
-      </div>
-      <div
-        class="relative overflow-hidden lg:col-span-2 outline outline-dashed bg-yellow"
-      >
-        <img
-          class="absolute bottom-0 left-0 right-0 w-full h-1/2 object-cover object-top"
-          src="/dots.png"
-        />
-        <div class="absolute bottom-2.5 left-2.5"><Journey1Svg /></div>
-        <a
-          class="relative flex-1 px-2.5 pt-2.t lg:px-5 lg:pt-5 pb-20 flex flex-col justify-center items-center text-center space-y-2.5"
-          href="/stakes"
-        >
-          <span>I</span>
-          <h3 class="font-tuoi-tre text-7xl uppercase">Stakes</h3>
-          <p>Closed AI vs. Open AI. Which future will we choose?</p>
-        </a>
-      </div>
-      <div
-        class="relative overflow-hidden lg:col-span-2 outline outline-dashed bg-yellow"
-      >
-        <img
-          class="absolute bottom-0 left-0 right-0 w-full h-1/2 object-cover object-top"
-          src="/dots.png"
-        />
-        <div class="absolute bottom-2.5 right-2.5"><Journey2Svg /></div>
-        <a
-          class="relative flex-1 px-2.5 pt-2.t lg:px-5 lg:pt-5 pb-20 flex flex-col justify-center items-center text-center space-y-2.5"
-          href="/code"
-        >
-          <span>II</span>
-          <h3 class="font-workbench text-7xl uppercase">Code</h3>
-          <p>Closed AI vs. Open AI. Which future will we choose?</p>
-        </a>
-      </div>
-      <div
-        class="relative overflow-hidden lg:col-span-2 outline outline-dashed bg-yellow"
-      >
-        <img
-          class="absolute bottom-0 left-0 right-0 w-full h-1/2 object-cover object-top"
-          src="/dots.png"
-        />
-        <div class="absolute bottom-2.5 right-2.5"><Journey3Svg /></div>
-        <a
-          class="relative flex-1 px-2.5 pt-2.t lg:px-5 lg:pt-5 pb-20 flex flex-col justify-center items-center text-center space-y-2.5"
-          href="/tools"
-        >
-          <span>III</span>
-          <h3 class="font-mainframe text-7xl uppercase">Tools</h3>
-          <p>Closed AI vs. Open AI. Which future will we choose?</p>
-        </a>
-      </div>
-      <div
-        class="relative overflow-hidden lg:col-span-2 outline outline-dashed bg-yellow"
-      >
-        <img
-          class="absolute bottom-0 left-0 right-0 w-full h-1/2 object-cover object-top"
-          src="/dots.png"
-        />
-        <div class="absolute bottom-2.5 left-2.5"><Journey4Svg /></div>
-        <a
-          class="relative flex-1 px-2.5 pt-2.t lg:px-5 lg:pt-5 pb-20 flex flex-col justify-center items-center text-center space-y-2.5"
-          href="/rebels"
-        >
-          <span>IV</span>
-          <h3 class="font-computer text-7xl uppercase">Rebels</h3>
-          <p>Closed AI vs. Open AI. Which future will we choose?</p>
-        </a>
-      </div>
-      <div
-        class="relative overflow-hidden lg:col-span-2 lg:col-start-2 outline outline-dashed bg-yellow"
-      >
-        <img
-          class="absolute bottom-0 left-0 right-0 w-full h-1/2 object-cover object-top"
-          src="/dots.png"
-        />
-        <div class="absolute bottom-2.5 right-2.5"><Journey5Svg /></div>
-        <a
-          class="relative flex-1 px-2.5 pt-2.t lg:px-5 lg:pt-5 pb-20 flex flex-col justify-center items-center text-center space-y-2.5"
-          href="/ledger"
-        >
-          <span>V</span>
-          <h3 class="font-star text-7xl uppercase">Ledger</h3>
-          <p>Closed AI vs. Open AI. Which future will we choose?</p>
-        </a>
+    <div class="grid lg:grid-cols-4 gap-2.5 lg:gap-5">
+      <div class="lg:col-start-2 lg:col-span-2 space-y-2.5 lg:space-y-5">
+        <h2 class="font-mozilla-headline text-5xl mt-7.5">
+          “We're not here to predict the future. We're here to prove that in the
+          age of artificial intelligence, we still get to choose its direction.”
+        </h2>
+        <p>– Nabiha Syed</p>
       </div>
     </div>
   </section>

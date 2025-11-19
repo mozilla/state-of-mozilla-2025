@@ -2,6 +2,8 @@
 import Layout from "../layouts/Layout.astro";
 import Captcha from "../components/Captcha.svelte";
 import StakesSvg from "../components/svg/StakesSvg.svelte";
+import ProgressWatcher from "../components/ProgressWatcher.svelte";
+import ProgressCard from "../components/ProgressCard.svelte";
 ---
 
 <Layout>
@@ -211,38 +213,80 @@ import StakesSvg from "../components/svg/StakesSvg.svelte";
       </div>
     </div>
   </section>
+
+  <ProgressWatcher client:load current="stakes" />
+
+  <section class="m-0">
+    <div class="bg-black px-2.5 lg:px-5 text-white">
+      <p>END OF:// CHAPTER_ONE</p>
+    </div>
+    <div class="bg-yellow p-2.5 lg:p-5 space-y-2.5 space-y-5">
+      <div class="grid lg:grid-cols-2 gap-2.5 lg:gap-5">
+        <div>
+          <p>:: CONGRATS! :: FIRST #STAMP# REWARD AFFIRMATIVE</p>
+        </div>
+        <div>
+          <a class="flex flex-col gap-px" href="/stakes">
+            <div
+              class="relative overflow-hidden outline outline-dashed bg-yellow"
+            >
+              <img
+                class="absolute bottom-0 left-0 right-0 w-full h-1/2 object-cover object-top"
+                src="/dots.png"
+              />
+              <div
+                class="relative flex-1 px-2.5 pt-2.5 lg:px-5 lg:pt-5 pb-20 flex flex-col justify-center items-center text-center space-y-2.5"
+              >
+                <h3 class="text-7xl uppercase">
+                  <span class="font-star">Choose</span>
+                  <span class="font-star">your future</span>
+                </h3>
+              </div>
+            </div>
+            <div class="outline outline-dashed bg-yellow p-5">
+              START THE JOURNEY →
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <ProgressCard client:load />
 </Layout>
 
-<script>
-  function toggleFutures(toggleElement: HTMLElement) {
-    const target = toggleElement.dataset.target;
+<script is:inline>
+  // Use event delegation on document - works even when content loads dynamically
+  document.addEventListener("click", function (event) {
+    var toggleElement = event.target.closest(".future-toggle");
+    if (!toggleElement) return;
+
+    var target = toggleElement.dataset.target;
     if (!target) return;
 
     // Get all toggle buttons and content sections
-    const allToggles = document.querySelectorAll<HTMLElement>(".future-toggle");
-    const allContents = document.querySelectorAll<HTMLElement>(
-      ".future-a, .future-b",
-    );
+    var allToggles = document.querySelectorAll(".future-toggle");
+    var allContents = document.querySelectorAll(".future-a, .future-b");
 
     // Check if this toggle is already active
-    const isActive = toggleElement.classList.contains("bg-black");
+    var isActive = toggleElement.classList.contains("bg-black");
 
     if (isActive) {
       // If clicking the active tab, deactivate it
       toggleElement.classList.remove("bg-black", "text-yellow");
       toggleElement.classList.add("bg-yellow");
-      document.querySelectorAll<HTMLElement>(target).forEach((item) => {
+      document.querySelectorAll(target).forEach(function (item) {
         item.classList.add("hidden");
       });
     } else {
       // Deactivate all toggles
-      allToggles.forEach((toggle) => {
+      allToggles.forEach(function (toggle) {
         toggle.classList.remove("bg-black", "text-yellow");
         toggle.classList.add("bg-yellow");
       });
 
       // Hide all content
-      allContents.forEach((content) => {
+      allContents.forEach(function (content) {
         content.classList.add("hidden");
       });
 
@@ -251,18 +295,9 @@ import StakesSvg from "../components/svg/StakesSvg.svelte";
       toggleElement.classList.add("bg-black", "text-yellow");
 
       // Show target content
-      document.querySelectorAll<HTMLElement>(target).forEach((item) => {
+      document.querySelectorAll(target).forEach(function (item) {
         item.classList.remove("hidden");
       });
     }
-  }
-
-  // Add click listeners to all toggle buttons
-  document.querySelectorAll<HTMLElement>(".future-toggle").forEach((toggle) => {
-    toggle.addEventListener("click", (event) => {
-      // Get the toggle element (in case user clicked on the span inside)
-      const toggleElement = event.currentTarget as HTMLElement;
-      toggleFutures(toggleElement);
-    });
   });
 </script>

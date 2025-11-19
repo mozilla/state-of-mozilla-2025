@@ -4,54 +4,67 @@
 </script>
 
 <footer>
-  <section class="bg-yellow px-2.5 lg:px-5 pt-2.5 pb-5 lg:pt-5 lg:pb-12">
+  <section
+    class="bg-black text-white px-2.5 lg:px-5 py-2.5 lg:py-5 space-y-5 lg:space-y-10"
+  >
+    <p class="mb-5">Join us in creating a better internet</p>
     <div class="grid lg:grid-cols-2 gap-2.5 lg:gap-5">
-      <div class="space-y-2.5">
-        <p class="uppercase">Join us in creating a better internet</p>
+      <div class="space-y-2.5 lg:space-y-5">
         <p>
           We know the internet has the potential to be even better. But we can
           only get there if we work together.
         </p>
-        <ul>
+        <p class="text-gray mb-2.5">Learn more</p>
+        <ul class="space-y-2.5">
           <li>
             <a
+              class="underline"
               target="_blank"
               href="https://www.mozilla.org/en-US/about/manifesto/"
             >
-              MOZILLA MANIFESTO →
-            </a>
-          </li>
-          <li>
-            <a target="_blank" href="https://blog.mozilla.org/en/"> BLOG → </a>
-          </li>
-          <li>
-            <a target="_blank" href="https://www.firefox.com/en-US/">
-              DOWNLOAD FIREFOX →
-            </a>
-          </li>
-          <li>
-            <a target="_blank" href="https://www.mozilla.org/en-US/careers/">
-              CARREERS →
+              Mozilla Manifesto
             </a>
           </li>
           <li>
             <a
+              class="underline"
+              target="_blank"
+              href="https://blog.mozilla.org/en/"
+            >
+              Blog
+            </a>
+          </li>
+          <li>
+            <a
+              class="underline"
+              target="_blank"
+              href="https://www.firefox.com/en-US/"
+            >
+              Download Firefox
+            </a>
+          </li>
+          <li>
+            <a
+              class="underline"
+              target="_blank"
+              href="https://www.mozilla.org/en-US/careers/"
+            >
+              Careers
+            </a>
+          </li>
+          <li>
+            <a
+              class="underline"
               target="_blank"
               href="https://www.mozillafoundation.org/en/donate/"
             >
-              DONATE →
+              Donate
             </a>
           </li>
         </ul>
       </div>
-    </div>
-  </section>
-  <section class="bg-black text-white px-2.5 lg:px-5 py-2.5 lg:py-5">
-    <div class="grid lg:grid-cols-2 gap-2.5 lg:gap-5 mb-5 lg:mb-12">
-      <div>
+      <div class="space-y-2.5 lg:space-y-5">
         <p>Get Mozilla updates. Private and secure - no sharing, no selling.</p>
-      </div>
-      <div>
         <form
           action="https://mozilla.formstack.com/forms/index.php"
           method="POST"
@@ -64,14 +77,14 @@
             type="email"
             name="field189514574"
             id="email"
-            placeholder="Enter your e-mail"
+            placeholder="your email address"
             required
             aria-required="true"
-            class="placeholder:text-white w-full lg:w-2.5/4 border-b border-white border-dashed focus:outline-0 py-1.5 uppercase"
+            class="placeholder:text-white w-full text-black lg:w-3/4 px-5 py-4 bg-white/20 focus:outline-0 focus:bg-white focus:placeholder:text-black"
           />
           <label
             for="privacy"
-            class="flex items-start space-x-1 lg:w-2.5/4 text-sm"
+            class="flex items-start space-x-1 lg:w-3/4 text-sm"
           >
             <input
               type="checkbox"
@@ -92,11 +105,12 @@
               </a>
             </span>
           </label>
-          <button class="btn text-left lg:w-2.5/4"> Sign up now </button>
+          <button class="btn text-left lg:w-3/4">Subscribe</button>
         </form>
       </div>
     </div>
-    <div class="grid lg:grid-cols-2 gap-2.5 lg:gap-5 mb-5 lg:mb-12">
+    <hr class="border-gray" />
+    <div class="grid lg:grid-cols-2 gap-2.5 lg:gap-5">
       <div class="space-y-5 lg:space-y-12">
         <p>
           Visit <a
@@ -119,41 +133,57 @@
           </a>.
         </p>
         <Footer1Svg />
-        <ul class="uppercase">
+        <p class="text-gray mb-2.5">Company</p>
+        <ul class="space-y-2.5">
           <li>
-            <a target="_blank" href="https://www.mozilla.org/privacy/websites/">
-              Website Privacy Notice →
+            <a
+              class="underline"
+              target="_blank"
+              href="https://www.mozilla.org/privacy/websites/"
+            >
+              Website Privacy Notice
             </a>
           </li>
           <li>
             <a
+              class="underline"
               target="_blank"
               href="https://www.mozilla.org/privacy/websites/cookie-settings/"
             >
-              Cookies →
-            </a>
-          </li>
-          <li>
-            <a target="_blank" href="https://www.mozilla.org/about/legal/">
-              Legal →
+              Cookies
             </a>
           </li>
           <li>
             <a
+              class="underline"
               target="_blank"
-              href="https://www.mozilla.org/about/governance/policies/participation/"
+              href="https://www.mozilla.org/about/legal/"
             >
-              Community Participation Guidelines →
+              Legal
             </a>
           </li>
           <li>
-            <a target="_blank" href="https://www.mozilla.org/about/this-site/">
-              About this site →
+            <a
+              class="underline"
+              target="_blank"
+              href="https://www.mozilla.org/about/governance/policies/participation/"
+            >
+              Community Participation Guidelines
+            </a>
+          </li>
+          <li>
+            <a
+              class="underline"
+              target="_blank"
+              href="https://www.mozilla.org/about/this-site/"
+            >
+              About this site
             </a>
           </li>
         </ul>
       </div>
     </div>
+    <hr class="border-gray" />
     <Footer2Svg />
   </section>
 </footer>

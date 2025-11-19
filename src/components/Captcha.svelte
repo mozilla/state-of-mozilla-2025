@@ -80,19 +80,22 @@
     id="captcha"
     class="fixed z-40 w-full h-full inset-0 flex justify-center items-center overscroll-contain bg-white/60 p-2.5"
   >
-    <div class="p-2.5 lg:p-5 border-2 border-black bg-yellow">
+    <div
+      class="p-2.5 lg:p-5 border-2 border-black bg-yellow lg:w-1/2"
+      style="box-shadow: 8.3871px 8.3871px 0px rgba(0, 0, 0, 0.25);"
+    >
       {#if !showBypass}
         <CaptchaWordSvg />
 
         <form onsubmit={handleSubmit}>
-          <label for="word">Type the word above:</label>
-          <div class="grid lg:grid-cols-2 gap-2.5">
+          <label for="word" class="uppercase">Type the word above</label>
+          <div class="grid gap-2.5">
             <div class="flex space-x-2.5">
               <input
                 type="text"
                 bind:this={input}
                 bind:value={inputValue}
-                class="border border-black bg-white px-2.5 px-[1.5rem] py-[1rem]"
+                class="w-full border border-black bg-white px-2.5 px-[1.5rem] py-[1rem]"
               />
               <div class="flex flex-col justify-around">
                 <svg
