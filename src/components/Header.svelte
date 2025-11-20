@@ -4,8 +4,6 @@
 
   const { currentPage = "/" } = $props();
 
-  console.log(currentPage);
-
   let open = $state(false);
   let headerHeight = $state(0);
   const progress = $derived($progressStore);

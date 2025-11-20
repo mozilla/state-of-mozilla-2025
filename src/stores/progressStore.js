@@ -44,6 +44,8 @@ function createProgressStore() {
     reset: () => {
       if (typeof window !== "undefined") {
         localStorage.setItem(PROGRESS_KEY, JSON.stringify(INITIAL_PROGRESS));
+        sessionStorage.removeItem("captchaVerified");
+        sessionStorage.removeItem("stopwallVerified");
       }
       set(INITIAL_PROGRESS);
     },
