@@ -1,3 +1,14 @@
 [[redirects]]
   from = "/rebel"
   to = "/"
+
+# Support discovery of previous years' SoM reports, which are not on this domain
+[[redirects]]
+  from = "/2024"
+  to = "https://www.mozilla.org/foundation/annualreport/2024/"
+  status = 301
+
+[[redirects]]
+  from = "/2023"
+  to = "https://archive.stateof.mozilla.org/2023/"
+  status = 301
