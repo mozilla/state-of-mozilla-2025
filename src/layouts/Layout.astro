@@ -3,6 +3,10 @@ import "../styles/global.css";
 import IntroWrapper from "../components/IntroWrapper.svelte";
 import Header from "../components/Header.svelte";
 import Footer from "../components/Footer.svelte";
+
+// Normalize pathname by removing trailing slash, but keep "/" for root
+const normalizedPath =
+  Astro.url.pathname === "/" ? "/" : Astro.url.pathname.replace(/\/$/, "");
 ---
 
 <!doctype html>
@@ -27,7 +31,7 @@ import Footer from "../components/Footer.svelte";
     <title>State of Mozilla 2025</title>
   </head>
   <body class="flex flex-col min-h-svh">
-    <Header currentPage={Astro.url.pathname} client:load />
+    <Header currentPage={normalizedPath} client:load />
     <IntroWrapper client:load>
       <main class="space-y-10 lg:space-y-20">
         <slot />

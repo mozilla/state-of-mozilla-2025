@@ -3,6 +3,8 @@
 
   const { currentPage = "/" } = $props();
 
+  console.log(currentPage);
+
   let open = $state(false);
   const progress = $derived($progressStore);
 
@@ -12,7 +14,7 @@
 
   function getLinkClasses(href, page) {
     const isActive = currentPage === href;
-    const isViewed = page && progress[page];
+    const isViewed = (page && progress[page]) || page === "intro";
 
     if (isActive) {
       return "bg-yellow text-black outline outline-black";
