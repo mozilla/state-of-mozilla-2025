@@ -1,13 +1,22 @@
 <script>
   import { progressStore } from "../stores/progressStore.js";
+  import { onMount } from "svelte";
 
   const { currentPage = "/" } = $props();
 
   console.log(currentPage);
 
-  let open = $state(currentPage !== "/");
+  let open = $state(false);
   let headerHeight = $state(0);
   const progress = $derived($progressStore);
+
+  onMount(() => {
+    // Check if desktop and not intro page
+    const isDesktop = window.innerWidth >= 1024;
+    if (isDesktop && currentPage !== "/") {
+      open = true;
+    }
+  });
 
   function toggleMenu() {
     open = !open;
