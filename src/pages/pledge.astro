@@ -1,31 +1,28 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import StopWall from "../components/StopWall.svelte";
-import StakesSvg from "../components/svg/StakesSvg.svelte";
-import ProgressWatcher from "../components/ProgressWatcher.svelte";
 import ProgressCard from "../components/ProgressCard.svelte";
 ---
 
 <Layout>
   <StopWall client:load />
 
-  <ProgressWatcher client:load current="pledge" />
-
-  <section class="relative p-2.5 lg:p-5 h-[calc(100svh-var(--header-height))]">
-    <img class="absolute bottom-0 left-0 right-0" src="/dots-big.png" />
-    <div
-      class="absolute max-lg:w-1/2 right-0 lg:right-5 max-lg:bottom-2.5 lg:top-1/2 lg:-translate-y-full"
-    >
-      <StakesSvg />
+  <section
+    class="relative p-2.5 lg:p-5 min-h-[calc(100svh-var(--header-height)-20px)]"
+  >
+    <img class="absolute bottom-0 left-0 right-0 m-0" src="/dots-big.png" />
+    <div class="relative flex flex-col space-y-2.5 lg:space-y-5">
+      <p class="mb-2.5 lg:mb-5">IV - The Rebels</p>
+      <h1 class="font-mozilla-headline text-6xl lg:text-8xl">
+        Congrats!
+        <br class="max-lg:hidden" />
+        You are now part of the
+        <br class="max-lg:hidden" />
+        Mozilla Alliance
+      </h1>
+      <div class="mt-auto">
+        <ProgressCard full={true} client:load />
+      </div>
     </div>
-    <p class="mb-2.5 lg:mb-5">IV - The Rebels</p>
-    <h1 class="font-mozilla-headline text-6xl lg:text-8xl">
-      Congrats!
-      <br class="max-lg:hidden" />
-      You are now part of the
-      <br class="max-lg:hidden" />
-      Mozilla Alliance
-    </h1>
-    <ProgressCard full={true} client:load />
   </section>
 </Layout>

@@ -21,14 +21,19 @@
       progress = value;
     });
 
-    // Check if all progress is complete
-    const isProgressComplete = Object.values(progress).every(
-      (value) => value === true,
-    );
+    // Check if all chapters except pledge are complete
+    const isProgressComplete =
+      progress.stakes === true &&
+      progress.code === true &&
+      progress.tools === true &&
+      progress.rebels === true &&
+      progress.ledger === true;
 
     // Hide stopwall if progress is complete OR sessionStorage bypass is set
     if (isProgressComplete || sessionStorage.getItem("stopwallVerified")) {
       showStopWall = false;
+      // Mark pledge as viewed when accessing this page with complete progress
+      progressStore.markAsViewed("pledge");
     }
 
     return () => {
@@ -51,6 +56,8 @@
         setTimeout(() => {
           showStopWall = false;
           sessionStorage.setItem("stopwallVerified", "true");
+          // Mark pledge as viewed when bypass is executed
+          progressStore.markAsViewed("pledge");
         }, 1000);
       }
     }
@@ -71,7 +78,7 @@
       {#if !showBypass}
         <div class="space-y-2.5 lg:space-y-5">
           <p>
-            You have to complet all the chapters in order to view this page.
+            You have to complete all the chapters in order to view this page.
           </p>
           <button onclick={executeBypass} class="btn"
             >Initiate bypass function</button
