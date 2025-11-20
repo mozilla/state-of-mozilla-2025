@@ -5,7 +5,8 @@
 
   console.log(currentPage);
 
-  let open = $state(false);
+  let open = $state(currentPage !== "/");
+  let headerHeight = $state(0);
   const progress = $derived($progressStore);
 
   function toggleMenu() {
@@ -24,9 +25,17 @@
       return "bg-black text-white outline outline-white";
     }
   }
+
+  $effect(() => {
+    document.documentElement.style.setProperty(
+      "--header-height",
+      `${headerHeight}px`,
+    );
+  });
 </script>
 
 <header
+  bind:clientHeight={headerHeight}
   class="sticky z-50 top-0 left-0 right-0 w-full border-y border-white bg-black text-white divide-y divide-white {open
     ? 'max-lg:h-svh max-lg:overflow-y-auto max-lg:overscroll-y-contain'
     : ''}"
