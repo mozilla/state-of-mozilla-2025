@@ -100,9 +100,3 @@
     </div>
   </div>
 {/if}
-
-<style>
-  :global(html.stopwall-seen) #stopwall {
-    display: none;
-  }
-</style>

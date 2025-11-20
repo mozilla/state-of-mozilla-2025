@@ -223,9 +223,20 @@ body {
   }
 }
 
-/* Pause animation when reduced-motion is set */
 @media (prefers-reduced-motion: reduce) {
   .marquee__content {
     animation-play-state: paused !important;
   }
+}
+
+html.intro-seen #intro {
+  display: none;
+}
+
+html.captcha-seen #captcha {
+  display: none;
+}
+
+html.stopwall-seen #stopwall {
+  display: none;
 }

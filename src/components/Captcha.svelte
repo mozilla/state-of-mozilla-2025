@@ -159,9 +159,3 @@
     </div>
   </div>
 {/if}
-
-<style>
-  :global(html.captcha-seen) #captcha {
-    display: none;
-  }
-</style>

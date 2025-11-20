@@ -118,9 +118,3 @@
 {:else}
   {@render children()}
 {/if}
-
-<style>
-  :global(html.intro-seen) #intro {
-    display: none;
-  }
-</style>
