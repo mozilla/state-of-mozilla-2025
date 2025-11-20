@@ -12,11 +12,16 @@
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            // Mark current page as viewed
-            progressStore.markAsViewed(current);
+            // Only mark as viewed if captcha has been verified
+            const captchaVerified = sessionStorage.getItem("captchaVerified");
 
-            // Disconnect observer since we only need this to happen once
-            observer.disconnect();
+            if (captchaVerified === "true") {
+              // Mark current page as viewed
+              progressStore.markAsViewed(current);
+
+              // Disconnect observer since we only need this to happen once
+              observer.disconnect();
+            }
           }
         });
       },
