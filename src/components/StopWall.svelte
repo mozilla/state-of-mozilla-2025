@@ -1,6 +1,7 @@
 <script>
   import { onMount } from "svelte";
   import { progressStore } from "../stores/progressStore.js";
+  import CRT from "./CRT.svelte";
 
   let showStopWall = $state(true);
   let showBypass = $state(false);
@@ -69,10 +70,11 @@
 {#if showStopWall}
   <div
     id="stopwall"
-    class="fixed z-40 w-full h-full inset-0 flex justify-center items-center overscroll-contain bg-white/60 p-2.5"
+    class="fixed z-40 w-full h-full inset-0 flex justify-center items-center overscroll-contain bg-white/95 p-2.5"
   >
+    <CRT />
     <div
-      class="p-2.5 lg:p-5 border-2 border-black bg-yellow lg:w-1/2"
+      class="p-2.5 lg:p-5 border-2 border-black bg-yellow lg:w-1/2 relative z-10"
       style="box-shadow: 8.3871px 8.3871px 0px rgba(0, 0, 0, 0.25);"
     >
       {#if !showBypass}
