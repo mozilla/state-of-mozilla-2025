@@ -1,0 +1,66 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Captcha from "../components/Captcha.svelte";
+import StakesSvg from "../components/svg/StakesSvg.svelte";
+import ProgressWatcher from "../components/ProgressWatcher.svelte";
+import ProgressCard from "../components/ProgressCard.svelte";
+---
+
+<Layout>
+  <Captcha client:load />
+
+  <section
+    class="relative p-2.5 lg:p-5 h-[calc(100svh-var(--header-height))] bg-yellow"
+  >
+    <img class="absolute bottom-0 left-0 right-0" src="/dots-big.png" />
+    <div
+      class="absolute max-lg:w-1/2 right-0 lg:right-5 max-lg:bottom-2.5 lg:top-1/2 lg:-translate-y-full"
+    >
+      <StakesSvg />
+    </div>
+    <p class="mb-2.5 lg:mb-5">II - The Code</p>
+    <h1 class="font-workbench uppercase text-7xl lg:text-9xl">
+      Our AI bill
+      <br class="max-lg:hidden" />
+      of rights
+    </h1>
+  </section>
+
+  <ProgressWatcher client:load current="code" />
+
+  <section class="m-0">
+    <div class="bg-black text-yellow py-2.5 px-2.5 lg:px-5">
+      <p>END OF:// CHAPTER_TWO</p>
+    </div>
+    <div
+      class="bg-yellow px-2.5 pt-2.5 lg:px-5 lg:pt-5 pb-20 lg:pb-40 space-y-2.5"
+    >
+      <div class="grid lg:grid-cols-2 gap-2.5">
+        <div>
+          <p>:: CONGRATS! :: SECOND #STAMP# REWARD AFFIRMATIVE</p>
+        </div>
+        <div>
+          <a class="flex flex-col gap-px" href="/tools">
+            <div
+              class="relative overflow-hidden px-2.5 pt-2.5 pb-20 space-y-2.5 outline outline-dashed outline-black bg-black text-white"
+            >
+              <img
+                class="absolute bottom-0 left-0 right-0 w-full h-1/2 object-cover object-top"
+                src="/dots.png"
+              />
+              <p class="uppercase">Go to next chapter</p>
+              <h3 class="font-mainframe text-7xl uppercase">Tools</h3>
+            </div>
+            <div
+              class="outline outline-dashed outline-black bg-black text-white p-2.5"
+            >
+              PROCEED →
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <ProgressCard client:load />
+</Layout>

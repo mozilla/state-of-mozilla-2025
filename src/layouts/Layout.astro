@@ -30,10 +30,10 @@ const normalizedPath =
     <meta name="generator" content={Astro.generator} />
     <title>State of Mozilla 2025</title>
   </head>
-  <body class="bg-gray flex flex-col min-h-svh">
-    <div class="container mx-auto lg:my-5 bg-white">
-      <Header currentPage={normalizedPath} client:load />
+  <body class="bg-gray min-h-svh flex flex-col">
+    <div class="flex-1 flex flex-col container mx-auto lg:my-5 bg-white">
       <IntroWrapper client:load>
+        <Header currentPage={normalizedPath} client:load />
         <main class="space-y-10 lg:space-y-20">
           <slot />
         </main>
@@ -46,6 +46,9 @@ const normalizedPath =
       }
       if (sessionStorage.getItem("captchaVerified")) {
         document.documentElement.classList.add("captcha-seen");
+      }
+      if (sessionStorage.getItem("stopwallVerified")) {
+        document.documentElement.classList.add("stopwall-seen");
       }
     </script>
   </body>

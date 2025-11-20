@@ -168,8 +168,23 @@ body {
   animation: blink 1s steps(2, jump-none) infinite;
 }
 
-.animate-blink {
+.animate-blink-1 {
   animation: blink 0.5s steps(2, jump-none) 3;
+}
+.animate-blink-2 {
+  animation: blink 0.8s steps(2, jump-none) 3;
+}
+.animate-blink-3 {
+  animation: blink 0.6s steps(2, jump-none) 3;
+}
+.animate-blink-4 {
+  animation: blink 0.4s steps(2, jump-none) 3;
+}
+.animate-blink-5 {
+  animation: blink 0.7s steps(2, jump-none) 3;
+}
+.animate-blink-6 {
+  animation: blink 0.3s steps(2, jump-none) 3;
 }
 
 @keyframes blink {
