@@ -46,6 +46,8 @@ function createProgressStore() {
         localStorage.setItem(PROGRESS_KEY, JSON.stringify(INITIAL_PROGRESS));
         sessionStorage.removeItem("captchaVerified");
         sessionStorage.removeItem("stopwallVerified");
+        // Redirect to index page
+        window.location.href = "/";
       }
       set(INITIAL_PROGRESS);
     },
