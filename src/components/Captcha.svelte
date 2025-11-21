@@ -1,6 +1,6 @@
 <script>
   import { onMount } from "svelte";
-  import CaptchaWordSvg from "./svg/CaptchaWordSvg.svelte";
+  import Svg from "./Svg.svelte";
 
   let showCaptcha = $state(true);
   let input = $state(null);
@@ -85,7 +85,7 @@
       style="box-shadow: 8.3871px 8.3871px 0px rgba(0, 0, 0, 0.25);"
     >
       {#if !showBypass}
-        <CaptchaWordSvg />
+        <Svg src="/svg/captcha1.svg" class="w-full" />
 
         <form onsubmit={handleSubmit}>
           <label for="word" class="uppercase">Type the word above</label>

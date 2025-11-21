@@ -1,12 +1,6 @@
 <script>
   import { progressStore } from "../stores/progressStore.js";
-  import StakesSvg from "../components/svg/StakesSvg.svelte";
-  import Journey1Svg from "./svg/Journey1Svg.svelte";
-  import Journey2Svg from "./svg/Journey2Svg.svelte";
-  import Journey3Svg from "./svg/Journey3Svg.svelte";
-  import Journey4Svg from "./svg/Journey4Svg.svelte";
-  import Journey5Svg from "./svg/Journey5Svg.svelte";
-  import Journey6Svg from "./svg/Journey6Svg.svelte";
+  import Svg from "./Svg.svelte";
 
   const { full } = $props();
 
@@ -31,7 +25,7 @@
             <span class="absolute top-0 left-0 bg-black text-white">I</span>
             {#if progress.stakes}
               <div class="animate-blink-1 w-full h-full">
-                <Journey1Svg />
+                <Svg src="/svg/journey1.svg" class="max-w-full max-h-full" />
               </div>
             {/if}
           </div>
@@ -39,7 +33,7 @@
             <span class="absolute top-0 left-0 bg-black text-white">II</span>
             {#if progress.code}
               <div class="animate-blink-2 w-full h-full">
-                <Journey2Svg />
+                <Svg src="/svg/journey2.svg" class="max-w-full max-h-full" />
               </div>
             {/if}
           </div>
@@ -47,7 +41,7 @@
             <span class="absolute top-0 left-0 bg-black text-white">III</span>
             {#if progress.tools}
               <div class="animate-blink-3 w-full h-full">
-                <Journey3Svg />
+                <Svg src="/svg/journey3.svg" class="max-w-full max-h-full" />
               </div>
             {/if}
           </div>
@@ -55,7 +49,7 @@
             <span class="absolute top-0 left-0 bg-black text-white">IV</span>
             {#if progress.rebels}
               <div class="animate-blink-4 w-full h-full">
-                <Journey4Svg />
+                <Svg src="/svg/journey4.svg" class="max-w-full max-h-full" />
               </div>
             {/if}
           </div>
@@ -63,7 +57,7 @@
             <span class="absolute top-0 left-0 bg-black text-white">V</span>
             {#if progress.ledger}
               <div class="animate-blink-5 w-full h-full">
-                <Journey5Svg />
+                <Svg src="/svg/journey5.svg" class="max-w-full max-h-full" />
               </div>
             {/if}
           </div>
@@ -71,7 +65,7 @@
             <span class="absolute top-0 left-0 bg-black text-white">F</span>
             {#if progress.pledge}
               <div class="animate-blink-6 w-full h-full">
-                <Journey6Svg />
+                <Svg src="/svg/journey6.svg" class="max-w-full max-h-full" />
               </div>
             {/if}
           </div>
@@ -103,7 +97,7 @@
           <span>Restart</span>
         </button>
         <div class="flex justify-center">
-          <StakesSvg />
+          <Svg />
         </div>
       </div>
     {/if}

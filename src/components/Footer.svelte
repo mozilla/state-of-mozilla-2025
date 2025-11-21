@@ -1,6 +1,5 @@
 <script>
-  import Footer1Svg from "./svg/Footer1Svg.svelte";
-  import Footer2Svg from "./svg/Footer2Svg.svelte";
+  import Svg from "./Svg.svelte";
 </script>
 
 <footer>
@@ -132,7 +131,10 @@
             Creative Commons license
           </a>.
         </p>
-        <Footer1Svg />
+        <Svg
+          src="/svg/footer1.svg"
+          class="w-[184.5px] h-[148.5px] lg:w-[369px] lg:h-[297px]"
+        />
         <p class="text-gray mb-2.5">Company</p>
         <ul class="space-y-2.5">
           <li>
@@ -184,6 +186,6 @@
       </div>
     </div>
     <hr class="border-gray" />
-    <Footer2Svg />
+    <Svg src="/svg/footer2.svg" class="w-full" />
   </section>
 </footer>

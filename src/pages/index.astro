@@ -1,13 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Svg1 from "../components/svg/Svg1.svelte";
-import Svg2 from "../components/svg/Svg2.svelte";
-import Journey1Svg from "../components/svg/Journey1Svg.svelte";
-import Journey2Svg from "../components/svg/Journey2Svg.svelte";
-import Journey3Svg from "../components/svg/Journey3Svg.svelte";
-import Journey4Svg from "../components/svg/Journey4Svg.svelte";
-import Journey5Svg from "../components/svg/Journey5Svg.svelte";
-import Journey6Svg from "../components/svg/Journey6Svg.svelte";
+import Svg from "../components/Svg.svelte";
 ---
 
 <Layout>
@@ -19,8 +12,12 @@ import Journey6Svg from "../components/svg/Journey6Svg.svelte";
         >
           Doing for AI<br />what we did<br />for the web
         </h1>
-        <div class="-mt-5 lg:-mt-10 -mx-5"><Svg1 /></div>
-        <div class="-mt-5 lg:-mt-10"><Svg2 /></div>
+        <div class="-mt-5 lg:-mt-10 -mx-5">
+          <Svg client:load src="/svg/intro1.svg" />
+        </div>
+        <div class="-mt-5 lg:-mt-10">
+          <Svg client:load src="/svg/intro2.svg" />
+        </div>
       </div>
       <div>
         <div class="aspect-square w-full bg-gray-500"></div>
@@ -89,7 +86,7 @@ import Journey6Svg from "../components/svg/Journey6Svg.svelte";
           src="/dots.png"
         />
         <div class="absolute bottom-0 left-1/2 -translate-x-1/2">
-          <Journey1Svg />
+          <Svg client:load src="/svg/journey1.svg" />
         </div>
         <a
           class="relative flex-1 px-2.5 pt-2.5 lg:px-5 lg:pt-5 pb-30 flex flex-col justify-center items-center text-center space-y-2.5"
@@ -110,7 +107,7 @@ import Journey6Svg from "../components/svg/Journey6Svg.svelte";
           src="/dots.png"
         />
         <div class="absolute bottom-0 left-1/2 -translate-x-1/2">
-          <Journey2Svg />
+          <Svg client:load src="/svg/journey2.svg" />
         </div>
         <a
           class="relative flex-1 px-2.5 pt-2.5 lg:px-5 lg:pt-5 pb-30 flex flex-col justify-center items-center text-center space-y-2.5"
@@ -131,7 +128,7 @@ import Journey6Svg from "../components/svg/Journey6Svg.svelte";
           src="/dots.png"
         />
         <div class="absolute bottom-0 left-1/2 -translate-x-1/2">
-          <Journey3Svg />
+          <Svg client:load src="/svg/journey3.svg" />
         </div>
         <a
           class="relative flex-1 px-2.5 pt-2.5 lg:px-5 lg:pt-5 pb-30 flex flex-col justify-center items-center text-center space-y-2.5"
@@ -152,7 +149,7 @@ import Journey6Svg from "../components/svg/Journey6Svg.svelte";
           src="/dots.png"
         />
         <div class="absolute bottom-0 left-1/2 -translate-x-1/2">
-          <Journey4Svg />
+          <Svg client:load src="/svg/journey4.svg" />
         </div>
         <a
           class="relative flex-1 px-2.5 pt-2.5 lg:px-5 lg:pt-5 pb-30 flex flex-col justify-center items-center text-center space-y-2.5"
@@ -173,7 +170,7 @@ import Journey6Svg from "../components/svg/Journey6Svg.svelte";
           src="/dots.png"
         />
         <div class="absolute bottom-10 left-1/2 -translate-x-1/2">
-          <Journey5Svg />
+          <Svg client:load src="/svg/journey5.svg" />
         </div>
         <a
           class="relative flex-1 px-2.5 pt-2.5 lg:px-5 lg:pt-5 pb-30 flex flex-col justify-center items-center text-center space-y-2.5"
@@ -194,7 +191,7 @@ import Journey6Svg from "../components/svg/Journey6Svg.svelte";
           src="/dots.png"
         />
         <div class="absolute bottom-0 left-1/2 -translate-x-1/2">
-          <Journey6Svg />
+          <Svg client:load src="/svg/journey6.svg" />
         </div>
         <a
           class="relative flex-1 px-2.5 pt-2.5 lg:px-5 lg:pt-5 pb-30 flex flex-col justify-center items-center text-center space-y-2.5"
