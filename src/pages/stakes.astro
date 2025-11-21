@@ -6,6 +6,18 @@ import ProgressWatcher from "../components/ProgressWatcher.svelte";
 import ProgressCard from "../components/ProgressCard.svelte";
 ---
 
+<script is:inline>
+  // Restore selection immediately before DOM renders to prevent flicker
+  (function () {
+    var stored = localStorage.getItem("stakesSelection");
+    if (stored === "a") {
+      document.documentElement.classList.add("stakes-a");
+    } else if (stored === "b") {
+      document.documentElement.classList.add("stakes-b");
+    }
+  })();
+</script>
+
 <Layout>
   <Captcha client:load />
 
@@ -83,12 +95,12 @@ import ProgressCard from "../components/ProgressCard.svelte";
     <div class="grid grid-cols-2 lg:gap-2.5">
       <div class="space-y-2.5 lg:space-y-5">
         <button
-          data-target=".future-a"
-          class="future-toggle aspect-square w-full flex justify-center items-center outline outline-dashed bg-yellow cursor-pointer hover:bg-black hover:text-yellow"
+          data-selection="a"
+          class="future-toggle future-toggle-a aspect-square w-full flex justify-center items-center outline outline-dashed cursor-pointer bg-yellow hover:bg-black hover:text-yellow"
         >
           <span class="text-9xl">A</span>
         </button>
-        <div class="future-a hidden space-y-2.5 lg:space-y-5">
+        <div class="future-a space-y-2.5 lg:space-y-5">
           <p class="border-y border-black py-2.5">CLOSED AND EXTRACTIVE</p>
           <p>
             Monopolies, concentration, and slop. A future where a few
@@ -103,12 +115,12 @@ import ProgressCard from "../components/ProgressCard.svelte";
       </div>
       <div class="space-y-2.5 lg:space-y-5">
         <button
-          data-target=".future-b"
-          class="future-toggle aspect-square w-full flex justify-center items-center outline outline-dashed bg-yellow cursor-pointer hover:bg-black hover:text-yellow"
+          data-selection="b"
+          class="future-toggle future-toggle-b aspect-square w-full flex justify-center items-center outline outline-dashed cursor-pointer bg-yellow hover:bg-black hover:text-yellow"
         >
           <span class="text-9xl">B</span>
         </button>
-        <div class="future-b hidden space-y-2.5 lg:space-y-5">
+        <div class="future-b space-y-2.5 lg:space-y-5">
           <p class="border-y border-black py-2.5">OPEN AND HUMAN-FIRST</p>
           <p>
             An internet built on human agency and choice. Technology that
@@ -123,8 +135,8 @@ import ProgressCard from "../components/ProgressCard.svelte";
     </div>
   </section>
 
-  <section class="future-a future-b hidden p-2.5 lg:p-5 space-y-5 space-y-10">
-    <div class="future-a hidden space-y-2.5 lg:space-y-5">
+  <section class="future-section p-2.5 lg:p-5 space-y-5 space-y-10">
+    <div class="future-a space-y-2.5 lg:space-y-5">
       <div class="pb-10 lg:pb-20">
         <h2 class="font-tuoi-tre text-5xl lg:text-7xl">
           Monopolies, concentration, and slop.
@@ -164,7 +176,7 @@ import ProgressCard from "../components/ProgressCard.svelte";
       </div>
     </div>
 
-    <div class="future-b hidden space-y-2.5 lg:space-y-5">
+    <div class="future-b space-y-2.5 lg:space-y-5">
       <div class="pb-10 lg:pb-20">
         <h2 class="font-tuoi-tre text-5xl lg:text-7xl">
           An internet built on human agency and choice
@@ -253,90 +265,58 @@ import ProgressCard from "../components/ProgressCard.svelte";
   <ProgressCard client:load />
 </Layout>
 
+<style>
+  /* Default state: content hidden */
+  .future-a,
+  .future-b,
+  .future-section {
+    display: none;
+  }
+
+  /* When A is selected */
+  html.stakes-a .future-toggle-a {
+    background-color: #000;
+    color: var(--color-yellow);
+  }
+  html.stakes-a .future-a,
+  html.stakes-a .future-section {
+    display: block;
+  }
+
+  /* When B is selected */
+  html.stakes-b .future-toggle-b {
+    background-color: #000;
+    color: var(--color-yellow);
+  }
+  html.stakes-b .future-b,
+  html.stakes-b .future-section {
+    display: block;
+  }
+</style>
+
 <script is:inline>
-  const STAKES_SELECTION_KEY = "stakesSelection";
-
-  // Function to restore selection from localStorage
-  function restoreSelection() {
-    var stored = localStorage.getItem(STAKES_SELECTION_KEY);
-    if (!stored) return;
-
-    var target = stored === "a" ? ".future-a" : ".future-b";
-    var toggleElement = document.querySelector(
-      '[data-target="' + target + '"]',
-    );
-
-    if (toggleElement) {
-      // Activate the stored toggle
-      toggleElement.classList.remove("bg-yellow");
-      toggleElement.classList.add("bg-black", "text-yellow");
-
-      // Show the stored content
-      document.querySelectorAll(target).forEach(function (item) {
-        item.classList.remove("hidden");
-      });
-    } else {
-      // If element not found, try again after a short delay
-      setTimeout(restoreSelection, 50);
-    }
-  }
-
-  // Restore selection on page load - using both DOMContentLoaded and load events
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", restoreSelection);
-  } else {
-    // DOM is already ready, run immediately
-    restoreSelection();
-  }
-
-  // Use event delegation on document - works even when content loads dynamically
+  // Handle click events for A/B selection
   document.addEventListener("click", function (event) {
     var toggleElement = event.target.closest(".future-toggle");
     if (!toggleElement) return;
 
-    var target = toggleElement.dataset.target;
-    if (!target) return;
+    var selection = toggleElement.dataset.selection;
+    if (!selection) return;
 
-    // Get all toggle buttons and content sections
-    var allToggles = document.querySelectorAll(".future-toggle");
-    var allContents = document.querySelectorAll(".future-a, .future-b");
+    var html = document.documentElement;
+    var currentClass = "stakes-" + selection;
+    var isActive = html.classList.contains(currentClass);
 
-    // Check if this toggle is already active
-    var isActive = toggleElement.classList.contains("bg-black");
+    // Remove both classes first
+    html.classList.remove("stakes-a", "stakes-b");
 
     if (isActive) {
-      // If clicking the active tab, deactivate it
-      toggleElement.classList.remove("bg-black", "text-yellow");
-      toggleElement.classList.add("bg-yellow");
-      document.querySelectorAll(target).forEach(function (item) {
-        item.classList.add("hidden");
-      });
-      // Remove from localStorage
-      localStorage.removeItem(STAKES_SELECTION_KEY);
+      // Deselect - remove from localStorage
+      localStorage.removeItem("stakesSelection");
     } else {
-      // Deactivate all toggles
-      allToggles.forEach(function (toggle) {
-        toggle.classList.remove("bg-black", "text-yellow");
-        toggle.classList.add("bg-yellow");
-      });
-
-      // Hide all content
-      allContents.forEach(function (content) {
-        content.classList.add("hidden");
-      });
-
-      // Activate clicked toggle
-      toggleElement.classList.remove("bg-yellow");
-      toggleElement.classList.add("bg-black", "text-yellow");
-
-      // Show target content
-      document.querySelectorAll(target).forEach(function (item) {
-        item.classList.remove("hidden");
-      });
-
-      // Save to localStorage (extract 'a' or 'b' from target)
-      var selection = target.includes("future-a") ? "a" : "b";
-      localStorage.setItem(STAKES_SELECTION_KEY, selection);
+      // Select - add class and save to localStorage
+      html.classList.add(currentClass);
+      localStorage.setItem("stakesSelection", selection);
     }
   });
 </script>
