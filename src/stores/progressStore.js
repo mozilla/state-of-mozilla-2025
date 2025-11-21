@@ -44,6 +44,7 @@ function createProgressStore() {
     reset: () => {
       if (typeof window !== "undefined") {
         localStorage.setItem(PROGRESS_KEY, JSON.stringify(INITIAL_PROGRESS));
+        localStorage.removeItem("stakesSelection");
         sessionStorage.removeItem("captchaVerified");
         sessionStorage.removeItem("stopwallVerified");
         // Redirect to index page

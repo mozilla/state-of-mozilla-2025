@@ -14,16 +14,18 @@ import ProgressCard from "../components/ProgressCard.svelte";
   >
     <img class="absolute bottom-0 left-0 right-0" src="/dots-big.png" />
     <div
-      class="absolute max-lg:w-1/2 right-0 lg:right-5 max-lg:bottom-2.5 lg:top-1/2 lg:-translate-y-full"
+      class="absolute max-lg:w-1/2 left-2.5 lg:left-5 bottom-2.5 lg:bottom-5"
     >
-      <Svg />
+      <Svg client:load src="/svg/tools.svg" />
     </div>
-    <p class="mb-2.5 lg:mb-5">III - The Tools</p>
-    <h1 class="font-mainframe uppercase text-6xl lg:text-8xl">
-      Choices we’re
-      <br class="max-lg:hidden" />
-      making today
-    </h1>
+    <div class="relative">
+      <p class="mb-2.5 lg:mb-5">III - The Tools</p>
+      <h1 class="font-mainframe uppercase text-6xl lg:text-8xl">
+        Choices we’re
+        <br class="max-lg:hidden" />
+        making today
+      </h1>
+    </div>
   </section>
 
   <ProgressWatcher client:load current="tools" />

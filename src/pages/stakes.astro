@@ -22,12 +22,14 @@ import ProgressCard from "../components/ProgressCard.svelte";
         class="w-full lg:w-[352px] lg:h-[335px]"
       />
     </div>
-    <p class="mb-2.5 lg:mb-5">I - The Stakes</p>
-    <h1 class="font-tuoi-tre text-7xl lg:text-9xl">
-      Which future will
-      <br class="max-lg:hidden" />
-      you choose?
-    </h1>
+    <div class="relative">
+      <p class="mb-2.5 lg:mb-5">I - The Stakes</p>
+      <h1 class="font-tuoi-tre text-7xl lg:text-9xl">
+        Which future will
+        <br class="max-lg:hidden" />
+        you choose?
+      </h1>
+    </div>
   </section>
 
   <section class="p-2.5 lg:p-5">
@@ -252,6 +254,41 @@ import ProgressCard from "../components/ProgressCard.svelte";
 </Layout>
 
 <script is:inline>
+  const STAKES_SELECTION_KEY = "stakesSelection";
+
+  // Function to restore selection from localStorage
+  function restoreSelection() {
+    var stored = localStorage.getItem(STAKES_SELECTION_KEY);
+    if (!stored) return;
+
+    var target = stored === "a" ? ".future-a" : ".future-b";
+    var toggleElement = document.querySelector(
+      '[data-target="' + target + '"]',
+    );
+
+    if (toggleElement) {
+      // Activate the stored toggle
+      toggleElement.classList.remove("bg-yellow");
+      toggleElement.classList.add("bg-black", "text-yellow");
+
+      // Show the stored content
+      document.querySelectorAll(target).forEach(function (item) {
+        item.classList.remove("hidden");
+      });
+    } else {
+      // If element not found, try again after a short delay
+      setTimeout(restoreSelection, 50);
+    }
+  }
+
+  // Restore selection on page load - using both DOMContentLoaded and load events
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", restoreSelection);
+  } else {
+    // DOM is already ready, run immediately
+    restoreSelection();
+  }
+
   // Use event delegation on document - works even when content loads dynamically
   document.addEventListener("click", function (event) {
     var toggleElement = event.target.closest(".future-toggle");
@@ -274,6 +311,8 @@ import ProgressCard from "../components/ProgressCard.svelte";
       document.querySelectorAll(target).forEach(function (item) {
         item.classList.add("hidden");
       });
+      // Remove from localStorage
+      localStorage.removeItem(STAKES_SELECTION_KEY);
     } else {
       // Deactivate all toggles
       allToggles.forEach(function (toggle) {
@@ -294,6 +333,10 @@ import ProgressCard from "../components/ProgressCard.svelte";
       document.querySelectorAll(target).forEach(function (item) {
         item.classList.remove("hidden");
       });
+
+      // Save to localStorage (extract 'a' or 'b' from target)
+      var selection = target.includes("future-a") ? "a" : "b";
+      localStorage.setItem(STAKES_SELECTION_KEY, selection);
     }
   });
 </script>

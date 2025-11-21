@@ -8,18 +8,20 @@ import ProgressCard from "../components/ProgressCard.svelte";
   <StopWall client:load />
 
   <section
-    class="relative p-2.5 lg:p-5 min-h-[calc(100svh-var(--header-height)-20px)]"
+    class="relative flex flex-col px-2.5 pt-2.5 lg:px-5 lg:pt-5 min-h-[calc(100svh-var(--header-height)-20px)]"
   >
     <img class="absolute bottom-0 left-0 right-0 m-0" src="/dots-big.png" />
-    <div class="relative flex flex-col space-y-2.5 lg:space-y-5">
-      <p class="mb-2.5 lg:mb-5">IV - The Rebels</p>
-      <h1 class="font-mozilla-headline text-6xl lg:text-8xl">
-        Congrats!
-        <br class="max-lg:hidden" />
-        You are now part of the
-        <br class="max-lg:hidden" />
-        Mozilla Alliance
-      </h1>
+    <div class="flex-1 relative flex flex-col space-y-2.5 lg:space-y-5">
+      <div class="relative space-y-2.5 lg:space-y-5">
+        <p class="mb-2.5 lg:mb-5">IV - The Rebels</p>
+        <h1 class="font-mozilla-headline text-6xl lg:text-8xl">
+          Congrats!
+          <br class="max-lg:hidden" />
+          You are now part of the
+          <br class="max-lg:hidden" />
+          Mozilla Alliance
+        </h1>
+      </div>
       <div class="mt-auto">
         <ProgressCard full={true} client:load />
       </div>

@@ -73,7 +73,7 @@
       </div>
     </div>
     {#if full}
-      <div class="pointer-events-auto">
+      <div class="pointer-events-auto space-y-2.5 lg:space-y-5">
         <button
           onclick={() => progressStore.reset()}
           class="btn inline-flex! px-2.5! items-center space-x-2.5 w-full invert"
@@ -97,7 +97,7 @@
           <span>Restart</span>
         </button>
         <div class="flex justify-center">
-          <Svg />
+          <Svg src="/svg/pledge.svg" />
         </div>
       </div>
     {/if}
