@@ -6,13 +6,10 @@
   <section
     class="bg-black text-white px-2.5 lg:px-5 py-2.5 lg:py-5 space-y-5 lg:space-y-10"
   >
-    <p class="mb-5">Join us in creating a better internet</p>
+    <p class="mb-5">Let’s Do for AI What We Did for the Web</p>
     <div class="grid lg:grid-cols-2 gap-2.5 lg:gap-5">
       <div class="space-y-2.5 lg:space-y-5">
-        <p>
-          We know the internet has the potential to be even better. But we can
-          only get there if we work together.
-        </p>
+        <p>Help us make the age of AI better, fairer, and more free.</p>
         <p class="text-gray mb-2.5">Learn more</p>
         <ul class="space-y-2.5">
           <li>
