@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Svg from "../components/Svg.svelte";
+import FinancialDownloads from "../components/FinancialDownloads.astro";
 ---
 
 <Layout>
@@ -57,22 +58,24 @@ import Svg from "../components/Svg.svelte";
             we do.
           </li>
         </ul>
-        <a class="flex flex-col gap-px" href="/stakes">
-          <div
-            class="relative overflow-hidden text-center px-2.5 pt-2.5 lg:px-5 lg:pt-5 pb-20 lg:pb-40 outline outline-dashed bg-yellow"
-          >
-            <img
-              class="absolute bottom-0 left-0 right-0 w-full h-1/2 object-cover object-top"
-              src="/dots.png"
-            />
+        <a
+          class="flex flex-col gap-px bg-yellow hover:bg-black hover:text-yellow"
+          href="/stakes"
+        >
+          <div class="text-center pt-2.5 lg:pt-5 outline outline-dashed">
             <h3 class="text-8xl uppercase">
               <span class="font-star">Choose</span>
               <span class="font-star">your future</span>
             </h3>
+            <div class="relative overflow-hidden h-20 lg:h-40">
+              <Svg
+                client:load
+                src="/svg/dots.svg"
+                class="absolute left-0 right-0 top-1/2 -translate-y-1/2 w-full object-cover"
+              />
+            </div>
           </div>
-          <div class="outline outline-dashed bg-yellow p-5">
-            START THE JOURNEY →
-          </div>
+          <div class="outline outline-dashed p-5">START THE JOURNEY →</div>
         </a>
       </div>
     </div>
@@ -101,12 +104,15 @@ import Svg from "../components/Svg.svelte";
         <h2 class="text-3xl lg:text-5xl text-center">THE JOURNEY</h2>
       </div>
       <div
-        class="relative overflow-hidden lg:col-span-2 outline outline-dashed bg-yellow"
+        class="relative overflow-hidden lg:col-span-2 outline outline-dashed bg-yellow hover:bg-black hover:text-yellow"
       >
-        <img
-          class="absolute bottom-0 left-0 right-0 w-full h-1/2 object-cover object-top"
-          src="/dots.png"
-        />
+        <div class="absolute bottom-0 w-full overflow-hidden h-20 lg:h-40">
+          <Svg
+            client:load
+            src="/svg/dots.svg"
+            class="absolute left-0 right-0 top-1/2 -translate-y-1/2 w-full object-cover"
+          />
+        </div>
         <div class="absolute bottom-0 left-1/2 -translate-x-1/2">
           <Svg client:load src="/svg/journey1.svg" />
         </div>
@@ -122,12 +128,15 @@ import Svg from "../components/Svg.svelte";
         </a>
       </div>
       <div
-        class="relative overflow-hidden lg:col-span-2 outline outline-dashed bg-yellow"
+        class="relative overflow-hidden lg:col-span-2 outline outline-dashed bg-yellow hover:bg-black hover:text-yellow"
       >
-        <img
-          class="absolute bottom-0 left-0 right-0 w-full h-1/2 object-cover object-top"
-          src="/dots.png"
-        />
+        <div class="absolute bottom-0 w-full overflow-hidden h-20 lg:h-40">
+          <Svg
+            client:load
+            src="/svg/dots.svg"
+            class="absolute left-0 right-0 top-1/2 -translate-y-1/2 w-full object-cover"
+          />
+        </div>
         <div class="absolute bottom-0 left-1/2 -translate-x-1/2">
           <Svg client:load src="/svg/journey2.svg" />
         </div>
@@ -143,12 +152,15 @@ import Svg from "../components/Svg.svelte";
         </a>
       </div>
       <div
-        class="relative overflow-hidden lg:col-span-2 outline outline-dashed bg-yellow"
+        class="relative overflow-hidden lg:col-span-2 outline outline-dashed bg-yellow hover:bg-black hover:text-yellow"
       >
-        <img
-          class="absolute bottom-0 left-0 right-0 w-full h-1/2 object-cover object-top"
-          src="/dots.png"
-        />
+        <div class="absolute bottom-0 w-full overflow-hidden h-20 lg:h-40">
+          <Svg
+            client:load
+            src="/svg/dots.svg"
+            class="absolute left-0 right-0 top-1/2 -translate-y-1/2 w-full object-cover"
+          />
+        </div>
         <div class="absolute bottom-0 left-1/2 -translate-x-1/2">
           <Svg client:load src="/svg/journey3.svg" />
         </div>
@@ -164,12 +176,15 @@ import Svg from "../components/Svg.svelte";
         </a>
       </div>
       <div
-        class="relative overflow-hidden lg:col-span-2 outline outline-dashed bg-yellow"
+        class="relative overflow-hidden lg:col-span-2 outline outline-dashed bg-yellow hover:bg-black hover:text-yellow"
       >
-        <img
-          class="absolute bottom-0 left-0 right-0 w-full h-1/2 object-cover object-top"
-          src="/dots.png"
-        />
+        <div class="absolute bottom-0 w-full overflow-hidden h-20 lg:h-40">
+          <Svg
+            client:load
+            src="/svg/dots.svg"
+            class="absolute left-0 right-0 top-1/2 -translate-y-1/2 w-full object-cover"
+          />
+        </div>
         <div class="absolute bottom-0 left-1/2 -translate-x-1/2">
           <Svg client:load src="/svg/journey4.svg" />
         </div>
@@ -185,12 +200,15 @@ import Svg from "../components/Svg.svelte";
         </a>
       </div>
       <div
-        class="relative overflow-hidden lg:col-span-2 outline outline-dashed bg-yellow"
+        class="relative overflow-hidden lg:col-span-2 outline outline-dashed bg-yellow hover:bg-black hover:text-yellow"
       >
-        <img
-          class="absolute bottom-0 left-0 right-0 w-full h-1/2 object-cover object-top"
-          src="/dots.png"
-        />
+        <div class="absolute bottom-0 w-full overflow-hidden h-20 lg:h-40">
+          <Svg
+            client:load
+            src="/svg/dots.svg"
+            class="absolute left-0 right-0 top-1/2 -translate-y-1/2 w-full object-cover"
+          />
+        </div>
         <div class="absolute bottom-0 left-1/2 -translate-x-1/2">
           <Svg client:load src="/svg/journey5.svg" />
         </div>
@@ -206,12 +224,15 @@ import Svg from "../components/Svg.svelte";
         </a>
       </div>
       <div
-        class="relative overflow-hidden lg:col-span-2 outline outline-dashed bg-yellow"
+        class="relative overflow-hidden lg:col-span-2 outline outline-dashed bg-yellow hover:bg-black hover:text-yellow"
       >
-        <img
-          class="absolute bottom-0 left-0 right-0 w-full h-1/2 object-cover object-top"
-          src="/dots.png"
-        />
+        <div class="absolute bottom-0 w-full overflow-hidden h-20 lg:h-40">
+          <Svg
+            client:load
+            src="/svg/dots.svg"
+            class="absolute left-0 right-0 top-1/2 -translate-y-1/2 w-full object-cover"
+          />
+        </div>
         <div class="absolute bottom-0 left-1/2 -translate-x-1/2">
           <Svg client:load src="/svg/journey6.svg" />
         </div>
@@ -241,55 +262,5 @@ import Svg from "../components/Svg.svelte";
     </div>
   </section>
 
-  <section class="p-2.5 lg:p-5">
-    <hr class="border-dashed mb-2.5 lg:mb-5" />
-    <div class="grid lg:grid-cols-2 gap-5">
-      <div class="space-y-2.5">
-        <p>2024 Audited Financial Statement</p>
-        <a
-          target="_blank"
-          href=""
-          class="btn invert inline-flex! items-center space-x-1.5 w-full lg:w-2/3"
-        >
-          <svg
-            class="size-3"
-            viewBox="0 0 313 313"
-            fill="currentColor"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M0 196.49V312.86H312.97V196.74H273.64V273.46H37.88V196.49H0Z"
-            ></path>
-            <path
-              d="M156.31 235.02C129.85 195.33 104.77 157.72 77.75 117.22H116.77V0H194.86V116.91H234.95C207.86 157.58 182.97 194.97 156.31 235.02Z"
-            ></path>
-          </svg>
-          <span>Download report</span>
-        </a>
-      </div>
-      <div class="space-y-2.5">
-        <p>2024 Form 990</p>
-        <a
-          target="_blank"
-          href=""
-          class="btn invert inline-flex! items-center space-x-1.5 w-full lg:w-2/3"
-        >
-          <svg
-            class="size-3"
-            viewBox="0 0 313 313"
-            fill="currentColor"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M0 196.49V312.86H312.97V196.74H273.64V273.46H37.88V196.49H0Z"
-            ></path>
-            <path
-              d="M156.31 235.02C129.85 195.33 104.77 157.72 77.75 117.22H116.77V0H194.86V116.91H234.95C207.86 157.58 182.97 194.97 156.31 235.02Z"
-            ></path>
-          </svg>
-          <span>Download report</span>
-        </a>
-      </div>
-    </div>
-  </section>
+  <FinancialDownloads />
 </Layout>

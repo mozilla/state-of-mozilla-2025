@@ -104,8 +104,15 @@ import ProgressCard from "../components/ProgressCard.svelte";
       <div class="space-y-2.5 lg:space-y-5">
         <button
           data-selection="a"
-          class="future-toggle future-toggle-a aspect-square w-full flex justify-center items-center outline outline-dashed cursor-pointer bg-yellow hover:bg-black hover:text-yellow"
+          class="future-toggle future-toggle-a relative aspect-square w-full flex justify-center items-center outline outline-dashed cursor-pointer bg-yellow hover:bg-black hover:text-yellow"
         >
+          <div class="absolute inset-0 w-full h-full overflow-hidden">
+            <Svg
+              client:load
+              src="/svg/dots.svg"
+              class="absolute left-1/2 top-1/2 -translate-1/2 w-[200%] h-[200%] object-cover"
+            />
+          </div>
           <span class="text-9xl">A</span>
         </button>
         <div class="future-a space-y-2.5 lg:space-y-5">
@@ -124,8 +131,15 @@ import ProgressCard from "../components/ProgressCard.svelte";
       <div class="space-y-2.5 lg:space-y-5">
         <button
           data-selection="b"
-          class="future-toggle future-toggle-b aspect-square w-full flex justify-center items-center outline outline-dashed cursor-pointer bg-yellow hover:bg-black hover:text-yellow"
+          class="future-toggle future-toggle-b relative aspect-square w-full flex justify-center items-center outline outline-dashed cursor-pointer bg-yellow hover:bg-black hover:text-yellow"
         >
+          <div class="absolute inset-0 w-full h-full overflow-hidden">
+            <Svg
+              client:load
+              src="/svg/dots.svg"
+              class="absolute left-1/2 top-1/2 -translate-1/2 w-[200%] h-[200%] object-cover"
+            />
+          </div>
           <span class="text-9xl">B</span>
         </button>
         <div class="future-b space-y-2.5 lg:space-y-5">
