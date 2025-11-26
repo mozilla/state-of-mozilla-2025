@@ -6,21 +6,21 @@
   let showContent = $state(false);
 
   const lines = [
-    "INITIALIZING:// MOZFEST_2025",
-    ":: JOIN_THE_RESISTANCE ::",
+    "INITIALIZING:// MOZILLA_2025",
+    ":: JOIN_THE_MOVEMENT ::",
     "{ SIGNAL: OPEN }",
-    "# MOZFEST//AI.REBELLION.ACTIVE",
-    ">>> JOIN_THE_RESISTANCE_2025 >>>",
+    "# MOZILLA//AI.MOVEMENT.ACTIVE",
+    ">>> JOIN_THE_MOVEMENT_2025 >>>",
     "[DATA_STREAM: HUMAN-FIRST]",
-    "// MOZFEST_2025 [AUTH_OK]",
+    "// MOZILLA_2025 [AUTH_OK]",
     "< REBOOT_NETWORK >",
-    ": JOIN_THE_RESISTANCE :",
-    "[ ] TRANSMIT: MOZFEST",
+    ": JOIN_THE_MOVEMENT :",
+    "[ ] TRANSMIT: MOZILLA",
     "> END_OF_LINE // CHOOSE_YOUR_FUTURE",
-    ">>> JOIN_THE_RESISTANCE_2025 >>>",
+    ">>> JOIN_THE_MOVEMENT_2025 >>>",
     "{ SYSTEM: OPEN }",
-    "// MOZFEST::2025::REBELLION",
-    ">_ JOIN_THE_RESISTANCE();",
+    "// MOZILLA::2025::MOVEMENT",
+    ">_ JOIN_THE_MOVEMENT();",
   ];
 
   let displayedLines = $state([]);

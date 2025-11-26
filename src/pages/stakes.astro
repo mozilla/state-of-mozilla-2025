@@ -234,43 +234,17 @@ import ProgressCard from "../components/ProgressCard.svelte";
         </div>
       </div>
     </div>
-
-    <ProgressWatcher client:load current="stakes" />
   </section>
 
-  <section class="m-0">
-    <div class="bg-black text-yellow py-2.5 px-2.5 lg:px-5">
-      <p>END OF:// CHAPTER_ONE</p>
-    </div>
-    <div
-      class="bg-yellow px-2.5 pt-2.5 lg:px-5 lg:pt-5 pb-20 lg:pb-40 space-y-2.5"
-    >
-      <div class="grid lg:grid-cols-2 gap-2.5">
-        <div>
-          <p>:: CONGRATS! :: FIRST #STAMP# REWARD AFFIRMATIVE</p>
-        </div>
-        <div>
-          <a class="flex flex-col gap-px" href="/code">
-            <div
-              class="relative overflow-hidden px-2.5 pt-2.5 pb-20 space-y-2.5 outline outline-dashed outline-black bg-black text-white"
-            >
-              <img
-                class="absolute bottom-0 left-0 right-0 w-full h-1/2 object-cover object-top"
-                src="/dots.png"
-              />
-              <p class="uppercase">Go to next chapter</p>
-              <h3 class="font-workbench text-7xl uppercase">Code</h3>
-            </div>
-            <div
-              class="outline outline-dashed outline-black bg-black text-white p-2.5"
-            >
-              PROCEED →
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
+  <ProgressWatcher
+    client:load
+    current="stakes"
+    number="one"
+    position="first"
+    next="code"
+    font="font-workbench"
+    text="> Make a choice to unlock stamp..."
+  />
 
   <ProgressCard client:load />
 </Layout>

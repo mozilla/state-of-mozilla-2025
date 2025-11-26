@@ -12,7 +12,7 @@
   bind:clientHeight={cardHeight}
   style={full ? "" : `margin-top: -${cardHeight}px`}
   class={full
-    ? "relative"
+    ? "relative lg:pb-5"
     : "pointer-events-none sticky z-30 bottom-0 p-2.5 lg:p-5"}
 >
   <div
@@ -20,6 +20,31 @@
   >
     <div class="pointer-events-auto">
       <div class="bg-white border border-black p-2.5">
+        <div class="grid grid-cols-3 gap-2.5">
+          <div class="aspect-square bg-black flex justify-center items-center">
+            <svg
+              width="45"
+              height="29"
+              viewBox="0 0 45 29"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect width="28.3592" height="28.3592" fill="white" />
+              <path
+                d="M28.3594 14.1796L40.291 1.89975L40.291 26.4595L28.3594 14.1796Z"
+                fill="white"
+              />
+            </svg>
+          </div>
+          <div class="col-span-2 space-y-5">
+            <input
+              type="text"
+              placeholder="Your nickname"
+              class="w-full border-b border-dashed py-2.5 uppercase placeholder:text-black focus:outline-0 focus:border-solid"
+            />
+            <p>MOZILLA REPORT 2025</p>
+          </div>
+        </div>
         <div class="grid grid-cols-6 gap-px">
           <div class="relative aspect-square p-1 outline outline-black">
             <span class="absolute top-0 left-0 bg-black text-white">I</span>
