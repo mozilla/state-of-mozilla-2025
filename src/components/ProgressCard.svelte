@@ -13,6 +13,8 @@
   let loaded = $state(false);
   let webcamButton = $state(null);
   let hasWebcamImage = $state(false);
+  let shareWrapper = $state(null);
+  let isSharing = $state(false);
   const progress = $derived($progressStore);
 
   onMount(() => {
@@ -74,11 +76,44 @@
   }
 
   async function share() {
-    if (!card) return;
+    if (!card || !shareWrapper || isSharing) return;
+
+    isSharing = true;
 
     try {
-      // Generate canvas from the card element
-      const canvas = await html2canvas(card, {
+      // Clone the card and prepend to shareWrapper
+      const clonedCard = card.cloneNode(true);
+
+      // Copy canvas elements (webcam image) manually
+      const originalCanvases = card.querySelectorAll("canvas");
+      const clonedCanvases = clonedCard.querySelectorAll("canvas");
+      originalCanvases.forEach((originalCanvas, index) => {
+        if (clonedCanvases[index]) {
+          const clonedCanvas = clonedCanvases[index];
+          const ctx = clonedCanvas.getContext("2d");
+          clonedCanvas.width = originalCanvas.width;
+          clonedCanvas.height = originalCanvas.height;
+          ctx.drawImage(originalCanvas, 0, 0);
+        }
+      });
+
+      // Remove animate-blink-* classes from cloned card
+      const animatedElements = clonedCard.querySelectorAll(
+        '[class*="animate-blink-"]',
+      );
+      animatedElements.forEach((element) => {
+        element.className = element.className
+          .replace(/animate-blink-\d+/g, "")
+          .trim();
+      });
+
+      shareWrapper.insertBefore(clonedCard, shareWrapper.firstChild);
+
+      // Wait a brief moment for the DOM to settle and SVGs to render
+      await new Promise((resolve) => setTimeout(resolve, 100));
+
+      // Generate canvas from the shareWrapper element
+      const canvas = await html2canvas(shareWrapper, {
         backgroundColor: "#ffffff",
         scale: 2, // Higher quality
         logging: false,
@@ -87,7 +122,17 @@
         foreignObjectRendering: false,
         imageTimeout: 0,
         removeContainer: true,
+        onclone: (clonedDoc) => {
+          // Ensure all SVGs are visible in cloned document
+          const svgs = clonedDoc.querySelectorAll("svg");
+          svgs.forEach((svg) => {
+            svg.style.display = "block";
+          });
+        },
       });
+
+      // Remove cloned card
+      shareWrapper.removeChild(clonedCard);
 
       // Convert canvas to blob
       canvas.toBlob(async (blob) => {
@@ -119,9 +164,22 @@
           // Fallback to download
           downloadImage(canvas);
         }
+
+        isSharing = false;
       }, "image/png");
     } catch (error) {
       console.error("Error generating card image:", error);
+      // Cleanup in case of error
+      if (shareWrapper) {
+        const clonedCard = shareWrapper.firstChild;
+        if (
+          clonedCard &&
+          clonedCard !== shareWrapper.querySelector("div:last-child")
+        ) {
+          shareWrapper.removeChild(clonedCard);
+        }
+      }
+      isSharing = false;
     }
   }
 
@@ -328,7 +386,7 @@
   bind:clientHeight={cardHeight}
   style={full ? "" : `margin-top: -${cardHeight}px`}
   class={full
-    ? "relative lg:pb-5"
+    ? "relative"
     : "pointer-events-none sticky z-30 bottom-0 p-2.5 lg:p-5"}
 >
   <div
@@ -504,12 +562,31 @@
               stroke-width="2"
             />
           </svg>
-          <span>Share your results</span>
+          <span>{isSharing ? "Sharing..." : "Share your results"}</span>
         </button>
         <div class="flex justify-center">
           <Svg src="/svg/join-us.svg" />
         </div>
       </div>
     {/if}
+  </div>
+</div>
+
+<div
+  bind:this={shareWrapper}
+  class="fixed -left-[9999px] top-0 w-[1080px] aspect-[4/5] p-10 bg-white space-y-5"
+>
+  <div>
+    <h1
+      class="font-mozilla-headline relative z-10 text-4xl lg:text-5xl xl:text-5xl 2xl:text-7xl"
+    >
+      Doing for AI<br />what we did<br />for the web
+    </h1>
+    <div class="-mt-5 lg:-mt-10 -mx-5">
+      <Svg src="/svg/intro1.svg" />
+    </div>
+    <div class="-mt-5 lg:-mt-10">
+      <Svg src="/svg/intro2.svg" />
+    </div>
   </div>
 </div>
