@@ -10,6 +10,7 @@
   let name = $state("");
   let loaded = $state(false);
   let webcamButton = $state(null);
+  let hasWebcamImage = $state(false);
   const progress = $derived($progressStore);
 
   onMount(() => {
@@ -17,6 +18,35 @@
     if (savedName) {
       name = savedName;
     }
+
+    // Check if there's a saved webcam image
+    const savedImage = localStorage.getItem("webcamImage");
+    if (savedImage) {
+      hasWebcamImage = true;
+
+      const canvas = document.createElement("canvas");
+      const img = new Image();
+
+      img.onload = () => {
+        canvas.width = img.width;
+        canvas.height = img.height;
+        canvas.style.width = "100%";
+        canvas.style.height = "100%";
+        canvas.style.objectFit = "cover";
+        canvas.style.cursor = "pointer";
+        canvas.onclick = removeWebcamImage;
+
+        const ctx = canvas.getContext("2d");
+        ctx.drawImage(img, 0, 0);
+
+        if (webcamButton) {
+          webcamButton.parentNode.replaceChild(canvas, webcamButton);
+        }
+      };
+
+      img.src = savedImage;
+    }
+
     loaded = true;
   });
 
@@ -26,6 +56,15 @@
       localStorage.setItem("userName", name);
     }
   });
+
+  function removeWebcamImage(event) {
+    localStorage.removeItem("webcamImage");
+    hasWebcamImage = false;
+
+    // Remove the canvas element that was clicked
+    const canvas = event.currentTarget;
+    canvas.remove();
+  }
 
   async function activateWebcam() {
     try {
@@ -67,6 +106,8 @@
       canvas.style.width = "100%";
       canvas.style.height = "100%";
       canvas.style.objectFit = "cover";
+      canvas.style.cursor = "pointer";
+      canvas.onclick = removeWebcamImage;
 
       // Draw full video frame to canvas
       ctx.drawImage(video, 0, 0);
@@ -197,6 +238,11 @@
 
       ctx.putImageData(imageData, 0, 0);
 
+      // Save canvas image to localStorage as base64
+      const imageDataUrl = canvas.toDataURL("image/png");
+      localStorage.setItem("webcamImage", imageDataUrl);
+      hasWebcamImage = true;
+
       // Stop all video tracks to disable camera
       stream.getTracks().forEach((track) => track.stop());
 
@@ -282,26 +328,30 @@
         </div>
         <div class="grid grid-cols-3 gap-2.5">
           <div class="aspect-square w-full border-t border-x flex">
-            <button
-              bind:this={webcamButton}
-              onclick={() => activateWebcam()}
-              aria-label="Activate Webcam"
-              class="flex-1 bg-black flex justify-center items-center cursor-pointer"
-            >
-              <svg
-                width="45"
-                height="29"
-                viewBox="0 0 45 29"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
+            {#if loaded && !hasWebcamImage}
+              <button
+                bind:this={webcamButton}
+                onclick={() => activateWebcam()}
+                aria-label="Activate Webcam"
+                class="flex-1 bg-black flex justify-center items-center cursor-pointer"
               >
-                <rect width="28.3592" height="28.3592" fill="white" />
-                <path
-                  d="M28.3594 14.1796L40.291 1.89975L40.291 26.4595L28.3594 14.1796Z"
-                  fill="white"
-                />
-              </svg>
-            </button>
+                <svg
+                  width="45"
+                  height="29"
+                  viewBox="0 0 45 29"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect width="28.3592" height="28.3592" fill="white" />
+                  <path
+                    d="M28.3594 14.1796L40.291 1.89975L40.291 26.4595L28.3594 14.1796Z"
+                    fill="white"
+                  />
+                </svg>
+              </button>
+            {:else}
+              <div bind:this={webcamButton} class="flex-1"></div>
+            {/if}
           </div>
           <div class="col-span-2 space-y-5">
             <input
