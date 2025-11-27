@@ -5,6 +5,7 @@
 
   const { full } = $props();
 
+  let card = $state(null);
   let cardHeight = $state(0);
   let name = $state("");
   let loaded = $state(false);
@@ -211,6 +212,7 @@
 </script>
 
 <div
+  bind:this={card}
   bind:clientHeight={cardHeight}
   style={full ? "" : `margin-top: -${cardHeight}px`}
   class={full
@@ -221,14 +223,70 @@
     class="grid gap-2.5 lg:gap-5 {full ? 'lg:grid-cols-2' : 'lg:grid-cols-3'}"
   >
     <div class="pointer-events-auto">
-      <div class="bg-white border border-black p-2.5">
+      <div class="relative bg-white border border-black p-2.5">
+        <div
+          class="absolute top-0 left-0 -translate-y-full -translate-x-px flex divide-x border bg-white"
+        >
+          <button
+            onclick={() => {
+              card.classList.remove("sticky");
+            }}
+            class="flex justify-center items-center aspect-square w-5 cursor-pointer"
+            aria-label="Close"
+          >
+            <svg
+              width="20"
+              height="19"
+              viewBox="0 0 20 19"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <line
+                x1="1.0684"
+                y1="0.3536"
+                x2="19.0684"
+                y2="18.3536"
+                stroke="black"
+              />
+              <line
+                x1="0.353478"
+                y1="18.3536"
+                x2="18.3535"
+                y2="0.3536"
+                stroke="black"
+              />
+            </svg>
+          </button>
+          <button
+            class="flex justify-center items-center aspect-square w-5 cursor-pointer"
+            aria-label="Share"
+          >
+            <svg
+              width="12"
+              height="14"
+              viewBox="0 0 12 14"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5.97938 -4.12683e-05C6.98229 1.46358 7.9329 2.8505 8.95703 4.34399L7.47806 4.34399L7.47806 8.66663L4.51822 8.66663L4.51822 4.35542L2.9987 4.35542C4.02549 2.85566 4.96889 1.47685 5.97938 -4.12683e-05Z"
+                fill="black"
+              />
+              <path
+                d="M3 6.99988H1V12.9999H11V6.99988H8.5"
+                stroke="black"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+        </div>
         <div class="grid grid-cols-3 gap-2.5">
           <div class="aspect-square w-full border-t border-x flex">
             <button
               bind:this={webcamButton}
               onclick={() => activateWebcam()}
               aria-label="Activate Webcam"
-              class="flex-1 bg-black flex justify-center items-center"
+              class="flex-1 bg-black flex justify-center items-center cursor-pointer"
             >
               <svg
                 width="45"
