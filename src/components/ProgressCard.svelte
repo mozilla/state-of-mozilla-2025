@@ -2,9 +2,11 @@
   import { onMount } from "svelte";
   import { progressStore } from "../stores/progressStore.js";
   import Svg from "./Svg.svelte";
+  import html2canvas from "html2canvas";
 
   const { full } = $props();
 
+  let cardContainer = $state(null);
   let card = $state(null);
   let cardHeight = $state(0);
   let name = $state("");
@@ -66,10 +68,68 @@
     canvas.remove();
   }
 
+  async function share() {
+    if (!card) return;
+
+    try {
+      // Generate canvas from the card element
+      const canvas = await html2canvas(card, {
+        backgroundColor: "#ffffff",
+        scale: 2, // Higher quality
+        logging: false,
+        useCORS: true, // Handle cross-origin images
+        allowTaint: true,
+        foreignObjectRendering: false,
+        imageTimeout: 0,
+        removeContainer: true,
+      });
+
+      // Convert canvas to blob
+      canvas.toBlob(async (blob) => {
+        const file = new File([blob], "mozilla-report-2025.png", {
+          type: "image/png",
+        });
+
+        // Try to use native Web Share API
+        if (
+          navigator.share &&
+          navigator.canShare &&
+          navigator.canShare({ files: [file] })
+        ) {
+          try {
+            await navigator.share({
+              files: [file],
+              title: "Mozilla Report 2025",
+              text: "Check out my Mozilla Report 2025!",
+            });
+          } catch (err) {
+            // User cancelled share or share failed
+            if (err.name !== "AbortError") {
+              console.error("Share failed:", err);
+              downloadImage(canvas);
+            }
+          }
+        } else {
+          // Fallback to download
+          downloadImage(canvas);
+        }
+      }, "image/png");
+    } catch (error) {
+      console.error("Error generating card image:", error);
+    }
+  }
+
+  function downloadImage(canvas) {
+    const link = document.createElement("a");
+    link.download = "mozilla-report-2025.png";
+    link.href = canvas.toDataURL("image/png");
+    link.click();
+  }
+
   async function activateWebcam() {
     try {
       const stream = await navigator.mediaDevices.getUserMedia({
-        video: true,
+        video: { facingMode: "user" },
       });
 
       // Create temporary video element to capture frame
@@ -258,7 +318,7 @@
 </script>
 
 <div
-  bind:this={card}
+  bind:this={cardContainer}
   bind:clientHeight={cardHeight}
   style={full ? "" : `margin-top: -${cardHeight}px`}
   class={full
@@ -269,13 +329,13 @@
     class="grid gap-2.5 lg:gap-5 {full ? 'lg:grid-cols-2' : 'lg:grid-cols-3'}"
   >
     <div class="pointer-events-auto">
-      <div class="relative bg-white border border-black p-2.5">
+      <div bind:this={card} class="relative bg-white border border-black p-2.5">
         <div
           class="absolute top-0 left-0 -translate-y-full -translate-x-px flex divide-x border bg-white"
         >
           <button
             onclick={() => {
-              card.classList.remove("sticky");
+              cardContainer.classList.remove("sticky");
             }}
             class="flex justify-center items-center aspect-square w-5 cursor-pointer"
             aria-label="Close"
@@ -304,6 +364,7 @@
             </svg>
           </button>
           <button
+            onclick={share}
             class="flex justify-center items-center aspect-square w-5 cursor-pointer"
             aria-label="Share"
           >
@@ -358,13 +419,13 @@
               bind:value={name}
               type="text"
               placeholder={loaded ? "Your nickname" : ""}
-              class="w-full border-b border-dashed py-2.5 uppercase placeholder:text-black focus:outline-0 focus:border-solid"
+              class="w-full border-b border-dashed leading-loose placeholder:text-black focus:outline-0 focus:border-solid"
             />
             <p>MOZILLA REPORT 2025</p>
           </div>
         </div>
-        <div class="grid grid-cols-6 gap-px">
-          <div class="relative aspect-square p-1 outline outline-black">
+        <div class="grid grid-cols-6 gap-px border divide-x">
+          <div class="relative aspect-square p-1">
             <span class="absolute top-0 left-0 bg-black text-white">I</span>
             {#if progress.stakes}
               <div class="animate-blink-1 w-full h-full">
@@ -372,7 +433,7 @@
               </div>
             {/if}
           </div>
-          <div class="relative aspect-square p-1 outline outline-black">
+          <div class="relative aspect-square p-1">
             <span class="absolute top-0 left-0 bg-black text-white">II</span>
             {#if progress.code}
               <div class="animate-blink-2 w-full h-full">
@@ -380,7 +441,7 @@
               </div>
             {/if}
           </div>
-          <div class="relative aspect-square p-1 outline outline-black">
+          <div class="relative aspect-square p-1">
             <span class="absolute top-0 left-0 bg-black text-white">III</span>
             {#if progress.ledger}
               <div class="animate-blink-3 w-full h-full">
@@ -388,7 +449,7 @@
               </div>
             {/if}
           </div>
-          <div class="relative aspect-square p-1 outline outline-black">
+          <div class="relative aspect-square p-1">
             <span class="absolute top-0 left-0 bg-black text-white">IV</span>
             {#if progress.tools}
               <div class="animate-blink-4 w-full h-full">
@@ -396,7 +457,7 @@
               </div>
             {/if}
           </div>
-          <div class="relative aspect-square p-1 outline outline-black">
+          <div class="relative aspect-square p-1">
             <span class="absolute top-0 left-0 bg-black text-white">V</span>
             {#if progress.rebels}
               <div class="animate-blink-5 w-full h-full">
@@ -404,7 +465,7 @@
               </div>
             {/if}
           </div>
-          <div class="relative aspect-square p-1 outline outline-black">
+          <div class="relative aspect-square p-1">
             <span class="absolute top-0 left-0 bg-black text-white">F</span>
             {#if progress.joinus}
               <div class="animate-blink-6 w-full h-full">
