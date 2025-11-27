@@ -100,7 +100,8 @@
             await navigator.share({
               files: [file],
               title: "Mozilla Report 2025",
-              text: "Check out my Mozilla Report 2025!",
+              text: "Check out my progress on Mozilla Report 2025",
+              url: "https://stateof.mozilla.org/",
             });
           } catch (err) {
             // User cancelled share or share failed
