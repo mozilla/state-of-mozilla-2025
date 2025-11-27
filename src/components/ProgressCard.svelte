@@ -109,15 +109,18 @@
 
       shareWrapper.insertBefore(clonedCard, shareWrapper.firstChild);
 
+      // Ensure fonts are loaded before capturing
+      await document.fonts.ready;
+
       // Wait a brief moment for the DOM to settle and SVGs to render
       await new Promise((resolve) => setTimeout(resolve, 100));
 
       // Generate canvas from the shareWrapper element
       const canvas = await html2canvas(shareWrapper, {
         backgroundColor: "#ffffff",
-        scale: 2, // Higher quality
+        scale: window.devicePixelRatio || 2,
         logging: false,
-        useCORS: true, // Handle cross-origin images
+        useCORS: true,
         allowTaint: true,
         foreignObjectRendering: false,
         imageTimeout: 0,
@@ -127,6 +130,15 @@
           const svgs = clonedDoc.querySelectorAll("svg");
           svgs.forEach((svg) => {
             svg.style.display = "block";
+          });
+
+          // Fix text vertical shift by adjusting position
+          const textElements = clonedDoc.querySelectorAll("span");
+          textElements.forEach((el) => {
+            // Force specific properties to fix baseline
+            el.style.position = "relative";
+            el.style.top = "-0.45em"; // Shift text up slightly
+            el.style.display = "block";
           });
         },
       });
@@ -392,15 +404,31 @@
   <div
     class="grid gap-2.5 lg:gap-5 {full ? 'lg:grid-cols-2' : 'lg:grid-cols-3'}"
   >
-    <div class="pointer-events-auto">
-      <div bind:this={card} class="relative bg-white border border-black p-2.5">
+    <div class="pointer-events-auto {full ? 'lg:pb-5' : ''}">
+      <div
+        bind:this={card}
+        class="relative bg-white border border-black p-2.5"
+        style="clip-path: polygon(calc(100% - 1.25rem) 0%, 100% 1.25rem, 100% calc(100% - 1.25rem), calc(100% - 1.25rem) 100%, 1.25rem 100%, 0% calc(100% - 1.25rem), 0 0);"
+      >
+        <div
+          class="absolute top-0 right-0"
+          style="border-top: calc(1.25rem - 1px) solid black; border-left: calc(1.25rem - 1px) solid transparent;"
+        ></div>
+        <div
+          class="absolute bottom-0 right-0"
+          style="border-bottom: calc(1.25rem - 1px) solid black; border-left: calc(1.25rem - 1px) solid transparent;"
+        ></div>
+        <div
+          class="absolute bottom-0 left-0"
+          style="border-bottom: calc(1.25rem - 1px) solid black; border-right: calc(1.25rem - 1px) solid transparent;"
+        ></div>
         {#if !full}
           <button
             onclick={(e) => {
               cardContainer.classList.remove("sticky");
               e.target.remove();
             }}
-            class="absolute top-2.5 right-2.5 flex justify-center items-center aspect-square w-5 cursor-pointer"
+            class="absolute top-4 right-4 flex justify-center items-center aspect-square w-5 cursor-pointer"
             aria-label="Close"
           >
             <svg
@@ -460,14 +488,18 @@
               type="text"
               maxlength="24"
               placeholder={loaded ? "Your nickname" : ""}
-              class="w-3/4 border-b border-dashed leading-loose placeholder:text-black focus:outline-0 focus:border-solid"
+              class="w-3/4 border-b border-dashed leading-loose placeholder:text-black focus:outline-0 focus:border-solid {full
+                ? 'lg:text-2xl lg:leading-none'
+                : ''}"
             />
-            <p>MOZILLA REPORT 2025</p>
+            <p class={full ? "lg:text-2xl" : ""}>MOZILLA REPORT 2025</p>
           </div>
         </div>
         <div class="grid grid-cols-6 gap-px border divide-x">
           <div class="relative aspect-square p-1">
-            <span class="absolute top-0 left-0 bg-black text-white">I</span>
+            <div class="absolute top-0 left-0 bg-black text-white">
+              <span>I</span>
+            </div>
             {#if progress.stakes}
               <div class="animate-blink-1 w-full h-full">
                 <Svg src="/svg/journey1.svg" class="max-w-full max-h-full" />
@@ -475,7 +507,9 @@
             {/if}
           </div>
           <div class="relative aspect-square p-1">
-            <span class="absolute top-0 left-0 bg-black text-white">II</span>
+            <div class="absolute top-0 left-0 bg-black text-white">
+              <span>II</span>
+            </div>
             {#if progress.code}
               <div class="animate-blink-2 w-full h-full">
                 <Svg src="/svg/journey2.svg" class="max-w-full max-h-full" />
@@ -483,7 +517,9 @@
             {/if}
           </div>
           <div class="relative aspect-square p-1">
-            <span class="absolute top-0 left-0 bg-black text-white">III</span>
+            <div class="absolute top-0 left-0 bg-black text-white">
+              <span>III</span>
+            </div>
             {#if progress.ledger}
               <div class="animate-blink-3 w-full h-full">
                 <Svg src="/svg/journey3.svg" class="max-w-full max-h-full" />
@@ -491,7 +527,9 @@
             {/if}
           </div>
           <div class="relative aspect-square p-1">
-            <span class="absolute top-0 left-0 bg-black text-white">IV</span>
+            <div class="absolute top-0 left-0 bg-black text-white">
+              <span>IV</span>
+            </div>
             {#if progress.tools}
               <div class="animate-blink-4 w-full h-full">
                 <Svg src="/svg/journey4.svg" class="max-w-full max-h-full" />
@@ -499,7 +537,9 @@
             {/if}
           </div>
           <div class="relative aspect-square p-1">
-            <span class="absolute top-0 left-0 bg-black text-white">V</span>
+            <div class="absolute top-0 left-0 bg-black text-white">
+              <span>V</span>
+            </div>
             {#if progress.rebels}
               <div class="animate-blink-5 w-full h-full">
                 <Svg src="/svg/journey5.svg" class="max-w-full max-h-full" />
@@ -507,7 +547,9 @@
             {/if}
           </div>
           <div class="relative aspect-square p-1">
-            <span class="absolute top-0 left-0 bg-black text-white">F</span>
+            <div class="absolute top-0 left-0 bg-black text-white">
+              <span>F</span>
+            </div>
             {#if progress.joinus}
               <div class="animate-blink-6 w-full h-full">
                 <Svg src="/svg/journey6.svg" class="max-w-full max-h-full" />
@@ -515,10 +557,18 @@
             {/if}
           </div>
         </div>
+        <div class="flex justify-between mt-2.5">
+          <p class={full ? "text-2xl lg:text-4xl" : "text-lg lg:text-2xl"}>
+            MZLFEST-REBEL
+          </p>
+          <p class={full ? "text-2xl lg:text-4xl" : "text-lg lg:text-2xl"}>
+            LOREM IPSUM
+          </p>
+        </div>
       </div>
     </div>
     {#if full}
-      <div class="pointer-events-auto space-y-2.5 lg:space-y-5">
+      <div class="pointer-events-auto flex flex-col space-y-2.5 lg:space-y-5">
         <button
           onclick={() => progressStore.reset()}
           class="btn inline-flex! px-2.5! items-center space-x-2.5 w-full invert"
@@ -564,7 +614,7 @@
           </svg>
           <span>{isSharing ? "Sharing..." : "Share your results"}</span>
         </button>
-        <div class="flex justify-center">
+        <div class="mt-auto flex justify-center">
           <Svg src="/svg/join-us.svg" />
         </div>
       </div>
