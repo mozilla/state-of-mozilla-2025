@@ -574,7 +574,7 @@
 
 <div
   bind:this={shareWrapper}
-  class="fixed -left-[9999px] top-0 w-[1080px] aspect-[4/5] p-10 bg-white space-y-5"
+  class="fixed -left-[9999px] top-0 w-[600px] aspect-[4/5] p-5 bg-white space-y-5"
 >
   <div>
     <h1
