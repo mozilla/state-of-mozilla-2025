@@ -64,7 +64,7 @@
           </div>
           <div class="relative aspect-square p-1 outline outline-black">
             <span class="absolute top-0 left-0 bg-black text-white">III</span>
-            {#if progress.tools}
+            {#if progress.ledger}
               <div class="animate-blink-3 w-full h-full">
                 <Svg src="/svg/journey3.svg" class="max-w-full max-h-full" />
               </div>
@@ -72,7 +72,7 @@
           </div>
           <div class="relative aspect-square p-1 outline outline-black">
             <span class="absolute top-0 left-0 bg-black text-white">IV</span>
-            {#if progress.rebels}
+            {#if progress.tools}
               <div class="animate-blink-4 w-full h-full">
                 <Svg src="/svg/journey4.svg" class="max-w-full max-h-full" />
               </div>
@@ -80,7 +80,7 @@
           </div>
           <div class="relative aspect-square p-1 outline outline-black">
             <span class="absolute top-0 left-0 bg-black text-white">V</span>
-            {#if progress.ledger}
+            {#if progress.rebels}
               <div class="animate-blink-5 w-full h-full">
                 <Svg src="/svg/journey5.svg" class="max-w-full max-h-full" />
               </div>
