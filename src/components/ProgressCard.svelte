@@ -55,7 +55,12 @@
   // Save name to localStorage whenever it changes (only after loaded)
   $effect(() => {
     if (loaded && name !== null) {
-      localStorage.setItem("userName", name);
+      const trimmedName = name.slice(0, 24);
+      localStorage.setItem("userName", trimmedName);
+      // Update name if it was trimmed
+      if (name !== trimmedName) {
+        name = trimmedName;
+      }
     }
   });
 
@@ -331,14 +336,13 @@
   >
     <div class="pointer-events-auto">
       <div bind:this={card} class="relative bg-white border border-black p-2.5">
-        <div
-          class="absolute top-0 left-0 -translate-y-full -translate-x-px flex divide-x border bg-white"
-        >
+        {#if !full}
           <button
-            onclick={() => {
+            onclick={(e) => {
               cardContainer.classList.remove("sticky");
+              e.target.remove();
             }}
-            class="flex justify-center items-center aspect-square w-5 cursor-pointer"
+            class="absolute top-2.5 right-2.5 flex justify-center items-center aspect-square w-5 cursor-pointer"
             aria-label="Close"
           >
             <svg
@@ -364,30 +368,7 @@
               />
             </svg>
           </button>
-          <button
-            onclick={share}
-            class="flex justify-center items-center aspect-square w-5 cursor-pointer"
-            aria-label="Share"
-          >
-            <svg
-              width="12"
-              height="14"
-              viewBox="0 0 12 14"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M5.97938 -4.12683e-05C6.98229 1.46358 7.9329 2.8505 8.95703 4.34399L7.47806 4.34399L7.47806 8.66663L4.51822 8.66663L4.51822 4.35542L2.9987 4.35542C4.02549 2.85566 4.96889 1.47685 5.97938 -4.12683e-05Z"
-                fill="black"
-              />
-              <path
-                d="M3 6.99988H1V12.9999H11V6.99988H8.5"
-                stroke="black"
-                stroke-width="2"
-              />
-            </svg>
-          </button>
-        </div>
+        {/if}
         <div class="grid grid-cols-3 gap-2.5">
           <div class="aspect-square w-full border-t border-x flex">
             {#if loaded && !hasWebcamImage}
@@ -419,8 +400,9 @@
             <input
               bind:value={name}
               type="text"
+              maxlength="24"
               placeholder={loaded ? "Your nickname" : ""}
-              class="w-full border-b border-dashed leading-loose placeholder:text-black focus:outline-0 focus:border-solid"
+              class="w-3/4 border-b border-dashed leading-loose placeholder:text-black focus:outline-0 focus:border-solid"
             />
             <p>MOZILLA REPORT 2025</p>
           </div>
@@ -500,6 +482,29 @@
             />
           </svg>
           <span>Restart</span>
+        </button>
+        <button
+          onclick={share}
+          class="btn inline-flex! px-2.5! items-center space-x-2.5 w-full invert"
+        >
+          <svg
+            width="12"
+            height="14"
+            viewBox="0 0 12 14"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M5.98133 -4.12683e-05C6.98424 1.46358 7.93485 2.8505 8.95898 4.34399L7.48001 4.34399L7.48001 8.66663L4.52018 8.66663L4.52018 4.35542L3.00065 4.35542C4.02744 2.85566 4.97084 1.47685 5.98133 -4.12683e-05Z"
+              fill="white"
+            />
+            <path
+              d="M3 6.99988H1V12.9999H11V6.99988H8.5"
+              stroke="white"
+              stroke-width="2"
+            />
+          </svg>
+          <span>Share your results</span>
         </button>
         <div class="flex justify-center">
           <Svg src="/svg/join-us.svg" />

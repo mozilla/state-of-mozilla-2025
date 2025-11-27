@@ -201,7 +201,7 @@
           <a
             class="flex-1 p-2.5 flex flex-col justify-center items-center text-center space-y-2.5 {getLinkClasses(
               '/join-us',
-              'join-us',
+              'joinus',
             )}"
             href="/join-us"
           >
