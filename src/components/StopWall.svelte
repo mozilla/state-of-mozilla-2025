@@ -21,7 +21,7 @@
       progress = value;
     });
 
-    // Check if all chapters except pledge are complete
+    // Check if all chapters except Join Us are complete
     const isProgressComplete =
       progress.stakes === true &&
       progress.code === true &&
@@ -32,8 +32,8 @@
     // Hide stopwall if progress is complete OR sessionStorage bypass is set
     if (isProgressComplete || sessionStorage.getItem("stopwallVerified")) {
       showStopWall = false;
-      // Mark pledge as viewed when accessing this page with complete progress
-      progressStore.markAsViewed("pledge");
+      // Mark Join Us as viewed when accessing this page with complete progress
+      progressStore.markAsViewed("joinus");
     }
 
     return () => {
@@ -56,8 +56,8 @@
         setTimeout(() => {
           showStopWall = false;
           sessionStorage.setItem("stopwallVerified", "true");
-          // Mark pledge as viewed when bypass is executed
-          progressStore.markAsViewed("pledge");
+          // Mark Join Us as viewed when bypass is executed
+          progressStore.markAsViewed("joinus");
         }, 1000);
       }
     }

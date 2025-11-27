@@ -88,7 +88,7 @@
           </div>
           <div class="relative aspect-square p-1 outline outline-black">
             <span class="absolute top-0 left-0 bg-black text-white">F</span>
-            {#if progress.pledge}
+            {#if progress.joinus}
               <div class="animate-blink-6 w-full h-full">
                 <Svg src="/svg/journey6.svg" class="max-w-full max-h-full" />
               </div>
@@ -122,7 +122,7 @@
           <span>Restart</span>
         </button>
         <div class="flex justify-center">
-          <Svg src="/svg/pledge.svg" />
+          <Svg src="/svg/join-us.svg" />
         </div>
       </div>
     {/if}

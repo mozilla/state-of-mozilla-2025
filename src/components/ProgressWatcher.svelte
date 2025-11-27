@@ -111,14 +111,14 @@
           <div class="">
             <div class="p-2.5 p-5 space-y-2.5">
               <p class="uppercase">
-                Go to {next == "pledge" ? "last" : "next"} chapter
+                Go to {next == "join-us" ? "last" : "next"} chapter
               </p>
               <h3
                 class="{font} text-7xl {font != 'font-mozilla-headline'
                   ? 'uppercase'
                   : 'capitalize'}"
               >
-                {next}
+                {next.replace(/-/g, " ")}
               </h3>
             </div>
             <div class="relative overflow-hidden h-20 lg:h-40 -mt-5 lg:-mt-10">

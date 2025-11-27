@@ -160,6 +160,18 @@
         <li class="flex">
           <a
             class="flex-1 p-2.5 flex flex-col justify-center items-center text-center space-y-2.5 {getLinkClasses(
+              '/ledger',
+              'ledger',
+            )}"
+            href="/ledger"
+          >
+            <span class="lg:hidden">V</span>
+            <span class="font-star text-7xl lg:text-4xl uppercase">Ledger</span>
+          </a>
+        </li>
+        <li class="flex">
+          <a
+            class="flex-1 p-2.5 flex flex-col justify-center items-center text-center space-y-2.5 {getLinkClasses(
               '/tools',
               'tools',
             )}"
@@ -188,25 +200,13 @@
         <li class="flex">
           <a
             class="flex-1 p-2.5 flex flex-col justify-center items-center text-center space-y-2.5 {getLinkClasses(
-              '/ledger',
-              'ledger',
+              '/join-us',
+              'join-us',
             )}"
-            href="/ledger"
-          >
-            <span class="lg:hidden">V</span>
-            <span class="font-star text-7xl lg:text-4xl uppercase">Ledger</span>
-          </a>
-        </li>
-        <li class="flex">
-          <a
-            class="flex-1 p-2.5 flex flex-col justify-center items-center text-center space-y-2.5 {getLinkClasses(
-              '/pledge',
-              'pledge',
-            )}"
-            href="/pledge"
+            href="/join-us"
           >
             <span class="font-mozilla-headline text-6xl lg:text-3xl">
-              Pledge
+              Join Us
             </span>
           </a>
         </li>
