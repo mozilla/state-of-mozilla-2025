@@ -248,126 +248,88 @@
       // Draw full video frame to canvas
       ctx.drawImage(video, 0, 0);
 
-      // Apply cyberpunk glitch effect
+      // Apply effects: dithering + pixelation
       var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
       var data = imageData.data;
       var width = canvas.width;
       var height = canvas.height;
 
-      // Step 1: Pixelate the image
-      var pixelSize = 8; // Size of each "pixel" block
-      for (var y = 0; y < height; y += pixelSize) {
-        for (var x = 0; x < width; x += pixelSize) {
-          // Sample center pixel of block
-          var centerX = Math.min(x + Math.floor(pixelSize / 2), width - 1);
-          var centerY = Math.min(y + Math.floor(pixelSize / 2), height - 1);
-          var centerIdx = (centerY * width + centerX) * 4;
-
-          var r = data[centerIdx];
-          var g = data[centerIdx + 1];
-          var b = data[centerIdx + 2];
-
-          // Fill entire block with sampled color
-          for (var dy = 0; dy < pixelSize && y + dy < height; dy++) {
-            for (var dx = 0; dx < pixelSize && x + dx < width; dx++) {
-              var idx = ((y + dy) * width + (x + dx)) * 4;
-              data[idx] = r;
-              data[idx + 1] = g;
-              data[idx + 2] = b;
-            }
-          }
-        }
-      }
-
-      // Step 2: Convert to black and white with contrast boost and dithering
-      // First pass: convert to grayscale
-      for (var i = 0; i < data.length; i += 4) {
-        var gray = data[i] * 0.299 + data[i + 1] * 0.587 + data[i + 2] * 0.114;
-
-        // Boost contrast
-        gray = (gray - 128) * 1.5 + 128;
-        gray = Math.max(0, Math.min(255, gray));
-
-        data[i] = gray;
-        data[i + 1] = gray;
-        data[i + 2] = gray;
-      }
-
-      // Second pass: Floyd-Steinberg dithering
+      // Step 1: Floyd-Steinberg dithering to convert to pure black and white
       for (var y = 0; y < height - 1; y++) {
         for (var x = 1; x < width - 1; x++) {
           var idx = (y * width + x) * 4;
-          var oldPixel = data[idx];
+
+          // Convert to grayscale
+          var gray =
+            data[idx] * 0.299 + data[idx + 1] * 0.587 + data[idx + 2] * 0.114;
 
           // Quantize to pure black or white
-          var newPixel = oldPixel < 128 ? 0 : 255;
+          var newPixel = gray < 128 ? 0 : 255;
           data[idx] = newPixel;
           data[idx + 1] = newPixel;
           data[idx + 2] = newPixel;
 
           // Calculate error
-          var error = oldPixel - newPixel;
+          var error = gray - newPixel;
 
-          // Distribute error to neighboring pixels
+          // Distribute error to neighboring pixels (all 3 color channels)
           // Right pixel (x+1, y)
           var rightIdx = (y * width + (x + 1)) * 4;
           data[rightIdx] += (error * 7) / 16;
+          data[rightIdx + 1] += (error * 7) / 16;
+          data[rightIdx + 2] += (error * 7) / 16;
 
           // Bottom-left pixel (x-1, y+1)
           var bottomLeftIdx = ((y + 1) * width + (x - 1)) * 4;
           data[bottomLeftIdx] += (error * 3) / 16;
+          data[bottomLeftIdx + 1] += (error * 3) / 16;
+          data[bottomLeftIdx + 2] += (error * 3) / 16;
 
           // Bottom pixel (x, y+1)
           var bottomIdx = ((y + 1) * width + x) * 4;
           data[bottomIdx] += (error * 5) / 16;
+          data[bottomIdx + 1] += (error * 5) / 16;
+          data[bottomIdx + 2] += (error * 5) / 16;
 
           // Bottom-right pixel (x+1, y+1)
           var bottomRightIdx = ((y + 1) * width + (x + 1)) * 4;
           data[bottomRightIdx] += (error * 1) / 16;
+          data[bottomRightIdx + 1] += (error * 1) / 16;
+          data[bottomRightIdx + 2] += (error * 1) / 16;
         }
       }
 
-      // Step 3: Add random glitch lines
-      var glitchLines = 5 + Math.floor(Math.random() * 10);
-      for (var i = 0; i < glitchLines; i++) {
-        var glitchY = Math.floor(Math.random() * height);
-        var glitchHeight = 2 + Math.floor(Math.random() * 8);
-        var offset = Math.floor(Math.random() * 30) - 15; // Random horizontal shift
+      // Step 2: Pixelation with threshold logic
+      var pixelSize = 14;
+      var threshold = 0.7; // 50% threshold - adjust between 0 and 1
 
-        for (
-          var y = glitchY;
-          y < Math.min(glitchY + glitchHeight, height);
-          y++
-        ) {
-          for (var x = 0; x < width; x++) {
-            var sourceX = Math.max(0, Math.min(width - 1, x - offset));
-            var sourceIdx = (y * width + sourceX) * 4;
-            var targetIdx = (y * width + x) * 4;
+      for (var y = 0; y < height; y += pixelSize) {
+        for (var x = 0; x < width; x += pixelSize) {
+          // Count black and white pixels in this block
+          var blackCount = 0;
+          var totalCount = 0;
 
-            // Shift with color channel separation
-            data[targetIdx] = data[sourceIdx]; // R channel normal
-            data[targetIdx + 1] = data[sourceIdx + 1]; // G channel normal
-            data[targetIdx + 2] =
-              data[Math.min(sourceIdx + 8, data.length - 2)]; // B channel shifted
+          for (var dy = 0; dy < pixelSize && y + dy < height; dy++) {
+            for (var dx = 0; dx < pixelSize && x + dx < width; dx++) {
+              var idx = ((y + dy) * width + (x + dx)) * 4;
+              if (data[idx] === 0) {
+                blackCount++;
+              }
+              totalCount++;
+            }
           }
-        }
-      }
 
-      // Step 4: Add random RGB channel separation in some blocks
-      var glitchBlocks = 3;
-      for (var i = 0; i < glitchBlocks; i++) {
-        var blockX = Math.floor(Math.random() * (width - 50));
-        var blockY = Math.floor(Math.random() * (height - 50));
-        var blockW = 30 + Math.floor(Math.random() * 50);
-        var blockH = 20 + Math.floor(Math.random() * 40);
+          // Decide block color based on threshold
+          var blockColor = blackCount / totalCount > threshold ? 0 : 255;
 
-        for (var y = blockY; y < Math.min(blockY + blockH, height); y++) {
-          for (var x = blockX; x < Math.min(blockX + blockW, width); x++) {
-            var idx = (y * width + x) * 4;
-            // Swap or shift color channels randomly
-            var temp = data[idx];
-            data[idx] = data[idx + 2]; // Swap R and B
-            data[idx + 2] = temp;
+          // Fill entire block with decided color
+          for (var dy = 0; dy < pixelSize && y + dy < height; dy++) {
+            for (var dx = 0; dx < pixelSize && x + dx < width; dx++) {
+              var idx = ((y + dy) * width + (x + dx)) * 4;
+              data[idx] = blockColor;
+              data[idx + 1] = blockColor;
+              data[idx + 2] = blockColor;
+            }
           }
         }
       }
