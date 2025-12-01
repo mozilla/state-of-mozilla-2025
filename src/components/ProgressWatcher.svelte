@@ -89,10 +89,10 @@
     <p>END OF:// CHAPTER_{number}</p>
   </div>
   <div
-    class="bg-yellow px-2.5 pt-2.5 lg:px-5 lg:pt-5 pb-20 lg:pb-40 space-y-2.5"
+    class="bg-yellow px-2.5 pt-2.5 lg:px-5 lg:pt-5 max-lg:pb-[var(--card-height)] space-y-2.5"
   >
     <div class="grid lg:grid-cols-2 gap-2.5">
-      <div>
+      <div class="lg:pb-[var(--card-height)]">
         <p>
           {@html text}
           {@html text ? "<br />" : ""}

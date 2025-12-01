@@ -10,13 +10,13 @@ import ProgressCard from "../components/ProgressCard.svelte";
   <Captcha client:load />
 
   <section
-    class="relative p-2.5 lg:p-5 min-h-[calc(100svh-var(--header-height)-20px)] bg-yellow"
+    class="relative p-2.5 lg:p-5 min-h-[calc(50svh-var(--header-height)-20px)] lg:min-h-[calc(100svh-var(--header-height)-20px)] bg-yellow"
   >
     <img class="absolute bottom-0 left-0 right-0" src="/dots-big.png" />
     <div
       class="absolute max-lg:w-1/2 right-2.5 lg:right-5 bottom-2.5 lg:bottom-5"
     >
-      <Svg client:load src="/svg/tools.svg" />
+      <Svg client:load src="/svg/tools.svg" class="w-full h-full" />
     </div>
     <div class="relative">
       <p class="mb-2.5 lg:mb-5">IV - The Tools</p>

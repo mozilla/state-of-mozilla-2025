@@ -92,7 +92,7 @@
     </p>
     {#if showButton}
       <button
-        class="btn inline-flex! items-center space-x-5 lg:w-1/2"
+        class="btn inline-flex! items-center space-x-5 w-full lg:w-1/2"
         bind:this={buttonRef}
         onclick={closeIntro}
         onmouseenter={handleMouseEnter}

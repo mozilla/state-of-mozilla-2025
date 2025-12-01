@@ -7,21 +7,19 @@ import FinancialDownloads from "../components/FinancialDownloads.astro";
 <Layout>
   <section class="p-2.5 lg:p-5 space-y-2.5 lg:space-y-5">
     <div class="grid lg:grid-cols-2 gap-2.5 lg:gap-5">
+      <div class="lg:order-last">
+        <div class="aspect-square w-full bg-gray-500"></div>
+      </div>
       <div>
-        <h1
-          class="font-mozilla-headline relative z-10 text-4xl lg:text-5xl xl:text-5xl 2xl:text-7xl"
-        >
+        <h1 class="font-mozilla-headline relative z-10 text-5xl lg:text-7xl">
           Doing for AI<br />what we did<br />for the web
         </h1>
-        <div class="-mt-5 lg:-mt-10 -mx-5">
+        <div class="-mt-5 lg:-mt-10 -ml-5">
           <Svg client:load src="/svg/intro1.svg" />
         </div>
         <div class="-mt-5 lg:-mt-10">
           <Svg client:load src="/svg/intro2.svg" />
         </div>
-      </div>
-      <div>
-        <div class="aspect-square w-full bg-gray-500"></div>
       </div>
     </div>
   </section>

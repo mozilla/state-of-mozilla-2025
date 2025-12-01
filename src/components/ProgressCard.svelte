@@ -15,7 +15,15 @@
   let hasWebcamImage = $state(false);
   let shareWrapper = $state(null);
   let isSharing = $state(false);
+  let isStickyDismissed = $state(false);
   const progress = $derived($progressStore);
+
+  $effect(() => {
+    document.documentElement.style.setProperty(
+      "--card-height",
+      `${cardHeight}px`,
+    );
+  });
 
   onMount(() => {
     const savedName = localStorage.getItem("userName");
@@ -49,6 +57,12 @@
       };
 
       img.src = savedImage;
+    }
+
+    // Check if sticky was dismissed
+    const stickyDismissed = sessionStorage.getItem("stickyDismissed");
+    if (stickyDismissed === "true") {
+      isStickyDismissed = true;
     }
 
     loaded = true;
@@ -361,7 +375,7 @@
   style={full ? "" : `margin-top: -${cardHeight}px`}
   class={full
     ? "relative"
-    : "pointer-events-none sticky z-30 bottom-0 p-2.5 lg:p-5"}
+    : `pointer-events-none ${!isStickyDismissed ? "sticky" : ""} z-30 bottom-0 p-2.5 lg:p-5`}
 >
   <div
     class="grid gap-2.5 lg:gap-5 {full ? 'lg:grid-cols-2' : 'lg:grid-cols-3'}"
@@ -384,10 +398,11 @@
           class="absolute bottom-0 left-0"
           style="border-bottom: calc(1.25rem - 1px) solid black; border-right: calc(1.25rem - 1px) solid transparent;"
         ></div>
-        {#if !full}
+        {#if !full && !isStickyDismissed}
           <button
             onclick={(e) => {
-              cardContainer.classList.remove("sticky");
+              isStickyDismissed = true;
+              sessionStorage.setItem("stickyDismissed", "true");
               e.target.remove();
             }}
             class="absolute top-4 right-4 flex justify-center items-center aspect-square w-5 cursor-pointer"
