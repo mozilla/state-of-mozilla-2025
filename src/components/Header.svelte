@@ -165,7 +165,7 @@
             )}"
             href="/ledger"
           >
-            <span class="lg:hidden">V</span>
+            <span class="lg:hidden">III</span>
             <span class="font-star text-7xl lg:text-4xl uppercase">Ledger</span>
           </a>
         </li>
@@ -177,7 +177,7 @@
             )}"
             href="/tools"
           >
-            <span class="lg:hidden">III</span>
+            <span class="lg:hidden">IV</span>
             <span class="font-mainframe text-6xl lg:text-3xl uppercase"
               >Tools</span
             >
@@ -191,7 +191,7 @@
             )}"
             href="/rebels"
           >
-            <span class="lg:hidden">IV</span>
+            <span class="lg:hidden">V</span>
             <span class="font-computer text-7xl lg:text-4xl uppercase"
               >Rebels</span
             >
@@ -205,6 +205,7 @@
             )}"
             href="/join-us"
           >
+            <span class="lg:hidden">FINAL</span>
             <span class="font-mozilla-headline text-6xl lg:text-3xl">
               Join Us
             </span>

@@ -624,19 +624,13 @@
 
 <div
   bind:this={shareWrapper}
-  class="fixed -left-[9999px] top-0 w-[600px] aspect-[4/5] p-5 bg-white space-y-5"
+  class="fixed -left-[9999px] top-0 w-[600px] aspect-[4/5] flex flex-col p-5 bg-black"
 >
-  <div>
-    <h1
-      class="font-mozilla-headline relative z-10 text-4xl lg:text-5xl xl:text-5xl 2xl:text-7xl"
-    >
-      Doing for AI<br />what we did<br />for the web
-    </h1>
-    <div class="-mt-5 lg:-mt-10 -mx-5">
-      <Svg src="/svg/intro1.svg" />
-    </div>
-    <div class="-mt-5 lg:-mt-10">
-      <Svg src="/svg/intro2.svg" />
-    </div>
+  <div class="mt-auto">
+    <Svg src="/svg/footer2.svg" class="w-full" />
+    <p class="text-white">
+      CHECK OUT THE 2025 REPORT AND BECOME AN INTERNET REBEL
+    </p>
+    <p class="text-white">Find the report at stateof.mozilla.org</p>
   </div>
 </div>
