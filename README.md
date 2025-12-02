@@ -1,46 +1,72 @@
-# Astro Starter Kit: Basics
+# State of Mozilla 2025
 
-```sh
-pnpm create astro@latest -- --template basics
-```
+A web application built with Astro, Svelte, and Tailwind CSS for Mozilla's 2025 state presentation.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Tech Stack
 
-## 🚀 Project Structure
+- **Framework**: [Astro](https://astro.build) - Static site generator with component islands
+- **UI Components**: [Svelte](https://svelte.dev) - Reactive UI framework
+- **Styling**: [Tailwind CSS](https://tailwindcss.com) - Utility-first CSS framework
+- **Package Manager**: pnpm
+- **Additional Libraries**: html2canvas for image capture functionality
 
-Inside of your Astro project, you'll see the following folders and files:
+## Project Structure
 
 ```text
 /
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
+├── public/              # Static assets
+│   ├── fonts/          # Font files
+│   ├── svg/            # SVG images
+│   └── pdf/            # PDF documents
+├── src/
+│   ├── assets/         # Project assets
+│   ├── components/     # Svelte and Astro components
+│   │   ├── Header.svelte
+│   │   ├── Footer.svelte
+│   │   ├── ProgressCard.svelte
+│   │   ├── ProgressWatcher.svelte
+│   │   └── ...
+│   ├── layouts/        # Page layouts
+│   │   └── Layout.astro
+│   ├── pages/          # Route pages
+│   │   ├── index.astro
+│   │   ├── rebels.astro
+│   │   ├── stakes.astro
+│   │   ├── tools.astro
+│   │   ├── ledger.astro
+│   │   ├── code.astro
+│   │   └── join-us.astro
+│   ├── stores/         # Svelte stores
+│   │   └── progressStore.js
+│   └── styles/         # Global styles
+│       └── global.css
+├── astro.config.mjs    # Astro configuration
+├── svelte.config.js    # Svelte configuration
+├── tsconfig.json       # TypeScript configuration
 └── package.json
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
-
-## 🧞 Commands
+## Commands
 
 All commands are run from the root of the project, from a terminal:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+| Command         | Action                                      |
+| :-------------- | :------------------------------------------ |
+| `pnpm install`  | Install dependencies                        |
+| `pnpm dev`      | Start local dev server at `localhost:4321`  |
+| `pnpm build`    | Build production site to `./dist/`          |
+| `pnpm preview`  | Preview build locally before deploying      |
+| `pnpm astro`    | Run Astro CLI commands                      |
 
-## 👀 Want to learn more?
+## Development
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+1. Clone the repository
+2. Install dependencies:
+   ```sh
+   pnpm install
+   ```
+3. Start the development server:
+   ```sh
+   pnpm dev
+   ```
+4. Open your browser at `http://localhost:4321`
