@@ -49,6 +49,8 @@ function createProgressStore() {
         localStorage.removeItem("webcamImage");
         sessionStorage.removeItem("captchaVerified");
         sessionStorage.removeItem("stopwallVerified");
+        sessionStorage.removeItem("introShown");
+        sessionStorage.removeItem("stickyDismissed");
         // Redirect to index page
         window.location.href = "/";
       }

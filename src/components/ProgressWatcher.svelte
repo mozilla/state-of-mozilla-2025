@@ -8,11 +8,11 @@
   let progressWatcher = $state(null);
   let displayedLines = $state([]);
 
-  const lines = [
+  const lines = $derived([
     ":: CONGRATS! ::",
     `${position} #STAMP#`,
     "REWARD AFFIRMATIVE",
-  ];
+  ]);
 
   function startAnimation() {
     let currentIndex = 0;
@@ -93,7 +93,7 @@
   >
     <div class="grid lg:grid-cols-2 gap-2.5">
       <div class="lg:pb-[var(--card-height)]">
-        <p>
+        <p class="min-h-[128px]">
           {@html text}
           {@html text ? "<br />" : ""}
           {#each displayedLines as line}
