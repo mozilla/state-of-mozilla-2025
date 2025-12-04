@@ -94,8 +94,18 @@
     isSharing = true;
 
     try {
+      // Generate anonymous name if no name is provided
+      const displayName =
+        name.trim() || `anon-${Math.floor(1000 + Math.random() * 9000)}`;
+
       // Clone the card and prepend to shareWrapper
       const clonedCard = card.cloneNode(true);
+
+      // Update the name input field in the cloned card
+      const nameInput = clonedCard.querySelector('input[type="text"]');
+      if (nameInput) {
+        nameInput.value = displayName;
+      }
 
       // Copy canvas elements (webcam image) manually, or add fallback SVG if no image
       const originalCanvases = card.querySelectorAll("canvas");

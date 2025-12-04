@@ -45,6 +45,8 @@ function createProgressStore() {
       if (typeof window !== "undefined") {
         localStorage.setItem(PROGRESS_KEY, JSON.stringify(INITIAL_PROGRESS));
         localStorage.removeItem("stakesSelection");
+        localStorage.removeItem("userName");
+        localStorage.removeItem("webcamImage");
         sessionStorage.removeItem("captchaVerified");
         sessionStorage.removeItem("stopwallVerified");
         // Redirect to index page
