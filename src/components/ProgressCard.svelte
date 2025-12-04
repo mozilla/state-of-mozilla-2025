@@ -6,7 +6,6 @@
 
   const { full } = $props();
 
-  let cardContainer = $state(null);
   let card = $state(null);
   let cardHeight = $state(0);
   let name = $state("");
@@ -98,18 +97,42 @@
       // Clone the card and prepend to shareWrapper
       const clonedCard = card.cloneNode(true);
 
-      // Copy canvas elements (webcam image) manually
+      // Copy canvas elements (webcam image) manually, or add fallback SVG if no image
       const originalCanvases = card.querySelectorAll("canvas");
       const clonedCanvases = clonedCard.querySelectorAll("canvas");
-      originalCanvases.forEach((originalCanvas, index) => {
-        if (clonedCanvases[index]) {
-          const clonedCanvas = clonedCanvases[index];
-          const ctx = clonedCanvas.getContext("2d");
-          clonedCanvas.width = originalCanvas.width;
-          clonedCanvas.height = originalCanvas.height;
-          ctx.drawImage(originalCanvas, 0, 0);
+
+      if (originalCanvases.length > 0) {
+        // Copy webcam image canvas
+        originalCanvases.forEach((originalCanvas, index) => {
+          if (clonedCanvases[index]) {
+            const clonedCanvas = clonedCanvases[index];
+            const ctx = clonedCanvas.getContext("2d");
+            clonedCanvas.width = originalCanvas.width;
+            clonedCanvas.height = originalCanvas.height;
+            ctx.drawImage(originalCanvas, 0, 0);
+          }
+        });
+      } else if (!hasWebcamImage) {
+        // No webcam image - swap the button SVGs: hide camera icon, show intro1.svg
+        const webcamButton = clonedCard.querySelector(
+          ".grid.grid-cols-3 .aspect-square button",
+        );
+        if (webcamButton) {
+          // Get references to both SVGs before modifying classes
+          const cameraSvg = webcamButton.querySelector("svg:not(.hidden)");
+          const intro1Svg = webcamButton.querySelector("svg.hidden");
+
+          // Hide the default camera SVG
+          if (cameraSvg) {
+            cameraSvg.classList.add("hidden");
+          }
+
+          // Show the intro1.svg
+          if (intro1Svg) {
+            intro1Svg.classList.remove("hidden");
+          }
         }
-      });
+      }
 
       // Remove animate-blink-* classes from cloned card
       const animatedElements = clonedCard.querySelectorAll(
@@ -140,9 +163,11 @@
         imageTimeout: 0,
         removeContainer: true,
         onclone: (clonedDoc) => {
-          // Ensure all SVGs are visible in cloned document
-          const svgs = clonedDoc.querySelectorAll("svg");
-          svgs.forEach((svg) => {
+          // Ensure journey SVGs are visible in cloned document
+          const journeySvgs = clonedDoc.querySelectorAll(
+            '[class*="animate-blink-"] svg, .grid.grid-cols-6 svg',
+          );
+          journeySvgs.forEach((svg) => {
             svg.style.display = "block";
           });
 
@@ -370,7 +395,6 @@
 </script>
 
 <div
-  bind:this={cardContainer}
   bind:clientHeight={cardHeight}
   style={full ? "" : `margin-top: -${cardHeight}px`}
   class={full
@@ -454,6 +478,10 @@
                     fill="white"
                   />
                 </svg>
+                <Svg
+                  src="/svg/intro1.svg"
+                  class="hidden invert w-full h-full"
+                />
               </button>
             {:else}
               <div bind:this={webcamButton} class="flex-1"></div>
