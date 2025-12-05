@@ -1,7 +1,10 @@
 <script>
   import Svg from "./Svg.svelte";
+  import { onMount } from "svelte";
 
   let open = $state(null);
+  let ditherStep = $state(0); // 0 = heavy, 1 = medium, 2 = light, 3 = none
+  let processedImages = $state([]); // Array to hold all 4 processed versions
 
   function toggle(i) {
     open = i;
@@ -9,6 +12,154 @@
 
   function close() {
     open = null;
+  }
+
+  function applyDithering(img, pixelSize, threshold) {
+    const canvas = document.createElement("canvas");
+    canvas.width = img.naturalWidth;
+    canvas.height = img.naturalHeight;
+    const ctx = canvas.getContext("2d");
+
+    // Draw the image
+    ctx.drawImage(img, 0, 0);
+
+    // Get image data
+    var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    var data = imageData.data;
+    var width = canvas.width;
+    var height = canvas.height;
+
+    // Step 1: Floyd-Steinberg dithering
+    for (var y = 0; y < height - 1; y++) {
+      for (var x = 1; x < width - 1; x++) {
+        var idx = (y * width + x) * 4;
+
+        // Convert to grayscale
+        var gray =
+          data[idx] * 0.299 + data[idx + 1] * 0.587 + data[idx + 2] * 0.114;
+
+        // Quantize to pure black or white
+        var newPixel = gray < 128 ? 0 : 255;
+        data[idx] = newPixel;
+        data[idx + 1] = newPixel;
+        data[idx + 2] = newPixel;
+
+        // Calculate error
+        var error = gray - newPixel;
+
+        // Distribute error to neighboring pixels
+        var rightIdx = (y * width + (x + 1)) * 4;
+        data[rightIdx] += (error * 7) / 16;
+        data[rightIdx + 1] += (error * 7) / 16;
+        data[rightIdx + 2] += (error * 7) / 16;
+
+        var bottomLeftIdx = ((y + 1) * width + (x - 1)) * 4;
+        data[bottomLeftIdx] += (error * 3) / 16;
+        data[bottomLeftIdx + 1] += (error * 3) / 16;
+        data[bottomLeftIdx + 2] += (error * 3) / 16;
+
+        var bottomIdx = ((y + 1) * width + x) * 4;
+        data[bottomIdx] += (error * 5) / 16;
+        data[bottomIdx + 1] += (error * 5) / 16;
+        data[bottomIdx + 2] += (error * 5) / 16;
+
+        var bottomRightIdx = ((y + 1) * width + (x + 1)) * 4;
+        data[bottomRightIdx] += (error * 1) / 16;
+        data[bottomRightIdx + 1] += (error * 1) / 16;
+        data[bottomRightIdx + 2] += (error * 1) / 16;
+      }
+    }
+
+    // Step 2: Pixelation with threshold
+    for (var y = 0; y < height; y += pixelSize) {
+      for (var x = 0; x < width; x += pixelSize) {
+        var blackCount = 0;
+        var totalCount = 0;
+
+        for (var dy = 0; dy < pixelSize && y + dy < height; dy++) {
+          for (var dx = 0; dx < pixelSize && x + dx < width; dx++) {
+            var idx = ((y + dy) * width + (x + dx)) * 4;
+            if (data[idx] === 0) {
+              blackCount++;
+            }
+            totalCount++;
+          }
+        }
+
+        var blockColor = blackCount / totalCount > threshold ? 0 : 255;
+
+        for (var dy = 0; dy < pixelSize && y + dy < height; dy++) {
+          for (var dx = 0; dx < pixelSize && x + dx < width; dx++) {
+            var idx = ((y + dy) * width + (x + dx)) * 4;
+            data[idx] = blockColor;
+            data[idx + 1] = blockColor;
+            data[idx + 2] = blockColor;
+          }
+        }
+      }
+    }
+
+    ctx.putImageData(imageData, 0, 0);
+    return canvas.toDataURL("image/png");
+  }
+
+  function processRebelImage() {
+    const img = new Image();
+    img.crossOrigin = "anonymous";
+    img.src = "/img/rebel1.jpg";
+
+    img.onload = () => {
+      // Generate 4 versions with different dithering levels
+      processedImages = [
+        applyDithering(img, 14, 0.7), // Step 0: Heavy (large pixels)
+        applyDithering(img, 8, 0.6), // Step 1: Medium
+        applyDithering(img, 4, 0.5), // Step 2: Light
+        img.src, // Step 3: Original (no effect)
+      ];
+    };
+  }
+
+  onMount(() => {
+    if (typeof window !== "undefined") {
+      processRebelImage();
+    }
+  });
+
+  let animationInterval = null;
+
+  function handleMouseEnter() {
+    // Clear any existing animation
+    if (animationInterval) {
+      clearInterval(animationInterval);
+    }
+
+    // Start animation through steps (forward)
+    ditherStep = 1;
+    animationInterval = setInterval(() => {
+      ditherStep++;
+      if (ditherStep >= 3) {
+        clearInterval(animationInterval);
+        animationInterval = null;
+      }
+    }, 150); // 150ms between steps
+  }
+
+  function handleMouseLeave() {
+    // Clear any existing animation
+    if (animationInterval) {
+      clearInterval(animationInterval);
+    }
+
+    // Start animation backward through steps
+    if (ditherStep > 0) {
+      animationInterval = setInterval(() => {
+        ditherStep--;
+        if (ditherStep <= 0) {
+          clearInterval(animationInterval);
+          animationInterval = null;
+        }
+      }, 150); // 150ms between steps
+    }
   }
 </script>
 
@@ -204,8 +355,24 @@
       <div class="bg-white p-5 space-y-5">
         <div class="grid lg:grid-cols-2 gap-2.5 lg:gap-5">
           <div>
-            <div class="aspect-square w-full border">
-              <img src="/img/rebel1.jpg" alt="Rebel 1" />
+            <div
+              class="aspect-square w-full border"
+              onmouseenter={handleMouseEnter}
+              onmouseleave={handleMouseLeave}
+            >
+              {#if processedImages.length > 0}
+                <img
+                  src={processedImages[ditherStep]}
+                  alt="Rebel 1"
+                  class="w-full h-full object-cover"
+                />
+              {:else}
+                <img
+                  src="/img/rebel1.jpg"
+                  alt="Rebel 1"
+                  class="w-full h-full object-cover"
+                />
+              {/if}
             </div>
           </div>
           <div>
