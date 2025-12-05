@@ -49,6 +49,20 @@ const normalizedPath =
       }
       if (sessionStorage.getItem("stopwallVerified")) {
         document.documentElement.classList.add("stopwall-seen");
+      } else {
+        // Also hide stopwall if progress is complete
+        try {
+          const progress = JSON.parse(localStorage.getItem("progress") || "{}");
+          if (
+            progress.stakes &&
+            progress.code &&
+            progress.tools &&
+            progress.rebels &&
+            progress.ledger
+          ) {
+            document.documentElement.classList.add("stopwall-seen");
+          }
+        } catch (e) {}
       }
     </script>
   </body>
