@@ -4,13 +4,14 @@ import Captcha from "../components/Captcha.svelte";
 import Svg from "../components/Svg.svelte";
 import ProgressWatcher from "../components/ProgressWatcher.svelte";
 import ProgressCard from "../components/ProgressCard.svelte";
+import City from "../components/City.svelte";
 ---
 
 <Layout>
   <Captcha client:load />
 
   <section
-    class="relative p-2.5 lg:p-5 min-h-[calc(50svh-var(--header-height)-20px)] lg:min-h-[calc(100svh-var(--header-height)-20px)] bg-yellow"
+    class="mb-0 relative p-2.5 lg:p-5 min-h-[calc(50svh-var(--header-height)-20px)] lg:min-h-[calc(100svh-var(--header-height)-20px)] bg-yellow"
   >
     <img class="absolute bottom-0 left-0 right-0" src="/dots-big.png" />
     <div
@@ -20,13 +21,15 @@ import ProgressCard from "../components/ProgressCard.svelte";
     </div>
     <div class="relative">
       <p class="mb-2.5 lg:mb-5">V - The Rebels</p>
-      <h1 class="font-computer uppercase text-7xl lg:text-9xl">
+      <h1 class="font-computer uppercase text-6xl lg:text-9xl">
         GATHERING A
         <br class="max-lg:hidden" />
         REBEL ALLIANCE
       </h1>
     </div>
   </section>
+
+  <City client:load />
 
   <ProgressWatcher
     client:load

@@ -3,6 +3,7 @@
 @theme {
   --color-yellow: #ffffb4;
   --color-gray: #9d9d9d;
+  --color-red: #ff0000;
 }
 
 @font-face {
@@ -67,6 +68,10 @@
   font-weight: normal;
   font-style: normal;
   font-display: swap;
+}
+
+html {
+  overscroll-behavior: none;
 }
 
 body {
