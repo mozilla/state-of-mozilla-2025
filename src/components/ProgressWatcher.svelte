@@ -47,8 +47,12 @@
                 const stakesSelection = localStorage.getItem("stakesSelection");
                 canMarkAsViewed = stakesSelection !== null;
               } else if (current === "rebels") {
-                const rebelsFound = localStorage.getItem("rebelsFound");
-                canMarkAsViewed = rebelsFound !== null;
+                const rebelsFoundStr = localStorage.getItem("rebelsFound");
+                const rebelsFound = rebelsFoundStr
+                  ? JSON.parse(rebelsFoundStr)
+                  : [];
+                console.log(rebelsFound);
+                canMarkAsViewed = rebelsFound.length === 6;
               }
 
               if (canMarkAsViewed) {
