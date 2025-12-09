@@ -69,7 +69,7 @@
 {#if showStopWall}
   <div
     id="stopwall"
-    class="fixed z-40 w-full h-full inset-0 flex justify-center items-center overscroll-contain bg-white/90 backdrop-blur p-2.5"
+    class="fixed z-40 w-full h-full inset-0 flex justify-center items-center bg-white/90 backdrop-blur p-2.5"
   >
     <div
       class="p-2.5 lg:p-5 border-2 border-black bg-yellow lg:w-1/2 relative z-10"

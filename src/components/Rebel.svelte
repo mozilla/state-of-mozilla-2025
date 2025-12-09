@@ -158,7 +158,7 @@
 <!-- svelte-ignore a11y_no_static_element_interactions -->
 <div
   onclick={onClose}
-  class="fixed z-40 w-full h-full inset-0 flex justify-center items-center overscroll-contain bg-white/90 backdrop-blur p-2.5"
+  class="fixed z-40 w-full h-full inset-0 flex justify-center items-center bg-white/90 backdrop-blur p-2.5"
 >
   <div
     onclick={(e) => {
@@ -216,7 +216,7 @@
       </button>
     </div>
     <div class="bg-white p-5 space-y-5">
-      <div class="grid lg:grid-cols-2 gap-2.5 lg:gap-5">
+      <div class="grid grid-cols-2 gap-2.5 lg:gap-5">
         <div>
           <div
             class="aspect-square w-full border"

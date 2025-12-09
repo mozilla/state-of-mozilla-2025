@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "html2canvas": "^1.4.1",
-    "svelte": "^5.45.5"
+    "svelte": "^5.45.8"
   },
   "devDependencies": {
     "@astrojs/svelte": "^7.2.2",
