@@ -171,9 +171,8 @@ import ProgressCard from "../components/ProgressCard.svelte";
     number="two"
     position="second"
     next="ledger"
-    font="font-star"
     text="> These are the rules we live by.<br />> But words mean nothing without action."
   />
 
-  <ProgressCard client:load />
+  <ProgressCard client:load full={false} />
 </Layout>

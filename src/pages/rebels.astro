@@ -37,9 +37,8 @@ import City from "../components/City.svelte";
     number="five"
     position="fifth"
     next="join-us"
-    font="font-mozilla-headline"
     text="> Find all the rebels to unlock stamp..."
   />
 
-  <ProgressCard client:load />
+  <ProgressCard client:load full={false} />
 </Layout>

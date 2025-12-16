@@ -8,8 +8,8 @@
 
 @font-face {
   font-family: "Mozilla Text";
-  src: url("/fonts/MozillaText-Regular.woff2") format("woff2");
-  font-weight: normal;
+  src: url("/fonts/MozillaText-Medium.woff2") format("woff2");
+  font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
@@ -23,6 +23,14 @@
 }
 
 @font-face {
+  font-family: "OCR-PBI";
+  src: url("/fonts/OCR-PBI-site.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
   font-family: "mnicmp Star";
   src: url("/fonts/mnicmpStar-Regular.woff2") format("woff2");
   font-weight: normal;
@@ -30,7 +38,7 @@
   font-display: swap;
 }
 
-@font-face {
+/*@font-face {
   font-family: "Workbench";
   src: url("/fonts/Workbench-Regular.woff2") format("woff2");
   font-weight: normal;
@@ -55,28 +63,33 @@
 }
 
 @font-face {
-  font-family: "OCR-PBI";
-  src: url("/fonts/OCR-PBI-site.woff2") format("woff2");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
   font-family: "Lazenby Computer";
   src: url("/fonts/LazenbyComputer-Smooth.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
-}
+}*/
 
 html {
   overscroll-behavior: none;
 }
 
 body {
-  font-family: "OCR-PBI", sans-serif;
+  font-family: "Mozilla Text", sans-serif;
   line-height: 130%;
+  letter-spacing: -1%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  &:not(.font-modilla-headline):not(.font-ocr-pbi):not(-font-star) {
+    line-height: 80%;
+    letter-spacing: -2%;
+  }
 }
 
 .font-mozilla-headline {
@@ -90,7 +103,17 @@ body {
   font-family: "OCR-PBI", sans-serif;
   line-height: 130%;
 }
-.font-workbench {
+.font-star {
+  font-family: "mnicmp Star", sans-serif;
+  letter-spacing: -12%;
+  line-height: 105%;
+  &:after {
+    content: "";
+    margin-top: -0.4em;
+    display: table;
+  }
+}
+/*.font-workbench {
   font-family: "Workbench", sans-serif;
   line-height: 93%;
   &:after {
@@ -112,17 +135,7 @@ body {
   font-family: "Mainframe", sans-serif;
   letter-spacing: 40%;
   line-height: 80%;
-}
-.font-star {
-  font-family: "mnicmp Star", sans-serif;
-  letter-spacing: -12%;
-  line-height: 105%;
-  &:after {
-    content: "";
-    margin-top: -0.4em;
-    display: table;
-  }
-}
+}*/
 
 .btn {
   position: relative;

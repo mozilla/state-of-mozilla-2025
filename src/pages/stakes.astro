@@ -32,7 +32,7 @@ import ProgressCard from "../components/ProgressCard.svelte";
     </div>
     <div class="relative">
       <p class="mb-2.5 lg:mb-5">I - The Stakes</p>
-      <h1 class="font-tuoi-tre text-7xl lg:text-9xl">
+      <h1 class="text-7xl lg:text-9xl uppercase">
         Which future will
         <br class="max-lg:hidden" />
         you choose?
@@ -247,11 +247,10 @@ import ProgressCard from "../components/ProgressCard.svelte";
     number="one"
     position="first"
     next="code"
-    font="font-workbench"
     text="> Make a choice to unlock stamp..."
   />
 
-  <ProgressCard client:load />
+  <ProgressCard client:load full={false} />
 </Layout>
 
 <style>

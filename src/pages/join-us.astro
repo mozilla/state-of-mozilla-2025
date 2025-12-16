@@ -15,7 +15,7 @@ import FinancialDownloads from "../components/FinancialDownloads.astro";
     <div class="flex-1 relative flex flex-col space-y-2.5 lg:space-y-5">
       <div class="relative space-y-2.5 lg:space-y-5">
         <p class="mb-2.5 lg:mb-5">IV - The Rebels</p>
-        <h1 class="font-mozilla-headline text-6xl lg:text-8xl">
+        <h1 class="text-6xl lg:text-8xl uppercase">
           Amazing!
           <br class="max-lg:hidden" />
           Are you ready to
@@ -24,15 +24,13 @@ import FinancialDownloads from "../components/FinancialDownloads.astro";
         </h1>
       </div>
       <div class="mt-auto">
-        <ProgressCard full={true} client:load />
+        <ProgressCard client:load full={true} />
       </div>
     </div>
   </section>
 
   <section class="p-2.5 lg:p-5 space-y-2.5 lg:space-y-5">
-    <h2 class="font-mozilla-headline text-6xl lg:text-8xl">
-      Ready to choose your future?
-    </h2>
+    <h2 class="text-6xl lg:text-8xl uppercase">Ready to choose your future?</h2>
     <div class="grid lg:grid-cols-4 gap-2.5 lg:gap-5">
       <div class="lg:col-span-2 lg:col-start-2 space-y-2.5 lg:space-y-5">
         <p>

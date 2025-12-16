@@ -82,7 +82,7 @@
 
 {#if !showContent}
   <section id="intro" class="flex-1 p-2.5 lg:p-5 bg-black text-white z-40">
-    <code class="block">
+    <code class="block font-ocr-pbi">
       {#each displayedLines as line}
         <p>{line}</p>
       {/each}

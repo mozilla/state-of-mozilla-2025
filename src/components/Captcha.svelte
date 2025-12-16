@@ -145,7 +145,7 @@
         </form>
       {:else}
         <div class="bg-black text-white p-4 font-mono text-sm">
-          <code class="block">
+          <code class="block font-ocr-pbi">
             {#each bypassLines as line}
               <p>{line}</p>
             {/each}

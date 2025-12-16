@@ -3,7 +3,7 @@
   import { progressStore } from "../stores/progressStore.js";
   import Svg from "./Svg.svelte";
 
-  const { current, number, position, next, font, text } = $props();
+  const { current, number, position, next, text } = $props();
 
   let progressWatcher = $state(null);
   let displayedLines = $state([]);
@@ -97,7 +97,7 @@
   >
     <div class="grid lg:grid-cols-2 gap-2.5">
       <div class="lg:pb-[var(--card-height)]">
-        <p class="min-h-[128px]">
+        <code class="block min-h-[128px] font-ocr-pbi">
           {@html text}
           {@html text ? "<br />" : ""}
           {#each displayedLines as line}
@@ -105,7 +105,7 @@
             <br />
           {/each}
           <span class="blinking-cursor inline-block w-2.5 h-5 bg-black"></span>
-        </p>
+        </code>
       </div>
       <div>
         <a
@@ -117,11 +117,7 @@
               <p class="uppercase">
                 Go to {next == "join-us" ? "last" : "next"} chapter
               </p>
-              <h3
-                class="{font} text-7xl {font != 'font-mozilla-headline'
-                  ? 'uppercase'
-                  : 'capitalize'}"
-              >
+              <h3 class="text-7xl uppercase">
                 {next.replace(/-/g, " ")}
               </h3>
             </div>

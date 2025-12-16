@@ -21,9 +21,7 @@ import ProgressCard from "../components/ProgressCard.svelte";
     <div class="relative">
       <p class="mb-2.5 lg:mb-5">III - The Ledger</p>
       <h1 class="uppercase text-7xl lg:text-9xl">
-        <span class="font-star">ALL IN ON A</span>
-        <span class="font-star">DOUBLE</span>
-        <span class="font-star">BOTTOM LINE</span>
+        ALL IN ON A DOUBLE BOTTOM LINE
       </h1>
     </div>
   </section>
@@ -146,8 +144,8 @@ import ProgressCard from "../components/ProgressCard.svelte";
     number="three"
     position="third"
     next="tools"
-    font="font-mainframe"
+    text=""
   />
 
-  <ProgressCard client:load />
+  <ProgressCard client:load full={false} />
 </Layout>
