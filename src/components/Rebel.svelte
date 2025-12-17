@@ -180,7 +180,7 @@
     style="box-shadow: 8.3871px 8.3871px 0px rgba(0, 0, 0, 0.25);"
   >
     <div
-      class="sticky top-0 bg-red py-2.5 px-5 flex justify-between items-center space-x-2.5"
+      class="sticky z-10 top-0 bg-red py-2.5 px-5 flex justify-between items-center space-x-2.5"
     >
       <div class="flex items-center space-x-2.5">
         <svg
@@ -244,7 +244,11 @@
             {/if}
           </div>
         </div>
-        <div>
+        <div class="relative py-5">
+          <div
+            class="absolute top-2.5 right-0 w-[calc(100%+2.5rem)] h-px bg-black before:absolute before:-translate-y-[calc(50%-0.5px)] before:left-0 before:w-2.5 before:h-2.5 before:rounded-full before:bg-black before:content-['']"
+          ></div>
+          <div class="absolute top-2.5 right-0 w-[5px] h-1/3 bg-black"></div>
           <p class="uppercase">{rebel.name}</p>
           <p>{rebel.title}</p>
         </div>

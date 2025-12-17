@@ -11,14 +11,20 @@
     <div class="aspect-square border p-5">
       <Svg src={organization.icon} class="w-full h-full" />
     </div>
-    <div class="py-5 space-y-5">
+    <div class="relative py-5 space-y-5">
+      <div
+        class="absolute top-2.5 right-0 w-[calc(100%+2.5rem)] h-px bg-black before:absolute before:-translate-y-[calc(50%-0.5px)] before:left-0 before:w-2.5 before:h-2.5 before:rounded-full before:bg-black before:content-['']"
+      ></div>
+      <div class="absolute top-2.5 right-0 w-[5px] h-1/3 bg-black"></div>
       <p>{organization.name}</p>
       <a target="_blank" href={organization.url} class="underline">Website</a>
     </div>
   </div>
 
   {#if organization.paragraph1}
-    <p class="[&>*>a]:underline">{@html organization.paragraph1}</p>
+    <p class="[&>a]:underline [&>*>a]:underline">
+      {@html organization.paragraph1}
+    </p>
   {/if}
 
   <button
@@ -34,23 +40,37 @@
 
   {#if open}
     {#if organization.list1}
-      <ul class="list-disc ml-5">
-        {#each organization.list1 as item}
-          <li class="[&>*>a]:underline">{@html item}</li>
+      <ol class="list-none space-y-2.5">
+        {#each organization.list1 as item, i}
+          <li class="flex gap-2.5 [&>a]:underline [&>*>a]:underline">
+            <span
+              class="flex-shrink-0 w-6 h-6 rounded-full bg-black text-white text-xs flex items-center justify-center"
+              >{i + 1}</span
+            >
+            <span>{@html item}</span>
+          </li>
         {/each}
-      </ul>
+      </ol>
     {/if}
 
     {#if organization.paragraph2}
-      <p class="[&>*>a]:underline">{@html organization.paragraph2}</p>
+      <p class="[&>a]:underline [&>*>a]:underline">
+        {@html organization.paragraph2}
+      </p>
     {/if}
 
     {#if organization.list2}
-      <ul class="list-disc ml-5">
-        {#each organization.list2 as item}
-          <li class="[&>*>a]:underline">{@html item}</li>
+      <ol class="list-none space-y-2.5">
+        {#each organization.list2 as item, i}
+          <li class="flex gap-2.5 [&>a]:underline [&>*>a]:underline">
+            <span
+              class="flex-shrink-0 w-6 h-6 rounded-full bg-black text-white text-xs flex items-center justify-center"
+              >{i + 1}</span
+            >
+            <span>{@html item}</span>
+          </li>
         {/each}
-      </ul>
+      </ol>
     {/if}
   {/if}
 </div>
