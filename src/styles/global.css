@@ -15,14 +15,6 @@
 }
 
 @font-face {
-  font-family: "Mozilla Headline";
-  src: url("/fonts/MozillaHeadline-Medium.woff2") format("woff2");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
   font-family: "OCR-PBI";
   src: url("/fonts/OCR-PBI-site.woff2") format("woff2");
   font-weight: normal;
@@ -38,7 +30,15 @@
   font-display: swap;
 }
 
-/*@font-face {
+/*
+@font-face {
+  font-family: "Mozilla Headline";
+  src: url("/fonts/MozillaHeadline-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
   font-family: "Workbench";
   src: url("/fonts/Workbench-Regular.woff2") format("woff2");
   font-weight: normal;
@@ -86,16 +86,12 @@ h3,
 h4,
 h5,
 h6 {
-  &:not(.font-modilla-headline):not(.font-ocr-pbi):not(-font-star) {
+  &:not(.font-ocr-pbi):not(.font-star) {
     line-height: 80%;
     letter-spacing: -2%;
   }
 }
 
-.font-mozilla-headline {
-  font-family: "Mozilla Headline", sans-serif;
-  line-height: 88%;
-}
 .font-mozilla-text {
   font-family: "Mozilla Text", sans-serif;
 }
@@ -113,7 +109,12 @@ h6 {
     display: table;
   }
 }
-/*.font-workbench {
+/*
+.font-mozilla-headline {
+  font-family: "Mozilla Headline", sans-serif;
+  line-height: 88%;
+}
+.font-workbench {
   font-family: "Workbench", sans-serif;
   line-height: 93%;
   &:after {

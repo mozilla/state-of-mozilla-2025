@@ -20,7 +20,7 @@ import ProgressCard from "../components/ProgressCard.svelte";
     </div>
     <div class="relative">
       <p class="mb-2.5 lg:mb-5">IV - The Tools</p>
-      <h1 class="font-mainframe uppercase text-6xl lg:text-8xl">
+      <h1 class="font-mainframe uppercase text-7xl lg:text-9xl">
         Choices we’re
         <br class="max-lg:hidden" />
         making today
@@ -36,9 +36,6 @@ import ProgressCard from "../components/ProgressCard.svelte";
           things which push AI towards agency and choice. Mozilla’s investment
           strategy is focused on three pillars:
         </p>
-        <p class="border-y border-black py-2.5">
-          MOZILLA NEEDS TO DO FOR AI WHAT WE DID FOR THE WEB
-        </p>
         <Svg client:load src="/svg/chart.svg" class="w-full" />
       </div>
     </div>
@@ -49,67 +46,60 @@ import ProgressCard from "../components/ProgressCard.svelte";
       <div class="lg:col-span-2 lg:col-start-2 space-y-2.5 lg:space-y-5">
         <div><Svg client:load src="/svg/encryption.svg" class="w-full" /></div>
         <p>
-          How do we do for AI what we did for the web? By building and funding
-          things which push AI towards agency and choice. MozillThis investment
-          strategy doesn’t just represent an ambition — it also reflects what’s
+          This doesn’t just represent an ambition — it also reflects what’s
           actually happening across the Mozilla portfolio, as we build
           trustworthy AI across the board and create an alternative to the AI
           offerings that dominate the market today. Early examples of this
-          strategy in action include:a’s investment strategy is focused on three
-          pillars:
+          strategy in action include:
         </p>
       </div>
     </div>
-  </section>
 
-  <section class="p-2.5 lg:p-5">
     <div class="grid lg:grid-cols-3 gap-px">
       <div
         class="p-10 lg:p-20 flex flex-col justify-center items-center text-center outline outline-dashed bg-yellow"
       >
         <p>MoCo</p>
-        <p class="bg-black text-yellow">Firefox AI mode</p>
+        <p class="bg-black text-yellow">Firefox AI Window</p>
         <p>+ privacy preserving ads</p>
       </div>
       <div
         class="p-10 lg:p-20 flex flex-col justify-center items-center text-center outline outline-dashed bg-yellow"
       >
         <p>MZLA</p>
-        <p class="bg-black text-yellow">Thunderbolt</p>
+        <p class="bg-black text-yellow">Thunderbird Pro</p>
         <p>+ AI features in TBird</p>
       </div>
       <div
         class="p-10 lg:p-20 flex flex-col justify-center items-center text-center outline outline-dashed bg-yellow"
       >
         <p>Mozilla Ventures</p>
-        <p class="bg-black text-yellow">X40+ AI STARTUP</p>
+        <p class="bg-black text-yellow">x 40+ AI startups</p>
         <p>e.g. Flower, Oumi, Nous</p>
-      </div>
-      <div
-        class="p-10 lg:p-20 flex flex-col justify-center items-center text-center outline outline-dashed bg-yellow"
-      >
-        <p>Mozilla.ai</p>
-        <p class="bg-black text-yellow">ANY-* + MCPD</p>
-        <p>→SaaS dev platform</p>
       </div>
       <div
         class="p-10 lg:p-20 flex flex-col justify-center items-center text-center outline outline-dashed bg-yellow"
       >
         <p>MoFo</p>
         <p class="bg-black text-yellow">Mozilla Data Collective</p>
-        <p>+ Mozilla Education</p>
+        <p>+ Education Initiatives</p>
       </div>
       <div
         class="p-10 lg:p-20 flex flex-col justify-center items-center text-center outline outline-dashed bg-yellow"
       >
-        <p>Policy team</p>
+        <p>Mozilla.ai</p>
+        <p class="bg-black text-yellow">Any-* + MCPD</p>
+        <p>→SaaS dev platform</p>
+      </div>
+      <div
+        class="p-10 lg:p-20 flex flex-col justify-center items-center text-center outline outline-dashed bg-yellow"
+      >
+        <p>Policy + Advocacy</p>
         <p class="bg-black text-yellow">Open source AI</p>
         <p>push on governments</p>
       </div>
     </div>
-  </section>
 
-  <section class="p-2.5 lg:p-5 space-y-2.5 lg:space-y-5">
     <div class="grid lg:grid-cols-4 gap-2.5 lg:gap-5">
       <div class="lg:col-span-2 lg:col-start-2 space-y-2.5 lg:space-y-5">
         <p>
@@ -120,25 +110,32 @@ import ProgressCard from "../components/ProgressCard.svelte";
         </p>
         <p>
           Together, they advance a single vision: technology that expands human
-          agency, not limits it.
+          agency, not limits it. Across Mozilla’s portfolio, each of our
+          portfolio organizations plays a distinct role in building a better
+          digital future — from open-source innovation and responsible
+          investment to creative experimentation and public interest advocacy.
         </p>
       </div>
     </div>
-  </section>
 
-  <section class="p-2.5 lg:p-5">
     <div class="aspect-video w-full bg-gray"></div>
   </section>
 
   <section class="p-2.5 lg:p-5 space-y-2.5 lg:space-y-5">
     <div class="grid lg:grid-cols-4 gap-2.5 lg:gap-5">
       <div class="lg:col-span-2 lg:col-start-2 space-y-2.5 lg:space-y-5">
-        <p
-          class="flex justify-between items-center space-x-2.5 border-y border-black py-2.5"
-        >
-          <span>MOZILLA FOUNDATION</span>
-          <span class="text-xl">👁</span>
-        </p>
+        <div class="grid grid-cols-2 gap-2.5 lg:gap-5">
+          <div class="aspect-square border p-5">
+            <Svg
+              client:load
+              src="/svg/mozilla-foundation.svg"
+              class="w-full h-full"
+            />
+          </div>
+          <div class="py-5">
+            <p>MOZILLA FOUNDATION</p>
+          </div>
+        </div>
         <p>
           Mozilla Foundation is our charitable arm and the “parent” to all
           Mozilla entities, a non-profit building a better technology future,
@@ -192,7 +189,7 @@ import ProgressCard from "../components/ProgressCard.svelte";
           class="flex justify-between items-center space-x-2.5 border-y border-black py-2.5"
         >
           <span>MOZILLA CORPORATION</span>
-          <span class="text-xl">👁</span>
+          <span class="font-ocr-pbi text-xl">👁</span>
         </p>
         <p>
           Mozilla Corporation develops products and services that put people —
@@ -231,7 +228,7 @@ import ProgressCard from "../components/ProgressCard.svelte";
           class="flex justify-between items-center space-x-2.5 border-y border-black py-2.5"
         >
           <span>MOZILLA VENTURES</span>
-          <span class="text-xl">👁</span>
+          <span class="font-ocr-pbi text-xl">👁</span>
         </p>
         <p>
           Mozilla Ventures is Mozilla’s impact investment fund, backing
@@ -269,7 +266,7 @@ import ProgressCard from "../components/ProgressCard.svelte";
           class="flex justify-between items-center space-x-2.5 border-y border-black py-2.5"
         >
           <span>MZLA</span>
-          <span class="text-xl">👁</span>
+          <span class="font-ocr-pbi text-xl">👁</span>
         </p>
         <p>
           MZLA Technologies Corporation operates Thunderbird, Mozilla’s
@@ -307,7 +304,7 @@ import ProgressCard from "../components/ProgressCard.svelte";
           class="flex justify-between items-center space-x-2.5 border-y border-black py-2.5"
         >
           <span>MOZILLA.AI</span>
-          <span class="text-xl">👁</span>
+          <span class="font-ocr-pbi text-xl">👁</span>
         </p>
         <p>
           Mozilla.ai is an independent startup founded by Mozilla to build

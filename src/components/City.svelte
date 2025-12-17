@@ -91,7 +91,7 @@
           <div class="w-10">
             <div class="border w-5 h-5 flex justify-center items-center">
               {#if rebelsFound.includes(rebel.id)}
-                👁
+                <span class="font-ocr-pbi text-xl">👁</span>
               {/if}
             </div>
           </div>

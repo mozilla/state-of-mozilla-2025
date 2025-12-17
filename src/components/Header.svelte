@@ -52,6 +52,7 @@
       href="https://www.mozilla.org"
       class="size-10 p-2.5 border-r border-white flex justify-center items-center"
       title="State of Mozilla 2025"
+      aria-label="State of Mozilla 2025"
     >
       <svg
         width="24"

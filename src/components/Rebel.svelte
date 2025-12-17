@@ -116,6 +116,18 @@
     if (typeof window !== "undefined") {
       processRebelImage();
     }
+
+    function handleKeydown(event) {
+      if (event.key === "Escape") {
+        onClose();
+      }
+    }
+
+    window.addEventListener("keydown", handleKeydown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeydown);
+    };
   });
 
   function handleMouseEnter() {
@@ -168,7 +180,7 @@
     style="box-shadow: 8.3871px 8.3871px 0px rgba(0, 0, 0, 0.25);"
   >
     <div
-      class="bg-red py-2.5 px-5 flex justify-between items-center space-x-2.5"
+      class="sticky top-0 bg-red py-2.5 px-5 flex justify-between items-center space-x-2.5"
     >
       <div class="flex items-center space-x-2.5">
         <svg

@@ -51,7 +51,6 @@
                 const rebelsFound = rebelsFoundStr
                   ? JSON.parse(rebelsFoundStr)
                   : [];
-                console.log(rebelsFound);
                 canMarkAsViewed = rebelsFound.length === 6;
               }
 
