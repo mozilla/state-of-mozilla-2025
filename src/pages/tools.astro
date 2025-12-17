@@ -185,12 +185,18 @@ import ProgressCard from "../components/ProgressCard.svelte";
           attendees, 81% of them new, from 79 countries.
         </p>
 
-        <p
-          class="flex justify-between items-center space-x-2.5 border-y border-black py-2.5"
-        >
-          <span>MOZILLA CORPORATION</span>
-          <span class="font-ocr-pbi text-xl">👁</span>
-        </p>
+        <div class="grid grid-cols-2 gap-2.5 lg:gap-5">
+          <div class="aspect-square border p-5">
+            <Svg
+              client:load
+              src="/svg/mozilla-corporation.svg"
+              class="w-full h-full"
+            />
+          </div>
+          <div class="py-5">
+            <p>MOZILLA CORPORATION</p>
+          </div>
+        </div>
         <p>
           Mozilla Corporation develops products and services that put people —
           not profit — at the center of the internet, and is the developer of
@@ -224,12 +230,18 @@ import ProgressCard from "../components/ProgressCard.svelte";
           </li>
         </ul>
 
-        <p
-          class="flex justify-between items-center space-x-2.5 border-y border-black py-2.5"
-        >
-          <span>MOZILLA VENTURES</span>
-          <span class="font-ocr-pbi text-xl">👁</span>
-        </p>
+        <div class="grid grid-cols-2 gap-2.5 lg:gap-5">
+          <div class="aspect-square border p-5">
+            <Svg
+              client:load
+              src="/svg/mozilla-ventures.svg"
+              class="w-full h-full"
+            />
+          </div>
+          <div class="py-5">
+            <p>MOZILLA VENTURES</p>
+          </div>
+        </div>
         <p>
           Mozilla Ventures is Mozilla’s impact investment fund, backing
           entrepreneurs who are building trustworthy, open, and responsible
@@ -262,12 +274,14 @@ import ProgressCard from "../components/ProgressCard.svelte";
           <li>Z</li>
         </ul>
 
-        <p
-          class="flex justify-between items-center space-x-2.5 border-y border-black py-2.5"
-        >
-          <span>MZLA</span>
-          <span class="font-ocr-pbi text-xl">👁</span>
-        </p>
+        <div class="grid grid-cols-2 gap-2.5 lg:gap-5">
+          <div class="aspect-square border p-5">
+            <Svg client:load src="/svg/thunderbird.svg" class="w-full h-full" />
+          </div>
+          <div class="py-5">
+            <p>MZLA</p>
+          </div>
+        </div>
         <p>
           MZLA Technologies Corporation operates Thunderbird, Mozilla’s
           open-source email and productivity platform. Over the last year,
@@ -300,12 +314,14 @@ import ProgressCard from "../components/ProgressCard.svelte";
         </ul>
         <p>Thunderbird now has more than 20m daily average users worldwide.</p>
 
-        <p
-          class="flex justify-between items-center space-x-2.5 border-y border-black py-2.5"
-        >
-          <span>MOZILLA.AI</span>
-          <span class="font-ocr-pbi text-xl">👁</span>
-        </p>
+        <div class="grid grid-cols-2 gap-2.5 lg:gap-5">
+          <div class="aspect-square border p-5">
+            <Svg client:load src="/svg/mozilla-ai.svg" class="w-full h-full" />
+          </div>
+          <div class="py-5">
+            <p>MOZILLA.AI</p>
+          </div>
+        </div>
         <p>
           Mozilla.ai is an independent startup founded by Mozilla to build
           open-source AI infrastructure grounded in choice, agency, and trust.
