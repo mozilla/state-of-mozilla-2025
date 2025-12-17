@@ -4,12 +4,22 @@
   let { organization } = $props();
 
   let open = $state(false);
+
+  const isSvg = $derived(organization.icon?.endsWith(".svg"));
 </script>
 
 <div class="space-y-2.5 lg:space-y-5 mb-20">
   <div class="grid grid-cols-2 gap-2.5 lg:gap-5">
-    <div class="aspect-square border p-5">
-      <Svg src={organization.icon} class="w-full h-full" />
+    <div class="aspect-square border p-5 flex justify-center items-center">
+      {#if isSvg}
+        <Svg src={organization.icon} class="w-full h-full lg:w-1/2 lg:h-1/2" />
+      {:else}
+        <img
+          src={organization.icon}
+          alt={organization.name}
+          class="w-full h-full lg:w-1/2 lg:h-1/2 object-contain"
+        />
+      {/if}
     </div>
     <div class="relative py-5 space-y-5">
       <div
@@ -39,6 +49,9 @@
   </button>
 
   {#if open}
+    {#if organization.list1Intro}
+      <p>{@html organization.list1Intro}</p>
+    {/if}
     {#if organization.list1}
       <ol class="list-none space-y-2.5">
         {#each organization.list1 as item, i}
@@ -47,7 +60,7 @@
               class="flex-shrink-0 w-6 h-6 rounded-full bg-black text-white text-xs flex items-center justify-center"
               >{i + 1}</span
             >
-            <span>{@html item}</span>
+            <p class="[&>img]:mt-2.5">{@html item}</p>
           </li>
         {/each}
       </ol>
@@ -67,7 +80,7 @@
               class="flex-shrink-0 w-6 h-6 rounded-full bg-black text-white text-xs flex items-center justify-center"
               >{i + 1}</span
             >
-            <span>{@html item}</span>
+            <p class="[&>img]:mt-2.5">{@html item}</p>
           </li>
         {/each}
       </ol>
