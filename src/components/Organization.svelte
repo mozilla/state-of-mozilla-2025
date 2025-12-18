@@ -15,6 +15,7 @@
         <Svg src={organization.icon} class="w-full h-full lg:w-1/2 lg:h-1/2" />
       {:else}
         <img
+          loading="lazy"
           src={organization.icon}
           alt={organization.name}
           class="w-full h-full lg:w-1/2 lg:h-1/2 object-contain"

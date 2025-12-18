@@ -237,6 +237,7 @@
           >
             {#if processedImages.length > 0}
               <img
+                loading="lazy"
                 src={processedImages[ditherStep]}
                 alt={rebel.name}
                 class="w-full h-full object-cover"

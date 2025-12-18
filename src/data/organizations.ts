@@ -8,12 +8,12 @@ export const organizations = [
     list1Intro: `In 2025, Mozilla Foundation -`,
     list1: [
       `<strong>Launched <a target="_blank" href="https://www.mozillafoundation.org/">a new brand and website</a></strong>, bringing Mozilla Foundation's identity into sharper focus. The brand redesign, by Pentagram, reflects a spirit of defiant optimism, and the belief that the future of technology will be human, and tech can be great if we keep building it with care.
-      <img src="mozilla-foundation-1.jpg" alt="" />
+      <img loading="lazy" src="mozilla-foundation-1.jpg" alt="" />
       `,
       `<strong><a target="_blank" href="https://datacollective.mozillafoundation.org/">Founded the Mozilla Data Collective (MDC)</a></strong>, a new platform for responsible AI data exchange. It's the first social enterprise incubated by Mozilla Foundation, pioneering a radical alternative to how AI data is created and shared. MDC is built on the Mozilla Foundation's Common Voice Koproject, which to date has unlocked open datasets in 358 languages, representing 90% of the planet's speakers.`,
       `<strong>Scaled "Prototype to Program" <a target="_blank" href="https://www.mozillafoundation.org/creative-futures-counterstructures/">through Creative Futures</a></strong>, helping artists, technologists, and activists turn imaginative processes into sustained programs for internet health. The initiative brought together new fellows and host organizations across 27 countries, supporting experimental ideas that use creativity to shape technology's next chapter.`,
       `<strong>Launched <a target="_blank" href="https://www.mozillafoundation.org/nothing-personal/">Nothing Personal</a></strong>, a counterculture magazine and editorial platform for independent thinkers, technologists, and creatives on the front lines of digital culture. The magazine refreshes the Foundation's popular Privacy Not Included product reviews, and is working in partnership with The Onion on its humorous advice column.
-      <img src="mozilla-foundation-4.jpg" alt="" />
+      <img loading="lazy" src="mozilla-foundation-4.jpg" alt="" />
       `,
       `<strong>Mobilized an unprecedented wave of grassroots giving</strong>, welcoming over <strong>32,000 new donors</strong> from around the world in 2025. With more than one-third of support coming from first-time contributors, this surge reflects growing global belief in Mozilla's vision for an internet that truly serves the public interest.`,
     ],
@@ -29,7 +29,7 @@ export const organizations = [
     list1Intro: `In 2025, Mozilla Corporation -`,
     list1: [
       `<strong>Announced <a target="_blank" href="https://blog.mozilla.org/firefox/ai-window/">Firefox AI Window</a></strong>, a suite of privacy-first AI powered features. AI Window offers a reimagined browsing experience that brings trusted, transparent AI tools directly into the browser. Users are in full control, and can shut the features off at any time.
-      <img src="mozilla-corporation-1.jpg" alt="" />
+      <img loading="lazy" src="mozilla-corporation-1.jpg" alt="" />
       `,
       `Introduced <strong><a target="_blank" href="https://blog.mozilla.org/firefox/shake-to-summarize-time-best-inventions/">Shake to Summarize</a></strong>, one of <em>Fast Company's</em> "Innovations of the Year." With a single shake or tap, users on iOS devices can get to the heart of an article in seconds, with summaries adapting to what users are reading.`,
       `<strong>Created a new model for responsible advertising</strong>, launching a program that aligns commercial success with user respect, giving advertisers new ways to show up responsibly in environments people actually trust.`,

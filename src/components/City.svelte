@@ -27,6 +27,7 @@
 
 <section class="relative px-2.5 lg:px-5 bg-yellow pt-20 lg:pt-40">
   <img
+    loading="lazy"
     class="absolute top-0 left-0 right-0 rotate-180"
     src={dotsImageUrl}
     alt=""
