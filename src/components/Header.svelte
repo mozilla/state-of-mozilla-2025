@@ -158,25 +158,25 @@
         <li class="flex">
           <a
             class="flex-1 p-2.5 flex flex-col justify-center items-center text-center space-y-2.5 {getLinkClasses(
-              '/tools',
-              'tools',
-            )}"
-            href="/tools"
-          >
-            <span class="lg:hidden">III.</span>
-            <span class="text-6xl lg:text-3xl uppercase">Tools</span>
-          </a>
-        </li>
-        <li class="flex">
-          <a
-            class="flex-1 p-2.5 flex flex-col justify-center items-center text-center space-y-2.5 {getLinkClasses(
               '/ledger',
               'ledger',
             )}"
             href="/ledger"
           >
-            <span class="lg:hidden">IV.</span>
+            <span class="lg:hidden">III.</span>
             <span class="text-6xl lg:text-3xl uppercase">Ledger</span>
+          </a>
+        </li>
+        <li class="flex">
+          <a
+            class="flex-1 p-2.5 flex flex-col justify-center items-center text-center space-y-2.5 {getLinkClasses(
+              '/tools',
+              'tools',
+            )}"
+            href="/tools"
+          >
+            <span class="lg:hidden">IV.</span>
+            <span class="text-6xl lg:text-3xl uppercase">Tools</span>
           </a>
         </li>
         <li class="flex">
