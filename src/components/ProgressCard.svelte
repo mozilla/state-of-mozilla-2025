@@ -535,9 +535,9 @@
             <div class="absolute top-0 left-0 bg-black text-white">
               <span>III</span>
             </div>
-            {#if progress.ledger}
-              <div class="animate-blink-3 w-full h-full">
-                <Svg src="/svg/journey3.svg" class="max-w-full max-h-full" />
+            {#if progress.tools}
+              <div class="animate-blink-4 w-full h-full">
+                <Svg src="/svg/journey4.svg" class="max-w-full max-h-full" />
               </div>
             {/if}
           </div>
@@ -545,9 +545,9 @@
             <div class="absolute top-0 left-0 bg-black text-white">
               <span>IV</span>
             </div>
-            {#if progress.tools}
-              <div class="animate-blink-4 w-full h-full">
-                <Svg src="/svg/journey4.svg" class="max-w-full max-h-full" />
+            {#if progress.ledger}
+              <div class="animate-blink-3 w-full h-full">
+                <Svg src="/svg/journey3.svg" class="max-w-full max-h-full" />
               </div>
             {/if}
           </div>

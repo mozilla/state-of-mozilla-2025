@@ -4,8 +4,8 @@ const PROGRESS_KEY = "progress";
 const INITIAL_PROGRESS = {
   stakes: false,
   code: false,
-  ledger: false,
   tools: false,
+  ledger: false,
   rebels: false,
   joinus: false,
 };
