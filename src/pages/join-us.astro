@@ -1,8 +1,13 @@
 ---
+import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 import StopWall from "../components/StopWall.svelte";
 import ProgressCard from "../components/ProgressCard.svelte";
 import FinancialDownloads from "../components/FinancialDownloads.astro";
+import dotsBig from "../assets/img/dots-big.png";
+import article1 from "../assets/img/article1.png";
+import article2 from "../assets/img/article2.png";
+// import article3 from "../assets/img/article3.png";
 ---
 
 <Layout>
@@ -11,11 +16,7 @@ import FinancialDownloads from "../components/FinancialDownloads.astro";
   <section
     class="relative flex flex-col px-2.5 pt-2.5 lg:px-5 lg:pt-5 min-h-[calc(100svh-var(--header-height)-20px)]"
   >
-    <img
-      class="absolute bottom-0 left-0 right-0 m-0"
-      src="/dots-big.png"
-      alt=""
-    />
+    <Image class="absolute bottom-0 left-0 right-0 m-0" src={dotsBig} alt="" />
     <div class="flex-1 relative flex flex-col space-y-2.5 lg:space-y-5">
       <div class="relative space-y-2.5 lg:space-y-5">
         <p class="mb-2.5 lg:mb-5">IV - The Rebels</p>
@@ -51,8 +52,8 @@ import FinancialDownloads from "../components/FinancialDownloads.astro";
     <h2 class="text-3xl lg:text-4xl">Learn more about it</h2>
     <div class="grid lg:grid-cols-3 gap-2.5 lg:gap-5">
       <div class="space-y-2.5">
-        <img
-          src="/img/article1.png"
+        <Image
+          src={article1}
           class="aspect-video object-cover object-top w-full"
           alt="Rewiring Mozilla: Doing for AI what we did for the web"
         />
@@ -64,8 +65,8 @@ import FinancialDownloads from "../components/FinancialDownloads.astro";
         >
       </div>
       <div class="space-y-2.5">
-        <img
-          src="/img/article2.png"
+        <Image
+          src={article2}
           class="aspect-video object-cover object-top w-full"
           alt="Own What You Build: Open Source and AI’s Future"
         />
@@ -73,11 +74,11 @@ import FinancialDownloads from "../components/FinancialDownloads.astro";
         <a target="_blank" href="https://youtu.be/obRiQme2b3M">Read more →</a>
       </div>
       <div class="space-y-2.5">
-        <img
-          src="/img/article3.png"
+        <!-- <Image
+          src={article3}
           class="aspect-video object-cover object-top w-full"
           alt="Mark Surman on Building a Double Bottom Line for Tech"
-        />
+        /> -->
         <p>Mark Surman on Building a Double Bottom Line for Tech</p>
         <a target="_blank" href="https://youtu.be/BoFUABRULxg">Read more →</a>
       </div>

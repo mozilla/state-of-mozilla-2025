@@ -1,9 +1,11 @@
 ---
+import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 import Captcha from "../components/Captcha.svelte";
 import Svg from "../components/Svg.svelte";
 import ProgressWatcher from "../components/ProgressWatcher.svelte";
 import ProgressCard from "../components/ProgressCard.svelte";
+import dotsBig from "../assets/img/dots-big.png";
 ---
 
 <script is:inline>
@@ -24,7 +26,7 @@ import ProgressCard from "../components/ProgressCard.svelte";
   <section
     class="relative p-2.5 lg:p-5 min-h-[calc(50svh-var(--header-height)-20px)] lg:min-h-[calc(100svh-var(--header-height)-20px)] bg-yellow"
   >
-    <img class="absolute bottom-0 left-0 right-0" src="/dots-big.png" alt="" />
+    <Image class="absolute bottom-0 left-0 right-0" src={dotsBig} alt="" />
     <div
       class="absolute max-lg:w-1/2 right-0 lg:right-5 max-lg:bottom-2.5 lg:top-1/2 lg:-translate-y-full"
     >

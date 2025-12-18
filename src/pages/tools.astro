@@ -1,11 +1,13 @@
 ---
+import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 import Captcha from "../components/Captcha.svelte";
 import Svg from "../components/Svg.svelte";
 import ProgressWatcher from "../components/ProgressWatcher.svelte";
 import ProgressCard from "../components/ProgressCard.svelte";
-import Organization from "../components/Organization.svelte";
-import { organizations } from "../data/organizations.js";
+import OrganizationWrapper from "../components/OrganizationWrapper.astro";
+import { organizations } from "../data/organizations";
+import dotsBig from "../assets/img/dots-big.png";
 ---
 
 <Layout>
@@ -14,7 +16,7 @@ import { organizations } from "../data/organizations.js";
   <section
     class="relative p-2.5 lg:p-5 min-h-[calc(50svh-var(--header-height)-20px)] lg:min-h-[calc(100svh-var(--header-height)-20px)] bg-yellow"
   >
-    <img class="absolute bottom-0 left-0 right-0" src="/dots-big.png" alt="" />
+    <Image class="absolute bottom-0 left-0 right-0" src={dotsBig} alt="" />
     <div
       class="absolute max-lg:w-1/2 right-2.5 lg:right-5 bottom-2.5 lg:bottom-5"
     >
@@ -126,11 +128,7 @@ import { organizations } from "../data/organizations.js";
   <section class="p-2.5 lg:p-5 space-y-2.5 lg:space-y-5">
     <div class="grid lg:grid-cols-4 gap-2.5 lg:gap-5">
       <div class="lg:col-span-2 lg:col-start-2 space-y-2.5 lg:space-y-5">
-        {
-          organizations.map((org) => (
-            <Organization client:load organization={org} />
-          ))
-        }
+        {organizations.map((org) => <OrganizationWrapper organization={org} />)}
       </div>
     </div>
   </section>

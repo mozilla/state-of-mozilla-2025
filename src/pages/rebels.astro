@@ -1,10 +1,31 @@
 ---
+import { Image, getImage } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 import Captcha from "../components/Captcha.svelte";
 import Svg from "../components/Svg.svelte";
 import ProgressWatcher from "../components/ProgressWatcher.svelte";
 import ProgressCard from "../components/ProgressCard.svelte";
 import City from "../components/City.svelte";
+import { rebels } from "../data/rebels.js";
+import dotsBig from "../assets/img/dots-big.png";
+
+const optimizedDots = await getImage({ src: dotsBig });
+
+// Dynamically import all images from assets/img (non-eager for selective loading)
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "../assets/img/*.{jpg,jpeg,png,gif,webp}",
+);
+
+// Build a map of filename -> optimized URL for images used in rebels data
+const rebelImages: Record<string, string> = {};
+for (const rebel of rebels) {
+  const imagePath = `../assets/img/${rebel.image}`;
+  if (images[imagePath]) {
+    const module = await images[imagePath]();
+    const optimized = await getImage({ src: module.default });
+    rebelImages[rebel.image] = optimized.src;
+  }
+}
 ---
 
 <Layout>
@@ -13,7 +34,7 @@ import City from "../components/City.svelte";
   <section
     class="mb-0 relative p-2.5 lg:p-5 min-h-[calc(50svh-var(--header-height)-20px)] lg:min-h-[calc(100svh-var(--header-height)-20px)] bg-yellow"
   >
-    <img class="absolute bottom-0 left-0 right-0" src="/dots-big.png" alt="" />
+    <Image class="absolute bottom-0 left-0 right-0" src={dotsBig} alt="" />
     <div
       class="absolute max-lg:w-1/2 right-2.5 lg:right-5 bottom-2.5 lg:bottom-5"
     >
@@ -29,7 +50,11 @@ import City from "../components/City.svelte";
     </div>
   </section>
 
-  <City client:load />
+  <City
+    client:load
+    dotsImageUrl={optimizedDots.src}
+    rebelImages={rebelImages}
+  />
 
   <ProgressWatcher
     client:load

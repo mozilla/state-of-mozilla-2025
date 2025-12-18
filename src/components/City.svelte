@@ -4,6 +4,8 @@
   import { rebels } from "../data/rebels.js";
   import { onMount } from "svelte";
 
+  let { dotsImageUrl, rebelImages = {} } = $props();
+
   let open = $state(null);
   let rebelsFound = $state([]);
 
@@ -26,7 +28,7 @@
 <section class="relative px-2.5 lg:px-5 bg-yellow pt-20 lg:pt-40">
   <img
     class="absolute top-0 left-0 right-0 rotate-180"
-    src="/dots-big.png"
+    src={dotsImageUrl}
     alt=""
   />
   <div class="relative">
@@ -113,5 +115,10 @@
 </section>
 
 {#if open !== null}
-  <Rebel rebel={rebels[open - 1]} onClose={() => (open = null)} />
+  {@const rebel = rebels[open - 1]}
+  {@const optimizedImage = rebelImages[rebel.image] || rebel.image}
+  <Rebel
+    rebel={{ ...rebel, image: optimizedImage }}
+    onClose={() => (open = null)}
+  />
 {/if}

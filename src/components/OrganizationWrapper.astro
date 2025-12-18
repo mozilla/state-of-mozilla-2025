@@ -1,0 +1,84 @@
+---
+import { getImage } from "astro:assets";
+import Organization from "./Organization.svelte";
+
+interface Props {
+  organization: {
+    id: string;
+    name: string;
+    url: string;
+    icon: string;
+    paragraph1: string;
+    list1Intro?: string;
+    list1?: string[];
+    paragraph2?: string | null;
+    list2?: string[] | null;
+  };
+}
+
+const { organization } = Astro.props;
+
+// Dynamically import all images from assets/img
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "../assets/img/*.{jpg,jpeg,png,gif,webp}",
+  { eager: true },
+);
+
+// Helper to get image by filename
+function getImageByName(filename: string): ImageMetadata | undefined {
+  const key = `../assets/img/${filename}`;
+  return images[key]?.default;
+}
+
+// Process icon if it's an image (not SVG)
+let processedIcon = organization.icon;
+if (organization.icon && !organization.icon.endsWith(".svg")) {
+  const iconImage = getImageByName(organization.icon);
+  if (iconImage) {
+    const optimized = await getImage({ src: iconImage });
+    processedIcon = optimized.src;
+  }
+}
+
+// Helper function to replace image paths in HTML strings
+async function processHtmlImages(html: string): Promise<string> {
+  // Match src="filename.ext" patterns (just filenames, not paths)
+  const imgRegex = new RegExp('src="([^"/]+\\.(jpg|jpeg|png|gif|webp))"', "gi");
+  let result = html;
+  let match;
+
+  while ((match = imgRegex.exec(html)) !== null) {
+    const filename = match[1];
+    const image = getImageByName(filename);
+    if (image) {
+      const optimized = await getImage({ src: image });
+      result = result.replace(`src="${filename}"`, `src="${optimized.src}"`);
+    }
+  }
+
+  return result;
+}
+
+// Process all HTML content with images
+const processedOrg = {
+  ...organization,
+  icon: processedIcon,
+  paragraph1: organization.paragraph1
+    ? await processHtmlImages(organization.paragraph1)
+    : organization.paragraph1,
+  list1Intro: organization.list1Intro
+    ? await processHtmlImages(organization.list1Intro)
+    : organization.list1Intro,
+  list1: organization.list1
+    ? await Promise.all(organization.list1.map(processHtmlImages))
+    : organization.list1,
+  paragraph2: organization.paragraph2
+    ? await processHtmlImages(organization.paragraph2)
+    : organization.paragraph2,
+  list2: organization.list2
+    ? await Promise.all(organization.list2.map(processHtmlImages))
+    : organization.list2,
+};
+---
+
+<Organization client:load organization={processedOrg} />
