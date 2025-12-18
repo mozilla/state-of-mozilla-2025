@@ -432,38 +432,65 @@
           class="absolute bottom-0 left-0"
           style="border-bottom: calc(1.25rem - 1px) solid black; border-right: calc(1.25rem - 1px) solid transparent;"
         ></div>
-        {#if !full && !isStickyDismissed}
+        {#if !full}
           <button
-            onclick={(e) => {
-              isStickyDismissed = true;
-              sessionStorage.setItem("stickyDismissed", "true");
-              e.target.remove();
+            onclick={() => {
+              isStickyDismissed = !isStickyDismissed;
+              sessionStorage.setItem(
+                "stickyDismissed",
+                isStickyDismissed.toString(),
+              );
             }}
             class="absolute top-4 right-4 flex justify-center items-center aspect-square w-5 cursor-pointer"
-            aria-label="Close"
+            aria-label={isStickyDismissed ? "Expand" : "Close"}
           >
-            <svg
-              width="20"
-              height="19"
-              viewBox="0 0 20 19"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <line
-                x1="1.0684"
-                y1="0.3536"
-                x2="19.0684"
-                y2="18.3536"
-                stroke="black"
-              />
-              <line
-                x1="0.353478"
-                y1="18.3536"
-                x2="18.3535"
-                y2="0.3536"
-                stroke="black"
-              />
-            </svg>
+            {#if isStickyDismissed}
+              <svg
+                width="20"
+                height="12"
+                viewBox="0 0 20 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <line
+                  x1="0.353553"
+                  y1="11.6464"
+                  x2="10.3536"
+                  y2="1.64645"
+                  stroke="black"
+                />
+                <line
+                  x1="9.64645"
+                  y1="1.64645"
+                  x2="19.6464"
+                  y2="11.6464"
+                  stroke="black"
+                />
+              </svg>
+            {:else}
+              <svg
+                width="20"
+                height="19"
+                viewBox="0 0 20 19"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <line
+                  x1="1.0684"
+                  y1="0.3536"
+                  x2="19.0684"
+                  y2="18.3536"
+                  stroke="black"
+                />
+                <line
+                  x1="0.353478"
+                  y1="18.3536"
+                  x2="18.3535"
+                  y2="0.3536"
+                  stroke="black"
+                />
+              </svg>
+            {/if}
           </button>
         {/if}
         <div class="grid grid-cols-3 gap-2.5">
