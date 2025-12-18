@@ -62,12 +62,17 @@ import FinancialDownloads from "../components/FinancialDownloads.astro";
           class="flex flex-col gap-px bg-yellow hover:bg-black hover:text-yellow"
           href="/stakes"
         >
-          <div class="text-center pt-2.5 lg:pt-5 outline outline-dashed">
+          <div
+            class="relative text-center pt-2.5 lg:pt-5 outline outline-dashed pb-30"
+          >
             <h3 class="text-8xl uppercase">
               <span class="font-star">Choose</span>
-              <span class="font-star">your future</span>
+              <span class="font-star">your</span>
+              <span class="font-star">future</span>
             </h3>
-            <div class="relative overflow-hidden h-20 lg:h-40">
+            <div
+              class="absolute bottom-0 left-0 right-0 w-full h-40 overflow-hidden"
+            >
               <Svg
                 client:load
                 src="/svg/dots.svg"
@@ -170,9 +175,7 @@ import FinancialDownloads from "../components/FinancialDownloads.astro";
         >
           <span>III</span>
           <h3 class="text-7xl uppercase">Tools</h3>
-          <p class="text-xl text-balance">
-            Our work to build a better internet
-          </p>
+          <p class="text-xl text-balance">Choices we're making today</p>
         </a>
       </div>
       <div
@@ -194,7 +197,7 @@ import FinancialDownloads from "../components/FinancialDownloads.astro";
         >
           <span>V</span>
           <h3 class="text-7xl uppercase">Ledger</h3>
-          <p class="text-xl text-balance">All in on a double bottom line</p>
+          <p class="text-xl text-balance">Investing in a rebel alliance</p>
         </a>
       </div>
       <div
@@ -216,7 +219,7 @@ import FinancialDownloads from "../components/FinancialDownloads.astro";
         >
           <span>IV</span>
           <h3 class="text-7xl uppercase">Rebels</h3>
-          <p class="text-xl text-balance">Gathering a rebel alliance</p>
+          <p class="text-xl text-balance">Building collective power</p>
         </a>
       </div>
       <div
