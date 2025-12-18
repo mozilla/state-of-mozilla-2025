@@ -503,7 +503,7 @@
               type="text"
               maxlength="24"
               placeholder={loaded ? "Your nickname" : ""}
-              class="w-3/4 border-b border-dashed leading-loose placeholder:text-black focus:outline-0 focus:border-solid {full
+              class="w-3/4 border-b border-dashed leading-loose placeholder:text-gray focus:outline-0 focus:border-solid {full
                 ? 'lg:text-2xl lg:leading-none'
                 : ''}"
             />

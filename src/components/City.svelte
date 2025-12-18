@@ -23,55 +23,50 @@
   }
 </script>
 
-<section class="px-2.5 lg:px-5 bg-yellow">
-  <div class="grid lg:grid-cols-4 gap-2.5 lg:gap-5">
-    <div class="lg:col-span-2 lg:col-start-2">
-      <div class="relative">
-        <p
-          class="uppercase absolute top-2.5 lg:top-5 left-2.5 lg:left-5 pr-5 lg:w-3/4 max-lg:text-sm"
-        >
-          This is not our fight alone. The movement for a human-first internet
-          is a coalition of the willing.
-        </p>
-        <Svg src="/svg/city.svg" class="w-full h-full" />
-        <button
-          onclick={() => openRebel(1)}
-          class="absolute top-[18%] left-[25%] bg-red flex justify-center items-center w-10 h-10 rounded-full cursor-pointer"
-        >
-          1
-        </button>
-        <button
-          onclick={() => openRebel(2)}
-          class="absolute top-[24%] left-[87%] bg-red flex justify-center items-center w-10 h-10 rounded-full cursor-pointer"
-        >
-          2
-        </button>
-        <button
-          onclick={() => openRebel(3)}
-          class="absolute top-[40%] left-[72%] bg-red flex justify-center items-center w-10 h-10 rounded-full cursor-pointer"
-        >
-          3
-        </button>
-        <button
-          onclick={() => openRebel(4)}
-          class="absolute top-[51%] left-[37%] bg-red flex justify-center items-center w-10 h-10 rounded-full cursor-pointer"
-        >
-          4
-        </button>
-        <button
-          onclick={() => openRebel(5)}
-          class="absolute top-[75%] left-[4%] bg-red flex justify-center items-center w-10 h-10 rounded-full cursor-pointer"
-        >
-          5
-        </button>
-        <button
-          onclick={() => openRebel(6)}
-          class="absolute top-[74%] left-[44%] bg-red flex justify-center items-center w-10 h-10 rounded-full cursor-pointer"
-        >
-          6
-        </button>
-      </div>
-    </div>
+<section class="relative px-2.5 lg:px-5 bg-yellow pt-20 lg:pt-40">
+  <img
+    class="absolute top-0 left-0 right-0 rotate-180"
+    src="/dots-big.png"
+    alt=""
+  />
+  <div class="relative">
+    <Svg src="/svg/city.svg" class="w-full h-full" />
+    <button
+      onclick={() => openRebel(1)}
+      class="absolute top-[18%] left-[25%] bg-red flex justify-center items-center w-10 h-10 rounded-full cursor-pointer"
+    >
+      1
+    </button>
+    <button
+      onclick={() => openRebel(2)}
+      class="absolute top-[24%] left-[87%] bg-red flex justify-center items-center w-10 h-10 rounded-full cursor-pointer"
+    >
+      2
+    </button>
+    <button
+      onclick={() => openRebel(3)}
+      class="absolute top-[40%] left-[72%] bg-red flex justify-center items-center w-10 h-10 rounded-full cursor-pointer"
+    >
+      3
+    </button>
+    <button
+      onclick={() => openRebel(4)}
+      class="absolute top-[51%] left-[37%] bg-red flex justify-center items-center w-10 h-10 rounded-full cursor-pointer"
+    >
+      4
+    </button>
+    <button
+      onclick={() => openRebel(5)}
+      class="absolute top-[75%] left-[4%] bg-red flex justify-center items-center w-10 h-10 rounded-full cursor-pointer"
+    >
+      5
+    </button>
+    <button
+      onclick={() => openRebel(6)}
+      class="absolute top-[74%] left-[44%] bg-red flex justify-center items-center w-10 h-10 rounded-full cursor-pointer"
+    >
+      6
+    </button>
   </div>
 </section>
 
