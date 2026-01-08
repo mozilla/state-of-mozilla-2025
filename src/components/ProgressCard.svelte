@@ -14,7 +14,7 @@
   let hasWebcamImage = $state(false);
   let shareWrapper = $state(null);
   let isSharing = $state(false);
-  let isStickyDismissed = $state(false);
+  let isStickyDismissed = $state(true);
   const progress = $derived($progressStore);
 
   $effect(() => {
