@@ -63,6 +63,9 @@
     if (stickyDismissed === "true") {
       isStickyDismissed = true;
     }
+    if (stickyDismissed === "false") {
+      isStickyDismissed = false;
+    }
 
     loaded = true;
   });
