@@ -6,6 +6,7 @@ import Svg from "../components/Svg.svelte";
 import ProgressWatcher from "../components/ProgressWatcher.svelte";
 import ProgressCard from "../components/ProgressCard.svelte";
 import dotsBig from "../assets/img/dots-big.png";
+import FinancialDownloads from "../components/FinancialDownloads.astro";
 ---
 
 <Layout>
@@ -26,11 +27,9 @@ import dotsBig from "../assets/img/dots-big.png";
       <Svg client:load src="/svg/ledger.svg" class="w-full h-full" />
     </div>
     <div class="relative">
-      <p class="mb-2.5 lg:mb-5">III - The Ledger</p>
-      <h1 class="uppercase text-7xl lg:text-9xl">
-        Investing in a
-        <br class="max-lg:hidden" />
-        rebel alliance
+      <p class="mb-2.5 lg:mb-5">IV - The Ledger</p>
+      <h1 class="uppercase text-6xl lg:text-9xl">
+        Investing in a rebel alliance
       </h1>
     </div>
   </section>
@@ -39,45 +38,257 @@ import dotsBig from "../assets/img/dots-big.png";
     <div class="grid lg:grid-cols-4 gap-2.5 lg:gap-5">
       <div class="lg:col-span-2 lg:col-start-2 space-y-2.5 lg:space-y-5">
         <p>
-          These principles light the way towards a different economic model for
-          tech: values-driven innovation creating a sustainable business, which
-          allows us to reinvest in a movement for an open web. Mozilla’s current
-          strategy is built around an explicit double bottom line framework:
+          Mozilla was born to challenge a tech monopoly — and we succeeded not
+          by becoming a significant player in the browser market, but by
+          building an ecosystem that made openness thrive. Today, as AI reshapes
+          the web and our relationship to technology, and concentrates power
+          even faster, we’re using the same strategy in new ways.
         </p>
-        <Svg client:load src="/svg/users.svg" class="w-full mb-2.5 lg:mb-5" />
+        <p>
+          This is a story about how we invest — not just with dollars, but with
+          our convictions, rooted in the Mozilla Manifesto.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="p-2.5 lg:p-5 space-y-2.5 lg:space-y-5">
+    <div class="grid lg:grid-cols-4 gap-2.5 lg:gap-5">
+      <div class="lg:col-span-2 lg:col-start-2 space-y-2.5 lg:space-y-5">
+        <p class="border-y border-black py-2.5">INVESTING TO TIP THE SCALES</p>
+
+        <p>
+          We know the stakes: a handful of big companies now dominate the full
+          AI stack. That concentration is dangerous: it narrows who gets to
+          build, who benefits, and who decides what technology becomes.
+        </p>
+        <p>
+          We’re focusing our ~$1.4B in reserves, our brand and our people power
+          at shifting this balance.
+        </p>
+        <p>
+          Our investment theory starts with a simple belief: a growing movement
+          of mission driven tech companies and nonprofits can be a counterforce
+          to the big players, creating a world of technology that is more
+          diverse, creative and useful to people everywhere.
+        </p>
+        <p>
+          Who is part of the alliance? Open source developers. Responsible tech
+          startups. Public‑interest technologists. Anyone building AI that gives
+          users agency, choice, and trust. Mozilla is one of these players. And,
+          it is also an investor who is making bets on its peers.
+        </p>
+        <p>
+          As the existing organizations in our portfolio continue to advance
+          trustworthy AI, we have also set up a number of new Mozilla
+          organizations aimed at creating alternatives in the AI era. We’ve also
+          invested in over 50 companies advancing responsible technology and
+          dozens of public interest technologies and nonprofits — all of whom
+          are aimed at tipping the scales.
+        </p>
+        <p>
+          This philosophy of ‘invest in the rebel alliance’ is at the heart of
+          who Mozilla is today — and how we think we can drive change.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="p-2.5 lg:p-5 space-y-2.5 lg:space-y-5">
+    <div class="grid lg:grid-cols-4 gap-2.5 lg:gap-5">
+      <div class="lg:col-span-2 lg:col-start-2 space-y-2.5 lg:space-y-5">
+        <p class="border-y border-black py-2.5">LEVERAGING OUR ASSETS</p>
+        <p>
+          Mozilla has something rare in tech today: the ability to make
+          long‑term bets without surrendering our values. We are independent. We
+          are global. And we have meaningful resources to invest.
+        </p>
+        <p>We have a powerful mix of financial and non-financial assets:</p>
+        <p>FINANCIAL STRENGTH:</p>
+      </div>
+    </div>
+    <div class="grid lg:grid-cols-2 gap-px bg-yellow mb-10">
+      <div
+        class="lg:col-span-full p-5 lg:p-10 space-y-2.5 outline outline-dashed"
+      >
+        <p class="font-mozilla-text text-5xl lg:text-7xl xl:text-8xl uppercase">
+          1.4b
+        </p>
+        <p>in reserves (and no debt)</p>
+      </div>
+      <div class="p-5 lg:p-10 space-y-2.5 outline outline-dashed">
+        <p class="font-mozilla-text text-5xl lg:text-7xl xl:text-8xl uppercase">
+          $620M
+        </p>
+        <p>in asset growth since 2020</p>
+      </div>
+      <div class="p-5 lg:p-10 space-y-2.5 outline outline-dashed">
+        <p class="font-mozilla-text text-5xl lg:text-7xl xl:text-8xl uppercase">
+          $658.5M
+        </p>
+        <p>in Firefox related income (2024)</p>
+      </div>
+      <div class="p-5 lg:p-10 space-y-2.5 outline outline-dashed">
+        <p class="font-mozilla-text text-5xl lg:text-7xl xl:text-8xl uppercase">
+          $125M
+        </p>
+        <p>invested in philanthropic programs since 2020</p>
+      </div>
+      <div class="p-5 lg:p-10 space-y-2.5 outline outline-dashed">
+        <p class="font-mozilla-text text-5xl lg:text-7xl xl:text-8xl uppercase">
+          50+
+        </p>
+        <p>equity holdings in responsible tech companies</p>
+      </div>
+    </div>
+    <div class="grid lg:grid-cols-4 gap-2.5 lg:gap-5">
+      <div class="lg:col-span-2 lg:col-start-2 space-y-2.5 lg:space-y-5">
+        <p>REACH AND COMMUNITY:</p>
+      </div>
+    </div>
+    <div class="grid lg:grid-cols-2 gap-px bg-yellow mb-10">
+      <div class="p-5 lg:p-10 space-y-2.5 outline outline-dashed">
+        <p class="font-mozilla-text text-5xl lg:text-7xl xl:text-8xl uppercase">
+          ~200M
+        </p>
+        <p>monthly Firefox users</p>
+      </div>
+      <div class="p-5 lg:p-10 space-y-2.5 outline outline-dashed">
+        <p class="font-mozilla-text text-5xl lg:text-7xl xl:text-8xl uppercase">
+          ~20M
+        </p>
+        <p>monthly Thunderbird users</p>
+      </div>
+      <div class="p-5 lg:p-10 space-y-2.5 outline outline-dashed">
+        <p class="font-mozilla-text text-5xl lg:text-7xl xl:text-8xl uppercase">
+          Tens of thousands
+        </p>
+        <p>of donors supporting Mozilla’s mission worldwide</p>
+      </div>
+      <div class="p-5 lg:p-10 space-y-2.5 outline outline-dashed">
+        <p>Participants from</p>
+        <p class="font-mozilla-text text-5xl lg:text-7xl xl:text-8xl uppercase">
+          79
+        </p>
+        <p>countries at Mozilla Festival</p>
+      </div>
+    </div>
+    <div class="grid lg:grid-cols-4 gap-2.5 lg:gap-5">
+      <div class="lg:col-span-2 lg:col-start-2 space-y-2.5 lg:space-y-5">
+        <p>
+          Of course, big tech has bigger assets. But that doesn't mean we can't
+          challenge them. Our assets are aimed at helping a whole ecosystem grow
+          — and at creating an alliance that can transform tech.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="p-2.5 lg:p-5 space-y-2.5 lg:space-y-5">
+    <div class="grid lg:grid-cols-4 gap-2.5 lg:gap-5">
+      <div class="lg:col-span-2 lg:col-start-2 space-y-2.5 lg:space-y-5">
+        <p class="border-y border-black py-2.5">HOW WE'RE INVESTING</p>
+        <p>
+          In 2026, Mozilla will continue to invest and leverage our assets to
+          help tip the balance of AI toward openness, agency and trust. We
+          anticipate $~650M in expenditure across the portfolio to run our core
+          businesses, generate revenue, drive mission impact, and grow new
+          opportunities in 2026:
+        </p>
+        <p>
+          Approximately <strong>80% of expenditure on core products</strong>:
+        </p>
         <ul class="list-disc list-inside space-y-2.5 lg:space-y-5">
           <li>
-            <strong>Mission Impact:</strong> By the end of 2028, 100% of our operating
-            organizations will have flagship AI offerings that actively advance the
-            Mozilla Manifesto. We're not just building products—we're building proof
-            that our principles work at scale.
+            Continued, substantial investment in core products like Firefox and
+            Thunderbird.
+          </li>
+        </ul>
+        <p>
+          Approximately <strong
+            >20% expanding into trustworthy, open source AI</strong
+          >:
+        </p>
+        <ul class="list-disc list-inside space-y-2.5 lg:space-y-5">
+          <li>
+            Pushing the envelope on products and features that offer people
+            access to AI in ways they can trust, giving them real agency and
+            choice.
           </li>
           <li>
-            <strong>Market Success:</strong> We're targeting 20% year-over-year growth
-            in non-search revenue across our portfolio, with at least three Mozilla
-            organizations achieving $25M+ in annual revenue. This isn't growth for
-            growth's sake—it's about resilience for this new era.
+            Investments in startups and tools that will make open easier than
+            closed, helping developers find open source AI alternatives to
+            renting from platforms.
+          </li>
+          <li>
+            Grants, fellowships and community programs aimed at rebuilding the
+            future of technology with communities and people at the center.
           </li>
         </ul>
       </div>
     </div>
   </section>
 
-  <section>
-    <div
-      class="grid lg:grid-cols-3 max-lg:divide-y lg:divide-x divide-dashed bg-yellow"
-    >
-      <div class="p-5 lg:p-10 space-y-2.5">
-        <p class="text-6xl lg:text-8xl uppercase">1.4b</p>
-        <p>in reserves</p>
+  <section class="p-2.5 lg:p-5 space-y-2.5 lg:space-y-5">
+    <div class="grid lg:grid-cols-4 gap-2.5 lg:gap-5">
+      <div class="lg:col-span-2 lg:col-start-2 space-y-2.5 lg:space-y-5">
+        <p class="border-y border-black py-2.5">
+          INVESTING A DOUBLE BOTTOM LINE
+        </p>
+        <p>
+          All of this investment is <strong
+            >guided by 25 years of experience using a double bottom line</strong
+          >. We know that we can shift the tech industry in a different
+          direction if we pay attention to both mission and money.
+        </p>
+        <p>
+          We have updated and published the <strong
+            >double bottom line framework</strong
+          > we’re using to make all decisions — and track progress — related to our
+          current investment strategy.
+        </p>
+        <p>MISSION</p>
       </div>
-      <div class="p-5 lg:p-10 space-y-2.5">
-        <p class="text-6xl lg:text-8xl uppercase">$620m</p>
-        <p>asset growth since 2020</p>
+    </div>
+    <div class="grid lg:grid-cols-2 gap-px bg-yellow mb-10">
+      <div class="lg:col-span-full p-5 outline outline-dashed">
+        <Svg client:load src="/svg/mission.svg" class="mx-auto" />
       </div>
-      <div class="p-5 lg:p-10 space-y-2.5">
-        <p class="text-6xl lg:text-8xl uppercase">$XXX</p>
-        <p>approx investments in AI development</p>
+      <div class="p-5 outline outline-dashed">
+        <p class="mb-2.5">In the world</p>
+        <p class="font-mozilla-text text-4xl lg:text-6xl xl:text-7xl uppercase">
+          People have easy access to AI that is open and puts humanity first.
+        </p>
+      </div>
+      <div class="p-5 outline outline-dashed">
+        <p class="mb-2.5">At Mozilla</p>
+        <p class="font-mozilla-text text-4xl lg:text-6xl xl:text-7xl uppercase">
+          All products offer genuine choice, useful, trustworthy AI or ‘no AI at
+          all’.
+        </p>
+      </div>
+    </div>
+    <div class="grid lg:grid-cols-4 gap-2.5 lg:gap-5">
+      <div class="lg:col-span-2 lg:col-start-2 space-y-2.5 lg:space-y-5">
+        <p>MONEY</p>
+      </div>
+    </div>
+    <div class="grid lg:grid-cols-2 gap-px bg-yellow">
+      <div class="lg:col-span-full p-5 outline outline-dashed">
+        <Svg client:load src="/svg/money.svg" class="mx-auto" />
+      </div>
+      <div class="p-5 outline outline-dashed">
+        <p class="mb-2.5">In the world</p>
+        <p class="font-mozilla-text text-4xl lg:text-6xl xl:text-7xl uppercase">
+          More and more responsible tech companies succeed in the market.
+        </p>
+      </div>
+      <div class="p-5 outline outline-dashed">
+        <p class="mb-2.5">At Mozilla</p>
+        <p class="font-mozilla-text text-4xl lg:text-6xl xl:text-7xl uppercase">
+          Our revenue sources diversify, showing responsible tech can win in the
+          market.
+        </p>
       </div>
     </div>
   </section>
@@ -86,71 +297,35 @@ import dotsBig from "../assets/img/dots-big.png";
     <div class="grid lg:grid-cols-4 gap-2.5 lg:gap-5">
       <div class="lg:col-span-2 lg:col-start-2 space-y-2.5 lg:space-y-5">
         <p>
-          Every org in the Mozilla portfolio — companies and nonprofits — has
-          organized its strategy around this double bottom line, ensuring
-          everything we do balances mission <em>and</em> money.
+          Every organization in Mozilla’s core portfolio plans, builds, and
+          measures success against this double bottom line. And, we use this
+          framework — alongside the Mozilla Manifesto — when investing in
+          others.
         </p>
         <p>
-          This has meant continued growth and diversification across Mozilla’s
-          portfolio, as Mozilla scales our investments and backs up our
-          commitment to do for AI what we did for the web.
+          Our hope is that this approach will catch on. If it does, it can tip
+          the scales, creating space for smaller players, for startups and
+          public interest technologists and for all of us to put technology on a
+          different track. We know from history that it’s possible, if we do it
+          together.
+        </p>
+        <p class="italic">
+          Below you’ll find links to Mozilla’s Foundation’s Form 990 tax filing
+          and our audited financials which provided a consolidated view across
+          our portfolio.
         </p>
       </div>
     </div>
   </section>
 
-  <section>
-    <div
-      class="grid lg:grid-cols-2 max-lg:divide-y lg:divide-x divide-dashed bg-yellow"
-    >
-      <div class="p-5 lg:p-10 space-y-2.5">
-        <p class="text-6xl lg:text-8xl uppercase">200m</p>
-        <p>approx monthly average Firefox users</p>
-      </div>
-      <div class="p-5 lg:p-10 space-y-2.5">
-        <p class="text-6xl lg:text-8xl uppercase">20m</p>
-        <p>approx monthly average Thunderbird users</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="p-2.5 lg:p-5 space-y-2.5 lg:space-y-5">
-    <div class="grid lg:grid-cols-4 gap-2.5 lg:gap-5">
-      <div class="lg:col-span-2 lg:col-start-2 space-y-2.5 lg:space-y-5">
-        <p>
-          We can’t do this alone. But Mozilla, as we enter this next era, is
-          building and funding efforts that push AI towards agency and choice.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section class="mb-0">
-    <div
-      class="grid lg:grid-cols-2 lg:divide-x divide-y divide-dashed bg-yellow"
-    >
-      <div class="p-5 lg:p-10 space-y-2.5">
-        <p class="text-6xl lg:text-8xl uppercase">$236m</p>
-        <p>investment in philanthropic programs</p>
-      </div>
-      <div class="p-5 lg:p-10 space-y-2.5">
-        <p class="text-6xl lg:text-8xl uppercase">$35m</p>
-        <p>investment in Mozilla Ventures Round One</p>
-      </div>
-      <div class="lg:col-span-2 p-5 lg:p-10 space-y-2.5">
-        <p class="text-6xl lg:text-8xl uppercase">
-          425 grantees and fellows in 46 different countriessince 2020
-        </p>
-      </div>
-    </div>
-  </section>
+  <FinancialDownloads />
 
   <ProgressWatcher
     client:load
     current="ledger"
-    number="three"
-    position="third"
-    next="tools"
+    number="four"
+    position="fourth"
+    next="rebels"
     text=""
   />
 

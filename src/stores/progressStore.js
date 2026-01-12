@@ -3,7 +3,7 @@ import { writable } from "svelte/store";
 const PROGRESS_KEY = "progress";
 const INITIAL_PROGRESS = {
   stakes: false,
-  code: false,
+  manifesto: false,
   ledger: false,
   tools: false,
   rebels: false,

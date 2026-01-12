@@ -555,7 +555,7 @@
             <div class="absolute top-0 left-0 bg-black text-white">
               <span>II</span>
             </div>
-            {#if progress.code}
+            {#if progress.manifesto}
               <div class="animate-blink-2 w-full h-full">
                 <Svg src="/svg/journey2.svg" class="max-w-full max-h-full" />
               </div>

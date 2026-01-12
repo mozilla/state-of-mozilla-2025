@@ -6,10 +6,13 @@
   <section
     class="bg-black text-white px-2.5 lg:px-5 py-2.5 lg:py-5 space-y-5 lg:space-y-10"
   >
-    <p class="mb-5">Let’s Do for AI What We Did for the Web</p>
     <div class="grid lg:grid-cols-2 gap-2.5 lg:gap-5">
       <div class="space-y-2.5 lg:space-y-5">
-        <p>Help us make the age of AI better, fairer, and more free.</p>
+        <p>
+          Let’s Do for AI What We Did for the Web.
+          <br />
+          Help us make the age of AI better, fairer, and more free.
+        </p>
         <p class="text-gray mb-2.5">Learn more</p>
         <ul class="space-y-2.5">
           <li>
@@ -55,6 +58,15 @@
               href="https://www.mozillafoundation.org/en/donate/"
             >
               Donate
+            </a>
+          </li>
+          <li>
+            <a
+              class="underline"
+              target="_blank"
+              href="https://www.mozilla.org/privacy/websites/cookie-settings/"
+            >
+              Cookies
             </a>
           </li>
         </ul>
@@ -105,84 +117,14 @@
         </form>
       </div>
     </div>
-    <hr class="border-gray" />
     <div class="grid lg:grid-cols-2 gap-2.5 lg:gap-5">
       <div class="space-y-5 lg:space-y-12">
-        <p>
-          Visit <a
-            class="underline"
-            target="_blank"
-            href="https://www.mozilla.org/">Mozilla Corporation</a
-          >'s not-for-profit parent,
-          <a
-            class="underline"
-            target="_blank"
-            href="https://www.mozillafoundation.org/en/">Mozilla Foundation</a
-          >. Portions of this content are ©1998-2025 by individual mozilla.org
-          contributors. Content available under a
-          <a
-            class="underline"
-            target="_blank"
-            href="https://www.mozilla.org/en-US/foundation/licensing/website-content/"
-          >
-            Creative Commons license
-          </a>.
-        </p>
         <Svg
           src="/svg/footer1.svg"
           class="w-[184.5px] h-[148.5px] lg:w-[369px] lg:h-[297px]"
         />
-        <p class="text-gray mb-2.5">Company</p>
-        <ul class="space-y-2.5">
-          <li>
-            <a
-              class="underline"
-              target="_blank"
-              href="https://www.mozilla.org/privacy/websites/"
-            >
-              Website Privacy Notice
-            </a>
-          </li>
-          <li>
-            <a
-              class="underline"
-              target="_blank"
-              href="https://www.mozilla.org/privacy/websites/cookie-settings/"
-            >
-              Cookies
-            </a>
-          </li>
-          <li>
-            <a
-              class="underline"
-              target="_blank"
-              href="https://www.mozilla.org/about/legal/"
-            >
-              Legal
-            </a>
-          </li>
-          <li>
-            <a
-              class="underline"
-              target="_blank"
-              href="https://www.mozilla.org/about/governance/policies/participation/"
-            >
-              Community Participation Guidelines
-            </a>
-          </li>
-          <li>
-            <a
-              class="underline"
-              target="_blank"
-              href="https://www.mozilla.org/about/this-site/"
-            >
-              About this site
-            </a>
-          </li>
-        </ul>
       </div>
     </div>
-    <hr class="border-gray" />
     <Svg src="/svg/footer2.svg" class="w-full" />
   </section>
 </footer>

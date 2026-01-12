@@ -34,8 +34,8 @@ A web application built with Astro, Svelte, and Tailwind CSS for Mozilla's 2025 
 │   │   ├── stakes.astro
 │   │   ├── tools.astro
 │   │   ├── ledger.astro
-│   │   ├── code.astro
-│   │   └── join-us.astro
+│   │   ├── manifesto.astro
+│   │   └── roadmap.astro
 │   ├── stores/         # Svelte stores
 │   │   └── progressStore.js
 │   └── styles/         # Global styles

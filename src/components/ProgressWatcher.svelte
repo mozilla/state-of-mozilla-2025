@@ -114,13 +114,13 @@
           <div class="">
             <div class="p-2.5 p-5 space-y-2.5">
               <p class="uppercase">
-                Go to {next == "join-us" ? "last" : "next"} chapter
+                Go to {next == "roadmap" ? "last" : "next"} chapter
               </p>
-              <h3 class="text-7xl uppercase">
+              <h3 class="text-5xl lg:text-7xl uppercase">
                 {next.replace(/-/g, " ")}
               </h3>
             </div>
-            <div class="relative overflow-hidden h-20 lg:h-40 -mt-5 lg:-mt-10">
+            <div class="relative overflow-hidden h-10 lg:h-40 -mt-10 lg:-mt-10">
               <Svg
                 src="/svg/dots.svg"
                 class="absolute left-0 right-0 top-1/2 -translate-y-1/2 w-full object-cover"

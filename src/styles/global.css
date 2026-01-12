@@ -92,8 +92,14 @@ h6 {
   }
 }
 
+strong {
+  background-color: var(--color-yellow);
+}
+
 .font-mozilla-text {
   font-family: "Mozilla Text", sans-serif;
+  line-height: 80%;
+  letter-spacing: -2%;
 }
 .font-ocr-pbi {
   font-family: "OCR-PBI", sans-serif;

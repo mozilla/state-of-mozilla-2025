@@ -21,10 +21,10 @@
       progress = value;
     });
 
-    // Check if all chapters except Join Us are complete
+    // Check if all chapters except The Roadmap are complete
     const isProgressComplete =
       progress.stakes === true &&
-      progress.code === true &&
+      progress.manifesto === true &&
       progress.tools === true &&
       progress.rebels === true &&
       progress.ledger === true;
@@ -32,7 +32,7 @@
     // Hide stopwall if progress is complete OR sessionStorage bypass is set
     if (isProgressComplete || sessionStorage.getItem("stopwallVerified")) {
       showStopWall = false;
-      // Mark Join Us as viewed when accessing this page with complete progress
+      // Mark The Roadmap as viewed when accessing this page with complete progress
       progressStore.markAsViewed("joinus");
     }
 
@@ -56,7 +56,7 @@
         setTimeout(() => {
           showStopWall = false;
           sessionStorage.setItem("stopwallVerified", "true");
-          // Mark Join Us as viewed when bypass is executed
+          // Mark The Roadmap as viewed when bypass is executed
           progressStore.markAsViewed("joinus");
         }, 1000);
       }

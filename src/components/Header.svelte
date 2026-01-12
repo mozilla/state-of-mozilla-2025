@@ -128,7 +128,11 @@
             href="/"
           >
             <span class="lg:hidden">0.</span>
-            <span class="text-6xl lg:text-3xl uppercase">Intro</span>
+            <span
+              class="text-6xl lg:text-xl xl:text-2xl 2xl:text-3xl uppercase"
+            >
+              Intro
+            </span>
           </a>
         </li>
         <li class="flex">
@@ -140,31 +144,27 @@
             href="/stakes"
           >
             <span class="lg:hidden">I.</span>
-            <span class="text-6xl lg:text-3xl uppercase"> Stakes </span>
+            <span
+              class="text-6xl lg:text-xl xl:text-2xl 2xl:text-3xl uppercase"
+            >
+              Stakes
+            </span>
           </a>
         </li>
         <li class="flex">
           <a
             class="flex-1 p-2.5 flex flex-col justify-center items-center text-center space-y-2.5 {getLinkClasses(
-              '/code',
-              'code',
+              '/manifesto',
+              'manifesto',
             )}"
-            href="/code"
+            href="/manifesto"
           >
             <span class="lg:hidden">II.</span>
-            <span class="text-6xl lg:text-3xl uppercase">Code</span>
-          </a>
-        </li>
-        <li class="flex">
-          <a
-            class="flex-1 p-2.5 flex flex-col justify-center items-center text-center space-y-2.5 {getLinkClasses(
-              '/ledger',
-              'ledger',
-            )}"
-            href="/ledger"
-          >
-            <span class="lg:hidden">III.</span>
-            <span class="text-6xl lg:text-3xl uppercase">Ledger</span>
+            <span
+              class="text-6xl lg:text-xl xl:text-2xl 2xl:text-3xl uppercase"
+            >
+              Manifesto
+            </span>
           </a>
         </li>
         <li class="flex">
@@ -176,7 +176,27 @@
             href="/tools"
           >
             <span class="lg:hidden">IV.</span>
-            <span class="text-6xl lg:text-3xl uppercase">Tools</span>
+            <span
+              class="text-6xl lg:text-xl xl:text-2xl 2xl:text-3xl uppercase"
+            >
+              Tools
+            </span>
+          </a>
+        </li>
+        <li class="flex">
+          <a
+            class="flex-1 p-2.5 flex flex-col justify-center items-center text-center space-y-2.5 {getLinkClasses(
+              '/ledger',
+              'ledger',
+            )}"
+            href="/ledger"
+          >
+            <span class="lg:hidden">III.</span>
+            <span
+              class="text-6xl lg:text-xl xl:text-2xl 2xl:text-3xl uppercase"
+            >
+              Ledger
+            </span>
           </a>
         </li>
         <li class="flex">
@@ -188,19 +208,27 @@
             href="/rebels"
           >
             <span class="lg:hidden">V.</span>
-            <span class="text-6xl lg:text-3xl uppercase">Rebels</span>
+            <span
+              class="text-6xl lg:text-xl xl:text-2xl 2xl:text-3xl uppercase"
+            >
+              Rebels
+            </span>
           </a>
         </li>
         <li class="flex">
           <a
             class="flex-1 p-2.5 flex flex-col justify-center items-center text-center space-y-2.5 {getLinkClasses(
-              '/join-us',
-              'joinus',
+              '/roadmap',
+              'roadmap',
             )}"
-            href="/join-us"
+            href="/roadmap"
           >
             <span class="lg:hidden">FINAL</span>
-            <span class="text-6xl lg:text-3xl uppercase"> Join Us </span>
+            <span
+              class="text-6xl lg:text-xl xl:text-2xl 2xl:text-3xl uppercase"
+            >
+              Roadmap
+            </span>
           </a>
         </li>
       </ul>

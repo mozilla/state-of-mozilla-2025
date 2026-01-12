@@ -17,9 +17,6 @@ import FinancialDownloads from "../components/FinancialDownloads.astro";
         <div class="-mt-5 lg:-mt-10 -ml-5">
           <Svg client:load src="/svg/intro1.svg" />
         </div>
-        <div class="-mt-5 lg:-mt-10">
-          <Svg client:load src="/svg/intro2.svg" />
-        </div>
       </div>
     </div>
   </section>
@@ -28,36 +25,67 @@ import FinancialDownloads from "../components/FinancialDownloads.astro";
     <div class="grid lg:grid-cols-4 gap-2.5 lg:gap-5">
       <div class="lg:col-start-2 lg:col-span-2 space-y-2.5 lg:space-y-5">
         <p>
-          The 2025 State of Mozilla is an invitation: choose your future. We’re
-          at a crossroads with AI, between tech we can shape, trust and enjoy
-          vs. a world of centrally controlled monotony and slop.
+          The 2025/26 State of Mozilla is an invitation: <strong
+            >choose your future</strong
+          >.
         </p>
         <p>
-          Mozilla is rewiring for a new era, decentralizing control, harnessing
-          a global community committed to a better internet, and building great
-          products that give people real agency and choice. At a moment where
-          big tech seeks to monopolize our shared future, Mozilla is choosing a
-          different path:
+          AI is well-past being a secondary technology. It’s rapidly becoming
+          the tool, for better or worse, that mediates how we search, create,
+          communicate, and make sense of the web itself.
         </p>
+        <p>
+          As AI is woven into browsers, apps, and everyday tools, the choices we
+          make now will shape not just new products, but how the internet works,
+          and who it works for. Even as a company known for its browser and
+          email products, our future – and humanity’s – is inextricably tied to
+          the direction AI takes.
+        </p>
+        <p>
+          The big tech players know this too. That’s why they’re racing to lock
+          down and control AI — to make sure it works on their terms, not ours.
+        </p>
+        <p>At this critical moment, Mozilla is choosing a different path:</p>
         <ul class="list-disc list-inside space-y-2.5 lg:space-y-5">
           <li>
-            We choose humanity: We don’t have to accept monopolies,
-            concentration and control. We can have AI and an internet built on
-            human agency and choice, and technology that empowers creativity and
-            protects privacy.
+            We Choose Humanity: Even as the role of AI grows, we need to build
+            for human agency—tech that fuels creativity and fiercely protects
+            privacy.
           </li>
           <li>
-            We choose collective power: We know we can build this world if we
-            lean into open source and community, just as we did when we built
-            Firefox and Thunderbird.
+            We Choose Collective Power: As we learn how to build with AI, we
+            need to lean into open source and community, just as we did with
+            Firefox.
           </li>
           <li>
-            We choose a different economic model for tech. We know we can build
-            responsible tech that succeeds in the market — which is why a double
-            bottom line that measures both mission + money now guides everything
-            we do.
+            We Choose a Different Economic Model: A ‘double bottom
+            line’—prioritizing both mission and market impact—continues to guide
+            everything we do.
           </li>
         </ul>
+        <p>
+          <strong
+            >We are rewiring Mozilla itself to do for AI what we did for the
+            web: push the technology in a new direction, one defined by
+            openness, agency and choice.</strong
+          > We’re continuing to invest in core products like Firefox and Thunderbird,
+          so that their use of AI is trustworthy, human-centered and entirely up to
+          you.
+        </p>
+        <p>
+          And, as in the web era, it's going to take a powerful community to
+          win. An increasing portion of Mozilla’s time and money is focused on
+          gathering a rebel alliance of sorts, a growing network of open source
+          developers, responsible startups, and public-interest technologists
+          working to shape what the internet becomes.
+        </p>
+        <p>
+          We <strong>can</strong> do this. As fast as technology is moving, what comes
+          next is still up for grabs. We can still choose a different future, but
+          time is running out.
+        </p>
+        <p>Will you choose with us?</p>
+
         <a
           class="flex flex-col gap-px bg-yellow hover:bg-black hover:text-yellow"
           href="/stakes"
@@ -127,9 +155,7 @@ import FinancialDownloads from "../components/FinancialDownloads.astro";
         >
           <span>I</span>
           <h3 class="text-7xl uppercase">Stakes</h3>
-          <p class="text-xl text-balance">
-            Closed vs. Open. Which future will we choose?
-          </p>
+          <p class="text-xl text-balance">Closed vs. Open</p>
         </a>
       </div>
       <div
@@ -147,13 +173,35 @@ import FinancialDownloads from "../components/FinancialDownloads.astro";
         </div>
         <a
           class="relative flex-1 px-2.5 pt-2.5 lg:px-5 lg:pt-5 pb-30 flex flex-col justify-center items-center text-center space-y-2.5"
-          href="/code"
+          href="/manifesto"
         >
           <span>II</span>
-          <h3 class="text-7xl uppercase">Code</h3>
+          <h3 class="text-7xl uppercase">Manifesto</h3>
           <p class="text-xl text-balance">
-            Applying the Mozilla Manifesto in the Age of AI
+            Applying our values in the Era of AI
           </p>
+        </a>
+      </div>
+      <div
+        class="relative overflow-hidden lg:col-span-2 outline outline-dashed bg-yellow hover:bg-black hover:text-yellow"
+      >
+        <div class="absolute bottom-0 w-full overflow-hidden h-20 lg:h-40">
+          <Svg
+            client:load
+            src="/svg/dots.svg"
+            class="absolute left-0 right-0 top-1/2 -translate-y-1/2 w-full object-cover"
+          />
+        </div>
+        <div class="absolute bottom-0 left-1/2 -translate-x-1/2">
+          <Svg client:load src="/svg/journey3.svg" />
+        </div>
+        <a
+          class="relative flex-1 px-2.5 pt-2.5 lg:px-5 lg:pt-5 pb-30 flex flex-col justify-center items-center text-center space-y-2.5"
+          href="/tools"
+        >
+          <span>III</span>
+          <h3 class="text-7xl uppercase">Tools</h3>
+          <p class="text-xl text-balance">What we’re building</p>
         </a>
       </div>
       <div
@@ -176,28 +224,6 @@ import FinancialDownloads from "../components/FinancialDownloads.astro";
           <span>V</span>
           <h3 class="text-7xl uppercase">Ledger</h3>
           <p class="text-xl text-balance">Investing in a rebel alliance</p>
-        </a>
-      </div>
-      <div
-        class="relative overflow-hidden lg:col-span-2 outline outline-dashed bg-yellow hover:bg-black hover:text-yellow"
-      >
-        <div class="absolute bottom-0 w-full overflow-hidden h-20 lg:h-40">
-          <Svg
-            client:load
-            src="/svg/dots.svg"
-            class="absolute left-0 right-0 top-1/2 -translate-y-1/2 w-full object-cover"
-          />
-        </div>
-        <div class="absolute bottom-0 left-1/2 -translate-x-1/2">
-          <Svg client:load src="/svg/journey3.svg" />
-        </div>
-        <a
-          class="relative flex-1 px-2.5 pt-2.5 lg:px-5 lg:pt-5 pb-30 flex flex-col justify-center items-center text-center space-y-2.5"
-          href="/tools"
-        >
-          <span>III</span>
-          <h3 class="text-7xl uppercase">Tools</h3>
-          <p class="text-xl text-balance">Choices we're making today</p>
         </a>
       </div>
       <div
@@ -237,10 +263,11 @@ import FinancialDownloads from "../components/FinancialDownloads.astro";
         </div>
         <a
           class="relative flex-1 px-2.5 pt-2.5 lg:px-5 lg:pt-5 pb-30 flex flex-col justify-center items-center text-center space-y-2.5"
-          href="/join-us"
+          href="/roadmap"
         >
           <span>FINAL</span>
-          <h3 class="text-7xl uppercase">Join Us</h3>
+          <h3 class="text-7xl uppercase">Roadmap</h3>
+          <p class="text-xl text-balance">Where we’re going, together</p>
         </a>
       </div>
     </div>

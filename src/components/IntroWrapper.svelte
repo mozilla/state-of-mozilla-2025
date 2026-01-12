@@ -7,20 +7,17 @@
 
   const lines = [
     "INITIALIZING:// MOZILLA_2025",
-    ":: JOIN_THE_MOVEMENT ::",
+    ":: CHOOSE_YOUR_FUTURE ::",
     "{ SIGNAL: OPEN }",
-    "# MOZILLA//AI.MOVEMENT.ACTIVE",
-    ">>> JOIN_THE_MOVEMENT_2025 >>>",
+    "# MOZILLA//FUTURE.ACTIVE",
     "[DATA_STREAM: HUMAN-FIRST]",
     "// MOZILLA_2025 [AUTH_OK]",
     "< REBOOT_NETWORK >",
-    ": JOIN_THE_MOVEMENT :",
+    ": CHOOSE_YOUR_FUTURE :",
     "[ ] TRANSMIT: MOZILLA",
-    "> END_OF_LINE // CHOOSE_YOUR_FUTURE",
-    ">>> JOIN_THE_MOVEMENT_2025 >>>",
-    "{ SYSTEM: OPEN }",
-    "// MOZILLA::2025::MOVEMENT",
-    ">_ JOIN_THE_MOVEMENT();",
+    "> END_OF_LINE // { SYSTEM: OPEN }",
+    "// MOZILLA::2025::",
+    "CHOOSE YOUR FUTURE();",
   ];
 
   let displayedLines = $state([]);
