@@ -4,7 +4,7 @@
   import { rebels } from "../data/rebels.js";
   import { onMount } from "svelte";
 
-  let { dotsImageUrl, rebelImages = {} } = $props();
+  let { rebelImages = {} } = $props();
 
   let open = $state(null);
   let rebelsFound = $state([]);
@@ -26,11 +26,9 @@
 </script>
 
 <section class="relative px-2.5 lg:px-5 bg-yellow pt-20 lg:pt-40">
-  <img
-    loading="lazy"
-    class="absolute top-0 left-0 right-0 rotate-180"
-    src={dotsImageUrl}
-    alt=""
+  <Svg
+    src="/svg/Dithering_Small.svg"
+    class="absolute top-0 left-0 right-0 rotate-180 -translate-y-2.5 w-full"
   />
   <div class="relative">
     <Svg src="/svg/city.svg" class="w-full h-full" />

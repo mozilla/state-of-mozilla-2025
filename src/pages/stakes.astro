@@ -5,7 +5,6 @@ import Captcha from "../components/Captcha.svelte";
 import Svg from "../components/Svg.svelte";
 import ProgressWatcher from "../components/ProgressWatcher.svelte";
 import ProgressCard from "../components/ProgressCard.svelte";
-import dotsBig from "../assets/img/dots-big.png";
 ---
 
 <script is:inline>
@@ -26,11 +25,10 @@ import dotsBig from "../assets/img/dots-big.png";
   <section
     class="relative p-2.5 lg:p-5 min-h-[calc(50svh-var(--header-height)-20px)] lg:min-h-[calc(100svh-var(--header-height)-20px)] bg-yellow"
   >
-    <Image
-      priority
-      class="absolute bottom-0 left-0 right-0"
-      src={dotsBig}
-      alt=""
+    <Svg
+      client:load
+      src="/svg/Dithering_Small.svg"
+      class="absolute bottom-0 left-0 right-0 w-full"
     />
     <div
       class="absolute max-lg:w-1/2 right-2.5 lg:right-5 bottom-2.5 lg:bottom-5"

@@ -7,9 +7,6 @@ import ProgressWatcher from "../components/ProgressWatcher.svelte";
 import ProgressCard from "../components/ProgressCard.svelte";
 import City from "../components/City.svelte";
 import { rebels } from "../data/rebels.js";
-import dotsBig from "../assets/img/dots-big.png";
-
-const optimizedDots = await getImage({ src: dotsBig });
 
 // Dynamically import all images from assets/img (non-eager for selective loading)
 const images = import.meta.glob<{ default: ImageMetadata }>(
@@ -34,11 +31,10 @@ for (const rebel of rebels) {
   <section
     class="mb-0 relative p-2.5 lg:p-5 min-h-[calc(50svh-var(--header-height)-20px)] lg:min-h-[calc(100svh-var(--header-height)-20px)] bg-yellow"
   >
-    <Image
-      priority
-      class="absolute bottom-0 left-0 right-0"
-      src={dotsBig}
-      alt=""
+    <Svg
+      client:load
+      src="/svg/Dithering_Small.svg"
+      class="absolute bottom-0 left-0 right-0 w-full"
     />
     <div
       class="absolute max-lg:w-1/2 right-2.5 lg:right-5 bottom-2.5 lg:bottom-5"
@@ -53,11 +49,7 @@ for (const rebel of rebels) {
     </div>
   </section>
 
-  <City
-    client:load
-    dotsImageUrl={optimizedDots.src}
-    rebelImages={rebelImages}
-  />
+  <City client:load rebelImages={rebelImages} />
 
   <section class="p-2.5 lg:p-5 space-y-2.5 lg:space-y-5">
     <div class="grid lg:grid-cols-4 gap-2.5 lg:gap-5">
