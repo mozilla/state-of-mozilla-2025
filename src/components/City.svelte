@@ -25,57 +25,55 @@
   }
 </script>
 
-<section class="relative px-2.5 lg:px-5 bg-yellow pt-20 lg:pt-40">
-  <Svg
-    src="/svg/Dithering_Small.svg"
-    class="absolute top-0 left-0 right-0 rotate-180 -translate-y-2.5 w-full"
-  />
+<section class="px-2.5 lg:px-5 bg-black">
+  <div class="grid lg:grid-cols-4 gap-2.5 lg:gap-5">
+    <div class="lg:col-span-2 lg:col-start-2">
+      <h2 class="lg:text-3xl text-center uppercase text-yellow py-2.5">
+        SPOT THE REBELS in the city
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class="relative bg-yellow pt-5">
   <div class="relative">
     <Svg src="/svg/city.svg" class="w-full h-full" />
     <button
       onclick={() => openRebel(1)}
-      class="absolute top-[18%] left-[25%] bg-red flex justify-center items-center w-10 h-10 rounded-full cursor-pointer"
+      class="absolute top-[18%] left-[25%] bg-blue text-white flex justify-center items-center w-10 h-10 rounded-full cursor-pointer"
     >
       1
     </button>
     <button
       onclick={() => openRebel(2)}
-      class="absolute top-[24%] left-[87%] bg-red flex justify-center items-center w-10 h-10 rounded-full cursor-pointer"
+      class="absolute top-[24%] left-[87%] bg-blue text-white flex justify-center items-center w-10 h-10 rounded-full cursor-pointer"
     >
       2
     </button>
     <button
       onclick={() => openRebel(3)}
-      class="absolute top-[40%] left-[72%] bg-red flex justify-center items-center w-10 h-10 rounded-full cursor-pointer"
+      class="absolute top-[40%] left-[72%] bg-blue text-white flex justify-center items-center w-10 h-10 rounded-full cursor-pointer"
     >
       3
     </button>
     <button
       onclick={() => openRebel(4)}
-      class="absolute top-[51%] left-[37%] bg-red flex justify-center items-center w-10 h-10 rounded-full cursor-pointer"
+      class="absolute top-[51%] left-[37%] bg-blue text-white flex justify-center items-center w-10 h-10 rounded-full cursor-pointer"
     >
       4
     </button>
     <button
       onclick={() => openRebel(5)}
-      class="absolute top-[75%] left-[4%] bg-red flex justify-center items-center w-10 h-10 rounded-full cursor-pointer"
+      class="absolute top-[75%] left-[4%] bg-blue text-white flex justify-center items-center w-10 h-10 rounded-full cursor-pointer"
     >
       5
     </button>
     <button
       onclick={() => openRebel(6)}
-      class="absolute top-[74%] left-[44%] bg-red flex justify-center items-center w-10 h-10 rounded-full cursor-pointer"
+      class="absolute top-[74%] left-[44%] bg-blue text-white flex justify-center items-center w-10 h-10 rounded-full cursor-pointer"
     >
       6
     </button>
-  </div>
-</section>
-
-<section class="px-2.5 lg:px-5 bg-black">
-  <div class="grid lg:grid-cols-4 gap-2.5 lg:gap-5">
-    <div class="lg:col-span-2 lg:col-start-2">
-      <p class="uppercase text-yellow py-2.5">SPOT THE REBELS in the city:</p>
-    </div>
   </div>
 </section>
 

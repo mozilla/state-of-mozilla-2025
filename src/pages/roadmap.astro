@@ -4,21 +4,23 @@ import Layout from "../layouts/Layout.astro";
 import StopWall from "../components/StopWall.svelte";
 import Svg from "../components/Svg.svelte";
 import ProgressCard from "../components/ProgressCard.svelte";
-import article1 from "../assets/img/article1.png";
-import article2 from "../assets/img/article2.png";
-// import article3 from "../assets/img/article3.png";
+import dotsBig from "../assets/img/dots-big.png";
+import article1 from "../assets/img/article1.jpg";
+import article2 from "../assets/img/article2.jpg";
+import article3 from "../assets/img/article3.jpg";
 ---
 
 <Layout>
   <StopWall client:load />
 
   <section
-    class="relative flex flex-col px-2.5 pt-2.5 lg:px-5 lg:pt-5 min-h-[calc(100svh-var(--header-height)-20px)]"
+    class="relative flex flex-col px-2.5 pt-2.5 lg:px-5 lg:pt-5 min-h-[calc(100svh-var(--header-height)-20px)] overflow-hidden"
   >
-    <Svg
-      client:load
-      src="/svg/Dithering_Small.svg"
-      class="absolute bottom-0 left-0 right-0 w-full"
+    <Image
+      priority
+      class="absolute bottom-0 left-0 right-0 translate-y-20"
+      src={dotsBig}
+      alt=""
     />
     <div class="flex-1 relative flex flex-col space-y-2.5 lg:space-y-5">
       <div class="relative space-y-2.5 lg:space-y-5">
@@ -129,11 +131,11 @@ import article2 from "../assets/img/article2.png";
         <a target="_blank" href="https://youtu.be/obRiQme2b3M">Read more →</a>
       </div>
       <div class="space-y-2.5">
-        <!-- <Image
+        <Image
           src={article3}
           class="aspect-video object-cover object-top w-full"
           alt="Mark Surman on Building a Double Bottom Line for Tech"
-        /> -->
+        />
         <p>Mark Surman on Building a Double Bottom Line for Tech</p>
         <a target="_blank" href="https://youtu.be/BoFUABRULxg">Read more →</a>
       </div>

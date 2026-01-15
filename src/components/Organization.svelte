@@ -50,10 +50,8 @@
     class="btn invert py-1! w-full flex items-center space-x-2.5"
   >
     <span class="font-ocr-pbi text-xl">👁</span>
-    <span class:hidden={!open} class:visible={!open}
-      >HIDE 2025 ACHIEVEMENTS</span
-    >
-    <span class:hidden={open} class:visible={open}>SHOW 2025 ACHIEVEMENTS</span>
+    <span class:hidden={!open} class:visible={!open}>SHOW LESS</span>
+    <span class:hidden={open} class:visible={open}>SHOW MORE</span>
   </button>
 
   {#if open}

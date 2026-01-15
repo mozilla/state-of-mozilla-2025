@@ -6,22 +6,22 @@ import Svg from "../components/Svg.svelte";
 import ProgressWatcher from "../components/ProgressWatcher.svelte";
 import ProgressCard from "../components/ProgressCard.svelte";
 import FinancialDownloads from "../components/FinancialDownloads.astro";
+import dotsBig from "../assets/img/dots-big.png";
 ---
 
 <Layout>
   <Captcha client:load />
 
   <section
-    class="relative p-2.5 lg:p-5 min-h-[calc(50svh-var(--header-height)-20px)] lg:min-h-[calc(100svh-var(--header-height)-20px)] bg-yellow"
+    class="relative p-2.5 lg:p-5 min-h-[calc(50svh-var(--header-height)-20px)] lg:min-h-[calc(100svh-var(--header-height)-20px)] bg-yellow overflow-hidden"
   >
-    <Svg
-      client:load
-      src="/svg/Dithering_Small.svg"
-      class="absolute bottom-0 left-0 right-0 w-full"
+    <Image
+      priority
+      class="absolute bottom-0 left-0 right-0 translate-y-20"
+      src={dotsBig}
+      alt=""
     />
-    <div
-      class="absolute max-lg:w-1/2 right-2.5 lg:right-5 bottom-2.5 lg:bottom-5"
-    >
+    <div class="absolute h-3/4 right-2.5 lg:right-5 bottom-2.5 lg:bottom-5">
       <Svg client:load src="/svg/ledger.svg" class="w-full h-full" />
     </div>
     <div class="relative">
@@ -102,10 +102,14 @@ import FinancialDownloads from "../components/FinancialDownloads.astro";
           are global. And we have meaningful resources to invest.
         </p>
         <p>We have a powerful mix of financial and non-financial assets:</p>
-        <p>FINANCIAL STRENGTH:</p>
       </div>
     </div>
     <div class="grid lg:grid-cols-2 gap-px bg-yellow mb-10">
+      <div
+        class="lg:col-span-full p-2.5 lg:p-5 outline outline-dashed bg-yellow"
+      >
+        <h2 class="text-3xl lg:text-5xl text-center">FINANCIAL STRENGTH</h2>
+      </div>
       <div
         class="lg:col-span-full p-5 lg:p-10 space-y-2.5 outline outline-dashed"
       >
@@ -139,12 +143,13 @@ import FinancialDownloads from "../components/FinancialDownloads.astro";
         <p>equity holdings in responsible tech companies</p>
       </div>
     </div>
-    <div class="grid lg:grid-cols-4 gap-2.5 lg:gap-5">
-      <div class="lg:col-span-2 lg:col-start-2 space-y-2.5 lg:space-y-5">
-        <p>REACH AND COMMUNITY:</p>
-      </div>
-    </div>
+
     <div class="grid lg:grid-cols-2 gap-px bg-yellow mb-10">
+      <div
+        class="lg:col-span-full p-2.5 lg:p-5 outline outline-dashed bg-yellow"
+      >
+        <h2 class="text-3xl lg:text-5xl text-center">REACH AND COMMUNITY</h2>
+      </div>
       <div class="p-5 lg:p-10 space-y-2.5 outline outline-dashed">
         <p class="font-mozilla-text text-5xl lg:text-7xl xl:text-8xl uppercase">
           ~200M
@@ -245,10 +250,14 @@ import FinancialDownloads from "../components/FinancialDownloads.astro";
           > we’re using to make all decisions — and track progress — related to our
           current investment strategy.
         </p>
-        <p>MISSION</p>
       </div>
     </div>
     <div class="grid lg:grid-cols-2 gap-px bg-yellow mb-10">
+      <div
+        class="lg:col-span-full p-2.5 lg:p-5 outline outline-dashed bg-yellow"
+      >
+        <h2 class="text-3xl lg:text-5xl text-center">MISSION</h2>
+      </div>
       <div class="lg:col-span-full p-5 outline outline-dashed">
         <Svg client:load src="/svg/mission.svg" class="mx-auto" />
       </div>
@@ -266,12 +275,13 @@ import FinancialDownloads from "../components/FinancialDownloads.astro";
         </p>
       </div>
     </div>
-    <div class="grid lg:grid-cols-4 gap-2.5 lg:gap-5">
-      <div class="lg:col-span-2 lg:col-start-2 space-y-2.5 lg:space-y-5">
-        <p>MONEY</p>
-      </div>
-    </div>
+
     <div class="grid lg:grid-cols-2 gap-px bg-yellow">
+      <div
+        class="lg:col-span-full p-2.5 lg:p-5 outline outline-dashed bg-yellow"
+      >
+        <h2 class="text-3xl lg:text-5xl text-center">MONEY</h2>
+      </div>
       <div class="lg:col-span-full p-5 outline outline-dashed">
         <Svg client:load src="/svg/money.svg" class="mx-auto" />
       </div>

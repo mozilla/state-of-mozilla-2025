@@ -177,10 +177,10 @@
       e.stopPropagation();
     }}
     class="w-full lg:w-2/3 rounded-4xl bg-white overflow-x-hidden overflow-y-auto overscroll-none h-[calc(100svh-(var(--header-height)*2)-84px)]"
-    style="box-shadow: 8.3871px 8.3871px 0px rgba(0, 0, 0, 0.25);"
+    style="box-shadow: 8.3871px 8.3871px 0px rgba(0, 0, 0, 0.25); scrollbar-width: none;"
   >
     <div
-      class="sticky z-10 top-0 bg-red py-2.5 px-5 flex justify-between items-center space-x-2.5"
+      class="sticky z-10 top-0 bg-blue text-white py-2.5 px-5 flex justify-between items-center space-x-2.5"
     >
       <div class="flex items-center space-x-2.5">
         <svg
@@ -192,7 +192,7 @@
         >
           <path
             d="M22.8295 2.6287H9.77431L8.52879 0.165706C8.47563 0.0602568 8.3693 0 8.25538 0H1.63285C1.51893 0 1.4126 0.0677889 1.35944 0.165706L0.311381 2.24456C0.106325 2.6513 0 3.10322 0 3.55515V20.0203C0 20.9091 0.729086 21.6397 1.63285 21.6397H22.8295C23.7333 21.6397 24.4624 20.9166 24.4624 20.0203V4.2481C24.4624 3.35178 23.7333 2.6287 22.8295 2.6287Z"
-            fill="black"
+            fill="white"
           />
         </svg>
         <span>{rebel.id}.</span>
@@ -215,14 +215,14 @@
             y1="18.0312"
             x2="18.0311"
             y2="0.353543"
-            stroke="black"
+            stroke="white"
           />
           <line
             x1="0.724647"
             y1="0.516198"
             x2="18.4023"
             y2="18.1939"
-            stroke="black"
+            stroke="white"
           />
         </svg>
       </button>
@@ -249,17 +249,19 @@
           <div
             class="absolute top-2.5 right-0 w-[calc(100%+2.5rem)] h-px bg-black before:absolute before:-translate-y-[calc(50%-0.5px)] before:left-0 before:w-2.5 before:h-2.5 before:rounded-full before:bg-black before:content-['']"
           ></div>
-          <div class="absolute top-2.5 right-0 w-[5px] h-1/3 bg-black"></div>
-          <p class="uppercase">{rebel.name}</p>
-          <p>{rebel.title}</p>
+          <div class="overflow-y-auto overscroll-none lg:h-[calc(66vw/2-80px)]">
+            <p class="uppercase">{rebel.name}</p>
+            <p class="mb-10 lg:mb-20">{rebel.title}</p>
+            {#each rebel.bio as paragraph}
+              <p class="max-lg:hidden">{paragraph}</p>
+            {/each}
+          </div>
         </div>
       </div>
-      <div class="grid lg:grid-cols-2 gap-2.5 lg:gap-5">
-        <div class="lg:col-start-2 space-y-2.5 lg:space-y-5">
-          {#each rebel.bio as paragraph}
-            <p>{paragraph}</p>
-          {/each}
-        </div>
+      <div>
+        {#each rebel.bio as paragraph}
+          <p class="lg:hidden">{paragraph}</p>
+        {/each}
       </div>
     </div>
   </div>

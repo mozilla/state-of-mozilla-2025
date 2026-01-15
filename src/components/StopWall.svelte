@@ -33,7 +33,7 @@
     if (isProgressComplete || sessionStorage.getItem("stopwallVerified")) {
       showStopWall = false;
       // Mark The Roadmap as viewed when accessing this page with complete progress
-      progressStore.markAsViewed("joinus");
+      progressStore.markAsViewed("roadmap");
     }
 
     return () => {
@@ -57,7 +57,7 @@
           showStopWall = false;
           sessionStorage.setItem("stopwallVerified", "true");
           // Mark The Roadmap as viewed when bypass is executed
-          progressStore.markAsViewed("joinus");
+          progressStore.markAsViewed("roadmap");
         }, 1000);
       }
     }

@@ -7,7 +7,7 @@ const INITIAL_PROGRESS = {
   ledger: false,
   tools: false,
   rebels: false,
-  joinus: false,
+  roadmap: false,
 };
 
 function createProgressStore() {

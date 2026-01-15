@@ -5,6 +5,7 @@ import Captcha from "../components/Captcha.svelte";
 import Svg from "../components/Svg.svelte";
 import ProgressWatcher from "../components/ProgressWatcher.svelte";
 import ProgressCard from "../components/ProgressCard.svelte";
+import dotsBig from "../assets/img/dots-big.png";
 ---
 
 <script is:inline>
@@ -23,12 +24,13 @@ import ProgressCard from "../components/ProgressCard.svelte";
   <Captcha client:load />
 
   <section
-    class="relative p-2.5 lg:p-5 min-h-[calc(50svh-var(--header-height)-20px)] lg:min-h-[calc(100svh-var(--header-height)-20px)] bg-yellow"
+    class="relative p-2.5 lg:p-5 min-h-[calc(50svh-var(--header-height)-20px)] lg:min-h-[calc(100svh-var(--header-height)-20px)] bg-yellow overflow-hidden"
   >
-    <Svg
-      client:load
-      src="/svg/Dithering_Small.svg"
-      class="absolute bottom-0 left-0 right-0 w-full"
+    <Image
+      priority
+      class="absolute bottom-0 left-0 right-0 translate-y-20"
+      src={dotsBig}
+      alt=""
     />
     <div
       class="absolute max-lg:w-1/2 right-2.5 lg:right-5 bottom-2.5 lg:bottom-5"
@@ -76,7 +78,7 @@ import ProgressCard from "../components/ProgressCard.svelte";
   </section>
 
   <section class="p-2.5 lg:p-5 space-y-2.5 lg:space-y-5">
-    <div class="marquee bg-black text-white text-xl -mx-2.5 lg:-mx-5">
+    <div class="marquee bg-blue text-white text-xl -mx-2.5 lg:-mx-5">
       <ul class="marquee__content">
         <li>DO NOT ACCEPT DEFAULT SETTINGS</li>
         <li>DO NOT ACCEPT DEFAULT SETTINGS</li>
@@ -105,7 +107,7 @@ import ProgressCard from "../components/ProgressCard.svelte";
             <Svg
               client:load
               src="/svg/dots.svg"
-              class="absolute left-1/2 top-1/2 -translate-1/2 w-[200%] h-[200%] object-cover"
+              class="absolute left-0 right-0 bottom-0 w-full object-cover"
             />
           </div>
           <span class="text-9xl">A</span>
@@ -120,7 +122,7 @@ import ProgressCard from "../components/ProgressCard.svelte";
             <Svg
               client:load
               src="/svg/dots.svg"
-              class="absolute left-1/2 top-1/2 -translate-1/2 w-[200%] h-[200%] object-cover"
+              class="absolute left-0 right-0 bottom-0 w-full object-cover"
             />
           </div>
           <span class="text-9xl">B</span>
@@ -129,110 +131,58 @@ import ProgressCard from "../components/ProgressCard.svelte";
     </div>
     <div class="grid lg:grid-cols-2 lg:gap-2.5">
       <div class="future-a space-y-2.5 lg:space-y-5 lg:col-start-1">
-        <p class="border-y border-black py-2.5">CLOSED AND EXTRACTIVE</p>
+        <div class="aspect-square w-full bg-gray-500"></div>
+
         <p>
-          Monopolies, concentration, and slop. A future where a few corporations
-          decide how billions of people learn, create, and see the world.
+          Twenty five years ago, when Microsoft controlled 95% of browsers, they
+          defined how people accessed information, who could build what, and on
+          what terms. Mozilla was born to end that stranglehold, challenging
+          other browsers dominance and shocking the world when we won the fight
+          to guard the open nature of the internet. That remains our north star
+          today.
         </p>
-        <div>
-          <div class="aspect-square w-full bg-gray-500"></div>
-          <p>CLOSED AND EXTRACTIVE</p>
-        </div>
+        <p>
+          Today's AI concentration is far more insidious. Right now, a few big
+          companies are vying for control of the full stack that will underpin
+          our shared future —hardware, software, data, energy, and
+          infrastructure. This isn't just about market share, it's about who
+          decides how billions of people learn, create and see the world.
+        </p>
+        <p>
+          We’re excited about the possibilities that AI offers. But too often
+          the AI we’re getting watches and controls, and just isn’t that useful.
+        </p>
+        <p><em>Is this the future you want?</em></p>
       </div>
       <div class="future-b space-y-2.5 lg:space-y-5 lg:col-start-2">
-        <p class="border-y border-black py-2.5">OPEN AND HUMAN-FIRST</p>
+        <div class="aspect-square w-full bg-gray-500"></div>
+
+        <p>Imagine it’s 2030.</p>
         <p>
-          An internet built on human agency and choice. Technology that empowers
-          creativity, protects privacy, and benefits everyone.
+          You wake up and your digital world feels different — familiar, but
+          freer. The tools you use don’t watch you; they work for you. AI agents
+          collaborate, not control. The web is alive again — open, creative,
+          participatory — a space where people and ideas, not monopolies, shape
+          what comes next.
         </p>
-        <div>
-          <div class="aspect-square w-full bg-gray-500"></div>
-          <p>OPEN AND HUMAN-FIRST</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="future-section p-2.5 lg:p-5 space-y-5 space-y-10">
-    <div class="future-a space-y-2.5 lg:space-y-5">
-      <div class="relative overflow-hidden pb-10 lg:pb-20">
-        <Svg
-          client:load
-          src="/svg/dots.svg"
-          class="absolute left-0 right-0 top-1/2 -translate-y-1/2 w-full object-cover"
-        />
-        <h2 class="font-tuoi-tre text-5xl lg:text-7xl">
-          Monopolies, concentration, and slop.
-        </h2>
-      </div>
-      <div class="grid lg:grid-cols-2 gap-2.5 lg:gap-5">
-        <div class="lg:col-start-1 space-y-2.5 lg:space-y-5">
-          <p>
-            Twenty five years ago, when Microsoft controlled 95% of browsers,
-            they defined how people accessed information, who could build what,
-            and on what terms. Mozilla was born to end that stranglehold,
-            challenging other browsers dominance and shocking the world when we
-            won the fight to guard the open nature of the internet. That remains
-            our north star today.
-          </p>
-          <p>
-            Today's AI concentration is far more insidious. Right now, a few big
-            companies are vying for control of the full stack that will underpin
-            our shared future —hardware, software, data, energy, and
-            infrastructure. This isn't just about market share, it's about who
-            decides how billions of people learn, create and see the world.
-          </p>
-          <p>
-            We’re excited about the possibilities that AI offers. But too often
-            the AI we’re getting watches and controls, and just isn’t that
-            useful.
-          </p>
-          <p><em>Is this the future you want?</em></p>
-        </div>
-      </div>
-    </div>
-
-    <div class="future-b space-y-2.5 lg:space-y-5">
-      <div class="relative overflow-hidden pb-10 lg:pb-20">
-        <Svg
-          client:load
-          src="/svg/dots.svg"
-          class="absolute left-0 right-0 top-1/2 -translate-y-1/2 w-full object-cover"
-        />
-        <h2 class="font-tuoi-tre text-5xl lg:text-7xl">
-          An internet built on human agency and choice
-        </h2>
-      </div>
-      <div class="grid lg:grid-cols-2 gap-2.5 lg:gap-5">
-        <div class="lg:col-start-2 space-y-2.5 lg:space-y-5">
-          <p>Imagine it’s 2030.</p>
-          <p>
-            You wake up and your digital world feels different — familiar, but
-            freer. The tools you use don’t watch you; they work for you. AI
-            agents collaborate, not control. The web is alive again — open,
-            creative, participatory — a space where people and ideas, not
-            monopolies, shape what comes next.
-          </p>
-          <p>
-            AI isn’t something that happens to us anymore. It’s something we
-            shape — in our work, our community, our daily lives. Independent
-            creators are thriving. Local entrepreneurs and small nonprofits are
-            using open-source models to build solutions that actually fit their
-            needs. Students are learning with AI that reflects their culture and
-            language. Researchers are collaborating across borders on systems
-            that are transparent, ethical, and free.
-          </p>
-          <p>
-            Twenty-five years ago, the global open source community rewrote the
-            rules of the internet. Mozilla was a part of this.Together, we
-            proved that an open, values-driven approach to technology could win
-            — not just morally, but in the marketplace. We can do it again for
-            AI.
-          </p>
-          <p>
-            <em>How can we build this future together?</em>
-          </p>
-        </div>
+        <p>
+          AI isn’t something that happens to us anymore. It’s something we shape
+          — in our work, our community, our daily lives. Independent creators
+          are thriving. Local entrepreneurs and small nonprofits are using
+          open-source models to build solutions that actually fit their needs.
+          Students are learning with AI that reflects their culture and
+          language. Researchers are collaborating across borders on systems that
+          are transparent, ethical, and free.
+        </p>
+        <p>
+          Twenty-five years ago, the global open source community rewrote the
+          rules of the internet. Mozilla was a part of this.Together, we proved
+          that an open, values-driven approach to technology could win — not
+          just morally, but in the marketplace. We can do it again for AI.
+        </p>
+        <p>
+          <em>How can we build this future together?</em>
+        </p>
       </div>
     </div>
   </section>

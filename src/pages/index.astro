@@ -10,12 +10,50 @@ import FinancialDownloads from "../components/FinancialDownloads.astro";
       <div class="lg:order-last">
         <div class="aspect-square w-full bg-gray-500"></div>
       </div>
-      <div>
-        <h1 class="relative z-10 text-5xl lg:text-7xl uppercase">
-          Doing for AI<br />what we did<br />for the web
-        </h1>
-        <div class="-mt-5 lg:-mt-10 -ml-5">
-          <Svg client:load src="/svg/intro1.svg" />
+      <div class="flex flex-col justify-between">
+        <div>
+          <h1 class="relative z-10 text-5xl lg:text-7xl uppercase">
+            Doing for AI<br />what we did<br />for the web
+          </h1>
+          <div class="-mt-5 lg:-mt-10 -ml-5">
+            <Svg client:load src="/svg/intro1.svg" />
+          </div>
+        </div>
+        <div class="grid grid-cols-2 gap-px bg-yellow">
+          <div
+            class="relative overflow-hidden col-span-full outline outline-dashed p-5"
+          >
+            <Svg
+              client:load
+              src="/svg/dots.svg"
+              class="absolute left-0 right-0 top-1/2 -translate-y-1/2 w-full object-cover"
+            />
+            <p class="text-center">HIGHLIGHT ARTICLES</p>
+          </div>
+          <a
+            href="/tools#corp"
+            class="max-lg:col-span-full outline outline-dashed p-5 hover:bg-black hover:text-yellow"
+          >
+            III. LATEST ON FIREFOX →
+          </a>
+          <a
+            href="/manifesto"
+            class="max-lg:col-span-full outline outline-dashed p-5 hover:bg-black hover:text-yellow"
+          >
+            II. THE AI ERA →
+          </a>
+          <a
+            href="/tools#mzla"
+            class="max-lg:col-span-full outline outline-dashed p-5 hover:bg-black hover:text-yellow"
+          >
+            III. LATEST ON THUNDERBIRD →
+          </a>
+          <a
+            href="/ledger"
+            class="max-lg:col-span-full outline outline-dashed p-5 hover:bg-black hover:text-yellow"
+          >
+            IV. FINANCIAL DATAS →
+          </a>
         </div>
       </div>
     </div>
@@ -137,7 +175,7 @@ import FinancialDownloads from "../components/FinancialDownloads.astro";
         <h2 class="text-3xl lg:text-5xl text-center">THE JOURNEY</h2>
       </div>
       <div
-        class="relative overflow-hidden lg:col-span-2 outline outline-dashed bg-yellow hover:bg-black hover:text-yellow"
+        class="group relative overflow-hidden lg:col-span-2 outline outline-dashed bg-yellow hover:bg-black hover:text-yellow"
       >
         <div class="absolute bottom-0 w-full overflow-hidden h-20 lg:h-40">
           <Svg
@@ -146,8 +184,12 @@ import FinancialDownloads from "../components/FinancialDownloads.astro";
             class="absolute left-0 right-0 top-1/2 -translate-y-1/2 w-full object-cover"
           />
         </div>
-        <div class="absolute bottom-0 left-1/2 -translate-x-1/2">
-          <Svg client:load src="/svg/journey1.svg" />
+        <div class="absolute bottom-2.5 left-1/2 -translate-x-1/2">
+          <Svg
+            client:load
+            src="/svg/journey1.svg"
+            class="text-blue group-hover:text-yellow"
+          />
         </div>
         <a
           class="relative flex-1 px-2.5 pt-2.5 lg:px-5 lg:pt-5 pb-30 flex flex-col justify-center items-center text-center space-y-2.5"
@@ -159,7 +201,7 @@ import FinancialDownloads from "../components/FinancialDownloads.astro";
         </a>
       </div>
       <div
-        class="relative overflow-hidden lg:col-span-2 outline outline-dashed bg-yellow hover:bg-black hover:text-yellow"
+        class="group relative overflow-hidden lg:col-span-2 outline outline-dashed bg-yellow hover:bg-black hover:text-yellow"
       >
         <div class="absolute bottom-0 w-full overflow-hidden h-20 lg:h-40">
           <Svg
@@ -168,8 +210,12 @@ import FinancialDownloads from "../components/FinancialDownloads.astro";
             class="absolute left-0 right-0 top-1/2 -translate-y-1/2 w-full object-cover"
           />
         </div>
-        <div class="absolute bottom-0 left-1/2 -translate-x-1/2">
-          <Svg client:load src="/svg/journey2.svg" />
+        <div class="absolute bottom-5 left-1/2 -translate-x-1/2">
+          <Svg
+            client:load
+            src="/svg/journey2.svg"
+            class="text-blue group-hover:text-yellow"
+          />
         </div>
         <a
           class="relative flex-1 px-2.5 pt-2.5 lg:px-5 lg:pt-5 pb-30 flex flex-col justify-center items-center text-center space-y-2.5"
@@ -183,7 +229,7 @@ import FinancialDownloads from "../components/FinancialDownloads.astro";
         </a>
       </div>
       <div
-        class="relative overflow-hidden lg:col-span-2 outline outline-dashed bg-yellow hover:bg-black hover:text-yellow"
+        class="group relative overflow-hidden lg:col-span-2 outline outline-dashed bg-yellow hover:bg-black hover:text-yellow"
       >
         <div class="absolute bottom-0 w-full overflow-hidden h-20 lg:h-40">
           <Svg
@@ -192,8 +238,12 @@ import FinancialDownloads from "../components/FinancialDownloads.astro";
             class="absolute left-0 right-0 top-1/2 -translate-y-1/2 w-full object-cover"
           />
         </div>
-        <div class="absolute bottom-0 left-1/2 -translate-x-1/2">
-          <Svg client:load src="/svg/journey3.svg" />
+        <div class="absolute bottom-5 left-1/2 -translate-x-1/2">
+          <Svg
+            client:load
+            src="/svg/journey3.svg"
+            class="text-blue group-hover:text-yellow"
+          />
         </div>
         <a
           class="relative flex-1 px-2.5 pt-2.5 lg:px-5 lg:pt-5 pb-30 flex flex-col justify-center items-center text-center space-y-2.5"
@@ -205,7 +255,7 @@ import FinancialDownloads from "../components/FinancialDownloads.astro";
         </a>
       </div>
       <div
-        class="relative overflow-hidden lg:col-span-2 outline outline-dashed bg-yellow hover:bg-black hover:text-yellow"
+        class="group relative overflow-hidden lg:col-span-2 outline outline-dashed bg-yellow hover:bg-black hover:text-yellow"
       >
         <div class="absolute bottom-0 w-full overflow-hidden h-20 lg:h-40">
           <Svg
@@ -214,8 +264,12 @@ import FinancialDownloads from "../components/FinancialDownloads.astro";
             class="absolute left-0 right-0 top-1/2 -translate-y-1/2 w-full object-cover"
           />
         </div>
-        <div class="absolute bottom-0 left-1/2 -translate-x-1/2">
-          <Svg client:load src="/svg/journey5.svg" />
+        <div class="absolute bottom-5 left-1/2 -translate-x-1/2">
+          <Svg
+            client:load
+            src="/svg/journey4.svg"
+            class="text-blue group-hover:text-yellow"
+          />
         </div>
         <a
           class="relative flex-1 px-2.5 pt-2.5 lg:px-5 lg:pt-5 pb-30 flex flex-col justify-center items-center text-center space-y-2.5"
@@ -227,7 +281,7 @@ import FinancialDownloads from "../components/FinancialDownloads.astro";
         </a>
       </div>
       <div
-        class="relative overflow-hidden lg:col-span-2 outline outline-dashed bg-yellow hover:bg-black hover:text-yellow"
+        class="group relative overflow-hidden lg:col-span-2 outline outline-dashed bg-yellow hover:bg-black hover:text-yellow"
       >
         <div class="absolute bottom-0 w-full overflow-hidden h-20 lg:h-40">
           <Svg
@@ -236,8 +290,12 @@ import FinancialDownloads from "../components/FinancialDownloads.astro";
             class="absolute left-0 right-0 top-1/2 -translate-y-1/2 w-full object-cover"
           />
         </div>
-        <div class="absolute bottom-0 left-1/2 -translate-x-1/2">
-          <Svg client:load src="/svg/journey4.svg" />
+        <div class="absolute bottom-5 left-1/2 -translate-x-1/2">
+          <Svg
+            client:load
+            src="/svg/journey5.svg"
+            class="text-blue group-hover:text-yellow"
+          />
         </div>
         <a
           class="relative flex-1 px-2.5 pt-2.5 lg:px-5 lg:pt-5 pb-30 flex flex-col justify-center items-center text-center space-y-2.5"
@@ -249,7 +307,7 @@ import FinancialDownloads from "../components/FinancialDownloads.astro";
         </a>
       </div>
       <div
-        class="relative overflow-hidden lg:col-span-2 outline outline-dashed bg-yellow hover:bg-black hover:text-yellow"
+        class="group relative overflow-hidden lg:col-span-2 outline outline-dashed bg-yellow hover:bg-black hover:text-yellow"
       >
         <div class="absolute bottom-0 w-full overflow-hidden h-20 lg:h-40">
           <Svg
@@ -258,8 +316,12 @@ import FinancialDownloads from "../components/FinancialDownloads.astro";
             class="absolute left-0 right-0 top-1/2 -translate-y-1/2 w-full object-cover"
           />
         </div>
-        <div class="absolute bottom-0 left-1/2 -translate-x-1/2">
-          <Svg client:load src="/svg/journey6.svg" />
+        <div class="absolute bottom-5 left-1/2 -translate-x-1/2">
+          <Svg
+            client:load
+            src="/svg/journey6.svg"
+            class="text-blue group-hover:text-yellow"
+          />
         </div>
         <a
           class="relative flex-1 px-2.5 pt-2.5 lg:px-5 lg:pt-5 pb-30 flex flex-col justify-center items-center text-center space-y-2.5"

@@ -4,6 +4,7 @@
   --color-yellow: #ffffb4;
   --color-gray: #9d9d9d;
   --color-red: #ff0000;
+  --color-blue: #0000ff;
 }
 
 @font-face {
@@ -78,6 +79,11 @@ body {
   font-family: "Mozilla Text", sans-serif;
   line-height: 130%;
   letter-spacing: -1%;
+}
+
+* {
+  scrollbar-color: black white;
+  scrollbar-width: thin;
 }
 
 h1,

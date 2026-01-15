@@ -547,7 +547,10 @@
             </div>
             {#if progress.stakes}
               <div class="animate-blink-1 w-full h-full">
-                <Svg src="/svg/journey1.svg" class="max-w-full max-h-full" />
+                <Svg
+                  src="/svg/journey1.svg"
+                  class="max-w-full max-h-full text-blue"
+                />
               </div>
             {/if}
           </div>
@@ -557,7 +560,10 @@
             </div>
             {#if progress.manifesto}
               <div class="animate-blink-2 w-full h-full">
-                <Svg src="/svg/journey2.svg" class="max-w-full max-h-full" />
+                <Svg
+                  src="/svg/journey2.svg"
+                  class="max-w-full max-h-full text-blue"
+                />
               </div>
             {/if}
           </div>
@@ -565,9 +571,12 @@
             <div class="absolute top-0 left-0 bg-black text-white">
               <span>III</span>
             </div>
-            {#if progress.ledger}
+            {#if progress.tools}
               <div class="animate-blink-3 w-full h-full">
-                <Svg src="/svg/journey3.svg" class="max-w-full max-h-full" />
+                <Svg
+                  src="/svg/journey3.svg"
+                  class="max-w-full max-h-full text-blue"
+                />
               </div>
             {/if}
           </div>
@@ -575,9 +584,12 @@
             <div class="absolute top-0 left-0 bg-black text-white">
               <span>IV</span>
             </div>
-            {#if progress.tools}
+            {#if progress.ledger}
               <div class="animate-blink-4 w-full h-full">
-                <Svg src="/svg/journey4.svg" class="max-w-full max-h-full" />
+                <Svg
+                  src="/svg/journey4.svg"
+                  class="max-w-full max-h-full text-blue"
+                />
               </div>
             {/if}
           </div>
@@ -587,7 +599,10 @@
             </div>
             {#if progress.rebels}
               <div class="animate-blink-5 w-full h-full">
-                <Svg src="/svg/journey5.svg" class="max-w-full max-h-full" />
+                <Svg
+                  src="/svg/journey5.svg"
+                  class="max-w-full max-h-full text-blue"
+                />
               </div>
             {/if}
           </div>
@@ -595,9 +610,12 @@
             <div class="absolute top-0 left-0 bg-black text-white">
               <span>F</span>
             </div>
-            {#if progress.joinus}
+            {#if progress.roadmap}
               <div class="animate-blink-6 w-full h-full">
-                <Svg src="/svg/journey6.svg" class="max-w-full max-h-full" />
+                <Svg
+                  src="/svg/journey6.svg"
+                  class="max-w-full max-h-full text-blue"
+                />
               </div>
             {/if}
           </div>
@@ -659,9 +677,6 @@
           </svg>
           <span>{isSharing ? "Sharing..." : "Share your results"}</span>
         </button>
-        <div class="mt-auto flex justify-center">
-          <Svg src="/svg/join-us.svg" />
-        </div>
       </div>
     {/if}
   </div>

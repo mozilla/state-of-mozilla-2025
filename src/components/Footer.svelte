@@ -88,11 +88,11 @@
             placeholder="your email address"
             required
             aria-required="true"
-            class="placeholder:text-white w-full text-black lg:w-3/4 px-5 py-4 bg-white/20 focus:outline-0 focus:bg-white focus:placeholder:text-black"
+            class="placeholder:text-white w-full text-black lg:w-2/3 px-5 py-4 bg-white/20 focus:outline-0 focus:bg-white focus:placeholder:text-black"
           />
           <label
             for="privacy"
-            class="flex items-start space-x-1 lg:w-3/4 text-sm"
+            class="flex items-start space-x-1 lg:w-2/3 text-sm"
           >
             <input
               type="checkbox"
@@ -113,7 +113,7 @@
               </a>
             </span>
           </label>
-          <button class="btn text-left lg:w-3/4">Subscribe</button>
+          <button class="btn text-left lg:w-2/3">Subscribe</button>
         </form>
       </div>
     </div>
