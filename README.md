@@ -1,6 +1,6 @@
 # State of Mozilla 2025
 
-A web application built with Astro, Svelte, and Tailwind CSS for Mozilla's 2025 state presentation.
+A web application built with Astro, Svelte, and Tailwind CSS for State of Mozilla 2025.
 
 ## Tech Stack
 
@@ -20,22 +20,34 @@ A web application built with Astro, Svelte, and Tailwind CSS for Mozilla's 2025 
 │   └── pdf/            # PDF documents
 ├── src/
 │   ├── assets/         # Project assets
+│   │   └── img/        # Image files
 │   ├── components/     # Svelte and Astro components
-│   │   ├── Header.svelte
+│   │   ├── Captcha.svelte
+│   │   ├── City.svelte
+│   │   ├── FinancialDownloads.astro
 │   │   ├── Footer.svelte
+│   │   ├── Header.svelte
+│   │   ├── IntroWrapper.svelte
+│   │   ├── Organization.svelte
+│   │   ├── OrganizationWrapper.astro
 │   │   ├── ProgressCard.svelte
 │   │   ├── ProgressWatcher.svelte
-│   │   └── ...
+│   │   ├── Rebel.svelte
+│   │   ├── StopWall.svelte
+│   │   └── Svg.svelte
+│   ├── data/           # Data files
+│   │   ├── organizations.ts
+│   │   └── rebels.js
 │   ├── layouts/        # Page layouts
 │   │   └── Layout.astro
 │   ├── pages/          # Route pages
 │   │   ├── index.astro
-│   │   ├── rebels.astro
-│   │   ├── stakes.astro
-│   │   ├── tools.astro
 │   │   ├── ledger.astro
 │   │   ├── manifesto.astro
-│   │   └── roadmap.astro
+│   │   ├── rebels.astro
+│   │   ├── roadmap.astro
+│   │   ├── stakes.astro
+│   │   └── tools.astro
 │   ├── stores/         # Svelte stores
 │   │   └── progressStore.js
 │   └── styles/         # Global styles
