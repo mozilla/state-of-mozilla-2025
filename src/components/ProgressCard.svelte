@@ -255,13 +255,16 @@
   }
 
   async function activateWebcam() {
+    let stream = null;
+    let video = null;
+
     try {
-      const stream = await navigator.mediaDevices.getUserMedia({
+      stream = await navigator.mediaDevices.getUserMedia({
         video: { facingMode: "user" },
       });
 
       // Create temporary video element to capture frame
-      const video = document.createElement("video");
+      video = document.createElement("video");
       video.srcObject = stream;
       video.autoplay = true;
       video.muted = true;
@@ -393,16 +396,19 @@
       localStorage.setItem("webcamImage", imageDataUrl);
       hasWebcamImage = true;
 
-      // Stop all video tracks to disable camera
-      stream.getTracks().forEach((track) => track.stop());
-
-      // Remove temporary video from DOM
-      document.body.removeChild(video);
-
       // Replace image with canvas
       webcamButton.parentNode.replaceChild(canvas, webcamButton);
     } catch (error) {
       console.error("Error accessing webcam:", error);
+    } finally {
+      // Always stop the stream to release the webcam
+      if (stream) {
+        stream.getTracks().forEach((track) => track.stop());
+      }
+      // Always remove the video element from DOM if it was added
+      if (video && video.parentNode) {
+        video.parentNode.removeChild(video);
+      }
     }
   }
 </script>
@@ -546,7 +552,9 @@
               <span>I</span>
             </div>
             {#if progress.stakes}
-              <div class="animate-blink-1 w-full h-full">
+              <div
+                class="animate-blink-1 w-full h-full flex justify-center items-center"
+              >
                 <Svg
                   src="/svg/journey1.svg"
                   class="max-w-full max-h-full text-blue"
@@ -559,7 +567,9 @@
               <span>II</span>
             </div>
             {#if progress.manifesto}
-              <div class="animate-blink-2 w-full h-full">
+              <div
+                class="animate-blink-2 w-full h-full flex justify-center items-center"
+              >
                 <Svg
                   src="/svg/journey2.svg"
                   class="max-w-full max-h-full text-blue"
@@ -572,7 +582,9 @@
               <span>III</span>
             </div>
             {#if progress.tools}
-              <div class="animate-blink-3 w-full h-full">
+              <div
+                class="animate-blink-3 w-full h-full flex justify-center items-center"
+              >
                 <Svg
                   src="/svg/journey3.svg"
                   class="max-w-full max-h-full text-blue"
@@ -585,7 +597,9 @@
               <span>IV</span>
             </div>
             {#if progress.ledger}
-              <div class="animate-blink-4 w-full h-full">
+              <div
+                class="animate-blink-4 w-full h-full flex justify-center items-center"
+              >
                 <Svg
                   src="/svg/journey4.svg"
                   class="max-w-full max-h-full text-blue"
@@ -598,7 +612,9 @@
               <span>V</span>
             </div>
             {#if progress.rebels}
-              <div class="animate-blink-5 w-full h-full">
+              <div
+                class="animate-blink-5 w-full h-full flex justify-center items-center"
+              >
                 <Svg
                   src="/svg/journey5.svg"
                   class="max-w-full max-h-full text-blue"
@@ -611,7 +627,9 @@
               <span>F</span>
             </div>
             {#if progress.roadmap}
-              <div class="animate-blink-6 w-full h-full">
+              <div
+                class="animate-blink-6 w-full h-full flex justify-center items-center"
+              >
                 <Svg
                   src="/svg/journey6.svg"
                   class="max-w-full max-h-full text-blue"
