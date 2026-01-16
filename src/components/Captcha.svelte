@@ -1,5 +1,5 @@
 <script>
-  import { onMount } from "svelte";
+  import { onMount, tick } from "svelte";
   import Svg from "./Svg.svelte";
 
   let showCaptcha = $state(true);
@@ -33,20 +33,28 @@
   }
 
   function playAudio() {
-    const audio = new Audio(`/audio/${currentCaptcha.word}.mp3`);
+    const randomIndex = Math.floor(Math.random() * 5) + 1;
+    const audio = new Audio(
+      `/audio/pocket-tts-${currentCaptcha.word}${randomIndex}.wav`,
+    );
     audio.play();
   }
 
-  onMount(() => {
+  onMount(async () => {
     if (sessionStorage.getItem("captchaVerified")) {
       showCaptcha = false;
     }
     captchaIndex = Math.floor(Math.random() * captchas.length);
-    input.focus();
+    await tick();
+    input?.focus();
   });
 
   function handleSubmit(event) {
     event.preventDefault();
+
+    if (attemptCount >= 2) {
+      return;
+    }
 
     if (inputValue.toLowerCase() === currentCaptcha.word) {
       showCaptcha = false;
