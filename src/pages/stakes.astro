@@ -6,6 +6,8 @@ import Svg from "../components/Svg.svelte";
 import ProgressWatcher from "../components/ProgressWatcher.svelte";
 import ProgressCard from "../components/ProgressCard.svelte";
 import dotsBig from "../assets/img/dots-big.png";
+import videoPoster2 from "../assets/img/video-poster-2.jpg";
+import videoPoster3 from "../assets/img/video-poster-3.jpg";
 ---
 
 <script is:inline>
@@ -23,12 +25,10 @@ import dotsBig from "../assets/img/dots-big.png";
 <Layout>
   <Captcha client:load />
 
-  <section
-    class="relative p-2.5 lg:p-5 min-h-[calc(50svh-var(--header-height)-20px)] lg:min-h-[calc(100svh-var(--header-height)-20px)] bg-yellow overflow-hidden"
-  >
+  <section class="relative p-2.5 lg:p-5 min-h-[50vh] bg-yellow overflow-hidden">
     <Image
       priority
-      class="absolute bottom-0 left-0 right-0 translate-y-20"
+      class="absolute bottom-0 left-0 right-0 lg:translate-y-1/2"
       src={dotsBig}
       alt=""
     />
@@ -37,8 +37,8 @@ import dotsBig from "../assets/img/dots-big.png";
     >
       <Svg client:load src="/svg/stakes.svg" class="w-full h-full" />
     </div>
-    <div class="relative">
-      <p class="mb-2.5 lg:mb-5">I - The Stakes</p>
+    <div class="relative lg:w-3/4 space-y-2.5 lg:space-y-5">
+      <p>I - The Stakes</p>
       <h1 class="text-6xl lg:text-9xl uppercase">Closed vs. Open</h1>
     </div>
   </section>
@@ -101,7 +101,7 @@ import dotsBig from "../assets/img/dots-big.png";
       <div class="space-y-2.5 lg:space-y-5">
         <button
           data-selection="a"
-          class="future-toggle future-toggle-a relative aspect-square w-full flex justify-center items-center outline outline-dashed cursor-pointer bg-yellow hover:bg-black hover:text-yellow"
+          class="future-toggle future-toggle-a relative aspect-video w-full flex justify-center items-center outline outline-dashed cursor-pointer bg-yellow hover:bg-black hover:text-yellow"
         >
           <div class="absolute inset-0 w-full h-full overflow-hidden">
             <Svg
@@ -116,7 +116,7 @@ import dotsBig from "../assets/img/dots-big.png";
       <div class="space-y-2.5 lg:space-y-5">
         <button
           data-selection="b"
-          class="future-toggle future-toggle-b relative aspect-square w-full flex justify-center items-center outline outline-dashed cursor-pointer bg-yellow hover:bg-black hover:text-yellow"
+          class="future-toggle future-toggle-b relative aspect-video w-full flex justify-center items-center outline outline-dashed cursor-pointer bg-yellow hover:bg-black hover:text-yellow"
         >
           <div class="absolute inset-0 w-full h-full overflow-hidden">
             <Svg
@@ -131,7 +131,11 @@ import dotsBig from "../assets/img/dots-big.png";
     </div>
     <div class="grid lg:grid-cols-2 lg:gap-2.5">
       <div class="future-a space-y-2.5 lg:space-y-5 lg:col-start-1">
-        <div class="aspect-square w-full bg-gray-500"></div>
+        <Image
+          src={videoPoster2}
+          class="aspect-[4/3] object-cover w-full"
+          alt="BLACKBOX"
+        />
 
         <p>
           Twenty five years ago, when Microsoft controlled 95% of browsers, they
@@ -155,7 +159,11 @@ import dotsBig from "../assets/img/dots-big.png";
         <p><em>Is this the future you want?</em></p>
       </div>
       <div class="future-b space-y-2.5 lg:space-y-5 lg:col-start-2">
-        <div class="aspect-square w-full bg-gray-500"></div>
+        <Image
+          src={videoPoster3}
+          class="aspect-[4/3] object-cover w-full"
+          alt="BRAINFRUIT"
+        />
 
         <p>Imagine it’s 2030.</p>
         <p>

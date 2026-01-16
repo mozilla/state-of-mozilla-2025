@@ -421,9 +421,11 @@
     : `pointer-events-none ${!isStickyDismissed ? "sticky" : ""} z-30 bottom-0 p-2.5 lg:p-5`}
 >
   <div
-    class="grid gap-2.5 lg:gap-5 {full ? 'lg:grid-cols-2' : 'lg:grid-cols-3'}"
+    class="grid gap-2.5 lg:gap-5 {full
+      ? 'lg:grid-cols-2 lg:pb-5'
+      : 'lg:grid-cols-3'}"
   >
-    <div class="pointer-events-auto {full ? 'lg:pb-5' : ''}">
+    <div class="pointer-events-auto">
       <div
         bind:this={card}
         class="relative bg-white border border-black p-2.5"
@@ -695,6 +697,7 @@
           </svg>
           <span>{isSharing ? "Sharing..." : "Share your results"}</span>
         </button>
+        <Svg src="/svg/join-us.svg" class="w-full" />
       </div>
     {/if}
   </div>

@@ -8,25 +8,24 @@ import ProgressCard from "../components/ProgressCard.svelte";
 import OrganizationWrapper from "../components/OrganizationWrapper.astro";
 import { organizations } from "../data/organizations";
 import dotsBig from "../assets/img/dots-big.png";
+import videoPoster5 from "../assets/img/video-poster-5.jpg";
 ---
 
 <Layout>
   <Captcha client:load />
 
-  <section
-    class="relative p-2.5 lg:p-5 min-h-[calc(50svh-var(--header-height)-20px)] lg:min-h-[calc(100svh-var(--header-height)-20px)] bg-yellow overflow-hidden"
-  >
+  <section class="relative p-2.5 lg:p-5 min-h-[50vh] bg-yellow overflow-hidden">
     <Image
       priority
-      class="absolute bottom-0 left-0 right-0 translate-y-20"
+      class="absolute bottom-0 left-0 right-0 lg:translate-y-1/2"
       src={dotsBig}
       alt=""
     />
     <div class="absolute h-full right-2.5 lg:right-5 bottom-2.5 lg:bottom-5">
       <Svg client:load src="/svg/tools.svg" class="w-full h-full" />
     </div>
-    <div class="relative">
-      <p class="mb-2.5 lg:mb-5">III - The Tools</p>
+    <div class="relative lg:w-3/4 space-y-2.5 lg:space-y-5">
+      <p>III - The Tools</p>
       <h1 class="font-mainframe uppercase text-6xl lg:text-9xl">
         What we’re
         <br />building
@@ -151,7 +150,15 @@ import dotsBig from "../assets/img/dots-big.png";
   </section>
 
   <section class="p-2.5 lg:p-5 space-y-2.5 lg:space-y-5">
-    <div class="aspect-video w-full bg-gray"></div>
+    <div class="grid lg:grid-cols-8 gap-2.5 lg:gap-5">
+      <div class="lg:col-span-6 lg:col-start-2 space-y-2.5 lg:space-y-5">
+        <Image
+          src={videoPoster5}
+          class="aspect-[4/3] object-cover w-full"
+          alt="FUNBLOCKS"
+        />
+      </div>
+    </div>
   </section>
 
   <section class="p-2.5 lg:p-5 space-y-2.5 lg:space-y-5">

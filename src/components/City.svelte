@@ -79,34 +79,36 @@
 
 <section class="p-2.5 lg:p-5 my-10 lg:my-20">
   <div class="grid lg:grid-cols-4 gap-2.5 lg:gap-5">
-    <div class="lg:col-span-2 lg:col-start-2 space-y-2.5 lg:space-y-5">
-      {#each rebels as rebel}
-        <div class="flex">
-          <div class="w-10">
-            <div class="border w-5 h-5 flex justify-center items-center">
-              {#if rebelsFound.includes(rebel.id)}
-                <span class="font-ocr-pbi text-xl">👁</span>
-              {/if}
+    <div class="lg:col-span-2 lg:col-start-2">
+      <div class="lg:columns-2 space-y-2.5 lg:space-y-5">
+        {#each rebels as rebel}
+          <div class="flex">
+            <div class="w-10">
+              <div class="border w-5 h-5 flex justify-center items-center">
+                {#if rebelsFound.includes(rebel.id)}
+                  <span class="font-ocr-pbi text-xl">👁</span>
+                {/if}
+              </div>
+            </div>
+            <div>
+              <p class="uppercase">
+                {rebel.id}.
+                {#if rebelsFound.includes(rebel.id)}
+                  <button
+                    onclick={() => openRebel(rebel.id)}
+                    class="underline cursor-pointer"
+                  >
+                    {rebel.name}
+                  </button>
+                {:else}
+                  <span>{rebel.name}</span>
+                {/if}
+              </p>
+              <p>{rebel.title}</p>
             </div>
           </div>
-          <div>
-            <p class="uppercase">
-              {rebel.id}.
-              {#if rebelsFound.includes(rebel.id)}
-                <button
-                  onclick={() => openRebel(rebel.id)}
-                  class="underline cursor-pointer"
-                >
-                  {rebel.name}
-                </button>
-              {:else}
-                <span>{rebel.name}</span>
-              {/if}
-            </p>
-            <p>{rebel.title}</p>
-          </div>
-        </div>
-      {/each}
+        {/each}
+      </div>
     </div>
   </div>
 </section>

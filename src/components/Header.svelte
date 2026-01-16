@@ -68,9 +68,9 @@
         ></path>
       </svg>
     </a>
-    <span class="font-mozilla-text flex-1 px-2.5 text-center">
+    <a href="/" class="font-mozilla-text flex-1 px-2.5 text-center">
       State of Mozilla 2025
-    </span>
+    </a>
     <div
       class="size-10 p-2.5 border-l border-white flex justify-center items-center"
     >

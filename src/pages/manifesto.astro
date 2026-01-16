@@ -11,12 +11,10 @@ import dotsBig from "../assets/img/dots-big.png";
 <Layout>
   <Captcha client:load />
 
-  <section
-    class="relative p-2.5 lg:p-5 min-h-[calc(50svh-var(--header-height)-20px)] lg:min-h-[calc(100svh-var(--header-height)-20px)] bg-yellow overflow-hidden"
-  >
+  <section class="relative p-2.5 lg:p-5 min-h-[50vh] bg-yellow overflow-hidden">
     <Image
       priority
-      class="absolute bottom-0 left-0 right-0 translate-y-20"
+      class="absolute bottom-0 left-0 right-0 lg:translate-y-1/2"
       src={dotsBig}
       alt=""
     />
@@ -25,8 +23,8 @@ import dotsBig from "../assets/img/dots-big.png";
     >
       <Svg client:load src="/svg/code.svg" class="w-full h-full" />
     </div>
-    <div class="relative">
-      <p class="mb-2.5 lg:mb-5">II - The Manifesto</p>
+    <div class="relative lg:w-3/4 space-y-2.5 lg:space-y-5">
+      <p>II - The Manifesto</p>
       <h1 class="font-workbench uppercase text-6xl lg:text-9xl">
         Applying our values in the Era of AI
       </h1>
@@ -60,7 +58,11 @@ import dotsBig from "../assets/img/dots-big.png";
     <div class="grid lg:grid-cols-4 gap-2.5 lg:gap-5">
       <div class="lg:col-span-2 lg:col-start-2 space-y-10 lg:space-y-20">
         <div class="grid grid-cols-3 gap-2.5 lg:gap-5 items-center">
-          <Svg client:load src="/svg/code-icon-1.svg" class="w-full" />
+          <Svg
+            client:load
+            src="/svg/code-icon-1.svg"
+            class="w-full text-blue"
+          />
           <p class="col-span-2">
             HUMAN AGENCY<br /><br />in a world of AI and agents, it is more
             important than ever that technology is designed in ways that let
@@ -69,7 +71,11 @@ import dotsBig from "../assets/img/dots-big.png";
           </p>
         </div>
         <div class="grid grid-cols-3 gap-2.5 lg:gap-5">
-          <Svg client:load src="/svg/code-icon-2.svg" class="w-full" />
+          <Svg
+            client:load
+            src="/svg/code-icon-2.svg"
+            class="w-full text-blue"
+          />
           <p class="col-span-2">
             DECENTRALIZATION AND OPEN SOURCE<br /><br />an open, accessible
             internet depends on innovation and decentralized participation in
@@ -79,7 +85,11 @@ import dotsBig from "../assets/img/dots-big.png";
           </p>
         </div>
         <div class="grid grid-cols-3 gap-2.5 lg:gap-5">
-          <Svg client:load src="/svg/code-icon-3.svg" class="w-full" />
+          <Svg
+            client:load
+            src="/svg/code-icon-3.svg"
+            class="w-full text-blue"
+          />
           <p class="col-span-2">
             BALANCING COMMERCIAL AND PUBLIC BENEFIT<br /><br />more than ever,
             the direction of the internet and AI is defined by commercial
@@ -109,7 +119,7 @@ import dotsBig from "../assets/img/dots-big.png";
         <div
           class="relative overflow-hidden p-2.5 lg:p-5 outline outline-dashed bg-yellow space-y-2.5"
         >
-          <h3 class="text-3xl lg:text-7xl uppercase text-center">
+          <h3 class="text-4xl lg:text-6xl 2xl:text-7xl uppercase text-center">
             <span class="font-star">THE MOZILLA</span>
             <span class="font-star">MANIFESTO:</span>
             <span class="font-star">A BLUEPRINT FOR</span>
@@ -119,7 +129,7 @@ import dotsBig from "../assets/img/dots-big.png";
             <Svg client:load src="/svg/intro1.svg" />
           </div>
           <hr class="border-dashed mt-0" />
-          <h3 class="text-3xl lg:text-7xl uppercase">
+          <h3 class="text-3xl lg:text-4xl 2xl:text-7xl uppercase">
             <span class="font-star">HUMAN AGENCY</span>
           </h3>
           <p>
@@ -129,7 +139,7 @@ import dotsBig from "../assets/img/dots-big.png";
             them most.
           </p>
           <hr class="border-dashed mt-5" />
-          <h3 class="text-3xl lg:text-7xl uppercase">
+          <h3 class="text-3xl lg:text-4xl 2xl:text-7xl uppercase">
             <span class="font-star">DECENTRALIZATION</span>
             <span class="font-star">AND OPENSOURCE</span>
           </h3>
@@ -140,7 +150,7 @@ import dotsBig from "../assets/img/dots-big.png";
             critical to making this possible in the AI era.
           </p>
           <hr class="border-dashed mt-5" />
-          <h3 class="text-3xl lg:text-7xl uppercase">
+          <h3 class="text-3xl lg:text-4xl 2xl:text-7xl uppercase">
             <span class="font-star">BALANCING COMMERCIAL</span>
             <span class="font-star">AND PUBLIC BENEFIT</span>
           </h3>
