@@ -1,21 +1,23 @@
 <script>
-  import { onMount } from "svelte";
-
   const { src, class: className = "" } = $props();
 
   let svgContent = $state("");
 
-  onMount(async () => {
+  async function loadSvg(svgSrc) {
     try {
-      const response = await fetch(src);
+      const response = await fetch(svgSrc);
       if (!response.ok) {
         throw new Error(`Failed to load SVG: ${response.statusText}`);
       }
       const text = await response.text();
       svgContent = text;
     } catch (err) {
-      console.error(`Error loading ${src}:`, err);
+      console.error(`Error loading ${svgSrc}:`, err);
     }
+  }
+
+  $effect(() => {
+    loadSvg(src);
   });
 
   // Apply custom classes to the SVG element
