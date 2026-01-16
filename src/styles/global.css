@@ -78,7 +78,7 @@ html {
 body {
   font-family: "Mozilla Text", sans-serif;
   line-height: 130%;
-  letter-spacing: -1%;
+  letter-spacing: -0.01em;
 }
 
 * {
@@ -94,7 +94,7 @@ h5,
 h6 {
   &:not(.font-ocr-pbi):not(.font-star) {
     line-height: 80%;
-    letter-spacing: -2%;
+    letter-spacing: -0.02em;
   }
 }
 
@@ -105,7 +105,7 @@ strong {
 .font-mozilla-text {
   font-family: "Mozilla Text", sans-serif;
   line-height: 80%;
-  letter-spacing: -2%;
+  letter-spacing: -0.02em;
 }
 .font-ocr-pbi {
   font-family: "OCR-PBI", sans-serif;
@@ -113,7 +113,7 @@ strong {
 }
 .font-star {
   font-family: "mnicmp Star", sans-serif;
-  letter-spacing: -12%;
+  letter-spacing: -0.12em;
   line-height: 105%;
   &:after {
     content: "";
@@ -141,12 +141,12 @@ strong {
 }
 .font-tuoi-tre {
   font-family: "FFF_tuoi-tre Text", sans-serif;
-  letter-spacing: -1%;
+  letter-spacing: -0.01em;
   line-height: 75%;
 }
 .font-mainframe {
   font-family: "Mainframe", sans-serif;
-  letter-spacing: 40%;
+  letter-spacing: -0.4em;
   line-height: 80%;
 }*/
 

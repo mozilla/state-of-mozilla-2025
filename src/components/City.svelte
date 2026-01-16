@@ -28,7 +28,7 @@
 <section class="px-2.5 lg:px-5 bg-black">
   <div class="grid lg:grid-cols-4 gap-2.5 lg:gap-5">
     <div class="lg:col-span-2 lg:col-start-2">
-      <h2 class="lg:text-3xl text-center uppercase text-yellow py-2.5">
+      <h2 class="lg:text-5xl text-center uppercase text-yellow py-2.5">
         SPOT THE REBELS in the city
       </h2>
     </div>
