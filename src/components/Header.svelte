@@ -175,7 +175,7 @@
             )}"
             href="/tools"
           >
-            <span class="lg:hidden">IV.</span>
+            <span class="lg:hidden">III.</span>
             <span
               class="text-6xl lg:text-xl xl:text-2xl 2xl:text-3xl uppercase"
             >
@@ -191,7 +191,7 @@
             )}"
             href="/ledger"
           >
-            <span class="lg:hidden">III.</span>
+            <span class="lg:hidden">IV.</span>
             <span
               class="text-6xl lg:text-xl xl:text-2xl 2xl:text-3xl uppercase"
             >

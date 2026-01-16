@@ -31,14 +31,6 @@
   font-display: swap;
 }
 
-/*
-@font-face {
-  font-family: "Mozilla Headline";
-  src: url("/fonts/MozillaHeadline-Medium.woff2") format("woff2");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
 @font-face {
   font-family: "Workbench";
   src: url("/fonts/Workbench-Regular.woff2") format("woff2");
@@ -69,6 +61,14 @@
   font-weight: normal;
   font-style: normal;
   font-display: swap;
+}
+
+/*@font-face {
+  font-family: "Mozilla Headline";
+  src: url("/fonts/MozillaHeadline-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
 }*/
 
 html {
@@ -86,7 +86,7 @@ body {
   scrollbar-width: thin;
 }
 
-h1,
+/*h1,
 h2,
 h3,
 h4,
@@ -96,7 +96,7 @@ h6 {
     line-height: 80%;
     letter-spacing: -0.02em;
   }
-}
+}*/
 
 strong {
   background-color: var(--color-yellow);
@@ -121,11 +121,6 @@ strong {
     display: table;
   }
 }
-/*
-.font-mozilla-headline {
-  font-family: "Mozilla Headline", sans-serif;
-  line-height: 88%;
-}
 .font-workbench {
   font-family: "Workbench", sans-serif;
   line-height: 93%;
@@ -141,13 +136,17 @@ strong {
 }
 .font-tuoi-tre {
   font-family: "FFF_tuoi-tre Text", sans-serif;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.04em;
   line-height: 75%;
 }
 .font-mainframe {
   font-family: "Mainframe", sans-serif;
-  letter-spacing: -0.4em;
+  letter-spacing: 0.3em;
   line-height: 80%;
+}
+/*.font-mozilla-headline {
+  font-family: "Mozilla Headline", sans-serif;
+  line-height: 88%;
 }*/
 
 .btn {
