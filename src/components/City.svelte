@@ -40,37 +40,37 @@
     <Svg src="/svg/city.svg" class="w-full h-full" />
     <button
       onclick={() => openRebel(1)}
-      class="absolute top-[18%] left-[25%] bg-blue text-white flex justify-center items-center w-10 h-10 rounded-full cursor-pointer"
+      class="absolute top-[18%] left-[25%] bg-red text-white flex justify-center items-center w-10 h-10 rounded-full cursor-pointer"
     >
       1
     </button>
     <button
       onclick={() => openRebel(2)}
-      class="absolute top-[24%] left-[87%] bg-blue text-white flex justify-center items-center w-10 h-10 rounded-full cursor-pointer"
+      class="absolute top-[24%] left-[87%] bg-red text-white flex justify-center items-center w-10 h-10 rounded-full cursor-pointer"
     >
       2
     </button>
     <button
       onclick={() => openRebel(3)}
-      class="absolute top-[40%] left-[72%] bg-blue text-white flex justify-center items-center w-10 h-10 rounded-full cursor-pointer"
+      class="absolute top-[40%] left-[72%] bg-red text-white flex justify-center items-center w-10 h-10 rounded-full cursor-pointer"
     >
       3
     </button>
     <button
       onclick={() => openRebel(4)}
-      class="absolute top-[51%] left-[37%] bg-blue text-white flex justify-center items-center w-10 h-10 rounded-full cursor-pointer"
+      class="absolute top-[51%] left-[37%] bg-red text-white flex justify-center items-center w-10 h-10 rounded-full cursor-pointer"
     >
       4
     </button>
     <button
       onclick={() => openRebel(5)}
-      class="absolute top-[75%] left-[4%] bg-blue text-white flex justify-center items-center w-10 h-10 rounded-full cursor-pointer"
+      class="absolute top-[75%] left-[4%] bg-red text-white flex justify-center items-center w-10 h-10 rounded-full cursor-pointer"
     >
       5
     </button>
     <button
       onclick={() => openRebel(6)}
-      class="absolute top-[74%] left-[44%] bg-blue text-white flex justify-center items-center w-10 h-10 rounded-full cursor-pointer"
+      class="absolute top-[74%] left-[44%] bg-red text-white flex justify-center items-center w-10 h-10 rounded-full cursor-pointer"
     >
       6
     </button>

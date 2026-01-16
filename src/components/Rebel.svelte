@@ -180,7 +180,7 @@
     style="box-shadow: 8.3871px 8.3871px 0px rgba(0, 0, 0, 0.25); scrollbar-width: none;"
   >
     <div
-      class="sticky z-10 top-0 bg-blue text-white py-2.5 px-5 flex justify-between items-center space-x-2.5"
+      class="sticky z-10 top-0 bg-red text-white py-2.5 px-5 flex justify-between items-center space-x-2.5"
     >
       <div class="flex items-center space-x-2.5">
         <svg

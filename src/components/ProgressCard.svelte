@@ -559,7 +559,7 @@
               >
                 <Svg
                   src="/svg/journey1.svg"
-                  class="max-w-full max-h-full text-blue"
+                  class="max-w-full max-h-full text-red"
                 />
               </div>
             {/if}
@@ -574,7 +574,7 @@
               >
                 <Svg
                   src="/svg/journey2.svg"
-                  class="max-w-full max-h-full text-blue"
+                  class="max-w-full max-h-full text-red"
                 />
               </div>
             {/if}
@@ -589,7 +589,7 @@
               >
                 <Svg
                   src="/svg/journey3.svg"
-                  class="max-w-full max-h-full text-blue"
+                  class="max-w-full max-h-full text-red"
                 />
               </div>
             {/if}
@@ -604,7 +604,7 @@
               >
                 <Svg
                   src="/svg/journey4.svg"
-                  class="max-w-full max-h-full text-blue"
+                  class="max-w-full max-h-full text-red"
                 />
               </div>
             {/if}
@@ -619,7 +619,7 @@
               >
                 <Svg
                   src="/svg/journey5.svg"
-                  class="max-w-full max-h-full text-blue"
+                  class="max-w-full max-h-full text-red"
                 />
               </div>
             {/if}
@@ -634,7 +634,7 @@
               >
                 <Svg
                   src="/svg/journey6.svg"
-                  class="max-w-full max-h-full text-blue"
+                  class="max-w-full max-h-full text-red"
                 />
               </div>
             {/if}
