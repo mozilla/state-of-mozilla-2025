@@ -9,7 +9,6 @@
 </script>
 
 <div
-  id={organization.id}
   class="space-y-2.5 lg:space-y-5 mb-20 scroll-mt-[calc(1rem+42px)] lg:scroll-mt-[calc(1rem+99px)]"
 >
   <div class="grid grid-cols-2 gap-2.5 lg:gap-5">

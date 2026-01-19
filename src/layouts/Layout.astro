@@ -64,6 +64,18 @@ const normalizedPath =
           }
         } catch (e) {}
       }
+
+      // Handle hash scrolling after hydration (fixes Chrome not scrolling to anchors)
+      if (window.location.hash) {
+        const scrollToHash = () => {
+          const target = document.querySelector(window.location.hash);
+          if (target) {
+            target.scrollIntoView();
+          }
+        };
+        // Delay to allow for video/content loading
+        setTimeout(scrollToHash, 500);
+      }
     </script>
   </body>
 </html>

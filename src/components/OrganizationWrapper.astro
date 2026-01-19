@@ -81,4 +81,9 @@ const processedOrg = {
 };
 ---
 
-<Organization client:load organization={processedOrg} />
+<div
+  id={organization.id}
+  class="scroll-mt-[calc(1rem+42px)] lg:scroll-mt-[calc(1rem+99px)]"
+>
+  <Organization client:load organization={processedOrg} />
+</div>
