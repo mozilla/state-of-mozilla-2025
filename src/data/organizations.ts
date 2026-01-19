@@ -4,7 +4,7 @@ export const organizations = [
     title: "Growing Firefox",
     name: "Mozilla Corp",
     url: "https://www.mozilla.org/",
-    icon: "/svg/mozilla-corporation.svg",
+    icon: "/svg/firefox.svg",
     paragraph1: `Growing and investing in Firefox remains our biggest priority. Mozilla Corporation’s leading aim is to grow as a meaningful, differentiated browser, trusted by over 200mil people. In 2025 the team made great progress shipping tab groups, vertical tabs, smart tabs, many sidebar integrations with AI companies and more. Mozilla Corp welcomed Anthony Enzor-DeMeo, the first technologist to serve as CEO in over 15 years.  In 2026 there will be a focus on building tools and features for those who want AI, and for those who do not. We are the only browser who does this - and likely the only one that will.`,
     list1Intro: "2025 achievements",
     list1: [
@@ -118,7 +118,7 @@ export const organizations = [
     title: "Improving the Open Source AI Stack",
     name: "New Initiatives",
     url: null,
-    icon: null,
+    icon: "/svg/mozilla-corporation.svg",
     paragraph1: `If we want to push the future of AI in a better direction, we need open source AI to win in the market. In late 2025, a new CTO, Raffi Krikorian, joined the Mozilla team to help make sure this happens. The core focus: working with people around the world to ensure the equivalent of a LAMP stack for AI emerges, an ecosystem shaped by communities and countries and companies with open interfaces, open data and open models. In 2026, we’ll invest further in things like Mozilla.ai and the Mozilla Data Collective as contributions to this ecosystem, and we will look for new communities, projects companies to collaborate with and invest in to advance this goal. `,
     list1Intro: "2026 plans",
     list1: [

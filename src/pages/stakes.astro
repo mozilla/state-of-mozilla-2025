@@ -4,10 +4,9 @@ import Layout from "../layouts/Layout.astro";
 import Captcha from "../components/Captcha.svelte";
 import Svg from "../components/Svg.svelte";
 import ProgressWatcher from "../components/ProgressWatcher.svelte";
-import ProgressCard from "../components/ProgressCard.svelte";
 import dotsBig from "../assets/img/dots-big.png";
 import videoPoster2 from "../assets/img/video-poster-2.jpg";
-import videoPoster3 from "../assets/img/video-poster-3.jpg";
+import Video from "../components/Video.svelte";
 ---
 
 <script is:inline>
@@ -38,7 +37,6 @@ import videoPoster3 from "../assets/img/video-poster-3.jpg";
       <Svg client:load src="/svg/stakes.svg" class="w-full h-full" />
     </div>
     <div class="relative lg:w-3/4 space-y-2.5 lg:space-y-5">
-      <p>I - The Stakes</p>
       <h1 class="font-tuoi-tre text-6xl lg:text-9xl uppercase">
         Which future will you choose?
       </h1>
@@ -80,7 +78,7 @@ import videoPoster3 from "../assets/img/video-poster-3.jpg";
   </section>
 
   <section class="p-2.5 lg:p-5 space-y-2.5 lg:space-y-5">
-    <div class="marquee bg-red text-white text-xl -mx-2.5 lg:-mx-5">
+    <div class="marquee bg-black text-white text-xl -mx-2.5 lg:-mx-5">
       <ul class="marquee__content">
         <li>DO NOT ACCEPT DEFAULT SETTINGS</li>
         <li>DO NOT ACCEPT DEFAULT SETTINGS</li>
@@ -161,11 +159,12 @@ import videoPoster3 from "../assets/img/video-poster-3.jpg";
         <p><em>Is this the future you want?</em></p>
       </div>
       <div class="future-b space-y-2.5 lg:space-y-5 lg:col-start-2">
-        <Image
-          src={videoPoster3}
-          class="aspect-[4/3] object-cover w-full"
-          alt="BRAINFRUIT"
-        />
+        <div>
+          <Video
+            client:load
+            src="https://player.vimeo.com/progressive_redirect/playback/1155181557/rendition/1080p/file.mp4%20%281080p%29.mp4?loc=external&signature=a3ccd2426872b2b13841ac9edbbb16de585c91d570bed6f56e55b5f4463c620c"
+          />
+        </div>
 
         <p>Imagine it’s 2030.</p>
         <p>
@@ -201,12 +200,11 @@ import videoPoster3 from "../assets/img/video-poster-3.jpg";
     client:load
     current="stakes"
     number="one"
+    n="1"
     position="first"
     next="manifesto"
     text="> Make a choice to unlock stamp..."
   />
-
-  <ProgressCard client:load full={false} />
 </Layout>
 
 <style>

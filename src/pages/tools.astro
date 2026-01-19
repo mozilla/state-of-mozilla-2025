@@ -4,11 +4,10 @@ import Layout from "../layouts/Layout.astro";
 import Captcha from "../components/Captcha.svelte";
 import Svg from "../components/Svg.svelte";
 import ProgressWatcher from "../components/ProgressWatcher.svelte";
-import ProgressCard from "../components/ProgressCard.svelte";
 import OrganizationWrapper from "../components/OrganizationWrapper.astro";
 import { organizations } from "../data/organizations";
 import dotsBig from "../assets/img/dots-big.png";
-import videoPoster5 from "../assets/img/video-poster-5.jpg";
+import Video from "../components/Video.svelte";
 ---
 
 <Layout>
@@ -25,7 +24,6 @@ import videoPoster5 from "../assets/img/video-poster-5.jpg";
       <Svg client:load src="/svg/tools.svg" class="w-full h-full" />
     </div>
     <div class="relative lg:w-3/4 space-y-2.5 lg:space-y-5">
-      <p>III - The Tools</p>
       <h1 class="font-mainframe uppercase text-6xl lg:text-9xl">
         What we’re
         <br />building
@@ -150,12 +148,11 @@ import videoPoster5 from "../assets/img/video-poster-5.jpg";
   </section>
 
   <section class="p-2.5 lg:p-5 space-y-2.5 lg:space-y-5">
-    <div class="grid lg:grid-cols-8 gap-2.5 lg:gap-5">
-      <div class="lg:col-span-6 lg:col-start-2 space-y-2.5 lg:space-y-5">
-        <Image
-          src={videoPoster5}
-          class="aspect-[4/3] object-cover w-full"
-          alt="FUNBLOCKS"
+    <div class="grid lg:grid-cols-14 gap-2.5 lg:gap-5">
+      <div class="lg:col-span-8 lg:col-start-4 space-y-2.5 lg:space-y-5">
+        <Video
+          client:load
+          src="https://player.vimeo.com/progressive_redirect/playback/1155181479/rendition/1080p/file.mp4%20%281080p%29.mp4?loc=external&signature=1b39c6c6f9250ade6f961c9e95fc948f078eb8c0d1a861c717906c6978c399d3"
         />
       </div>
     </div>
@@ -173,10 +170,9 @@ import videoPoster5 from "../assets/img/video-poster-5.jpg";
     client:load
     current="tools"
     number="three"
+    n="3"
     position="third"
     next="ledger"
     text=""
   />
-
-  <ProgressCard client:load full={false} />
 </Layout>

@@ -10,26 +10,25 @@
 
 <div
   id={organization.id}
-  class="space-y-2.5 lg:space-y-5 mb-20 scroll-mt-[calc(1rem+(var(--header-height)))]"
+  class="space-y-2.5 lg:space-y-5 mb-20 scroll-mt-[calc(1rem+42px)] lg:scroll-mt-[calc(1rem+99px)]"
 >
   <div class="grid grid-cols-2 gap-2.5 lg:gap-5">
     <div class="aspect-square border p-5 flex justify-center items-center">
       {#if isSvg}
-        <Svg src={organization.icon} class="w-full h-full lg:w-1/2 lg:h-1/2" />
+        <Svg
+          src={organization.icon}
+          class="w-full h-full lg:w-1/2 lg:h-1/2 grayscale"
+        />
       {:else}
         <img
           loading="lazy"
           src={organization.icon}
           alt={organization.name}
-          class="w-full h-full lg:w-1/2 lg:h-1/2 object-contain"
+          class="w-full h-full lg:w-1/2 lg:h-1/2 object-contain grayscale"
         />
       {/if}
     </div>
     <div class="relative py-5 space-y-5">
-      <div
-        class="absolute top-2.5 right-0 w-[calc(100%+2.5rem)] h-px bg-black before:absolute before:-translate-y-[calc(50%-0.5px)] before:left-0 before:w-2.5 before:h-2.5 before:rounded-full before:bg-black before:content-['']"
-      ></div>
-      <div class="absolute top-2.5 right-0 w-[5px] h-1/3 bg-black"></div>
       <p>
         <strong>{organization.title}</strong>
         <br />

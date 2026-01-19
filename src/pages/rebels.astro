@@ -4,7 +4,6 @@ import Layout from "../layouts/Layout.astro";
 import Captcha from "../components/Captcha.svelte";
 import Svg from "../components/Svg.svelte";
 import ProgressWatcher from "../components/ProgressWatcher.svelte";
-import ProgressCard from "../components/ProgressCard.svelte";
 import City from "../components/City.svelte";
 import { rebels } from "../data/rebels.js";
 import dotsBig from "../assets/img/dots-big.png";
@@ -42,7 +41,6 @@ for (const rebel of rebels) {
       <Svg client:load src="/svg/rebels.svg" class="w-full h-full" />
     </div>
     <div class="relative lg:w-3/4 space-y-2.5 lg:space-y-5">
-      <p>V - The Rebels</p>
       <h1 class="font-computer uppercase text-6xl lg:text-9xl">
         Building collective power
       </h1>
@@ -73,10 +71,9 @@ for (const rebel of rebels) {
     client:load
     current="rebels"
     number="five"
+    n="5"
     position="fifth"
     next="roadmap"
     text="> Find all the rebels to unlock stamp..."
   />
-
-  <ProgressCard client:load full={false} />
 </Layout>

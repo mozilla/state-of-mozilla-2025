@@ -1,28 +1,26 @@
 ---
-import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 import Svg from "../components/Svg.svelte";
 import FinancialDownloads from "../components/FinancialDownloads.astro";
-import videoPoster4 from "../assets/img/video-poster-4.jpg";
+import Video from "../components/Video.svelte";
 ---
 
 <Layout>
   <section class="p-2.5 lg:p-5 space-y-2.5 lg:space-y-5">
     <div class="grid lg:grid-cols-2 gap-2.5 lg:gap-5">
       <div class="lg:order-last">
-        <Image
-          src={videoPoster4}
-          class="aspect-[4/3] object-cover w-full"
-          alt="CTRLALTDEL"
+        <Video
+          client:load
+          src="https://player.vimeo.com/progressive_redirect/playback/1155181521/rendition/1080p/file.mp4%20%281080p%29.mp4?loc=external&signature=3439b1c1fd33dcd9deb3ea6d3551c16f190f9aa998f583b6069ed78aa9ab3577"
         />
       </div>
       <div class="flex flex-col justify-between">
         <div>
-          <h1 class="relative z-10 text-5xl lg:text-7xl uppercase">
+          <h1 class="font-mozilla-text-bold relative z-10 text-5xl lg:text-7xl">
             Doing for AI<br />what we did<br />for the web
           </h1>
-          <div class="absolute z-10 -translate-y-1/4 pointer-events-none">
-            <Svg client:load src="/svg/intro1.svg" class="text-red" />
+          <div class="xl:absolute z-10 -translate-y-1/4 pointer-events-none">
+            <Svg client:load src="/svg/intro1.svg" />
           </div>
         </div>
         <div class="grid grid-cols-2 gap-px bg-yellow">
@@ -34,31 +32,31 @@ import videoPoster4 from "../assets/img/video-poster-4.jpg";
               src="/svg/dots.svg"
               class="absolute left-0 right-0 top-1/2 -translate-y-1/2 w-full object-cover"
             />
-            <p class="text-center">HIGHLIGHT ARTICLES</p>
+            <p class="text-center uppercase">Take Me Right To</p>
           </div>
           <a
             href="/tools#corp"
-            class="max-lg:col-span-full outline outline-dashed p-5 hover:bg-black hover:text-yellow"
+            class="uppercase max-lg:col-span-full outline outline-dashed p-5 hover:bg-black hover:text-yellow"
           >
-            III. LATEST ON FIREFOX →
-          </a>
-          <a
-            href="/manifesto"
-            class="max-lg:col-span-full outline outline-dashed p-5 hover:bg-black hover:text-yellow"
-          >
-            II. THE AI ERA →
+            I. Latest on Firefox →
           </a>
           <a
             href="/tools#mzla"
-            class="max-lg:col-span-full outline outline-dashed p-5 hover:bg-black hover:text-yellow"
+            class="uppercase max-lg:col-span-full outline outline-dashed p-5 hover:bg-black hover:text-yellow"
           >
-            III. LATEST ON THUNDERBIRD →
+            II. Latest on Thunderbird →
+          </a>
+          <a
+            href="/tools"
+            class="uppercase max-lg:col-span-full outline outline-dashed p-5 hover:bg-black hover:text-yellow"
+          >
+            III. What We're Building →
           </a>
           <a
             href="/ledger"
-            class="max-lg:col-span-full outline outline-dashed p-5 hover:bg-black hover:text-yellow"
+            class="uppercase max-lg:col-span-full outline outline-dashed p-5 hover:bg-black hover:text-yellow"
           >
-            IV. FINANCIAL DATAS →
+            IV. The Financials →
           </a>
         </div>
       </div>
@@ -134,23 +132,12 @@ import videoPoster4 from "../assets/img/video-poster-4.jpg";
           class="flex flex-col gap-px bg-yellow hover:bg-black hover:text-yellow"
           href="/stakes"
         >
-          <div
-            class="relative text-center pt-2.5 lg:pt-5 outline outline-dashed pb-30"
-          >
-            <h3 class="text-8xl uppercase">
-              <span class="font-star">Choose</span>
-              <span class="font-star">your</span>
-              <span class="font-star">future</span>
-            </h3>
-            <div
-              class="absolute bottom-0 left-0 right-0 w-full h-40 overflow-hidden"
-            >
-              <Svg
-                client:load
-                src="/svg/dots.svg"
-                class="absolute left-0 right-0 top-1/2 -translate-y-1/2 w-full object-cover"
-              />
-            </div>
+          <div class="relative text-center outline outline-dashed">
+            <img
+              class="w-full"
+              src="/gif/choose_your_future.gif"
+              alt="Choose your future"
+            />
           </div>
           <div class="outline outline-dashed p-5">START THE JOURNEY →</div>
         </a>
@@ -193,8 +180,8 @@ import videoPoster4 from "../assets/img/video-poster-4.jpg";
         <div class="absolute bottom-2.5 left-1/2 -translate-x-1/2">
           <Svg
             client:load
-            src="/svg/journey1.svg"
-            class="text-red group-hover:text-yellow"
+            src="/svg/stamp-stakes.svg"
+            class="group-hover:text-yellow"
           />
         </div>
         <a
@@ -219,8 +206,8 @@ import videoPoster4 from "../assets/img/video-poster-4.jpg";
         <div class="absolute bottom-5 left-1/2 -translate-x-1/2">
           <Svg
             client:load
-            src="/svg/journey2.svg"
-            class="text-red group-hover:text-yellow"
+            src="/svg/stamp-manifesto.svg"
+            class="group-hover:text-yellow"
           />
         </div>
         <a
@@ -247,8 +234,8 @@ import videoPoster4 from "../assets/img/video-poster-4.jpg";
         <div class="absolute bottom-5 left-1/2 -translate-x-1/2">
           <Svg
             client:load
-            src="/svg/journey3.svg"
-            class="text-red group-hover:text-yellow"
+            src="/svg/stamp-tools.svg"
+            class="group-hover:text-yellow"
           />
         </div>
         <a
@@ -273,8 +260,8 @@ import videoPoster4 from "../assets/img/video-poster-4.jpg";
         <div class="absolute bottom-5 left-1/2 -translate-x-1/2">
           <Svg
             client:load
-            src="/svg/journey4.svg"
-            class="text-red group-hover:text-yellow"
+            src="/svg/stamp-ledger.svg"
+            class="group-hover:text-yellow"
           />
         </div>
         <a
@@ -299,8 +286,8 @@ import videoPoster4 from "../assets/img/video-poster-4.jpg";
         <div class="absolute bottom-5 left-1/2 -translate-x-1/2">
           <Svg
             client:load
-            src="/svg/journey5.svg"
-            class="text-red group-hover:text-yellow"
+            src="/svg/stamp-rebels.svg"
+            class="group-hover:text-yellow"
           />
         </div>
         <a
@@ -325,8 +312,8 @@ import videoPoster4 from "../assets/img/video-poster-4.jpg";
         <div class="absolute bottom-5 left-1/2 -translate-x-1/2">
           <Svg
             client:load
-            src="/svg/journey6.svg"
-            class="text-red group-hover:text-yellow"
+            src="/svg/stamp-roadmap.svg"
+            class="group-hover:text-yellow"
           />
         </div>
         <a
@@ -334,7 +321,7 @@ import videoPoster4 from "../assets/img/video-poster-4.jpg";
           href="/roadmap"
         >
           <span>FINAL</span>
-          <h3 class="text-7xl uppercase">Roadmap</h3>
+          <h3 class="font-mozilla-text-bold text-7xl">Roadmap</h3>
           <p class="text-xl text-balance">Where we’re going, together</p>
         </a>
       </div>
@@ -344,7 +331,7 @@ import videoPoster4 from "../assets/img/video-poster-4.jpg";
   <section class="p-2.5 lg:p-5">
     <div class="grid lg:grid-cols-4 gap-2.5 lg:gap-5">
       <div class="lg:col-start-2 lg:col-span-2 space-y-2.5 lg:space-y-5">
-        <h2 class="font-mozilla-headline text-5xl mt-7.5">
+        <h2 class="font-mozilla-text-bold text-5xl mt-7.5">
           “We're not here to predict the future. We're here to prove that in the
           age of artificial intelligence, we still get to choose its direction.”
         </h2>

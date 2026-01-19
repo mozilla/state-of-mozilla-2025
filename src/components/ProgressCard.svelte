@@ -4,25 +4,14 @@
   import Svg from "./Svg.svelte";
   import html2canvas from "html2canvas";
 
-  const { full } = $props();
-
   let card = $state(null);
-  let cardHeight = $state(0);
   let name = $state("");
   let loaded = $state(false);
   let webcamButton = $state(null);
   let hasWebcamImage = $state(false);
   let shareWrapper = $state(null);
   let isSharing = $state(false);
-  let isStickyDismissed = $state(true);
   const progress = $derived($progressStore);
-
-  $effect(() => {
-    document.documentElement.style.setProperty(
-      "--card-height",
-      `${cardHeight}px`,
-    );
-  });
 
   onMount(() => {
     const savedName = localStorage.getItem("userName");
@@ -56,15 +45,6 @@
       };
 
       img.src = savedImage;
-    }
-
-    // Check if sticky was dismissed
-    const stickyDismissed = sessionStorage.getItem("stickyDismissed");
-    if (stickyDismissed === "true") {
-      isStickyDismissed = true;
-    }
-    if (stickyDismissed === "false") {
-      isStickyDismissed = false;
     }
 
     loaded = true;
@@ -413,19 +393,10 @@
   }
 </script>
 
-<div
-  bind:clientHeight={cardHeight}
-  style={full ? "" : `margin-top: -${cardHeight}px`}
-  class={full
-    ? "relative"
-    : `pointer-events-none ${!isStickyDismissed ? "sticky" : ""} z-30 bottom-0 p-2.5 lg:p-5`}
->
-  <div
-    class="grid gap-2.5 lg:gap-5 {full
-      ? 'lg:grid-cols-2 lg:pb-5'
-      : 'lg:grid-cols-3'}"
-  >
-    <div class="pointer-events-auto">
+<div>
+  <div class="grid gap-2.5 lg:gap-5 lg:grid-cols-12">
+    <div class="lg:col-span-4">Lorem ipsum</div>
+    <div class="lg:col-span-4 lg:col-start-7 space-y-2.5 lg:space-y-5">
       <div
         bind:this={card}
         class="relative bg-white border border-black p-2.5"
@@ -443,67 +414,6 @@
           class="absolute bottom-0 left-0"
           style="border-bottom: calc(1.25rem - 1px) solid black; border-right: calc(1.25rem - 1px) solid transparent;"
         ></div>
-        {#if !full}
-          <button
-            onclick={() => {
-              isStickyDismissed = !isStickyDismissed;
-              sessionStorage.setItem(
-                "stickyDismissed",
-                isStickyDismissed.toString(),
-              );
-            }}
-            class="absolute top-4 right-4 flex justify-center items-center aspect-square w-5 cursor-pointer"
-            aria-label={isStickyDismissed ? "Expand" : "Close"}
-          >
-            {#if isStickyDismissed}
-              <svg
-                width="20"
-                height="12"
-                viewBox="0 0 20 12"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <line
-                  x1="0.353553"
-                  y1="11.6464"
-                  x2="10.3536"
-                  y2="1.64645"
-                  stroke="black"
-                />
-                <line
-                  x1="9.64645"
-                  y1="1.64645"
-                  x2="19.6464"
-                  y2="11.6464"
-                  stroke="black"
-                />
-              </svg>
-            {:else}
-              <svg
-                width="20"
-                height="19"
-                viewBox="0 0 20 19"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <line
-                  x1="1.0684"
-                  y1="0.3536"
-                  x2="19.0684"
-                  y2="18.3536"
-                  stroke="black"
-                />
-                <line
-                  x1="0.353478"
-                  y1="18.3536"
-                  x2="18.3535"
-                  y2="0.3536"
-                  stroke="black"
-                />
-              </svg>
-            {/if}
-          </button>
-        {/if}
         <div class="grid grid-cols-3 gap-2.5">
           <div class="aspect-square w-full border-t border-x flex">
             {#if loaded && !hasWebcamImage}
@@ -541,11 +451,9 @@
               type="text"
               maxlength="24"
               placeholder={loaded ? "Your nickname" : ""}
-              class="w-3/4 border-b border-dashed leading-loose placeholder:text-gray focus:outline-0 focus:border-solid {full
-                ? 'lg:text-2xl lg:leading-none'
-                : ''}"
+              class="w-3/4 border-b border-dashed leading-loose placeholder:text-gray focus:outline-0 focus:border-solid"
             />
-            <p class={full ? "lg:text-2xl" : ""}>MOZILLA REPORT 2025</p>
+            <p>STATE OF MOZILLA 2025</p>
           </div>
         </div>
         <div class="grid grid-cols-6 gap-px border divide-x">
@@ -558,8 +466,8 @@
                 class="animate-blink-1 w-full h-full flex justify-center items-center"
               >
                 <Svg
-                  src="/svg/journey1.svg"
-                  class="max-w-full max-h-full text-red"
+                  src="/svg/stamp-stakes.svg"
+                  class="max-w-full max-h-full"
                 />
               </div>
             {/if}
@@ -573,8 +481,8 @@
                 class="animate-blink-2 w-full h-full flex justify-center items-center"
               >
                 <Svg
-                  src="/svg/journey2.svg"
-                  class="max-w-full max-h-full text-red"
+                  src="/svg/stamp-manifesto.svg"
+                  class="max-w-full max-h-full"
                 />
               </div>
             {/if}
@@ -587,10 +495,7 @@
               <div
                 class="animate-blink-3 w-full h-full flex justify-center items-center"
               >
-                <Svg
-                  src="/svg/journey3.svg"
-                  class="max-w-full max-h-full text-red"
-                />
+                <Svg src="/svg/stamp-tools.svg" class="max-w-full max-h-full" />
               </div>
             {/if}
           </div>
@@ -603,8 +508,8 @@
                 class="animate-blink-4 w-full h-full flex justify-center items-center"
               >
                 <Svg
-                  src="/svg/journey4.svg"
-                  class="max-w-full max-h-full text-red"
+                  src="/svg/stamp-ledger.svg"
+                  class="max-w-full max-h-full"
                 />
               </div>
             {/if}
@@ -618,8 +523,8 @@
                 class="animate-blink-5 w-full h-full flex justify-center items-center"
               >
                 <Svg
-                  src="/svg/journey5.svg"
-                  class="max-w-full max-h-full text-red"
+                  src="/svg/stamp-rebels.svg"
+                  class="max-w-full max-h-full"
                 />
               </div>
             {/if}
@@ -633,25 +538,19 @@
                 class="animate-blink-6 w-full h-full flex justify-center items-center"
               >
                 <Svg
-                  src="/svg/journey6.svg"
-                  class="max-w-full max-h-full text-red"
+                  src="/svg/stamp-roadmap.svg"
+                  class="max-w-full max-h-full"
                 />
               </div>
             {/if}
           </div>
         </div>
-        <div class="flex justify-between mt-2.5">
-          <p class={full ? "text-2xl lg:text-4xl" : "text-lg lg:text-2xl"}>
-            MZLFEST-REBEL
-          </p>
-          <p class={full ? "text-2xl lg:text-4xl" : "text-lg lg:text-2xl"}>
-            LOREM IPSUM
-          </p>
+        <div class="flex justify-center mt-2.5">
+          <p class="text-lg lg:text-2xl">CHOOSE YOUR FUTURE</p>
         </div>
       </div>
-    </div>
-    {#if full}
-      <div class="pointer-events-auto flex flex-col space-y-2.5 lg:space-y-5">
+
+      <div class="flex flex-col space-y-2.5 lg:space-y-5">
         <button
           onclick={() => progressStore.reset()}
           class="btn inline-flex! px-2.5! items-center space-x-2.5 w-full invert"
@@ -697,9 +596,8 @@
           </svg>
           <span>{isSharing ? "Sharing..." : "Share your results"}</span>
         </button>
-        <Svg src="/svg/join-us.svg" class="w-full" />
       </div>
-    {/if}
+    </div>
   </div>
 </div>
 

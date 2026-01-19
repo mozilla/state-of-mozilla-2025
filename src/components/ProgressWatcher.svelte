@@ -3,10 +3,11 @@
   import { progressStore } from "../stores/progressStore.js";
   import Svg from "./Svg.svelte";
 
-  const { current, number, position, next, text } = $props();
+  const { current, number, n, position, next, text } = $props();
 
   let progressWatcher = $state(null);
   let displayedLines = $state([]);
+  let showStamp = $state(false);
 
   const lines = $derived([
     ":: CONGRATS! ::",
@@ -24,6 +25,9 @@
         displayedLines = [...displayedLines, lines[currentIndex]];
         currentIndex++;
         setTimeout(addLine, randomDelay);
+      } else {
+        // Animation complete, show the stamp
+        showStamp = true;
       }
     }
 
@@ -91,12 +95,10 @@
   <div class="bg-black text-yellow uppercase py-2.5 px-2.5 lg:px-5">
     <p>END OF:// CHAPTER_{number}</p>
   </div>
-  <div
-    class="bg-yellow px-2.5 pt-2.5 lg:px-5 lg:pt-5 max-lg:pb-[var(--card-height)] space-y-2.5"
-  >
-    <div class="grid lg:grid-cols-2 gap-2.5">
-      <div class="lg:pb-[var(--card-height)]">
-        <code class="block min-h-[128px] font-ocr-pbi">
+  <div class="bg-yellow p-2.5 p-5 space-y-2.5">
+    <div class="grid lg:grid-cols-2 gap-5">
+      <div class="flex flex-col justify-between space-y-5">
+        <code class="block font-ocr-pbi">
           {@html text}
           {@html text ? "<br />" : ""}
           {#each displayedLines as line}
@@ -105,6 +107,9 @@
           {/each}
           <span class="blinking-cursor inline-block w-2.5 h-5 bg-black"></span>
         </code>
+        {#if showStamp}
+          <Svg src="/svg/stamp-{current}.svg" class="animate-blink-{n}" />
+        {/if}
       </div>
       <div>
         <a

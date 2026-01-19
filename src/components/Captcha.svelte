@@ -1,5 +1,5 @@
 <script>
-  import { onMount, tick } from "svelte";
+  import { onMount } from "svelte";
   import Svg from "./Svg.svelte";
 
   let showCaptcha = $state(true);
@@ -8,13 +8,13 @@
   let attemptCount = $state(0);
   let showBypass = $state(false);
   let bypassLines = $state([]);
-  let captchaIndex = $state(0);
-
   const captchas = [
     { src: "/svg/captcha1.svg", word: "future" },
     { src: "/svg/captcha2.svg", word: "human" },
     { src: "/svg/captcha3.svg", word: "internet" },
   ];
+
+  let captchaIndex = $state(Math.floor(Math.random() * captchas.length));
 
   const currentCaptcha = $derived(captchas[captchaIndex]);
 
@@ -40,13 +40,14 @@
     audio.play();
   }
 
-  onMount(async () => {
+  onMount(() => {
     if (sessionStorage.getItem("captchaVerified")) {
       showCaptcha = false;
+      return;
     }
-    captchaIndex = Math.floor(Math.random() * captchas.length);
-    await tick();
-    input?.focus();
+    setTimeout(() => {
+      input?.focus();
+    }, 100);
   });
 
   function handleSubmit(event) {

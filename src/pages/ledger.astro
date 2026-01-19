@@ -4,7 +4,6 @@ import Layout from "../layouts/Layout.astro";
 import Captcha from "../components/Captcha.svelte";
 import Svg from "../components/Svg.svelte";
 import ProgressWatcher from "../components/ProgressWatcher.svelte";
-import ProgressCard from "../components/ProgressCard.svelte";
 import FinancialDownloads from "../components/FinancialDownloads.astro";
 import dotsBig from "../assets/img/dots-big.png";
 ---
@@ -23,7 +22,6 @@ import dotsBig from "../assets/img/dots-big.png";
       <Svg client:load src="/svg/ledger.svg" class="w-full h-full" />
     </div>
     <div class="relative lg:w-3/4 space-y-2.5 lg:space-y-5">
-      <p>IV - The Ledger</p>
       <h1 class="uppercase text-5xl lg:text-8xl xl:text-9xl">
         <span class="font-star">Investing in a</span>
         <span class="font-star">rebel alliance</span>
@@ -116,33 +114,23 @@ import dotsBig from "../assets/img/dots-big.png";
       <div
         class="lg:col-span-full p-5 lg:p-10 space-y-2.5 outline outline-dashed"
       >
-        <p class="font-mozilla-text text-5xl lg:text-7xl xl:text-8xl uppercase">
-          1.4b
-        </p>
+        <p class="font-mozilla-text text-5xl lg:text-7xl uppercase">1.4b</p>
         <p>in reserves (and no debt)</p>
       </div>
       <div class="p-5 lg:p-10 space-y-2.5 outline outline-dashed">
-        <p class="font-mozilla-text text-5xl lg:text-7xl xl:text-8xl uppercase">
-          $620M
-        </p>
+        <p class="font-mozilla-text text-5xl lg:text-7xl uppercase">$620M</p>
         <p>in asset growth since 2020</p>
       </div>
       <div class="p-5 lg:p-10 space-y-2.5 outline outline-dashed">
-        <p class="font-mozilla-text text-5xl lg:text-7xl xl:text-8xl uppercase">
-          $658.5M
-        </p>
+        <p class="font-mozilla-text text-5xl lg:text-7xl uppercase">$658.5M</p>
         <p>in Firefox related income (2024)</p>
       </div>
       <div class="p-5 lg:p-10 space-y-2.5 outline outline-dashed">
-        <p class="font-mozilla-text text-5xl lg:text-7xl xl:text-8xl uppercase">
-          $125M
-        </p>
+        <p class="font-mozilla-text text-5xl lg:text-7xl uppercase">$125M</p>
         <p>invested in philanthropic programs since 2020</p>
       </div>
       <div class="p-5 lg:p-10 space-y-2.5 outline outline-dashed">
-        <p class="font-mozilla-text text-5xl lg:text-7xl xl:text-8xl uppercase">
-          50+
-        </p>
+        <p class="font-mozilla-text text-5xl lg:text-7xl uppercase">50+</p>
         <p>equity holdings in responsible tech companies</p>
       </div>
     </div>
@@ -154,28 +142,22 @@ import dotsBig from "../assets/img/dots-big.png";
         <h2 class="text-3xl lg:text-5xl text-center">REACH AND COMMUNITY</h2>
       </div>
       <div class="p-5 lg:p-10 space-y-2.5 outline outline-dashed">
-        <p class="font-mozilla-text text-5xl lg:text-7xl xl:text-8xl uppercase">
-          ~200M
-        </p>
+        <p class="font-mozilla-text text-5xl lg:text-7xl uppercase">~200M</p>
         <p>monthly Firefox users</p>
       </div>
       <div class="p-5 lg:p-10 space-y-2.5 outline outline-dashed">
-        <p class="font-mozilla-text text-5xl lg:text-7xl xl:text-8xl uppercase">
-          ~20M
-        </p>
+        <p class="font-mozilla-text text-5xl lg:text-7xl uppercase">~20M</p>
         <p>monthly Thunderbird users</p>
       </div>
       <div class="p-5 lg:p-10 space-y-2.5 outline outline-dashed">
-        <p class="font-mozilla-text text-5xl lg:text-7xl xl:text-8xl uppercase">
+        <p class="font-mozilla-text text-5xl lg:text-7xl uppercase">
           Tens of thousands
         </p>
         <p>of donors supporting Mozilla’s mission worldwide</p>
       </div>
       <div class="p-5 lg:p-10 space-y-2.5 outline outline-dashed">
         <p>Participants from</p>
-        <p class="font-mozilla-text text-5xl lg:text-7xl xl:text-8xl uppercase">
-          79
-        </p>
+        <p class="font-mozilla-text text-5xl lg:text-7xl uppercase">79</p>
         <p>countries at Mozilla Festival</p>
       </div>
     </div>
@@ -335,10 +317,9 @@ import dotsBig from "../assets/img/dots-big.png";
     client:load
     current="ledger"
     number="four"
+    n="4"
     position="fourth"
     next="rebels"
     text=""
   />
-
-  <ProgressCard client:load full={false} />
 </Layout>

@@ -1,7 +1,10 @@
 <script>
   import { onMount } from "svelte";
+  import Video from "./Video.svelte";
 
   let { rebel, onClose } = $props();
+
+  let showVideo = $state(false);
 
   let ditherStep = $state(0); // 0 = heavy, 1 = medium, 2 = light, 3 = none
   let processedImages = $state([]); // Array to hold all 4 processed versions
@@ -180,7 +183,7 @@
     style="box-shadow: 8.3871px 8.3871px 0px rgba(0, 0, 0, 0.25); scrollbar-width: none;"
   >
     <div
-      class="sticky z-10 top-0 bg-red text-white py-2.5 px-5 flex justify-between items-center space-x-2.5"
+      class="sticky z-10 top-0 bg-black text-white py-2.5 px-5 flex justify-between items-center space-x-2.5"
     >
       <div class="flex items-center space-x-2.5">
         <svg
@@ -231,17 +234,44 @@
       <div class="grid grid-cols-2 gap-2.5 lg:gap-5">
         <div>
           <div
-            class="aspect-square w-full border"
+            class="relative aspect-square w-full border"
             onmouseenter={handleMouseEnter}
             onmouseleave={handleMouseLeave}
           >
-            {#if processedImages.length > 0}
-              <img
-                loading="lazy"
-                src={processedImages[ditherStep]}
-                alt={rebel.name}
-                class="w-full h-full object-cover"
+            <span class="absolute left-1/2 top-1/2 -translate-1/2">
+              LOADING
+            </span>
+            {#if showVideo}
+              <Video
+                muted={false}
+                src={rebel.video}
+                class="relative aspect-square w-full object-cover"
               />
+            {:else}
+              {#if processedImages.length > 0}
+                <img
+                  loading="lazy"
+                  src={processedImages[ditherStep]}
+                  alt={rebel.name}
+                  class="relative w-full h-full object-cover"
+                />
+              {/if}
+              <button
+                onclick={() => (showVideo = true)}
+                class="absolute bottom-5 left-5 bg-black/60 hover:bg-black/80 border-none rounded-full w-11 h-11 flex items-center justify-center cursor-pointer text-white transition-colors"
+                aria-label="Play video"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  stroke="none"
+                >
+                  <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>
+              </button>
             {/if}
           </div>
         </div>

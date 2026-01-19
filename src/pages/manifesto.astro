@@ -4,7 +4,6 @@ import Layout from "../layouts/Layout.astro";
 import Captcha from "../components/Captcha.svelte";
 import Svg from "../components/Svg.svelte";
 import ProgressWatcher from "../components/ProgressWatcher.svelte";
-import ProgressCard from "../components/ProgressCard.svelte";
 import dotsBig from "../assets/img/dots-big.png";
 ---
 
@@ -24,7 +23,6 @@ import dotsBig from "../assets/img/dots-big.png";
       <Svg client:load src="/svg/code.svg" class="w-full h-full" />
     </div>
     <div class="relative lg:w-3/4 space-y-2.5 lg:space-y-5">
-      <p>II - The Manifesto</p>
       <h1 class="font-workbench uppercase text-6xl lg:text-9xl">
         Applying our values in the Era of AI
       </h1>
@@ -58,7 +56,7 @@ import dotsBig from "../assets/img/dots-big.png";
     <div class="grid lg:grid-cols-4 gap-2.5 lg:gap-5">
       <div class="lg:col-span-2 lg:col-start-2 space-y-10 lg:space-y-20">
         <div class="grid grid-cols-3 gap-2.5 lg:gap-5 items-center">
-          <Svg client:load src="/svg/code-icon-1.svg" class="w-full text-red" />
+          <Svg client:load src="/svg/code-icon-1.svg" class="w-full" />
           <p class="col-span-2">
             HUMAN AGENCY<br /><br />in a world of AI and agents, it is more
             important than ever that technology is designed in ways that let
@@ -67,7 +65,7 @@ import dotsBig from "../assets/img/dots-big.png";
           </p>
         </div>
         <div class="grid grid-cols-3 gap-2.5 lg:gap-5">
-          <Svg client:load src="/svg/code-icon-2.svg" class="w-full text-red" />
+          <Svg client:load src="/svg/code-icon-2.svg" class="w-full" />
           <p class="col-span-2">
             DECENTRALIZATION AND OPEN SOURCE<br /><br />an open, accessible
             internet depends on innovation and decentralized participation in
@@ -77,7 +75,7 @@ import dotsBig from "../assets/img/dots-big.png";
           </p>
         </div>
         <div class="grid grid-cols-3 gap-2.5 lg:gap-5">
-          <Svg client:load src="/svg/code-icon-3.svg" class="w-full text-red" />
+          <Svg client:load src="/svg/code-icon-3.svg" class="w-full" />
           <p class="col-span-2">
             BALANCING COMMERCIAL AND PUBLIC BENEFIT<br /><br />more than ever,
             the direction of the internet and AI is defined by commercial
@@ -114,7 +112,7 @@ import dotsBig from "../assets/img/dots-big.png";
             <span class="font-star">THE AI ERA</span>
           </h3>
           <div class="-mt-5 lg:-mt-10 -mx-5 mb-0">
-            <Svg client:load src="/svg/intro1.svg" class="text-red" />
+            <Svg client:load src="/svg/intro1.svg" />
           </div>
           <hr class="border-dashed mt-0" />
           <h3 class="text-3xl lg:text-4xl 2xl:text-7xl uppercase">
@@ -163,10 +161,9 @@ import dotsBig from "../assets/img/dots-big.png";
     client:load
     current="manifesto"
     number="two"
+    n="2"
     position="second"
     next="tools"
     text="> These are the rules we live by.<br />> But words mean nothing without action."
   />
-
-  <ProgressCard client:load full={false} />
 </Layout>

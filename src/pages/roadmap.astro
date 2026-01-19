@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
+import Svg from "../components/Svg.svelte";
 import StopWall from "../components/StopWall.svelte";
 import ProgressCard from "../components/ProgressCard.svelte";
 import dotsBig from "../assets/img/dots-big.png";
@@ -12,25 +13,22 @@ import article3 from "../assets/img/article3.jpg";
 <Layout>
   <StopWall client:load />
 
-  <section
-    class="relative flex flex-col px-2.5 pt-2.5 lg:px-5 lg:pt-5 min-h-[calc(100svh-var(--header-height)-20px)] bg-yellow overflow-hidden"
-  >
+  <section class="relative p-2.5 lg:p-5 min-h-[50vh] bg-yellow overflow-hidden">
     <Image
       priority
       class="absolute bottom-0 left-0 right-0 lg:translate-y-1/2"
       src={dotsBig}
       alt=""
     />
-    <div class="flex-1 relative flex flex-col space-y-2.5 lg:space-y-5">
-      <div class="relative lg:w-3/4 space-y-2.5 lg:space-y-5">
-        <p>FINAL - The Roadmap</p>
-        <h1 class="text-6xl lg:text-9xl uppercase">
-          Where we’re going, together
-        </h1>
-      </div>
-      <div class="mt-auto">
-        <ProgressCard client:load full={true} />
-      </div>
+    <div
+      class="absolute max-lg:w-1/2 right-2.5 lg:right-5 bottom-2.5 lg:bottom-5"
+    >
+      <Svg client:load src="/svg/roadmap.svg" class="w-full h-full" />
+    </div>
+    <div class="relative lg:w-3/4 space-y-2.5 lg:space-y-5">
+      <h1 class="font-mozilla-text-bold text-6xl lg:text-9xl">
+        Where we’re going, together
+      </h1>
     </div>
   </section>
 
@@ -138,6 +136,15 @@ import article3 from "../assets/img/article3.jpg";
         <p>Mark Surman on Building a Double Bottom Line for Tech</p>
         <a target="_blank" href="https://youtu.be/BoFUABRULxg">Read more →</a>
       </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="bg-black text-yellow uppercase py-2.5 px-2.5 lg:px-5">
+      <p>CONGRATULATIONS!</p>
+    </div>
+    <div class="p-2.5 lg:p-5 space-y-5 bg-yellow">
+      <ProgressCard client:load />
     </div>
   </section>
 </Layout>

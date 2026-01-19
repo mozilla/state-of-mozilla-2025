@@ -16,6 +16,14 @@
 }
 
 @font-face {
+  font-family: "Mozilla Text Bold";
+  src: url("/fonts/MozillaText-Bold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
   font-family: "OCR-PBI";
   src: url("/fonts/OCR-PBI-site.woff2") format("woff2");
   font-weight: normal;
@@ -104,6 +112,11 @@ strong {
 
 .font-mozilla-text {
   font-family: "Mozilla Text", sans-serif;
+  line-height: 80%;
+  letter-spacing: -0.02em;
+}
+.font-mozilla-text-bold {
+  font-family: "Mozilla Text Bold", sans-serif;
   line-height: 80%;
   letter-spacing: -0.02em;
 }
