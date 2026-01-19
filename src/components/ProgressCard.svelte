@@ -12,8 +12,33 @@
   let shareWrapper = $state(null);
   let isSharing = $state(false);
   const progress = $derived($progressStore);
+  let displayedLines = $state([]);
+
+  const lines = $derived([
+    ":: CONGRATS! ::",
+    `PROFILE #CARD#`,
+    "100% PROGRESS",
+  ]);
+
+  function startAnimation() {
+    let currentIndex = 0;
+
+    function addLine() {
+      const randomDelay = Math.random() * 150 + 50;
+
+      if (currentIndex < lines.length) {
+        displayedLines = [...displayedLines, lines[currentIndex]];
+        currentIndex++;
+        setTimeout(addLine, randomDelay);
+      }
+    }
+
+    addLine();
+  }
 
   onMount(() => {
+    startAnimation();
+
     const savedName = localStorage.getItem("userName");
     if (savedName) {
       name = savedName;
@@ -395,8 +420,65 @@
 
 <div>
   <div class="grid gap-2.5 lg:gap-5 lg:grid-cols-12">
-    <div class="lg:col-span-4">Lorem ipsum</div>
-    <div class="lg:col-span-4 lg:col-start-7 space-y-2.5 lg:space-y-5">
+    <div
+      class="lg:col-span-4 flex flex-col justify-between space-y-2.5 lg:space-y-5"
+    >
+      <code class="block font-ocr-pbi">
+        {#each displayedLines as line}
+          {line}
+          <br />
+        {/each}
+        <span class="blinking-cursor inline-block w-2.5 h-5 bg-black"></span>
+      </code>
+      <div class="space-y-2.5 lg:space-y-5">
+        <button
+          onclick={() => progressStore.reset()}
+          class="btn inline-flex! px-2.5! items-center space-x-2.5 w-full invert"
+        >
+          <svg
+            width="13"
+            height="17"
+            viewBox="0 0 13 17"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M6.25156 17C6.18242 16.4164 6.13056 16.0881 6.11327 15.7599C6.09598 15.4681 6.0787 15.1763 6.06141 14.7933C3.48583 14.538 1.51523 13.2614 0.512653 10.7994C-0.230637 8.93921 -0.230637 6.95137 0.944799 5C1.35966 5.38298 1.70539 5.71124 2.01654 6.00303C0.771958 9.68693 2.60426 12.9331 5.99228 12.8784C6.04414 12.2766 6.09598 11.6565 6.16513 11.0365C7.09856 11.6201 8.32585 12.8967 9 14.0091C8.274 15.0851 7.306 15.9058 6.25156 17Z"
+              fill="white"
+            />
+            <path
+              d="M11.9137 12C11.562 11.5448 11.2806 11.1442 10.9816 10.7435C11.7554 8.99545 11.7203 7.30197 10.5772 5.8088C9.69788 4.66161 8.62512 3.76934 6.97204 3.95144C6.91928 4.60697 6.86653 5.24431 6.81377 5.95448C5.86413 4.95296 4.96723 4.00607 4 2.98634C4.7562 1.9302 5.74102 1.01973 6.83135 0C6.86652 0.728376 6.90169 1.31107 6.93686 1.93019C7.95685 2.31259 9.012 2.62215 9.97923 3.11381C13.1799 4.75265 13.8482 9.4871 11.9313 12"
+              fill="white"
+            />
+          </svg>
+          <span>Restart journey</span>
+        </button>
+        <button
+          onclick={share}
+          class="btn inline-flex! px-2.5! items-center space-x-2.5 w-full invert"
+        >
+          <svg
+            width="12"
+            height="14"
+            viewBox="0 0 12 14"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M5.98133 -4.12683e-05C6.98424 1.46358 7.93485 2.8505 8.95898 4.34399L7.48001 4.34399L7.48001 8.66663L4.52018 8.66663L4.52018 4.35542L3.00065 4.35542C4.02744 2.85566 4.97084 1.47685 5.98133 -4.12683e-05Z"
+              fill="white"
+            />
+            <path
+              d="M3 6.99988H1V12.9999H11V6.99988H8.5"
+              stroke="white"
+              stroke-width="2"
+            />
+          </svg>
+          <span>{isSharing ? "Sharing..." : "Share your progress"}</span>
+        </button>
+      </div>
+    </div>
+    <div class="lg:col-span-4 lg:col-start-7">
       <div
         bind:this={card}
         class="relative bg-white border border-black p-2.5"
@@ -548,54 +630,6 @@
         <div class="flex justify-center mt-2.5">
           <p class="text-lg lg:text-2xl">CHOOSE YOUR FUTURE</p>
         </div>
-      </div>
-
-      <div class="flex flex-col space-y-2.5 lg:space-y-5">
-        <button
-          onclick={() => progressStore.reset()}
-          class="btn inline-flex! px-2.5! items-center space-x-2.5 w-full invert"
-        >
-          <svg
-            width="13"
-            height="17"
-            viewBox="0 0 13 17"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M6.25156 17C6.18242 16.4164 6.13056 16.0881 6.11327 15.7599C6.09598 15.4681 6.0787 15.1763 6.06141 14.7933C3.48583 14.538 1.51523 13.2614 0.512653 10.7994C-0.230637 8.93921 -0.230637 6.95137 0.944799 5C1.35966 5.38298 1.70539 5.71124 2.01654 6.00303C0.771958 9.68693 2.60426 12.9331 5.99228 12.8784C6.04414 12.2766 6.09598 11.6565 6.16513 11.0365C7.09856 11.6201 8.32585 12.8967 9 14.0091C8.274 15.0851 7.306 15.9058 6.25156 17Z"
-              fill="white"
-            />
-            <path
-              d="M11.9137 12C11.562 11.5448 11.2806 11.1442 10.9816 10.7435C11.7554 8.99545 11.7203 7.30197 10.5772 5.8088C9.69788 4.66161 8.62512 3.76934 6.97204 3.95144C6.91928 4.60697 6.86653 5.24431 6.81377 5.95448C5.86413 4.95296 4.96723 4.00607 4 2.98634C4.7562 1.9302 5.74102 1.01973 6.83135 0C6.86652 0.728376 6.90169 1.31107 6.93686 1.93019C7.95685 2.31259 9.012 2.62215 9.97923 3.11381C13.1799 4.75265 13.8482 9.4871 11.9313 12"
-              fill="white"
-            />
-          </svg>
-          <span>Restart</span>
-        </button>
-        <button
-          onclick={share}
-          class="btn inline-flex! px-2.5! items-center space-x-2.5 w-full invert"
-        >
-          <svg
-            width="12"
-            height="14"
-            viewBox="0 0 12 14"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M5.98133 -4.12683e-05C6.98424 1.46358 7.93485 2.8505 8.95898 4.34399L7.48001 4.34399L7.48001 8.66663L4.52018 8.66663L4.52018 4.35542L3.00065 4.35542C4.02744 2.85566 4.97084 1.47685 5.98133 -4.12683e-05Z"
-              fill="white"
-            />
-            <path
-              d="M3 6.99988H1V12.9999H11V6.99988H8.5"
-              stroke="white"
-              stroke-width="2"
-            />
-          </svg>
-          <span>{isSharing ? "Sharing..." : "Share your results"}</span>
-        </button>
       </div>
     </div>
   </div>
