@@ -3,12 +3,12 @@
   let muted = $derived(initialMuted);
 </script>
 
-<div class="relative">
+<div class="relative outline">
   <video class={className} autoplay bind:muted loop playsinline>
     <source {src} type="video/mp4" />
   </video>
   <button
-    class="absolute bottom-5 right-5 bg-black/60 hover:bg-black/80 border-none rounded-full w-10 h-10 flex items-center justify-center cursor-pointer text-white transition-colors"
+    class="absolute bottom-5 right-5 bg-yellow border-none rounded-full w-10 h-10 flex items-center justify-center cursor-pointer text-black"
     onclick={() => (muted = !muted)}
     aria-label={muted ? "Unmute" : "Mute"}
   >

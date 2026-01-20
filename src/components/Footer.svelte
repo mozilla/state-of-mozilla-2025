@@ -2,9 +2,9 @@
   import Svg from "./Svg.svelte";
 </script>
 
-<footer>
+<footer class="relative">
   <section
-    class="bg-black text-white px-2.5 lg:px-5 py-2.5 lg:py-5 space-y-5 lg:space-y-10"
+    class="bg-black text-white outline outline-white px-2.5 lg:px-5 py-2.5 lg:py-5 space-y-5 lg:space-y-10"
   >
     <div class="grid lg:grid-cols-2 gap-2.5 lg:gap-5">
       <div class="space-y-2.5 lg:space-y-5">

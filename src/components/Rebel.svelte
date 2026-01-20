@@ -179,7 +179,7 @@
     onclick={(e) => {
       e.stopPropagation();
     }}
-    class="w-full lg:w-2/3 rounded-4xl bg-yellow overflow-x-hidden overflow-y-auto overscroll-none h-[calc(100svh-(var(--header-height)*2)-84px)]"
+    class="w-full lg:w-2/3 outline bg-yellow overflow-x-hidden overflow-y-auto overscroll-none h-[calc(100svh-(var(--header-height)*2)-84px)]"
     style="box-shadow: 8.3871px 8.3871px 0px rgba(0, 0, 0, 0.25); scrollbar-width: none;"
   >
     <div
@@ -258,7 +258,7 @@
               {/if}
               <button
                 onclick={() => (showVideo = true)}
-                class="absolute bottom-5 left-5 bg-black/60 hover:bg-black/80 border-none rounded-full w-11 h-11 flex items-center justify-center cursor-pointer text-white transition-colors"
+                class="absolute bottom-5 left-5 bg-yellow border-none rounded-full w-11 h-11 flex items-center justify-center cursor-pointer text-black"
                 aria-label="Play video"
               >
                 <svg
@@ -280,10 +280,10 @@
             class="absolute top-2.5 right-0 w-[calc(100%+2.5rem)] h-px bg-black before:absolute before:-translate-y-[calc(50%-0.5px)] before:left-0 before:w-2.5 before:h-2.5 before:rounded-full before:bg-black before:content-['']"
           ></div>
           <div class="overflow-y-auto overscroll-none lg:h-[calc(66vw/2-50px)]">
-            <p class="lg:text-3xl xl:text-4xl 2xl:text-5xl uppercase">
+            <p class="lg:text-xl xl:text-2xl 2xl:text-3xl uppercase">
               {rebel.name}
             </p>
-            <p class="lg:text-3xl xl:text-4xl 2xl:text-5xl mb-10 lg:mb-20">
+            <p class="lg:text-xl xl:text-2xl 2xl:text-3xl mb-10 lg:mb-20">
               {rebel.title}
             </p>
             {#each rebel.bio as paragraph}

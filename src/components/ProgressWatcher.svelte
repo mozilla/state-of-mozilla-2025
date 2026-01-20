@@ -55,7 +55,7 @@
                 const rebelsFound = rebelsFoundStr
                   ? JSON.parse(rebelsFoundStr)
                   : [];
-                canMarkAsViewed = rebelsFound.length === 6;
+                canMarkAsViewed = rebelsFound.length === 12;
               }
 
               if (canMarkAsViewed) {
