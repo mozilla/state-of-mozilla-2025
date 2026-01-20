@@ -14,10 +14,16 @@
   const progress = $derived($progressStore);
   let displayedLines = $state([]);
 
+  const progressPercentage = $derived(() => {
+    const total = 6;
+    const completed = Object.values(progress).filter(Boolean).length;
+    return Math.round((completed / total) * 100);
+  });
+
   const lines = $derived([
     ":: CONGRATS! ::",
     `PROFILE #CARD#`,
-    "100% PROGRESS",
+    `${progressPercentage()}% PROGRESS`,
   ]);
 
   function startAnimation() {
