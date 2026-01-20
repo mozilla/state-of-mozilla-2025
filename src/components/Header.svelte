@@ -43,7 +43,7 @@
 
 <header
   bind:clientHeight={headerHeight}
-  class="sticky z-50 top-0 left-0 right-0 w-full border border-white bg-black text-white divide-y divide-white {open
+  class="sticky lg:-mx-px lg:-mt-px z-50 top-0 left-0 right-0 w-full lg:w-[calc(100%+2px)] border border-white bg-black text-white divide-y divide-white {open
     ? 'max-lg:h-svh max-lg:overflow-y-auto max-lg:overscroll-none'
     : ''}"
 >
