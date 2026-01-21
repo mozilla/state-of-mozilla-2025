@@ -39,7 +39,8 @@
 
 <section class="relative bg-yellow pt-5">
   <div class="relative">
-    <Svg src="/svg/city.svg" class="w-full h-full" />
+    <Svg src="/svg/city.svg" class="max-lg:hidden w-full h-full" />
+    <Svg src="/svg/city-mobile.svg" class="lg:hidden w-full h-full" />
     <button
       onclick={() => openRebel(1)}
       class="absolute top-[18%] left-[25%] bg-red flex justify-center items-center w-10 h-10 rounded-full cursor-pointer"
@@ -78,7 +79,7 @@
     </button>
     <button
       onclick={() => openRebel(7)}
-      class="absolute top-[32%] left-[12%] bg-red flex justify-center items-center w-10 h-10 rounded-full cursor-pointer"
+      class="absolute top-[28%] left-[8%] bg-red flex justify-center items-center w-10 h-10 rounded-full cursor-pointer"
     >
       7
     </button>
@@ -121,7 +122,7 @@
       <div class="lg:columns-2 space-y-2.5 lg:space-y-5">
         {#each rebels as rebel}
           <div class="flex">
-            <div class="w-10">
+            <div class="w-10 shrink-0">
               <div class="border w-5 h-5 flex justify-center items-center">
                 {#if rebelsFound.includes(rebel.id)}
                   <span class="font-ocr-pbi text-xl">👁</span>

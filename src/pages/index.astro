@@ -14,47 +14,42 @@ import Video from "../components/Video.svelte";
           src="https://player.vimeo.com/progressive_redirect/playback/1155181521/rendition/1080p/file.mp4%20%281080p%29.mp4?loc=external&signature=3439b1c1fd33dcd9deb3ea6d3551c16f190f9aa998f583b6069ed78aa9ab3577"
         />
       </div>
-      <div class="flex flex-col justify-between">
-        <div>
+      <div class="flex flex-col justify-between space-y-2.5 lg:space-y-5">
+        <div class="relative max-lg:flex max-lg:flex-col">
           <h1 class="font-mozilla-text-bold relative z-10 text-5xl lg:text-7xl">
             Doing for AI what we did for the web
           </h1>
-          <div class="xl:absolute z-10 -translate-y-1/4 pointer-events-none">
+          <div
+            class="max-lg:self-end lg:hidden xl:block lg:absolute lg:right-0 lg:z-10 max-lg:-mt-10 lg:-translate-y-1/4"
+          >
             <Svg client:load src="/svg/intro1.svg" />
           </div>
         </div>
-        <div class="grid grid-cols-2 gap-px bg-yellow">
-          <div
-            class="relative overflow-hidden col-span-full outline outline-dashed p-5"
-          >
-            <Svg
-              client:load
-              src="/svg/dots.svg"
-              class="absolute left-0 right-0 top-1/2 -translate-y-1/2 w-full object-cover"
-            />
+        <div class="grid grid-cols-2 gap-px">
+          <div class="col-span-full outline outline-dashed p-5">
             <p class="text-center uppercase">Take Me Right To</p>
           </div>
           <a
             href="/tools#corp"
-            class="uppercase max-lg:col-span-full outline outline-dashed p-5 hover:bg-black hover:text-yellow"
+            class="uppercase max-lg:col-span-full outline outline-dashed p-5 hover:bg-black hover:text-white"
           >
             I. Latest on Firefox →
           </a>
           <a
             href="/tools#mzla"
-            class="uppercase max-lg:col-span-full outline outline-dashed p-5 hover:bg-black hover:text-yellow"
+            class="uppercase max-lg:col-span-full outline outline-dashed p-5 hover:bg-black hover:text-white"
           >
             II. Latest on Thunderbird →
           </a>
           <a
             href="/tools"
-            class="uppercase max-lg:col-span-full outline outline-dashed p-5 hover:bg-black hover:text-yellow"
+            class="uppercase max-lg:col-span-full outline outline-dashed p-5 hover:bg-black hover:text-white"
           >
             III. What We're Building →
           </a>
           <a
             href="/ledger"
-            class="uppercase max-lg:col-span-full outline outline-dashed p-5 hover:bg-black hover:text-yellow"
+            class="uppercase max-lg:col-span-full outline outline-dashed p-5 hover:bg-black hover:text-white"
           >
             IV. The Financials →
           </a>
@@ -139,7 +134,7 @@ import Video from "../components/Video.svelte";
               alt="Choose your future"
             />
           </div>
-          <div class="outline outline-dashed p-5">START THE JOURNEY →</div>
+          <div class="outline outline-dashed p-5">TAKE THE FIRST STEP →</div>
         </a>
       </div>
     </div>
@@ -150,7 +145,7 @@ import Video from "../components/Video.svelte";
       class="grid lg:grid-cols-4 gap-2.5 lg:gap-5 border-y border-black py-2.5"
     >
       <div class="lg:col-start-2 lg:col-span-2">
-        <p>THE JOURNEY AHEAD</p>
+        <p>LOOKING AHEAD</p>
       </div>
     </div>
     <div class="grid lg:grid-cols-4 gap-2.5 lg:gap-5">
@@ -183,7 +178,7 @@ import Video from "../components/Video.svelte";
           <Svg
             client:load
             src="/svg/stamp-stakes.svg"
-            class="group-hover:text-yellow"
+            class="group-hover:text-yellow h-20"
           />
         </div>
         <a
@@ -209,7 +204,7 @@ import Video from "../components/Video.svelte";
           <Svg
             client:load
             src="/svg/stamp-manifesto.svg"
-            class="group-hover:text-yellow"
+            class="group-hover:text-yellow h-20"
           />
         </div>
         <a
@@ -237,7 +232,7 @@ import Video from "../components/Video.svelte";
           <Svg
             client:load
             src="/svg/stamp-tools.svg"
-            class="group-hover:text-yellow"
+            class="group-hover:text-yellow h-20"
           />
         </div>
         <a
@@ -263,7 +258,7 @@ import Video from "../components/Video.svelte";
           <Svg
             client:load
             src="/svg/stamp-ledger.svg"
-            class="group-hover:text-yellow"
+            class="group-hover:text-yellow h-20"
           />
         </div>
         <a
@@ -289,7 +284,7 @@ import Video from "../components/Video.svelte";
           <Svg
             client:load
             src="/svg/stamp-rebels.svg"
-            class="group-hover:text-yellow"
+            class="group-hover:text-yellow h-20"
           />
         </div>
         <a
@@ -315,7 +310,7 @@ import Video from "../components/Video.svelte";
           <Svg
             client:load
             src="/svg/stamp-roadmap.svg"
-            class="group-hover:text-yellow"
+            class="group-hover:text-yellow h-20"
           />
         </div>
         <a

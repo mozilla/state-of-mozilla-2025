@@ -97,7 +97,7 @@
   </div>
   <div class="bg-yellow p-2.5 p-5 space-y-2.5">
     <div class="grid lg:grid-cols-2 gap-5">
-      <div class="flex flex-col justify-between space-y-5">
+      <div class="max-lg:min-h-[190px] flex flex-col justify-between">
         <code class="block font-ocr-pbi">
           {@html text}
           {@html text ? "<br />" : ""}
@@ -108,12 +108,15 @@
           <span class="blinking-cursor inline-block w-2.5 h-5 bg-black"></span>
         </code>
         {#if showStamp}
-          <Svg src="/svg/stamp-{current}.svg" class="animate-blink-{n}" />
+          <Svg
+            src="/svg/stamp-{current}.svg"
+            class="w-20 h-20 animate-blink-{n}"
+          />
         {/if}
       </div>
       <div>
         <a
-          class="group flex flex-col gap-px bg-black text-white hover:bg-white hover:text-black outline outline-dashed outline-black divide-y divide-dashed"
+          class="lg:w-2/3 group flex flex-col gap-px bg-black text-white hover:bg-white hover:text-black outline outline-dashed outline-black divide-y divide-dashed"
           href="/{next}"
         >
           <div class="">
@@ -121,11 +124,13 @@
               <p class="uppercase">
                 Go to {next == "roadmap" ? "last" : "next"} chapter
               </p>
-              <h3 class="text-5xl lg:text-7xl uppercase">
+              <h3
+                class="text-5xl lg:text-xl xl:text-2xl 2xl:text-3xl uppercase"
+              >
                 {next.replace(/-/g, " ")}
               </h3>
             </div>
-            <div class="relative overflow-hidden h-10 lg:h-40 -mt-10 lg:-mt-10">
+            <div class="relative overflow-hidden h-10 lg:h-20 -mt-10">
               <Svg
                 src="/svg/dots.svg"
                 class="absolute left-0 right-0 top-1/2 -translate-y-1/2 w-full object-cover"

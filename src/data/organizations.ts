@@ -4,7 +4,7 @@ export const organizations = [
     title: "Growing Firefox",
     name: "Mozilla Corp",
     url: "https://www.mozilla.org/",
-    icon: "/svg/firefox.svg",
+    icon: "/svg/Logo_MozillaCorp.svg",
     paragraph1: `Growing and investing in Firefox remains our biggest priority. Mozilla Corporation’s leading aim is to grow as a meaningful, differentiated browser, trusted by over 200mil people. In 2025 the team made great progress shipping tab groups, vertical tabs, smart tabs, many sidebar integrations with AI companies and more. Mozilla Corp welcomed Anthony Enzor-DeMeo, the first technologist to serve as CEO in over 15 years.  In 2026 there will be a focus on building tools and features for those who want AI, and for those who do not. We are the only browser who does this - and likely the only one that will.`,
     list1Intro: "2025 achievements",
     list1: [
@@ -28,7 +28,7 @@ export const organizations = [
     title: "Evolving Thunderbird",
     name: "MZLA Technologies",
     url: "https://www.thunderbird.net/",
-    icon: "thunderbird.png",
+    icon: "/svg/Logo_MZLATechnologies.svg",
     paragraph1: `With over 20 million daily users around the world, Thunderbird remains a core part of Mozilla’s portfolio of trusted software offerings. Over the course of 2025, the team at MZLA Technologies released major improvements to Thunderbird including Microsoft Exchange support, a major interface overhaul and significant code rewrites in Rust. In 2026, the team will release the Thunderbird Pro secure email hosting service and will experiment with opt-in, privacy-first AI tools under the banner of Thunderbird Assist. It’s important to note: the Thunderbird project sustains itself in great part on community code contributions and financial donations from users.`,
     list1Intro: "2025 achievements",
     list1: [
@@ -51,7 +51,7 @@ export const organizations = [
     title: "Investing in community",
     name: "Mozilla Foundation",
     url: "https://www.mozillafoundation.org/",
-    icon: "/svg/mozilla-foundation.svg",
+    icon: "/svg/Logo_MozillaFoundation.svg",
     paragraph1: `The Foundation is the umbrella for all of Mozilla’s activities — and also operates a set of charitable community programs aimed creating a better technology future, powered by people, open by design, fueled by imagination.  In 2025, Mozilla Foundation programs team launched a values driven tech incubator, engaged creatives in shaping the future of AI and unlocked an unprecedented wave of grassroots giving. In the year ahead, the team will focus on growing the Mozilla Data Collective and other initiatives that advance public interest AI.`,
     list1Intro: "2025 achievements",
     list1: [
@@ -75,7 +75,7 @@ export const organizations = [
     title: "Investing in Responsible Tech Startups",
     name: "Mozilla Ventures",
     url: "https://mozilla.vc/",
-    icon: "/svg/mozilla-ventures.svg",
+    icon: "/svg/Logo_MozillaVentures.svg",
     paragraph1: `Investing in companies that share Mozilla’s ambitions and ethos puts more people on the field in our efforts to push AI in a better direction. In 2025, the Mozilla Ventures team invested in 10 new companies, including startups like Oumi, Koodos, Roseman, Jozu and Union which are focused on open and trustworthy AI. In 2026, the team will expand its investments — and will run a start up track at MozFest in Barcelona. The team has also just released a report summarizing learnings from the 50+ startups in the Mozilla Ventures portfolio and their gathering at Mozilla Festival.`,
     list1Intro: "Investment highlights from 2025",
     list1: [
@@ -98,7 +98,7 @@ export const organizations = [
     title: "Building Open Source AI Dev Tools",
     name: "Mozilla.ai",
     url: "https://www.mozilla.ai/",
-    icon: "mozilla-ai.png",
+    icon: "/svg/Logo_MozillaAi.svg",
     paragraph1: `Increasingly, open source AI is just as good as closed options — but remains harder for developers to use. Mozilla.ai is a dedicated R+D lab and startup designed to change this. In 2025, the team focused on building an initial set of ‘choice first’ developer tools including the Apache-licensed libraries any-llm, any-agent and any-guardrail. They also welcomed well known AI researcher and entrepreneur John Dickerson as their new CEO.. In 2026, the team will focus on y.`,
     list1Intro: "2025 achievements",
     list1: [
@@ -117,8 +117,8 @@ export const organizations = [
     id: "new",
     title: "Improving the Open Source AI Stack",
     name: "New Initiatives",
-    url: null,
-    icon: "/svg/mozilla-corporation.svg",
+    url: "https://blog.mozilla.org/en/mozilla/mozilla-open-source-ai-strategy/",
+    icon: "/svg/Logo_NewInitiatives.svg",
     paragraph1: `If we want to push the future of AI in a better direction, we need open source AI to win in the market. In late 2025, a new CTO, Raffi Krikorian, joined the Mozilla team to help make sure this happens. The core focus: working with people around the world to ensure the equivalent of a LAMP stack for AI emerges, an ecosystem shaped by communities and countries and companies with open interfaces, open data and open models. In 2026, we’ll invest further in things like Mozilla.ai and the Mozilla Data Collective as contributions to this ecosystem, and we will look for new communities, projects companies to collaborate with and invest in to advance this goal. `,
     list1Intro: "2026 plans",
     list1: [

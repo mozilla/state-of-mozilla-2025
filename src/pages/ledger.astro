@@ -18,13 +18,24 @@ import dotsBig from "../assets/img/dots-big.png";
       src={dotsBig}
       alt=""
     />
-    <div class="absolute h-3/4 right-2.5 lg:right-5 bottom-2.5 lg:bottom-5">
-      <Svg client:load src="/svg/ledger.svg" class="w-full h-full" />
+    <div
+      class="absolute w-1/2 lg:w-1/4 right-2.5 lg:right-5 bottom-2.5 lg:bottom-5"
+    >
+      <Svg client:load src="/svg/icon-ledger.svg" class="w-full h-full" />
     </div>
     <div class="relative lg:w-3/4 space-y-2.5 lg:space-y-5">
-      <h1 class="uppercase text-5xl lg:text-8xl xl:text-9xl 2xl:text-[9rem]">
+      <h1
+        class="max-lg:hidden uppercase text-5xl lg:text-8xl xl:text-9xl 2xl:text-[9rem]"
+      >
         <span class="font-star">Investing in a</span>
         <span class="font-star">rebel alliance</span>
+      </h1>
+      <h1
+        class="lg:hidden uppercase text-7xl lg:text-8xl xl:text-9xl 2xl:text-[9rem]"
+      >
+        <span class="font-star">Investing</span>
+        <span class="font-star">in a rebel</span>
+        <span class="font-star">alliance</span>
       </h1>
     </div>
   </section>
@@ -119,66 +130,96 @@ import dotsBig from "../assets/img/dots-big.png";
         <p>We have a powerful mix of financial and non-financial assets:</p>
       </div>
     </div>
-    <div class="grid lg:grid-cols-2 gap-px bg-yellow mb-10">
+
+    <div class="grid lg:grid-cols-12 gap-2.5 lg:gap-5">
       <div
-        class="lg:col-span-full p-2.5 lg:p-5 outline outline-dashed bg-yellow"
+        class="lg:col-span-10 lg:col-start-2 xl:col-span-8 xl:col-start-3 2xl:col-span-6 2xl:col-start-4 space-y-2.5 lg:space-y-5"
       >
-        <h2 class="text-6xl lg:text-xl xl:text-2xl 2xl:text-3xl text-center">
-          FINANCIAL STRENGTH
-        </h2>
-      </div>
-      <div
-        class="lg:col-span-full p-5 lg:p-10 space-y-2.5 outline outline-dashed"
-      >
-        <p class="font-mozilla-text text-5xl lg:text-7xl uppercase">1.4b</p>
-        <p>in reserves (and no debt)</p>
-      </div>
-      <div class="p-5 lg:p-10 space-y-2.5 outline outline-dashed">
-        <p class="font-mozilla-text text-5xl lg:text-7xl uppercase">$620M</p>
-        <p>in asset growth since 2020</p>
-      </div>
-      <div class="p-5 lg:p-10 space-y-2.5 outline outline-dashed">
-        <p class="font-mozilla-text text-5xl lg:text-7xl uppercase">$658.5M</p>
-        <p>in Firefox related income (2024)</p>
-      </div>
-      <div class="p-5 lg:p-10 space-y-2.5 outline outline-dashed">
-        <p class="font-mozilla-text text-5xl lg:text-7xl uppercase">$125M</p>
-        <p>invested in philanthropic programs since 2020</p>
-      </div>
-      <div class="p-5 lg:p-10 space-y-2.5 outline outline-dashed">
-        <p class="font-mozilla-text text-5xl lg:text-7xl uppercase">50+</p>
-        <p>equity holdings in responsible tech companies</p>
+        <div class="grid lg:grid-cols-2 gap-px bg-yellow">
+          <div
+            class="lg:col-span-full p-2.5 lg:p-5 outline outline-dashed bg-yellow"
+          >
+            <h2
+              class="text-5xl lg:text-xl xl:text-2xl 2xl:text-3xl text-center"
+            >
+              FINANCIAL STRENGTH
+            </h2>
+          </div>
+          <div
+            class="lg:col-span-full p-5 lg:p-10 space-y-2.5 outline outline-dashed"
+          >
+            <p class="font-mozilla-text text-5xl lg:text-7xl uppercase">1.4b</p>
+            <p>in reserves (and no debt)</p>
+          </div>
+          <div class="p-5 lg:p-10 space-y-2.5 outline outline-dashed">
+            <p class="font-mozilla-text text-5xl lg:text-7xl uppercase">
+              $620M
+            </p>
+            <p>in asset growth since 2020</p>
+          </div>
+          <div class="p-5 lg:p-10 space-y-2.5 outline outline-dashed">
+            <p class="font-mozilla-text text-5xl lg:text-7xl uppercase">
+              $658.5M
+            </p>
+            <p>in Firefox related income (2024)</p>
+          </div>
+          <div class="p-5 lg:p-10 space-y-2.5 outline outline-dashed">
+            <p class="font-mozilla-text text-5xl lg:text-7xl uppercase">
+              $125M
+            </p>
+            <p>invested in philanthropic programs since 2020</p>
+          </div>
+          <div class="p-5 lg:p-10 space-y-2.5 outline outline-dashed">
+            <p class="font-mozilla-text text-5xl lg:text-7xl uppercase">50+</p>
+            <p>equity holdings in responsible tech companies</p>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="grid lg:grid-cols-2 gap-px bg-yellow mb-10">
+    <div class="grid lg:grid-cols-12 gap-2.5 lg:gap-5">
       <div
-        class="lg:col-span-full p-2.5 lg:p-5 outline outline-dashed bg-yellow"
+        class="lg:col-span-10 lg:col-start-2 xl:col-span-8 xl:col-start-3 2xl:col-span-6 2xl:col-start-4 space-y-2.5 lg:space-y-5"
       >
-        <h2 class="text-6xl lg:text-xl xl:text-2xl 2xl:text-3xl text-center">
-          REACH AND COMMUNITY
-        </h2>
-      </div>
-      <div class="p-5 lg:p-10 space-y-2.5 outline outline-dashed">
-        <p class="font-mozilla-text text-5xl lg:text-7xl uppercase">~200M</p>
-        <p>monthly Firefox users</p>
-      </div>
-      <div class="p-5 lg:p-10 space-y-2.5 outline outline-dashed">
-        <p class="font-mozilla-text text-5xl lg:text-7xl uppercase">~20M</p>
-        <p>monthly Thunderbird users</p>
-      </div>
-      <div class="p-5 lg:p-10 space-y-2.5 outline outline-dashed">
-        <p class="font-mozilla-text text-5xl lg:text-7xl uppercase">
-          Tens of thousands
-        </p>
-        <p>of donors supporting Mozilla’s mission worldwide</p>
-      </div>
-      <div class="p-5 lg:p-10 space-y-2.5 outline outline-dashed">
-        <p>Participants from</p>
-        <p class="font-mozilla-text text-5xl lg:text-7xl uppercase">79</p>
-        <p>countries at Mozilla Festival</p>
+        <div class="grid lg:grid-cols-2 gap-px bg-yellow">
+          <div
+            class="lg:col-span-full p-2.5 lg:p-5 outline outline-dashed bg-yellow"
+          >
+            <h2
+              class="text-5xl lg:text-xl xl:text-2xl 2xl:text-3xl text-center"
+            >
+              REACH AND COMMUNITY
+            </h2>
+          </div>
+          <div class="p-5 lg:p-10 space-y-2.5 outline outline-dashed">
+            <p class="font-mozilla-text text-5xl lg:text-7xl uppercase">
+              ~200M
+            </p>
+            <p>monthly Firefox users</p>
+          </div>
+          <div class="p-5 lg:p-10 space-y-2.5 outline outline-dashed">
+            <p class="font-mozilla-text text-5xl lg:text-7xl uppercase">~20M</p>
+            <p>monthly Thunderbird users</p>
+          </div>
+          <div
+            class="lg:col-span-full p-5 lg:p-10 space-y-2.5 outline outline-dashed"
+          >
+            <p class="font-mozilla-text text-5xl lg:text-7xl uppercase">
+              Tens of thousands
+            </p>
+            <p>of donors supporting Mozilla’s mission worldwide</p>
+          </div>
+          <div
+            class="lg:col-span-full p-5 lg:p-10 space-y-2.5 outline outline-dashed"
+          >
+            <p>Participants from</p>
+            <p class="font-mozilla-text text-5xl lg:text-7xl uppercase">79</p>
+            <p>countries at Mozilla Festival</p>
+          </div>
+        </div>
       </div>
     </div>
+
     <div class="grid lg:grid-cols-4 gap-2.5 lg:gap-5">
       <div class="lg:col-span-2 lg:col-start-2 space-y-2.5 lg:space-y-5">
         <p>
@@ -253,51 +294,34 @@ import dotsBig from "../assets/img/dots-big.png";
           > we’re using to make all decisions — and track progress — related to our
           current investment strategy.
         </p>
-      </div>
-    </div>
-    <div class="grid lg:grid-cols-2 gap-px bg-yellow mb-10">
-      <div
-        class="lg:col-span-full p-2.5 lg:p-5 outline outline-dashed bg-yellow"
-      >
-        <h2 class="text-6xl lg:text-xl xl:text-2xl 2xl:text-3xl text-center">
-          MISSION
-        </h2>
-      </div>
-      <div class="p-5 outline outline-dashed">
-        <p class="mb-2.5">In the world</p>
-        <p class="font-mozilla-text text-4xl lg:text-6xl xl:text-7xl uppercase">
-          People have easy access to AI that is open and puts humanity first.
-        </p>
-      </div>
-      <div class="p-5 outline outline-dashed">
-        <p class="mb-2.5">At Mozilla</p>
-        <p class="font-mozilla-text text-4xl lg:text-6xl xl:text-7xl uppercase">
-          All products offer genuine choice, useful, trustworthy AI or ‘no AI at
-          all’.
-        </p>
-      </div>
-    </div>
 
-    <div class="grid lg:grid-cols-2 gap-px bg-yellow">
-      <div
-        class="lg:col-span-full p-2.5 lg:p-5 outline outline-dashed bg-yellow"
-      >
-        <h2 class="text-6xl lg:text-xl xl:text-2xl 2xl:text-3xl text-center">
-          MONEY
-        </h2>
-      </div>
-      <div class="p-5 outline outline-dashed">
-        <p class="mb-2.5">In the world</p>
-        <p class="font-mozilla-text text-4xl lg:text-6xl xl:text-7xl uppercase">
-          More and more responsible tech companies succeed in the market.
-        </p>
-      </div>
-      <div class="p-5 outline outline-dashed">
-        <p class="mb-2.5">At Mozilla</p>
-        <p class="font-mozilla-text text-4xl lg:text-6xl xl:text-7xl uppercase">
-          Our revenue sources diversify, showing responsible tech can win in the
-          market.
-        </p>
+        <div
+          class="grid grid-cols-3 gap-2.5 lg:gap-5 items-center my-10 lg:my-20"
+        >
+          <Svg client:load src="/svg/mission.svg" class="w-full h-full" />
+          <p class="col-span-2">
+            MISSION<br /><br />
+            <strong>In the world</strong> - People have easy access to AI that is
+            open and puts humanity first.
+            <br /><br />
+            <strong>At Mozilla</strong> - All products offer genuine choice, useful,
+            trustworthy AI or ‘no AI at all’.
+          </p>
+        </div>
+
+        <div
+          class="grid grid-cols-3 gap-2.5 lg:gap-5 items-center my-10 lg:my-20"
+        >
+          <Svg client:load src="/svg/money.svg" class="w-full h-full" />
+          <p class="col-span-2">
+            MONEY<br /><br />
+            <strong>In the world</strong> - More and more responsible tech companies
+            succeed in the market.
+            <br /><br />
+            <strong>At Mozilla</strong> - Our revenue sources diversify, showing responsible
+            tech can win in the market.
+          </p>
+        </div>
       </div>
     </div>
   </section>

@@ -5,7 +5,6 @@ import Captcha from "../components/Captcha.svelte";
 import Svg from "../components/Svg.svelte";
 import ProgressWatcher from "../components/ProgressWatcher.svelte";
 import dotsBig from "../assets/img/dots-big.png";
-import videoPoster2 from "../assets/img/video-poster-2.jpg";
 import Video from "../components/Video.svelte";
 ---
 
@@ -32,9 +31,9 @@ import Video from "../components/Video.svelte";
       alt=""
     />
     <div
-      class="absolute max-lg:w-1/2 right-2.5 lg:right-5 bottom-2.5 lg:bottom-5"
+      class="absolute w-1/2 lg:w-1/4 right-2.5 lg:right-5 bottom-2.5 lg:bottom-5"
     >
-      <Svg client:load src="/svg/stakes.svg" class="w-full h-full" />
+      <Svg client:load src="/svg/icon-stakes.svg" class="w-full h-full" />
     </div>
     <div class="relative lg:w-3/4 space-y-2.5 lg:space-y-5">
       <h1 class="font-tuoi-tre text-6xl lg:text-9xl uppercase">
@@ -131,11 +130,12 @@ import Video from "../components/Video.svelte";
     </div>
     <div class="grid lg:grid-cols-2 lg:gap-2.5">
       <div class="future-a space-y-2.5 lg:space-y-5 lg:col-start-1">
-        <Image
-          src={videoPoster2}
-          class="aspect-[4/3] object-cover w-full"
-          alt="BLACKBOX"
-        />
+        <div>
+          <Video
+            client:load
+            src="https://player.vimeo.com/progressive_redirect/playback/1156565755/rendition/2160p/file.mp4%20%282160p%29.mp4?loc=external&signature=03691e17ee5d353b9aeb7e877af8697f270bb669b40477c42391f2ffba402584"
+          />
+        </div>
 
         <p>
           Twenty five years ago, when Microsoft controlled 95% of browsers, they
@@ -162,7 +162,7 @@ import Video from "../components/Video.svelte";
         <div>
           <Video
             client:load
-            src="https://player.vimeo.com/progressive_redirect/playback/1155181557/rendition/1080p/file.mp4%20%281080p%29.mp4?loc=external&signature=a3ccd2426872b2b13841ac9edbbb16de585c91d570bed6f56e55b5f4463c620c"
+            src="https://player.vimeo.com/progressive_redirect/playback/1156586578/rendition/2160p/file.mp4%20%282160p%29.mp4?loc=external&signature=49bc10b843a14a0891ca49e2ea38a13ea427c44915abd97c5be3042b6c812e06"
           />
         </div>
 

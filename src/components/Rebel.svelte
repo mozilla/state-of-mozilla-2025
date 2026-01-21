@@ -179,7 +179,7 @@
     onclick={(e) => {
       e.stopPropagation();
     }}
-    class="w-full lg:w-2/3 outline bg-yellow overflow-x-hidden overflow-y-auto overscroll-none h-[calc(100svh-(var(--header-height)*2)-84px)]"
+    class="w-full lg:w-1/2 outline bg-yellow"
     style="box-shadow: 8.3871px 8.3871px 0px rgba(0, 0, 0, 0.25); scrollbar-width: none;"
   >
     <div
@@ -231,7 +231,7 @@
       </button>
     </div>
     <div class="p-5 space-y-5">
-      <div class="grid grid-cols-2 gap-2.5 lg:gap-5">
+      <div class="grid lg:grid-cols-2 gap-2.5 lg:gap-5">
         <div>
           <div
             class="relative aspect-square w-full border"
@@ -275,27 +275,19 @@
             {/if}
           </div>
         </div>
-        <div class="relative py-5">
+        <div class="relative lg:py-5">
           <div
-            class="absolute top-2.5 right-0 w-[calc(100%+2.5rem)] h-px bg-black before:absolute before:-translate-y-[calc(50%-0.5px)] before:left-0 before:w-2.5 before:h-2.5 before:rounded-full before:bg-black before:content-['']"
+            class="max-lg:hidden absolute top-2.5 right-0 w-[calc(100%+2.5rem)] h-px bg-black before:absolute before:-translate-y-[calc(50%-0.5px)] before:left-0 before:w-2.5 before:h-2.5 before:rounded-full before:bg-black before:content-['']"
           ></div>
-          <div class="overflow-y-auto overscroll-none lg:h-[calc(66vw/2-50px)]">
+          <div>
             <p class="lg:text-xl xl:text-2xl 2xl:text-3xl uppercase">
               {rebel.name}
             </p>
-            <p class="lg:text-xl xl:text-2xl 2xl:text-3xl mb-10 lg:mb-20">
+            <p class="lg:text-xl xl:text-2xl 2xl:text-3xl">
               {rebel.title}
             </p>
-            {#each rebel.bio as paragraph}
-              <p class="max-lg:hidden">{paragraph}</p>
-            {/each}
           </div>
         </div>
-      </div>
-      <div>
-        {#each rebel.bio as paragraph}
-          <p class="lg:hidden">{paragraph}</p>
-        {/each}
       </div>
     </div>
   </div>

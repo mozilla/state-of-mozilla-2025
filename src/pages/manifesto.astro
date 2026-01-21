@@ -5,6 +5,7 @@ import Captcha from "../components/Captcha.svelte";
 import Svg from "../components/Svg.svelte";
 import ProgressWatcher from "../components/ProgressWatcher.svelte";
 import dotsBig from "../assets/img/dots-big.png";
+import Video from "../components/Video.svelte";
 ---
 
 <Layout>
@@ -18,12 +19,12 @@ import dotsBig from "../assets/img/dots-big.png";
       alt=""
     />
     <div
-      class="absolute max-lg:w-1/2 right-2.5 lg:right-5 bottom-2.5 lg:bottom-5"
+      class="absolute w-1/2 lg:w-1/4 right-2.5 lg:right-5 bottom-2.5 lg:bottom-5"
     >
-      <Svg client:load src="/svg/code.svg" class="w-full h-full" />
+      <Svg client:load src="/svg/icon-manifesto.svg" class="w-full h-full" />
     </div>
     <div class="relative lg:w-3/4 space-y-2.5 lg:space-y-5">
-      <h1 class="font-workbench uppercase text-6xl lg:text-8xl">
+      <h1 class="font-workbench uppercase text-5xl lg:text-8xl">
         Applying our values in the Era of AI
       </h1>
     </div>
@@ -56,7 +57,11 @@ import dotsBig from "../assets/img/dots-big.png";
     <div class="grid lg:grid-cols-4 gap-2.5 lg:gap-5">
       <div class="lg:col-span-2 lg:col-start-2 space-y-10 lg:space-y-20">
         <div class="grid grid-cols-3 gap-2.5 lg:gap-5 items-center">
-          <Svg client:load src="/svg/code-icon-1.svg" class="w-full" />
+          <Svg
+            client:load
+            src="/svg/manifesto-icon-1.svg"
+            class="w-full h-full"
+          />
           <p class="col-span-2">
             HUMAN AGENCY<br /><br />in a world of AI and agents, it is more
             important than ever that technology is designed in ways that let
@@ -64,8 +69,12 @@ import dotsBig from "../assets/img/dots-big.png";
             where it matters to them most.
           </p>
         </div>
-        <div class="grid grid-cols-3 gap-2.5 lg:gap-5">
-          <Svg client:load src="/svg/code-icon-2.svg" class="w-full" />
+        <div class="grid grid-cols-3 gap-2.5 lg:gap-5 items-center">
+          <Svg
+            client:load
+            src="/svg/manifesto-icon-2.svg"
+            class="w-full h-full"
+          />
           <p class="col-span-2">
             DECENTRALIZATION AND OPEN SOURCE<br /><br />an open, accessible
             internet depends on innovation and decentralized participation in
@@ -74,8 +83,12 @@ import dotsBig from "../assets/img/dots-big.png";
             this possible in the AI era.
           </p>
         </div>
-        <div class="grid grid-cols-3 gap-2.5 lg:gap-5">
-          <Svg client:load src="/svg/code-icon-3.svg" class="w-full" />
+        <div class="grid grid-cols-3 gap-2.5 lg:gap-5 items-center">
+          <Svg
+            client:load
+            src="/svg/manifesto-icon-3.svg"
+            class="w-full h-full"
+          />
           <p class="col-span-2">
             BALANCING COMMERCIAL AND PUBLIC BENEFIT<br /><br />more than ever,
             the direction of the internet and AI is defined by commercial
@@ -99,7 +112,18 @@ import dotsBig from "../assets/img/dots-big.png";
     </div>
   </section>
 
-  <section class="p-2.5 lg:p-5">
+  <section class="p-2.5 lg:p-5 space-y-2.5 lg:space-y-5">
+    <div class="grid lg:grid-cols-14 gap-2.5 lg:gap-5">
+      <div class="lg:col-span-8 lg:col-start-4 space-y-2.5 lg:space-y-5">
+        <Video
+          client:load
+          src="https://player.vimeo.com/progressive_redirect/playback/1155181557/rendition/1080p/file.mp4%20%281080p%29.mp4?loc=external&signature=a3ccd2426872b2b13841ac9edbbb16de585c91d570bed6f56e55b5f4463c620c"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- <section class="p-2.5 lg:p-5">
     <div class="grid lg:grid-cols-4 gap-2.5 lg:gap-5">
       <div class="lg:col-span-2 lg:col-start-2 space-y-5">
         <div
@@ -155,7 +179,7 @@ import dotsBig from "../assets/img/dots-big.png";
         </a>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <ProgressWatcher
     client:load
@@ -164,6 +188,6 @@ import dotsBig from "../assets/img/dots-big.png";
     n="2"
     position="second"
     next="tools"
-    text="> These are the rules we live by.<br />> But words mean nothing without action."
+    text=""
   />
 </Layout>

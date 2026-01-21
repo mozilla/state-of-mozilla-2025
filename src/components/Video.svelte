@@ -1,10 +1,27 @@
 <script>
   const { src, class: className = "", muted: initialMuted = true } = $props();
   let muted = $derived(initialMuted);
+  let videoElement = $state(null);
+
+  function togglePlayPause() {
+    if (videoElement.paused) {
+      videoElement.play();
+    } else {
+      videoElement.pause();
+    }
+  }
 </script>
 
 <div class="relative outline">
-  <video class={className} autoplay bind:muted loop playsinline>
+  <video
+    class={className}
+    autoplay
+    bind:this={videoElement}
+    bind:muted
+    loop
+    playsinline
+    onclick={togglePlayPause}
+  >
     <source {src} type="video/mp4" />
   </video>
   <button

@@ -13,19 +13,7 @@
 >
   <div class="grid grid-cols-2 gap-2.5 lg:gap-5">
     <div class="aspect-square border p-5 flex justify-center items-center">
-      {#if isSvg}
-        <Svg
-          src={organization.icon}
-          class="w-full h-full lg:w-1/2 lg:h-1/2 grayscale"
-        />
-      {:else}
-        <img
-          loading="lazy"
-          src={organization.icon}
-          alt={organization.name}
-          class="w-full h-full lg:w-1/2 lg:h-1/2 object-contain grayscale"
-        />
-      {/if}
+      <Svg src={organization.icon} class="w-full h-full lg:w-1/2 lg:h-1/2" />
     </div>
     <div class="relative py-5 space-y-5">
       <p>
