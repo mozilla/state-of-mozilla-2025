@@ -8,6 +8,7 @@ import dotsBig from "../assets/img/dots-big.png";
 import article1 from "../assets/img/article1.jpg";
 import article2 from "../assets/img/article2.jpg";
 import article3 from "../assets/img/article3.jpg";
+import Video from "../components/Video.svelte";
 ---
 
 <Layout>
@@ -26,7 +27,7 @@ import article3 from "../assets/img/article3.jpg";
       <Svg client:load src="/svg/icon-roadmap.svg" class="w-full h-full" />
     </div>
     <div class="relative lg:w-3/4 space-y-2.5 lg:space-y-5">
-      <h1 class="font-mozilla-text-bold text-6xl lg:text-[7rem]">
+      <h1 class="font-mozilla-text-bold text-6xl lg:text-[7rem] uppercase">
         Where we’re going, together
       </h1>
     </div>
@@ -98,6 +99,19 @@ import article3 from "../assets/img/article3.jpg";
             Let’s choose a better future. And, then build it. Together.
           </strong>
         </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="p-2.5 lg:p-5 space-y-2.5 lg:space-y-5">
+    <div class="grid lg:grid-cols-14 gap-2.5 lg:gap-5">
+      <div class="lg:col-span-8 lg:col-start-4 space-y-2.5 lg:space-y-5">
+        <video autoplay loop playsinline>
+          <source
+            src="https://player.vimeo.com/progressive_redirect/playback/1156853957/rendition/1080p/file.mp4%20%281080p%29.mp4?loc=external&signature=16342f9cc17cd388de324671a6e9f3b7d791faf5113bf4e0344bad8b3808ada0"
+            type="video/mp4"
+          />
+        </video>
       </div>
     </div>
   </section>

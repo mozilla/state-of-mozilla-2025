@@ -95,4 +95,12 @@ export const rebels = [
     video:
       "https://player.vimeo.com/progressive_redirect/playback/1155816741/rendition/1080p/file.mp4%20%281080p%29.mp4?loc=external&signature=4c47c2b98d622083d5d25255362eb390fdfc8683b547873f1cd614c64aec8fe4",
   },
+  {
+    id: 13,
+    name: "Bogomil Shopov",
+    title: "Bulgarian Translator and Hacker Volunteer",
+    image: "rebel13.jpg",
+    video:
+      "https://player.vimeo.com/progressive_redirect/playback/1156855855/rendition/720p/file.mp4%20%28720p%29.mp4?loc=external&signature=c4d88b54118f41e9f3e652085d590849b75ab5785d5fd9d0e6a655a762517690",
+  },
 ];

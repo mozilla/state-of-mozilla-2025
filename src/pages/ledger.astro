@@ -6,6 +6,7 @@ import Svg from "../components/Svg.svelte";
 import ProgressWatcher from "../components/ProgressWatcher.svelte";
 import FinancialDownloads from "../components/FinancialDownloads.astro";
 import dotsBig from "../assets/img/dots-big.png";
+import firefox from "../assets/img/Mozilla_REDPANDA_Still_01.jpg";
 ---
 
 <Layout>
@@ -352,6 +353,14 @@ import dotsBig from "../assets/img/dots-big.png";
   </section>
 
   <FinancialDownloads />
+
+  <section class="p-2.5 lg:p-5 space-y-2.5 lg:space-y-5">
+    <div class="grid lg:grid-cols-14 gap-2.5 lg:gap-5">
+      <div class="lg:col-span-8 lg:col-start-4 space-y-2.5 lg:space-y-5">
+        <Image src={firefox} alt="Firefox" />
+      </div>
+    </div>
+  </section>
 
   <ProgressWatcher
     client:load

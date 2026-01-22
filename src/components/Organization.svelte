@@ -11,11 +11,11 @@
 <div
   class="space-y-2.5 lg:space-y-5 mb-20 scroll-mt-[calc(1rem+42px)] lg:scroll-mt-[calc(1rem+99px)]"
 >
-  <div class="grid grid-cols-2 gap-2.5 lg:gap-5">
+  <div class="grid grid-cols-3 gap-2.5 lg:gap-5">
     <div class="aspect-square border p-5 flex justify-center items-center">
-      <Svg src={organization.icon} class="w-full h-full lg:w-1/2 lg:h-1/2" />
+      <Svg src={organization.icon} class="w-2/3 h-2/3 lg:w-1/2 lg:h-1/2" />
     </div>
-    <div class="relative py-5 space-y-5">
+    <div class="relative col-span-2 py-5 space-y-5">
       <p>
         <strong>{organization.title}</strong>
         <br />

@@ -113,6 +113,12 @@
     >
       12
     </button>
+    <button
+      onclick={() => openRebel(13)}
+      class="absolute top-[78%] left-[78%] bg-red flex justify-center items-center w-10 h-10 rounded-full cursor-pointer"
+    >
+      13
+    </button>
   </div>
 </section>
 

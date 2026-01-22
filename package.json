@@ -10,13 +10,13 @@
   },
   "dependencies": {
     "html2canvas": "^1.4.1",
-    "svelte": "^5.47.1"
+    "svelte": "^5.48.0"
   },
   "devDependencies": {
     "@astrojs/svelte": "^7.2.5",
     "@tailwindcss/vite": "^4.1.18",
-    "astro": "^5.16.11",
-    "prettier": "^3.8.0",
+    "astro": "^5.16.13",
+    "prettier": "^3.8.1",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-svelte": "^3.4.1",
     "sharp": "^0.34.5",

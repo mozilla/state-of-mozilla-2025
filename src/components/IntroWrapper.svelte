@@ -5,7 +5,22 @@
 
   let showContent = $state(false);
 
-  const lines = [
+  const linesDesktop = [
+    "INITIALIZING:// MOZILLA_2025",
+    ":: CHOOSE_YOUR_FUTURE :: { SIGNAL: OPEN } # MOZILLA//FUTURE.ACTIVE",
+    "{ SIGNAL: OPEN } # MOZILLA//FUTURE.ACTIVE [DATA_STREAM: HUMAN-FIRST] ",
+    "# MOZILLA//FUTURE.ACTIVE [DATA_STREAM: HUMAN-FIRST] // MOZILLA_2025 [AUTH_OK] < REBOOT_NETWORK >",
+    "[DATA_STREAM: HUMAN-FIRST] // MOZILLA_2025 [AUTH_OK]",
+    "// MOZILLA_2025 [AUTH_OK] < REBOOT_NETWORK > : CHOOSE_YOUR_FUTURE :",
+    "< REBOOT_NETWORK > : CHOOSE_YOUR_FUTURE : [ ] TRANSMIT: MOZILLA > END_OF_LINE",
+    ": CHOOSE_YOUR_FUTURE : [ ] TRANSMIT: MOZILLA",
+    "[ ] TRANSMIT: MOZILLA > END_OF_LINE // { SYSTEM: OPEN } // MOZILLA::2025::",
+    "> END_OF_LINE // { SYSTEM: OPEN } // MOZILLA::2025::",
+    "// MOZILLA::2025:: CHOOSE YOUR FUTURE(); { SIGNAL: OPEN } # MOZILLA//FUTURE.ACTIVE",
+    "CHOOSE YOUR FUTURE(); [AUTH_OK]",
+  ];
+
+  const linesMobile = [
     "INITIALIZING:// MOZILLA_2025",
     ":: CHOOSE_YOUR_FUTURE ::",
     "{ SIGNAL: OPEN }",
@@ -20,7 +35,8 @@
     "CHOOSE YOUR FUTURE();",
   ];
 
-  let displayedLines = $state([]);
+  let displayedLinesDesktop = $state([]);
+  let displayedLinesMobile = $state([]);
   let showButton = $state(false);
   let buttonRef = $state(null);
   let autoCloseTimer;
@@ -31,14 +47,30 @@
       return;
     }
 
-    let currentIndex = 0;
+    let currentIndexDesktop = 0;
+    let currentIndexMobile = 0;
 
     function addLine() {
       const randomDelay = Math.random() * 150 + 50;
 
-      if (currentIndex < lines.length) {
-        displayedLines = [...displayedLines, lines[currentIndex]];
-        currentIndex++;
+      const desktopDone = currentIndexDesktop >= linesDesktop.length;
+      const mobileDone = currentIndexMobile >= linesMobile.length;
+
+      if (!desktopDone || !mobileDone) {
+        if (!desktopDone) {
+          displayedLinesDesktop = [
+            ...displayedLinesDesktop,
+            linesDesktop[currentIndexDesktop],
+          ];
+          currentIndexDesktop++;
+        }
+        if (!mobileDone) {
+          displayedLinesMobile = [
+            ...displayedLinesMobile,
+            linesMobile[currentIndexMobile],
+          ];
+          currentIndexMobile++;
+        }
         setTimeout(addLine, randomDelay);
       } else {
         setTimeout(() => {
@@ -82,8 +114,15 @@
     id="intro"
     class="flex-1 p-2.5 lg:p-5 bg-black outline outline-white text-white z-40"
   >
-    <code class="block font-ocr-pbi">
-      {#each displayedLines as line}
+    <!-- Desktop lines -->
+    <code class="hidden lg:block font-ocr-pbi">
+      {#each displayedLinesDesktop as line}
+        <p>{line}</p>
+      {/each}
+    </code>
+    <!-- Mobile lines -->
+    <code class="block lg:hidden font-ocr-pbi">
+      {#each displayedLinesMobile as line}
         <p>{line}</p>
       {/each}
     </code>
