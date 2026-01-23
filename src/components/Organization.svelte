@@ -9,7 +9,7 @@
 </script>
 
 <div
-  class="space-y-2.5 lg:space-y-5 mb-20 scroll-mt-[calc(1rem+42px)] lg:scroll-mt-[calc(1rem+99px)]"
+  class="space-y-2.5 lg:space-y-5 scroll-mt-[calc(1rem+42px)] lg:scroll-mt-[calc(1rem+99px)]"
 >
   <div class="grid grid-cols-3 gap-2.5 lg:gap-5">
     <div class="aspect-square border p-5 flex justify-center items-center">
