@@ -124,6 +124,24 @@
 
 <section class="p-2.5 lg:p-5 my-10 lg:my-20">
   <div class="grid lg:grid-cols-4 gap-2.5 lg:gap-5">
+    <div class="lg:col-span-2 lg:col-start-2 space-y-2.5 lg:space-y-5">
+      <p>
+        It’s important to call out: <strong
+          >we can only succeed if we do this together</strong
+        >. As in the web era, we will need a rebel alliance of sorts if we want
+        to push AI in a better direction.
+      </p>
+      <p>
+        Mozilla — and our community — are a part of this alliance. Engineers,
+        developers, activists, investors, founders and champions - defiant
+        optimists who choose a better future for technology.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="p-2.5 lg:p-5 my-10 lg:my-20">
+  <div class="grid lg:grid-cols-4 gap-2.5 lg:gap-5">
     <div class="lg:col-span-2 lg:col-start-2">
       <div class="lg:columns-2 space-y-2.5 lg:space-y-5">
         {#each rebels as rebel}

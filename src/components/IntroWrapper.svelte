@@ -154,6 +154,7 @@
       </button>
     {/if}
   </section>
-{:else}
-  {@render children()}
 {/if}
+<div class:hidden={!showContent}>
+  {@render children()}
+</div>

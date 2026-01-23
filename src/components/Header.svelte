@@ -1,12 +1,12 @@
 <script>
-  import { progressStore } from "../stores/progressStore.js";
+  // import { progressStore } from "../stores/progressStore.js";
   import { onMount } from "svelte";
 
   const { currentPage = "/" } = $props();
 
   let open = $state(false);
   let headerHeight = $state(0);
-  const progress = $derived($progressStore);
+  // const progress = $derived($progressStore);
 
   onMount(() => {
     // Check if desktop and not intro page
@@ -21,15 +21,21 @@
   }
 
   function getLinkClasses(href, page) {
-    const isActive = currentPage === href;
-    const isViewed = (page && progress[page]) || page === "intro";
+    // const isActive = currentPage === href;
+    // const isViewed = (page && progress[page]) || page === "intro";
+    // if (isActive) {
+    //   return "bg-yellow text-black outline outline-black";
+    // } else if (isViewed) {
+    //   return "bg-white text-black outline outline-black";
+    // } else {
+    //   return "bg-black text-white outline outline-white";
+    // }
 
+    const isActive = currentPage === href;
     if (isActive) {
       return "bg-yellow text-black outline outline-black";
-    } else if (isViewed) {
-      return "bg-white text-black outline outline-black";
     } else {
-      return "bg-black text-white outline outline-white";
+      return "bg-white text-black outline outline-black";
     }
   }
 
@@ -43,7 +49,7 @@
 
 <header
   bind:clientHeight={headerHeight}
-  class="sticky lg:-mx-px lg:-mt-px z-50 top-0 left-0 right-0 w-full lg:w-[calc(100%+2px)] border border-white bg-black text-white divide-y divide-white {open
+  class="sticky z-50 top-0 left-0 right-0 w-full bg-black text-white divide-y divide-white {open
     ? 'max-lg:h-svh max-lg:overflow-y-auto max-lg:overscroll-none'
     : ''}"
 >
@@ -52,7 +58,7 @@
       href="https://www.mozilla.org"
       class="size-10 p-2.5 border-r border-white flex justify-center items-center"
       title="State of Mozilla 2025"
-      aria-label="State of Mozilla 2025"
+      aria-label="Mozilla"
     >
       <svg
         width="24"

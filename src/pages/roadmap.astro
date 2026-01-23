@@ -2,8 +2,8 @@
 import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 import Svg from "../components/Svg.svelte";
-import StopWall from "../components/StopWall.svelte";
-import ProgressCard from "../components/ProgressCard.svelte";
+// import StopWall from "../components/StopWall.svelte";
+// import ProgressCard from "../components/ProgressCard.svelte";
 import dotsBig from "../assets/img/dots-big.png";
 import article1 from "../assets/img/article1.jpg";
 import article2 from "../assets/img/article2.jpg";
@@ -12,7 +12,7 @@ import Video from "../components/Video.svelte";
 ---
 
 <Layout>
-  <StopWall client:load />
+  <!-- <StopWall client:load /> -->
 
   <section class="relative p-2.5 lg:p-5 min-h-[50vh] bg-yellow overflow-hidden">
     <Image
@@ -106,7 +106,7 @@ import Video from "../components/Video.svelte";
   <section class="p-2.5 lg:p-5 space-y-2.5 lg:space-y-5">
     <div class="grid lg:grid-cols-14 gap-2.5 lg:gap-5">
       <div class="lg:col-span-8 lg:col-start-4 space-y-2.5 lg:space-y-5">
-        <video autoplay loop playsinline>
+        <video autoplay loop playsinline muted>
           <source
             src="https://player.vimeo.com/progressive_redirect/playback/1156853957/rendition/1080p/file.mp4%20%281080p%29.mp4?loc=external&signature=16342f9cc17cd388de324671a6e9f3b7d791faf5113bf4e0344bad8b3808ada0"
             type="video/mp4"
@@ -171,12 +171,12 @@ import Video from "../components/Video.svelte";
     </div>
   </section>
 
-  <section>
+  <!-- <section>
     <div class="bg-black text-yellow uppercase py-2.5 px-2.5 lg:px-5">
       <p>END OF:// FINAL CHAPTER</p>
     </div>
     <div class="p-2.5 lg:p-5 space-y-5 bg-yellow">
       <ProgressCard client:load />
     </div>
-  </section>
+  </section> -->
 </Layout>

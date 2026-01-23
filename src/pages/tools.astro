@@ -3,7 +3,7 @@ import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 import Captcha from "../components/Captcha.svelte";
 import Svg from "../components/Svg.svelte";
-import ProgressWatcher from "../components/ProgressWatcher.svelte";
+// import ProgressWatcher from "../components/ProgressWatcher.svelte";
 import OrganizationWrapper from "../components/OrganizationWrapper.astro";
 import { organizations } from "../data/organizations";
 import dotsBig from "../assets/img/dots-big.png";
@@ -174,7 +174,7 @@ import Video from "../components/Video.svelte";
     </div>
   </section>
 
-  <ProgressWatcher
+  <!-- <ProgressWatcher
     client:load
     current="tools"
     number="three"
@@ -182,5 +182,5 @@ import Video from "../components/Video.svelte";
     position="third"
     next="ledger"
     text=""
-  />
+  /> -->
 </Layout>

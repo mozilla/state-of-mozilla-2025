@@ -3,7 +3,7 @@ import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 import Captcha from "../components/Captcha.svelte";
 import Svg from "../components/Svg.svelte";
-import ProgressWatcher from "../components/ProgressWatcher.svelte";
+// import ProgressWatcher from "../components/ProgressWatcher.svelte";
 import dotsBig from "../assets/img/dots-big.png";
 import Video from "../components/Video.svelte";
 ---
@@ -45,10 +45,17 @@ import Video from "../components/Video.svelte";
           an ideal, it became a tool to help us make principled design and engineering
           decisions every single day.
         </p>
-        <p>
-          This is still true today. While we are still guided by full manifesto,
-          five principles are especially relevant in the age of AI:
-        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="p-2.5 lg:p-5 space-y-2.5 lg:space-y-5">
+    <div class="grid lg:grid-cols-14 gap-2.5 lg:gap-5">
+      <div class="lg:col-span-8 lg:col-start-4 space-y-2.5 lg:space-y-5">
+        <Video
+          client:load
+          src="https://player.vimeo.com/progressive_redirect/playback/1156565755/rendition/2160p/file.mp4%20%282160p%29.mp4?loc=external&signature=03691e17ee5d353b9aeb7e877af8697f270bb669b40477c42391f2ffba402584"
+        />
       </div>
     </div>
   </section>
@@ -56,6 +63,10 @@ import Video from "../components/Video.svelte";
   <section class="p-2.5 lg:p-5 space-y-2.5 lg:space-y-5">
     <div class="grid lg:grid-cols-4 gap-2.5 lg:gap-5">
       <div class="lg:col-span-2 lg:col-start-2 space-y-10 lg:space-y-20">
+        <p>
+          This is still true today. While we are still guided by full manifesto,
+          five principles are especially relevant in the age of AI:
+        </p>
         <div class="grid grid-cols-3 gap-2.5 lg:gap-5 items-center">
           <Svg
             client:load
@@ -108,17 +119,6 @@ import Video from "../components/Video.svelte";
           startups and organize communities with the goal of doing for AI what
           we did for the web. They are core to who we are, and everything we do.
         </p>
-      </div>
-    </div>
-  </section>
-
-  <section class="p-2.5 lg:p-5 space-y-2.5 lg:space-y-5">
-    <div class="grid lg:grid-cols-14 gap-2.5 lg:gap-5">
-      <div class="lg:col-span-8 lg:col-start-4 space-y-2.5 lg:space-y-5">
-        <Video
-          client:load
-          src="https://player.vimeo.com/progressive_redirect/playback/1155181557/rendition/1080p/file.mp4%20%281080p%29.mp4?loc=external&signature=a3ccd2426872b2b13841ac9edbbb16de585c91d570bed6f56e55b5f4463c620c"
-        />
       </div>
     </div>
   </section>
@@ -181,7 +181,7 @@ import Video from "../components/Video.svelte";
     </div>
   </section> -->
 
-  <ProgressWatcher
+  <!-- <ProgressWatcher
     client:load
     current="manifesto"
     number="two"
@@ -189,5 +189,5 @@ import Video from "../components/Video.svelte";
     position="second"
     next="tools"
     text=""
-  />
+  /> -->
 </Layout>

@@ -3,6 +3,12 @@
   let muted = $derived(initialMuted);
   let videoElement = $state(null);
 
+  $effect(() => {
+    if (videoElement) {
+      videoElement.muted = muted;
+    }
+  });
+
   function togglePlayPause() {
     if (videoElement.paused) {
       videoElement.play();
@@ -16,8 +22,8 @@
   <video
     class={className}
     autoplay
+    muted
     bind:this={videoElement}
-    bind:muted
     loop
     playsinline
     onclick={togglePlayPause}

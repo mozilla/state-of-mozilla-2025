@@ -3,7 +3,6 @@ import Layout from "../layouts/Layout.astro";
 import Svg from "../components/Svg.svelte";
 import FinancialDownloads from "../components/FinancialDownloads.astro";
 import Video from "../components/Video.svelte";
-import testPoster from "../assets/img/Mozilla_REDPANDA_Still_01.jpg";
 ---
 
 <Layout>
@@ -129,12 +128,7 @@ import testPoster from "../assets/img/Mozilla_REDPANDA_Still_01.jpg";
           href="/stakes"
         >
           <div class="relative text-center outline outline-dashed">
-            <video
-              autoplay
-              loop
-              playsinline
-              poster="http://localhost:4321/_image?href=%2F%40fs%2FUsers%2Fmarcofacheris%2FDocuments%2Flavori%2Fmozilla%2Fstate-of-mozilla-2025%2Fsrc%2Fassets%2Fimg%2FMozilla_REDPANDA_Still_01.jpg%3ForigWidth%3D1920%26origHeight%3D1080%26origFormat%3Djpg&w=1920&h=1080&f=webp"
-            >
+            <video autoplay loop playsinline muted>
               <source
                 src="https://player.vimeo.com/progressive_redirect/playback/1156853957/rendition/1080p/file.mp4%20%281080p%29.mp4?loc=external&signature=16342f9cc17cd388de324671a6e9f3b7d791faf5113bf4e0344bad8b3808ada0"
                 type="video/mp4"
@@ -335,7 +329,9 @@ import testPoster from "../assets/img/Mozilla_REDPANDA_Still_01.jpg";
   <section class="p-2.5 lg:p-5">
     <div class="grid lg:grid-cols-4 gap-2.5 lg:gap-5">
       <div class="lg:col-start-2 lg:col-span-2 space-y-2.5 lg:space-y-5">
-        <h2 class="font-mozilla-text-bold text-5xl leading-none! mt-7.5">
+        <h2
+          class="font-mozilla-text-bold text-3xl lg:text-5xl leading-none! mt-7.5"
+        >
           “You don’t have to believe the AI hype to see we’re at a fork in the
           road. We can let Big AI define how the internet works in the future.
           Or we can build something that is open and decentralized — and that

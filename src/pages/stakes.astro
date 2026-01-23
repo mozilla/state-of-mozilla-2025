@@ -3,7 +3,7 @@ import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 import Captcha from "../components/Captcha.svelte";
 import Svg from "../components/Svg.svelte";
-import ProgressWatcher from "../components/ProgressWatcher.svelte";
+// import ProgressWatcher from "../components/ProgressWatcher.svelte";
 import dotsBig from "../assets/img/dots-big.png";
 import Video from "../components/Video.svelte";
 ---
@@ -133,7 +133,7 @@ import Video from "../components/Video.svelte";
         <div>
           <Video
             client:load
-            src="https://player.vimeo.com/progressive_redirect/playback/1156565755/rendition/2160p/file.mp4%20%282160p%29.mp4?loc=external&signature=03691e17ee5d353b9aeb7e877af8697f270bb669b40477c42391f2ffba402584"
+            src="https://player.vimeo.com/progressive_redirect/playback/1156588170/rendition/2160p/file.mp4%20%282160p%29.mp4?loc=external&signature=2a1540d18d1d7cf7d8c12f3c862e0785c65cd0ec57fb2728db9a47d00b2f2c96"
           />
         </div>
 
@@ -196,7 +196,7 @@ import Video from "../components/Video.svelte";
     </div>
   </section>
 
-  <ProgressWatcher
+  <!-- <ProgressWatcher
     client:load
     current="stakes"
     number="one"
@@ -204,7 +204,7 @@ import Video from "../components/Video.svelte";
     position="first"
     next="manifesto"
     text="> Make a choice to unlock stamp..."
-  />
+  /> -->
 </Layout>
 
 <style>

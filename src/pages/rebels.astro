@@ -3,7 +3,7 @@ import { Image, getImage } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 import Captcha from "../components/Captcha.svelte";
 import Svg from "../components/Svg.svelte";
-import ProgressWatcher from "../components/ProgressWatcher.svelte";
+// import ProgressWatcher from "../components/ProgressWatcher.svelte";
 import City from "../components/City.svelte";
 import { rebels } from "../data/rebels.js";
 import dotsBig from "../assets/img/dots-big.png";
@@ -51,25 +51,7 @@ for (const rebel of rebels) {
 
   <City client:load rebelImages={rebelImages} />
 
-  <section class="p-2.5 lg:p-5 space-y-2.5 lg:space-y-5">
-    <div class="grid lg:grid-cols-4 gap-2.5 lg:gap-5">
-      <div class="lg:col-span-2 lg:col-start-2 space-y-2.5 lg:space-y-5">
-        <p>
-          It’s important to call out: <strong
-            >we can only succeed if we do this together</strong
-          >. As in the web era, we will need a rebel alliance of sorts if we
-          want to push AI in a better direction.
-        </p>
-        <p>
-          Mozilla — and our community — are a part of this alliance. Engineers,
-          developers, activists, investors, founders and champions - defiant
-          optimists who choose a better future for technology.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <ProgressWatcher
+  <!-- <ProgressWatcher
     client:load
     current="rebels"
     number="five"
@@ -77,5 +59,5 @@ for (const rebel of rebels) {
     position="fifth"
     next="roadmap"
     text="> Find all the rebels to unlock stamp..."
-  />
+  /> -->
 </Layout>
