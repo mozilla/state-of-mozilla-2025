@@ -3,7 +3,7 @@ export const organizations = [
     id: "corp",
     title: "Growing Firefox",
     name: "Mozilla Corp",
-    url: "https://www.mozilla.org/",
+    url: "https://www.firefox.com/",
     icon: "/svg/Logo_MozillaCorp.svg",
     paragraph1: `Growing and investing in Firefox remains our biggest priority. Mozilla Corporation’s leading aim is to grow as a meaningful, differentiated browser, trusted by over 200mil people. In 2025 the team made great progress shipping tab groups, vertical tabs, smart tabs, many sidebar integrations with AI companies and more. Mozilla Corp welcomed Anthony Enzor-DeMeo, the first technologist to serve as CEO in over 15 years.  In 2026 there will be a focus on building tools and features for those who want AI, and for those who do not. We are the only browser who does this - and likely the only one that will.`,
     list1Intro: "2025 achievements",
@@ -17,7 +17,7 @@ export const organizations = [
     list2Intro: "Ahead in 2026",
     list2: [
       `Developing a <a target="_blank" class="underline font-bold" href="https://blog.mozilla.org/firefox/ai-window/">Firefox AI Window</a>, an opt-in user-controlled space we’re building in Firefox that lets you chat with an AI assistant and get help while you browse, all on your terms.`,
-      `Releasing <strong>the world’s first AI Kill Switch</strong>, single, unambiguous toggle in settings will allow users to completely disable all AI-related functions in Firefox. Don’t want AI? Turn it off.`,
+      `Launching <strong>AI Controls</strong>: dedicated settings in Firefox that give users one central place to manage AI features, even disable them completely. Don’t want AI? Turn it off.`,
       `Adding <strong>Firefox Support for Organizations</strong>, a dedicated offering for teams who need private issue triage and escalation, defined response times, custom development options, and close collaboration with Mozilla’s engineering and product teams.`,
       `Continued focus on <strong>improved interoperability</strong>, ensuring CSS and HTML features work identically across Firefox, Chrome and Safari`,
     ],

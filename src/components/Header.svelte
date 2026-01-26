@@ -55,10 +55,9 @@
 >
   <div class="flex items-center">
     <a
-      href="https://www.mozilla.org"
+      href="/"
       class="size-10 p-2.5 border-r border-white flex justify-center items-center"
-      title="State of Mozilla 2025"
-      aria-label="Mozilla"
+      aria-label="Intro"
     >
       <svg
         width="24"
