@@ -32,7 +32,7 @@ export const organizations = [
     paragraph1: `With over 20 million daily users around the world, Thunderbird remains a core part of Mozilla’s portfolio of trusted software offerings. Over the course of 2025, the team at MZLA Technologies released major improvements to Thunderbird including Microsoft Exchange support, a major interface overhaul and significant code rewrites in Rust. In 2026, the team will release the Thunderbird Pro secure email hosting service and will experiment with opt-in, privacy-first AI tools under the banner of Thunderbird Assist. It’s important to note: the Thunderbird project sustains itself in great part on community code contributions and financial donations from users.`,
     list1Intro: "2025 achievements",
     list1: [
-      `Moved to a <strong>once per month release schedule</strong>, landing over x major and minor changes to Thunderbird.`,
+      `Moved to a <strong>monthly release schedule</strong>, landing over x major and minor changes to Thunderbird.`,
       `Continued to modernize Thunderbird Desktop, adding new features including <strong>native email support for Microsoft Exchange</strong> as well as moving our desktop releases to a monthly cadence, allowing users to experience new features faster and with fewer disruptions.`,
       `Released <strong>Thunderbird Eclipse</strong> a major new extended services release, including a major interface overhaul and significant Rust rewrites across the code base.`,
       `Responded to user requests <strong>by previewing <a target="_blank" class="underline" href="https://blog.thunderbird.net/tag/tbpro/">Thunderbird Pro</a> and Thundermail secure email hosting</strong>. There is an <a target="_blank" class="underline" href="https://tb.pro/">early bird to our waitlist</a> for users who want to test the service.`,
@@ -88,7 +88,7 @@ export const organizations = [
     list2Intro: "2026 plans",
     list2: [
       `Continued investment in new companies with a strong <strong>focus on open and trustworthy AI</strong> as well as privacy and security + better online communities.`,
-      `Releasing a first report based on <strong>learning from 50+ responsible tech startups</strong> in the Mozilla Ventures portfolio.`,
+      `<a target="_blank" class="underline font-bold" href="https://blog.mozilla.org/mozilla/mozilla-ventures-2025-portfolio-convening/">Releasing a first report</a> based on <strong>learning from 50+ responsible tech startups</strong> in the Mozilla Ventures portfolio.`,
       `Hosting a <strong>startup track at Mozilla Festival</strong>, focused on where technology is heading: how AI is built and governed responsibly, how social platforms can prioritize trust over engagement, and why expanding who gets to build leads to stronger, more relevant technology.`,
     ],
     paragraph2: null,
