@@ -8,7 +8,7 @@
   const linesDesktop = [
     "INITIALIZING:// MOZILLA_2025",
     ":: CHOOSE_YOUR_FUTURE :: { SIGNAL: OPEN } # MOZILLA//FUTURE.ACTIVE",
-    "{ SIGNAL: OPEN } # MOZILLA//FUTURE.ACTIVE [DATA_STREAM: HUMAN-FIRST] ",
+    "{ SIGNAL: OPEN } # MOZILLA//FUTURE.ACTIVE [DATA_STREAM: HUMAN-FIRST]",
     "# MOZILLA//FUTURE.ACTIVE [DATA_STREAM: HUMAN-FIRST] // MOZILLA_2025 [AUTH_OK] < REBOOT_NETWORK >",
     "[DATA_STREAM: HUMAN-FIRST] // MOZILLA_2025 [AUTH_OK]",
     "// MOZILLA_2025 [AUTH_OK] < REBOOT_NETWORK > : CHOOSE_YOUR_FUTURE :",
@@ -16,8 +16,44 @@
     ": CHOOSE_YOUR_FUTURE : [ ] TRANSMIT: MOZILLA",
     "[ ] TRANSMIT: MOZILLA > END_OF_LINE // { SYSTEM: OPEN } // MOZILLA::2025::",
     "> END_OF_LINE // { SYSTEM: OPEN } // MOZILLA::2025::",
-    "// MOZILLA::2025:: CHOOSE YOUR FUTURE(); { SIGNAL: OPEN } # MOZILLA//FUTURE.ACTIVE",
-    "CHOOSE YOUR FUTURE(); [AUTH_OK]",
+    "&nbsp;",
+    "/* ----------------------------------------- */",
+    "&nbsp;",
+    "MOZILLA::2025:: BOOT_SEQUENCE [COMPLETE]",
+    "MOZILLA::2025:: NETWORK_STATUS [STABLE]",
+    "MOZILLA::2025:: TRUST_LAYER [OVERDRIVE]",
+    "&nbsp;",
+    "> VERIFY_ETHICS();",
+    "> VERIFY_PEOPLE();",
+    "> VERIFY_FUTURE();",
+    "&nbsp;",
+    "/* ----------------------------------------- */",
+    "&nbsp;",
+    "[DATA_STREAM: HUMAN-FIRST] :: LOCKED_IN",
+    "[VALUES: OPENNESS | PRIVACY | AGENCY] :: ENABLED",
+    "[CONTROL: CENTRALIZED] :: DISABLED",
+    "&nbsp;",
+    "# MOZILLA//FUTURE.ACTIVE",
+    "# MOZILLA//FUTURE.HUMAN",
+    "# MOZILLA//FUTURE.PANDA",
+    "&nbsp;",
+    "/* ----------------------------------------- */",
+    "&nbsp;",
+    "SYSTEM_PROMPT:",
+    "THE FUTURE IS NOT AUTO-GENERATED.",
+    "THE FUTURE IS NOT PRE-APPROVED.",
+    "THE FUTURE REQUIRES CONSENT.",
+    "THE FUTURE IS YOURS TO BUILD.",
+    "THE FUTURE IS EXPERIMENTAL SYNTH-MUSHROOM POP.",
+    "&nbsp;",
+    "/* ----------------------------------------- */",
+    "&nbsp;",
+    "> CHOOSE_YOUR_FUTURE();",
+    "> BUILD_IT_TOGETHER();",
+    "> KEEP_IT_OPEN();",
+    "&nbsp;",
+    "[AUTH_OK] [SIGNAL: OPEN]",
+    "TRANSMISSION_CONTINUES…",
   ];
 
   const linesMobile = [
@@ -39,7 +75,9 @@
   let displayedLinesMobile = $state([]);
   let showButton = $state(false);
   let buttonRef = $state(null);
+  let codeContainerRef = $state(null);
   let autoCloseTimer;
+  let isMobile = $state(false);
 
   onMount(() => {
     if (sessionStorage.getItem("introShown")) {
@@ -47,16 +85,24 @@
       return;
     }
 
+    // Check if mobile (matches lg breakpoint at 1024px)
+    isMobile = window.innerWidth < 1024;
+
     let currentIndexDesktop = 0;
     let currentIndexMobile = 0;
 
     function addLine() {
-      const randomDelay = Math.random() * 150 + 50;
+      const randomDelay = isMobile
+        ? Math.random() * 75 + 75
+        : Math.random() * 15 + 15;
 
       const desktopDone = currentIndexDesktop >= linesDesktop.length;
       const mobileDone = currentIndexMobile >= linesMobile.length;
 
-      if (!desktopDone || !mobileDone) {
+      // Each platform only waits for its own lines
+      const animationDone = isMobile ? mobileDone : desktopDone;
+
+      if (!animationDone) {
         if (!desktopDone) {
           displayedLinesDesktop = [
             ...displayedLinesDesktop,
@@ -70,6 +116,14 @@
             linesMobile[currentIndexMobile],
           ];
           currentIndexMobile++;
+        }
+        // Auto-scroll to bottom (only on desktop)
+        if (!isMobile) {
+          requestAnimationFrame(() => {
+            if (codeContainerRef) {
+              codeContainerRef.scrollTop = codeContainerRef.scrollHeight;
+            }
+          });
         }
         setTimeout(addLine, randomDelay);
       } else {
@@ -112,26 +166,31 @@
 {#if !showContent}
   <section
     id="intro"
-    class="flex-1 p-2.5 lg:p-5 bg-black outline outline-white text-white z-40"
+    class="h-svh lg:h-[calc(100svh-2.5rem)] flex flex-col p-2.5 lg:p-5 bg-black outline outline-white text-white z-40"
   >
-    <!-- Desktop lines -->
-    <code class="hidden lg:block font-ocr-pbi">
-      {#each displayedLinesDesktop as line}
-        <p>{line}</p>
-      {/each}
-    </code>
-    <!-- Mobile lines -->
-    <code class="block lg:hidden font-ocr-pbi">
-      {#each displayedLinesMobile as line}
-        <p>{line}</p>
-      {/each}
-    </code>
-    <p class="mb-2.5 lg:mb-5">
-      <span class="blinking-cursor inline-block w-2.5 h-5 bg-white"></span>
-    </p>
+    <div
+      bind:this={codeContainerRef}
+      class="flex-1 overflow-y-auto overflow-x-hidden overscroll-none"
+    >
+      <!-- Desktop lines -->
+      <code class="hidden lg:block font-ocr-pbi">
+        {#each displayedLinesDesktop as line}
+          <p>{@html line}</p>
+        {/each}
+      </code>
+      <!-- Mobile lines -->
+      <code class="block lg:hidden font-ocr-pbi">
+        {#each displayedLinesMobile as line}
+          <p>{@html line}</p>
+        {/each}
+      </code>
+      <p class="mb-[110px]">
+        <span class="blinking-cursor inline-block w-2.5 h-5 bg-white"></span>
+      </p>
+    </div>
     {#if showButton}
       <button
-        class="btn inline-flex! items-center space-x-5 w-full lg:w-1/2"
+        class="btn inline-flex! items-center space-x-5 w-full lg:w-1/2 shrink-0"
         bind:this={buttonRef}
         onclick={closeIntro}
         onmouseenter={handleMouseEnter}
