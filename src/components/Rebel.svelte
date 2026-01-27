@@ -120,6 +120,13 @@
       processRebelImage();
     }
 
+    const isMobile = window.innerWidth < 1024;
+    if (isMobile) {
+      document.body.style.overflow = "hidden";
+      document.body.style.position = "fixed";
+      document.body.style.width = "100%";
+    }
+
     function handleKeydown(event) {
       if (event.key === "Escape") {
         onClose();
@@ -129,6 +136,11 @@
     window.addEventListener("keydown", handleKeydown);
 
     return () => {
+      if (isMobile) {
+        document.body.style.overflow = "";
+        document.body.style.position = "";
+        document.body.style.width = "";
+      }
       window.removeEventListener("keydown", handleKeydown);
     };
   });
@@ -173,7 +185,7 @@
 <!-- svelte-ignore a11y_no_static_element_interactions -->
 <div
   onclick={onClose}
-  class="fixed z-40 w-full h-full inset-0 flex justify-center items-center bg-white/90 backdrop-blur p-2.5"
+  class="fixed z-40 w-full h-dvh inset-0 flex justify-center items-center bg-white/90 backdrop-blur p-2.5"
 >
   <div
     onclick={(e) => {

@@ -45,13 +45,36 @@
       `${headerHeight}px`,
     );
   });
+
+  $effect(() => {
+    const isMobile = window.innerWidth < 1024;
+    const shouldLock = open && isMobile;
+
+    if (shouldLock) {
+      document.body.style.overflow = "hidden";
+      document.body.style.position = "fixed";
+      document.body.style.width = "100%";
+    } else {
+      document.body.style.overflow = "";
+      document.body.style.position = "";
+      document.body.style.width = "";
+    }
+
+    return () => {
+      if (shouldLock) {
+        document.body.style.overflow = "";
+        document.body.style.position = "";
+        document.body.style.width = "";
+      }
+    };
+  });
 </script>
 
 <header
   bind:clientHeight={headerHeight}
-  class="sticky z-50 top-0 left-0 right-0 w-full bg-black text-white divide-y divide-white {open
-    ? 'max-lg:h-svh max-lg:overflow-y-auto max-lg:overscroll-none'
-    : ''}"
+  class="z-50 top-0 left-0 right-0 w-full bg-black text-white divide-y divide-white {open
+    ? 'fixed lg:sticky max-lg:h-dvh max-lg:overflow-y-auto max-lg:overscroll-none'
+    : 'sticky'}"
 >
   <div class="flex items-center">
     <a

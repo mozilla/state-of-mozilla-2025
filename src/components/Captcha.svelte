@@ -50,6 +50,29 @@
     }, 100);
   });
 
+  $effect(() => {
+    const isMobile = window.innerWidth < 1024;
+    const shouldLock = showCaptcha && isMobile;
+
+    if (shouldLock) {
+      document.body.style.overflow = "hidden";
+      document.body.style.position = "fixed";
+      document.body.style.width = "100%";
+    } else {
+      document.body.style.overflow = "";
+      document.body.style.position = "";
+      document.body.style.width = "";
+    }
+
+    return () => {
+      if (shouldLock) {
+        document.body.style.overflow = "";
+        document.body.style.position = "";
+        document.body.style.width = "";
+      }
+    };
+  });
+
   function handleSubmit(event) {
     event.preventDefault();
 
@@ -106,7 +129,7 @@
 {#if showCaptcha}
   <div
     id="captcha"
-    class="fixed z-40 w-full h-full inset-0 flex justify-center items-center overscroll-contain bg-white/90 backdrop-blur p-2.5"
+    class="fixed z-40 w-full h-dvh inset-0 flex justify-center items-center overscroll-contain bg-white/90 backdrop-blur p-2.5"
   >
     <div
       class="p-2.5 lg:p-5 outline bg-yellow lg:w-1/2 relative z-10"
