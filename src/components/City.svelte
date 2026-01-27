@@ -159,12 +159,12 @@
                 {#if rebelsFound.includes(rebel.id)}
                   <button
                     onclick={() => openRebel(rebel.id)}
-                    class="underline cursor-pointer"
+                    class="underline uppercase cursor-pointer"
                   >
                     {rebel.name}
                   </button>
                 {:else}
-                  <span>{rebel.name}</span>
+                  <span class="uppercase">{rebel.name}</span>
                 {/if}
               </p>
               <p>{rebel.title}</p>
