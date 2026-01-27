@@ -65,7 +65,7 @@ export const rebels = [
   },
   {
     id: 9,
-    name: "Jas Esper",
+    name: "Jad Esber",
     title: "Co-Founder Koodos",
     image: "rebel9.jpg",
     video:
