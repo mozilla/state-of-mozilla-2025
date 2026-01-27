@@ -36,7 +36,7 @@ const normalizedPath =
     >
       <IntroWrapper client:load>
         <Header currentPage={normalizedPath} client:load />
-        <main class="space-y-10 mb-10">
+        <main class="space-y-10 mb-10 max-lg:pt-(--header-height)">
           <slot />
         </main>
         <Footer client:load />

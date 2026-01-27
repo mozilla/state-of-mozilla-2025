@@ -72,9 +72,9 @@
 
 <header
   bind:clientHeight={headerHeight}
-  class="z-50 top-0 left-0 right-0 w-full bg-black text-white divide-y divide-white {open
-    ? 'fixed lg:sticky max-lg:h-dvh max-lg:overflow-y-auto max-lg:overscroll-none'
-    : 'sticky'}"
+  class="fixed lg:sticky z-50 top-0 left-0 right-0 w-full bg-black text-white divide-y divide-white {open
+    ? 'max-lg:h-dvh max-lg:overflow-y-auto max-lg:overscroll-none'
+    : ''}"
 >
   <div class="flex items-center">
     <a
