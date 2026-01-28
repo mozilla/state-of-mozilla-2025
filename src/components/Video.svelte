@@ -9,6 +9,30 @@
     }
   });
 
+  // IntersectionObserver to play/pause based on visibility
+  $effect(() => {
+    if (!videoElement) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            videoElement.play();
+          } else {
+            videoElement.pause();
+          }
+        });
+      },
+      { threshold: 0 },
+    );
+
+    observer.observe(videoElement);
+
+    return () => {
+      observer.disconnect();
+    };
+  });
+
   function togglePlayPause() {
     if (videoElement.paused) {
       videoElement.play();
@@ -21,7 +45,6 @@
 <div class="relative outline">
   <video
     class={className}
-    autoplay
     muted
     bind:this={videoElement}
     loop

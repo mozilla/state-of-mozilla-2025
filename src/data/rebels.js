@@ -2,7 +2,7 @@ export const rebels = [
   {
     id: 1,
     name: "Anna Spitznagel",
-    title: "Trail, a Mozilla Ventures Portfolio Company from Munich",
+    title: "Trail, a Mozilla Ventures Portfolio Company",
     image: "rebel1.jpg",
     video:
       "https://player.vimeo.com/progressive_redirect/playback/1155816949/rendition/1080p/file.mp4%20%281080p%29.mp4?loc=external&signature=a9cac888b8bda4757b30f3faa845472834586a57c756e206df44c611f95fd98b",
@@ -50,7 +50,7 @@ export const rebels = [
   {
     id: 7,
     name: "Paul Canetti",
-    title: "Co-Founder Skej",
+    title: "Co-Founder Skej, a Mozilla Ventures Portfolio Company",
     image: "rebel7.jpg",
     video:
       "https://player.vimeo.com/progressive_redirect/playback/1155816511/rendition/720p/file.mp4%20%28720p%29.mp4?loc=external&signature=9caa3a4cc18dd8f95dd321a0c0854026e9bee63fc52182bd08fb1a49a5452e53",
@@ -58,7 +58,7 @@ export const rebels = [
   {
     id: 8,
     name: "Tessa Brown",
-    title: "Co-Founder of Germ Network",
+    title: "Co-Founder of Germ Network, a Mozilla Ventures Portfolio Company",
     image: "rebel8.jpg",
     video:
       "https://player.vimeo.com/progressive_redirect/playback/1155816619/rendition/1080p/file.mp4%20%281080p%29.mp4?loc=external&signature=092ae7b05df58612fcd7ab0abd7d48c14bf4055fa159fc7e0396ae5567ae721a",
@@ -66,7 +66,7 @@ export const rebels = [
   {
     id: 9,
     name: "Jad Esber",
-    title: "Co-Founder Koodos",
+    title: "Co-Founder Koodos, a Mozilla Ventures Portfolio Company",
     image: "rebel9.jpg",
     video:
       "https://player.vimeo.com/progressive_redirect/playback/1155816597/rendition/1080p/file.mp4%20%281080p%29.mp4?loc=external&signature=5e7e98138035412946e17adf51fcf96f448713edb4f5cf16ec13f4455fa1d397",
@@ -82,7 +82,7 @@ export const rebels = [
   {
     id: 11,
     name: "Carolyn O’Hara",
-    title: "Firefox Desktop Prouduct Management",
+    title: "Firefox Desktop Product Management",
     image: "rebel11.jpg",
     video:
       "https://player.vimeo.com/progressive_redirect/playback/1155816705/rendition/1080p/file.mp4%20%281080p%29.mp4?loc=external&signature=14a16be09adc8f6b3562f7fd48264aef888f19b6229b87dc3d1b7c083812ba90",
@@ -90,7 +90,7 @@ export const rebels = [
   {
     id: 12,
     name: "Brad Micklea",
-    title: "Jozu, a Mozilla Ventures Portfolio Company",
+    title: "Co-Founder Jozu, a Mozilla Ventures Portfolio Company",
     image: "rebel12.jpg",
     video:
       "https://player.vimeo.com/progressive_redirect/playback/1155816741/rendition/1080p/file.mp4%20%281080p%29.mp4?loc=external&signature=4c47c2b98d622083d5d25255362eb390fdfc8683b547873f1cd614c64aec8fe4",
