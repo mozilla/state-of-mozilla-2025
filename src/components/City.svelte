@@ -4,6 +4,12 @@
   import { rebels } from "../data/rebels.js";
   import { onMount } from "svelte";
 
+  const rebelsMidpoint = Math.ceil(rebels.length / 2);
+  const rebelsColumns = [
+    rebels.slice(0, rebelsMidpoint),
+    rebels.slice(rebelsMidpoint),
+  ];
+
   let { rebelImages = {} } = $props();
 
   let open = $state(null);
@@ -143,32 +149,36 @@
 <section class="p-2.5 lg:p-5 my-10 lg:my-20">
   <div class="grid lg:grid-cols-4 gap-2.5 lg:gap-5">
     <div class="lg:col-span-2 lg:col-start-2">
-      <div class="lg:columns-2 space-y-2.5 lg:space-y-5">
-        {#each rebels as rebel}
-          <div class="flex">
-            <div class="w-10 shrink-0">
-              <div class="border w-5 h-5 flex justify-center items-center">
-                {#if rebelsFound.includes(rebel.id)}
-                  <span class="font-ocr-pbi text-xl">👁</span>
-                {/if}
+      <div class="grid lg:grid-cols-2 gap-2.5 lg:gap-5">
+        {#each rebelsColumns as column}
+          <div class="space-y-2.5 lg:space-y-5">
+            {#each column as rebel}
+              <div class="flex">
+                <div class="w-10 shrink-0">
+                  <div class="border w-5 h-5 flex justify-center items-center">
+                    {#if rebelsFound.includes(rebel.id)}
+                      <span class="font-ocr-pbi text-xl">👁</span>
+                    {/if}
+                  </div>
+                </div>
+                <div>
+                  <p class="uppercase">
+                    {rebel.id}.
+                    {#if rebelsFound.includes(rebel.id)}
+                      <button
+                        onclick={() => openRebel(rebel.id)}
+                        class="underline uppercase cursor-pointer"
+                      >
+                        {rebel.name}
+                      </button>
+                    {:else}
+                      <span class="uppercase">{rebel.name}</span>
+                    {/if}
+                  </p>
+                  <p>{rebel.title}</p>
+                </div>
               </div>
-            </div>
-            <div>
-              <p class="uppercase">
-                {rebel.id}.
-                {#if rebelsFound.includes(rebel.id)}
-                  <button
-                    onclick={() => openRebel(rebel.id)}
-                    class="underline uppercase cursor-pointer"
-                  >
-                    {rebel.name}
-                  </button>
-                {:else}
-                  <span class="uppercase">{rebel.name}</span>
-                {/if}
-              </p>
-              <p>{rebel.title}</p>
-            </div>
+            {/each}
           </div>
         {/each}
       </div>

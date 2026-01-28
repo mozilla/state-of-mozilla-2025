@@ -99,7 +99,7 @@ export const organizations = [
     name: "Mozilla.ai",
     url: "https://www.mozilla.ai/",
     icon: "/svg/Logo_MozillaAi.svg",
-    paragraph1: `Increasingly, open source AI is just as good as closed options — but remains harder for developers to use. Mozilla.ai is a dedicated R+D lab and startup designed to change this. In 2025, the team focused on building an initial set of ‘choice first’ developer tools including the Apache-licensed libraries any-llm, any-agent and any-guardrail. They also welcomed well known AI researcher and entrepreneur John Dickerson as their new CEO.. In 2026, the team will focus on y.`,
+    paragraph1: `Increasingly, open source AI is just as good as closed options — but remains harder for developers to use. Mozilla.ai is a dedicated R+D lab and startup designed to change this. In 2025, the team focused on building an initial set of ‘choice first’ developer tools including the Apache-licensed libraries any-llm, any-agent and any-guardrail. They also welcomed well known AI researcher and entrepreneur John Dickerson as their new CEO.`,
     list1Intro: "2025 achievements",
     list1: [
       `Developed and released a series of <strong>Apache licensed libraries to give developers more choices</strong> when creating things with AI, including any-llm, any-agent and any-guardrail.`,

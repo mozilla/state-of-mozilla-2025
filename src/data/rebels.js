@@ -2,7 +2,7 @@ export const rebels = [
   {
     id: 1,
     name: "Anna Spitznagel",
-    title: "Trail, a Mozilla Ventures Portfolio Company",
+    title: "Co-Founder Trail, a Mozilla Ventures Portfolio Company",
     image: "rebel1.jpg",
     video:
       "https://player.vimeo.com/progressive_redirect/playback/1155816949/rendition/1080p/file.mp4%20%281080p%29.mp4?loc=external&signature=a9cac888b8bda4757b30f3faa845472834586a57c756e206df44c611f95fd98b",
