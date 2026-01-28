@@ -2,6 +2,7 @@
   const { src, class: className = "", muted: initialMuted = true } = $props();
   let muted = $derived(initialMuted);
   let videoElement = $state(null);
+  let userPaused = $state(false);
 
   $effect(() => {
     if (videoElement) {
@@ -17,7 +18,9 @@
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            videoElement.play();
+            if (!userPaused) {
+              videoElement.play();
+            }
           } else {
             videoElement.pause();
           }
@@ -35,8 +38,10 @@
 
   function togglePlayPause() {
     if (videoElement.paused) {
+      userPaused = false;
       videoElement.play();
     } else {
+      userPaused = true;
       videoElement.pause();
     }
   }
