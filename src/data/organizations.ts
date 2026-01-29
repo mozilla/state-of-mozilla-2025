@@ -35,7 +35,7 @@ export const organizations = [
       `Moved to a <strong>monthly release schedule</strong>, landing major and minor changes to Thunderbird.`,
       `Continued to modernize Thunderbird Desktop, adding new features including <strong>native email support for Microsoft Exchange</strong> as well as moving our desktop releases to a monthly cadence, allowing users to experience new features faster and with fewer disruptions.`,
       `Released <strong>Thunderbird Eclipse</strong> a major new extended services release, including a major interface overhaul and significant Rust rewrites across the code base.`,
-      `Responded to user requests <strong>by previewing <a target="_blank" class="underline" href="https://blog.thunderbird.net/tag/tbpro/">Thunderbird Pro</a> and Thundermail secure email hosting</strong>. There is an <a target="_blank" class="underline" href="https://tb.pro/">early bird to our waitlist</a> for users who want to test the service.`,
+      `Responded to user requests <strong>by previewing <a target="_blank" class="underline" href="https://blog.thunderbird.net/tag/tbpro/">Thunderbird Pro</a> and Thundermail secure email hosting</strong>. There is an <a target="_blank" class="underline" href="https://tb.pro/">early bird signup to our waitlist</a> for users who want to test the service.`,
       `Released the first full version of <strong>Thunderbird for Android</strong>, which moved Thunderbird past the desktop for the very first time.`,
     ],
     list2Intro: "Ahead in 2026",
@@ -52,7 +52,7 @@ export const organizations = [
     name: "Mozilla Foundation",
     url: "https://www.mozillafoundation.org/",
     icon: "/svg/Logo_MozillaFoundation.svg",
-    paragraph1: `The Foundation is the umbrella for all of Mozilla’s activities — and also operates a set of charitable community programs aimed creating a better technology future, powered by people, open by design, fueled by imagination.  In 2025, Mozilla Foundation programs team launched a values driven tech incubator, engaged creatives in shaping the future of AI and unlocked an unprecedented wave of grassroots giving. In the year ahead, the team will focus on growing the Mozilla Data Collective and other initiatives that advance public interest AI.`,
+    paragraph1: `The Foundation is the umbrella for all of Mozilla’s activities — and also operates a set of charitable community programs aimed at creating a better technology future, powered by people, open by design, fueled by imagination.  In 2025, Mozilla Foundation programs team launched a values driven tech incubator, engaged creatives in shaping the future of AI and unlocked an unprecedented wave of grassroots giving. In the year ahead, the team will focus on growing the Mozilla Data Collective and other initiatives that advance public interest AI.`,
     list1Intro: "2025 achievements",
     list1: [
       `Launched an <strong>experimental incubator to help values-driven tech thrive</strong>, helping good tech ventures survive the leap from prototype to sustainability. The incubator launched with two initial cohorts, one in climate and one in democracy.`,
@@ -124,7 +124,7 @@ export const organizations = [
     list1: [
       `Working with our community to develop a <strong>State of Open Source AI report</strong> that will show what’s happening, and where more work and investment are needed.`,
       `Continued investment in Mozilla.ai and the Mozilla Data Collective as <strong>Mozilla contributions to improving the open source AI stack</strong>.`,
-      `Partnering or establishing companies that are filling key gaps in the the stack — or that are <strong>helping people adopt open source AI</strong> as part of their work.`,
+      `Partnering or establishing companies that are filling key gaps in the stack — or that are <strong>helping people adopt open source AI</strong> as part of their work.`,
       `Collaborating with teams across Mozilla as well as allied companies like Flower.ai to develop <strong>new standards put users in charge of how AI works</strong> and how their data is used.`,
     ],
     list2Intro: null,
