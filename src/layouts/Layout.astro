@@ -32,25 +32,37 @@ const normalizedPath =
     <meta name="description" content="Doing for AI what we did for the web" />
 
     <!-- Facebook Meta Tags -->
-    <meta property="og:url" content="https://stateof.mozilla.org/" />
+    <meta
+      property="og:url"
+      content={new URL(Astro.url.pathname, Astro.site).href}
+    />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="State of Mozilla 2025" />
     <meta
       property="og:description"
       content="Doing for AI what we did for the web"
     />
-    <meta property="og:image" content="/mozilla_thumbnail_1200x630.png" />
+    <meta
+      property="og:image"
+      content={new URL("/mozilla_thumbnail_1200x630.png", Astro.site).href}
+    />
 
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta property="twitter:domain" content="stateof.mozilla.org" />
-    <meta property="twitter:url" content="https://stateof.mozilla.org/" />
+    <meta
+      property="twitter:url"
+      content={new URL(Astro.url.pathname, Astro.site).href}
+    />
     <meta name="twitter:title" content="State of Mozilla 2025" />
     <meta
       name="twitter:description"
       content="Doing for AI what we did for the web"
     />
-    <meta name="twitter:image" content="/mozilla_thumbnail_1200x630.png" />
+    <meta
+      name="twitter:image"
+      content={new URL("/mozilla_thumbnail_1200x630.png", Astro.site).href}
+    />
   </head>
   <body class="bg-gray min-h-svh flex flex-col">
     <div
